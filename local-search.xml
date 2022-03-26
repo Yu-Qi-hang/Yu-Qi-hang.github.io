@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：23</title>
+    <link href="/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/"/>
+    <url>/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/</url>
+    
+    <content type="html"><![CDATA[<h4 id="23-Merge-k-Sorted-Lists"><a href="#23-Merge-k-Sorted-Lists" class="headerlink" title="23. Merge k Sorted Lists"></a>23. Merge k Sorted Lists</h4><p>You are given an array of <code>k</code> linked-lists <code>lists</code>, each linked-list is sorted in ascending order.</p><p><em>Merge all the linked-lists into one sorted linked-list and return it.</em></p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = [[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>]]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> linked-lists are:<br>[<br>  <span class="hljs-number">1</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">5</span>,<br>  <span class="hljs-number">1</span>-&gt;<span class="hljs-number">3</span>-&gt;<span class="hljs-number">4</span>,<br>  <span class="hljs-number">2</span>-&gt;<span class="hljs-number">6</span><br>]<br><span class="hljs-title">merging</span> them into one sorted list:<br><span class="hljs-number">1</span>-&gt;<span class="hljs-number">1</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-number">3</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">5</span>-&gt;<span class="hljs-number">6</span><br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = []<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = [[]]<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$k &#x3D;&#x3D; lists.length$</li><li>$0 &lt;&#x3D; k &lt;&#x3D; 10^4$</li><li>$0 &lt;&#x3D; lists[i].length &lt;&#x3D; 500$</li><li>$-10^4 &lt;&#x3D; lists[i][j] &lt;&#x3D; 10^4$</li><li><code>lists[i]</code> is sorted in <strong>ascending order</strong>.</li><li>The sum of <code>lists[i].length</code> will not exceed $10^4$.</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/23.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">mergeKLists</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode** lists, <span class="hljs-type">int</span> listsSize)</span>&#123;<br>    <span class="hljs-keyword">if</span>(listsSize&lt;<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=listsSize;i&gt;<span class="hljs-number">1</span>;i=(i+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-type">int</span> idx1=<span class="hljs-number">0</span>,idx2=i<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(idx1&lt;idx2)&#123;<br>            lists[idx1]=mergeTwoLists(lists[idx1],lists[idx2]);<br>            idx1++;<br>            idx2--;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> lists[<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>这个虽然是困难难度，其实并不难</li><li>多个链表的合并和两个链表合并没有什么区别</li><li>在这里调用<a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/21.c">21.Merge Two Sorted Lists</a>中实现的双链表合并即可</li><li>需要注意的是为空的情况，返回值也得确定为<code>NULL</code>。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>困难</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：22</title>
     <link href="/2022/03/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A22/"/>
     <url>/2022/03/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A22/</url>

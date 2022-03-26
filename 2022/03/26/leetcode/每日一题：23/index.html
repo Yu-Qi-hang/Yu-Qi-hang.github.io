@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第22题：Generate Parentheses">
+    <meta name="description" content="Leetcode题库第23题：Merge k Sorted Lists">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：22">
-<meta property="og:url" content="http://example.com/2022/03/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A22/index.html">
+<meta property="og:title" content="每日一题：23">
+<meta property="og:url" content="http://example.com/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第22题：Generate Parentheses">
+<meta property="og:description" content="Leetcode题库第23题：Merge k Sorted Lists">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-03-25T12:32:19.000Z">
-<meta property="article:modified_time" content="2022-03-25T12:33:29.455Z">
+<meta property="article:published_time" content="2022-03-26T04:22:36.000Z">
+<meta property="article:modified_time" content="2022-03-26T04:23:19.595Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：22 - 咸鱼Blog</title>
+  <title>每日一题：23 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Generate Parentheses">
+            <span class="h2" id="subtitle" title="Merge k Sorted Lists">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-25 20:32" pubdate>
-        2022年3月25日 晚上
+      <time datetime="2022-03-26 12:22" pubdate>
+        2022年3月26日 中午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.5k 字
+      1.1k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13 分钟
+      10 分钟
     </span>
   
 
@@ -254,24 +254,32 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Generate Parentheses</h1>
+            <h1 style="display: none">Merge k Sorted Lists</h1>
             
             <div class="markdown-body">
-              <h4 id="22-Generate-Parentheses"><a href="#22-Generate-Parentheses" class="headerlink" title="22. Generate Parentheses"></a>22. Generate Parentheses</h4><p>Given <code>n</code> pairs of parentheses, write a function to <em>generate all combinations of well-formed parentheses</em>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: [<span class="hljs-string">&quot;((()))&quot;</span>,<span class="hljs-string">&quot;(()())&quot;</span>,<span class="hljs-string">&quot;(())()&quot;</span>,<span class="hljs-string">&quot;()(())&quot;</span>,<span class="hljs-string">&quot;()()()&quot;</span>]<br></code></pre></td></tr></table></figure>
+              <h4 id="23-Merge-k-Sorted-Lists"><a href="#23-Merge-k-Sorted-Lists" class="headerlink" title="23. Merge k Sorted Lists"></a>23. Merge k Sorted Lists</h4><p>You are given an array of <code>k</code> linked-lists <code>lists</code>, each linked-list is sorted in ascending order.</p>
+<p><em>Merge all the linked-lists into one sorted linked-list and return it.</em></p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = [[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>]]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> linked-lists are:<br>[<br>  <span class="hljs-number">1</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">5</span>,<br>  <span class="hljs-number">1</span>-&gt;<span class="hljs-number">3</span>-&gt;<span class="hljs-number">4</span>,<br>  <span class="hljs-number">2</span>-&gt;<span class="hljs-number">6</span><br>]<br><span class="hljs-title">merging</span> them into one sorted list:<br><span class="hljs-number">1</span>-&gt;<span class="hljs-number">1</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-number">3</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">5</span>-&gt;<span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">1</span><br><span class="hljs-type">Output</span>: [<span class="hljs-string">&quot;()&quot;</span>]<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = []<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
+
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = [[]]<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= n &lt;= 8</code></li>
+<li>$k &#x3D;&#x3D; lists.length$</li>
+<li>$0 &lt;&#x3D; k &lt;&#x3D; 10^4$</li>
+<li>$0 &lt;&#x3D; lists[i].length &lt;&#x3D; 500$</li>
+<li>$-10^4 &lt;&#x3D; lists[i][j] &lt;&#x3D; 10^4$</li>
+<li><code>lists[i]</code> is sorted in <strong>ascending order</strong>.</li>
+<li>The sum of <code>lists[i].length</code> will not exceed $10^4$.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/22.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">char</span> ** <span class="hljs-title function_">generate</span><span class="hljs-params">(<span class="hljs-type">char</span> **ret,<span class="hljs-type">char</span> *temp,<span class="hljs-type">int</span> left,<span class="hljs-type">int</span> right,<span class="hljs-type">int</span> n,<span class="hljs-type">int</span> *returnSize,<span class="hljs-type">int</span> *batch)</span>&#123;<br>    <span class="hljs-keyword">if</span>(left==n&amp;&amp;right==n)&#123;<br>        <span class="hljs-keyword">if</span>(*batch==*returnSize)&#123;<br>            (*batch)*=<span class="hljs-number">2</span>;<br>            ret=(<span class="hljs-type">char</span>**)<span class="hljs-built_in">realloc</span>(ret,<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>*)*(*batch));<br>        &#125;<br>        ret[*returnSize]=temp;<br>        (*returnSize)++;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">if</span>(left&gt;right)&#123;<br>            <span class="hljs-type">char</span> *new=(<span class="hljs-type">char</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>)*(<span class="hljs-number">2</span>*n+<span class="hljs-number">1</span>));<br>            <span class="hljs-built_in">memset</span>(new,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*n+<span class="hljs-number">1</span>);<br>            <span class="hljs-built_in">strcpy</span>(new,temp);<br>            new[<span class="hljs-built_in">strlen</span>(temp)]=<span class="hljs-string">&#x27;)&#x27;</span>;<br>            ret=generate(ret,new,left,right+<span class="hljs-number">1</span>,n,returnSize,batch);<br>        &#125;<br>        <span class="hljs-keyword">if</span>(left&lt;n)&#123;<br>            <span class="hljs-type">char</span> *newnew=(<span class="hljs-type">char</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>)*(<span class="hljs-number">2</span>*n+<span class="hljs-number">1</span>));<br>            <span class="hljs-built_in">memset</span>(newnew,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>*n+<span class="hljs-number">1</span>);<br>            <span class="hljs-built_in">strcpy</span>(newnew,temp);<br>            newnew[<span class="hljs-built_in">strlen</span>(temp)]=<span class="hljs-string">&#x27;(&#x27;</span>;<br>            ret=generate(ret,newnew,left+<span class="hljs-number">1</span>,right,n,returnSize,batch);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br><span class="hljs-type">char</span> ** <span class="hljs-title function_">generateParenthesis</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span>* returnSize)</span>&#123;    <br>    <span class="hljs-type">int</span> returnsize=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> batch=<span class="hljs-number">5</span>;<br>    <span class="hljs-type">char</span> **ret=(<span class="hljs-type">char</span>**)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>*)*batch);<br>    ret=generate(ret,<span class="hljs-string">&quot;&quot;</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,n,&amp;returnsize,&amp;batch);<br>    *returnSize=returnsize;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/23.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">mergeKLists</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode** lists, <span class="hljs-type">int</span> listsSize)</span>&#123;<br>    <span class="hljs-keyword">if</span>(listsSize&lt;<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=listsSize;i&gt;<span class="hljs-number">1</span>;i=(i+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-type">int</span> idx1=<span class="hljs-number">0</span>,idx2=i<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(idx1&lt;idx2)&#123;<br>            lists[idx1]=mergeTwoLists(lists[idx1],lists[idx2]);<br>            idx1++;<br>            idx2--;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> lists[<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>想法是采取递归生成，每次新情况就拷贝已有的字符串；</li>
-<li>左括号能继续增加的条件是未达上限，右括号可以增加是条件是数量小于左括号；</li>
-<li>一旦两者都达到上限，则加到二维数组上；对于二维数组，空间不够时倍增空间；</li>
-<li>奇怪的错误点是，直接传<code>returnSize</code>进到函数会显示溢出，重新定义一个变量最后返回值赋值却没事。</li>
+<li>这个虽然是困难难度，其实并不难</li>
+<li>多个链表的合并和两个链表合并没有什么区别</li>
+<li>在这里调用<a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/21.c">21.Merge Two Sorted Lists</a>中实现的双链表合并即可</li>
+<li>需要注意的是为空的情况，返回值也得确定为<code>NULL</code>。</li>
 </ol>
 
             </div>
@@ -284,7 +292,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/">中等</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
                     
                   </div>
                 
@@ -311,18 +319,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：23</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/24/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A21/">
-                        <span class="hidden-mobile">每日一题：21</span>
+                      <a href="/2022/03/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A22/">
+                        <span class="hidden-mobile">每日一题：22</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
