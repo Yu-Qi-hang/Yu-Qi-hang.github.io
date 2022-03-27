@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第23题：Merge k Sorted Lists">
+    <meta name="description" content="Leetcode题库第24题：Swap Nodes in Pairs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：23">
-<meta property="og:url" content="http://example.com/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/index.html">
+<meta property="og:title" content="每日一题：24">
+<meta property="og:url" content="http://example.com/2022/03/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A24/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第23题：Merge k Sorted Lists">
+<meta property="og:description" content="Leetcode题库第24题：Swap Nodes in Pairs">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-03-26T04:22:36.000Z">
-<meta property="article:modified_time" content="2022-03-26T04:23:19.595Z">
+<meta property="article:published_time" content="2022-03-27T04:23:46.000Z">
+<meta property="article:modified_time" content="2022-03-27T04:24:26.570Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：23 - 咸鱼Blog</title>
+  <title>每日一题：24 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Merge k Sorted Lists">
+            <span class="h2" id="subtitle" title="Swap Nodes in Pairs">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-26 12:22" pubdate>
-        2022年3月26日 中午
+      <time datetime="2022-03-27 12:23" pubdate>
+        2022年3月27日 中午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      892 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10 分钟
+      8 分钟
     </span>
   
 
@@ -254,32 +254,26 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Merge k Sorted Lists</h1>
+            <h1 style="display: none">Swap Nodes in Pairs</h1>
             
             <div class="markdown-body">
-              <h4 id="23-Merge-k-Sorted-Lists"><a href="#23-Merge-k-Sorted-Lists" class="headerlink" title="23. Merge k Sorted Lists"></a>23. Merge k Sorted Lists</h4><p>You are given an array of <code>k</code> linked-lists <code>lists</code>, each linked-list is sorted in ascending order.</p>
-<p><em>Merge all the linked-lists into one sorted linked-list and return it.</em></p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = [[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>]]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> linked-lists are:<br>[<br>  <span class="hljs-number">1</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">5</span>,<br>  <span class="hljs-number">1</span>-&gt;<span class="hljs-number">3</span>-&gt;<span class="hljs-number">4</span>,<br>  <span class="hljs-number">2</span>-&gt;<span class="hljs-number">6</span><br>]<br><span class="hljs-title">merging</span> them into one sorted list:<br><span class="hljs-number">1</span>-&gt;<span class="hljs-number">1</span>-&gt;<span class="hljs-number">2</span>-&gt;<span class="hljs-number">3</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">4</span>-&gt;<span class="hljs-number">5</span>-&gt;<span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+              <h4 id="24-Swap-Nodes-in-Pairs"><a href="#24-Swap-Nodes-in-Pairs" class="headerlink" title="24. Swap Nodes in Pairs"></a>24. Swap Nodes in Pairs</h4><p>Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list’s nodes (i.e., only nodes themselves may be changed.)</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202203271223141.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = []<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = []<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: lists = [[]]<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>$k &#x3D;&#x3D; lists.length$</li>
-<li>$0 &lt;&#x3D; k &lt;&#x3D; 10^4$</li>
-<li>$0 &lt;&#x3D; lists[i].length &lt;&#x3D; 500$</li>
-<li>$-10^4 &lt;&#x3D; lists[i][j] &lt;&#x3D; 10^4$</li>
-<li><code>lists[i]</code> is sorted in <strong>ascending order</strong>.</li>
-<li>The sum of <code>lists[i].length</code> will not exceed $10^4$.</li>
+<li>The number of nodes in the list is in the range <code>[0, 100]</code>.</li>
+<li><code>0 &lt;= Node.val &lt;= 100</code></li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/23.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">mergeKLists</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode** lists, <span class="hljs-type">int</span> listsSize)</span>&#123;<br>    <span class="hljs-keyword">if</span>(listsSize&lt;<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=listsSize;i&gt;<span class="hljs-number">1</span>;i=(i+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-type">int</span> idx1=<span class="hljs-number">0</span>,idx2=i<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(idx1&lt;idx2)&#123;<br>            lists[idx1]=mergeTwoLists(lists[idx1],lists[idx2]);<br>            idx1++;<br>            idx2--;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> lists[<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solutioncode"><a href="#Solutioncode" class="headerlink" title="Solutioncode"></a>Solution<a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/24.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">swapPairs</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head)</span>&#123;<br>    <span class="hljs-keyword">if</span>(head&amp;&amp;head-&gt;next)&#123;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">pre</span>=</span><span class="hljs-literal">NULL</span>;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">first</span>=</span>head;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">second</span>=</span>head-&gt;next;<br>        head=head-&gt;next;<br>        <span class="hljs-keyword">while</span>(first&amp;&amp;second)&#123;<br>            first-&gt;next=second-&gt;next;<br>            second-&gt;next=first;<br>            <span class="hljs-keyword">if</span>(pre)pre-&gt;next=second;<br>            pre=first;<br>            <span class="hljs-keyword">if</span>(first-&gt;next)first=first-&gt;next;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">if</span>(first-&gt;next)second=first-&gt;next;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> head;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>这个虽然是困难难度，其实并不难</li>
-<li>多个链表的合并和两个链表合并没有什么区别</li>
-<li>在这里调用<a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/21.c">21.Merge Two Sorted Lists</a>中实现的双链表合并即可</li>
-<li>需要注意的是为空的情况，返回值也得确定为<code>NULL</code>。</li>
+<li>只需要两两交换直到凑不出一对即可；</li>
+<li>注意很多节点的不存在情况即可</li>
 </ol>
 
             </div>
@@ -292,7 +286,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/">中等</a>
                     
                   </div>
                 
@@ -319,18 +313,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A24/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：24</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A22/">
-                        <span class="hidden-mobile">每日一题：22</span>
+                      <a href="/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/">
+                        <span class="hidden-mobile">每日一题：23</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

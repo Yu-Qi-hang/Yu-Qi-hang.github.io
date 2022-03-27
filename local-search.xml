@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：24</title>
+    <link href="/2022/03/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A24/"/>
+    <url>/2022/03/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A24/</url>
+    
+    <content type="html"><![CDATA[<h4 id="24-Swap-Nodes-in-Pairs"><a href="#24-Swap-Nodes-in-Pairs" class="headerlink" title="24. Swap Nodes in Pairs"></a>24. Swap Nodes in Pairs</h4><p>Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list’s nodes (i.e., only nodes themselves may be changed.)</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202203271223141.jpeg" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = []<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>The number of nodes in the list is in the range <code>[0, 100]</code>.</li><li><code>0 &lt;= Node.val &lt;= 100</code></li></ul><h5 id="Solutioncode"><a href="#Solutioncode" class="headerlink" title="Solutioncode"></a>Solution<a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/24.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">swapPairs</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head)</span>&#123;<br>    <span class="hljs-keyword">if</span>(head&amp;&amp;head-&gt;next)&#123;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">pre</span>=</span><span class="hljs-literal">NULL</span>;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">first</span>=</span>head;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">second</span>=</span>head-&gt;next;<br>        head=head-&gt;next;<br>        <span class="hljs-keyword">while</span>(first&amp;&amp;second)&#123;<br>            first-&gt;next=second-&gt;next;<br>            second-&gt;next=first;<br>            <span class="hljs-keyword">if</span>(pre)pre-&gt;next=second;<br>            pre=first;<br>            <span class="hljs-keyword">if</span>(first-&gt;next)first=first-&gt;next;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">if</span>(first-&gt;next)second=first-&gt;next;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> head;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>只需要两两交换直到凑不出一对即可；</li><li>注意很多节点的不存在情况即可</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：23</title>
     <link href="/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/"/>
     <url>/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/</url>
