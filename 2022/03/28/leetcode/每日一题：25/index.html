@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第24题：Swap Nodes in Pairs">
+    <meta name="description" content="Leetcode题库第25题：Reverse Nodes in k-Group">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：24">
-<meta property="og:url" content="http://example.com/2022/03/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A24/index.html">
+<meta property="og:title" content="每日一题：25">
+<meta property="og:url" content="http://example.com/2022/03/28/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A25/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第24题：Swap Nodes in Pairs">
+<meta property="og:description" content="Leetcode题库第25题：Reverse Nodes in k-Group">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-03-27T04:23:46.000Z">
-<meta property="article:modified_time" content="2022-03-27T04:24:26.570Z">
+<meta property="article:published_time" content="2022-03-28T13:42:55.000Z">
+<meta property="article:modified_time" content="2022-03-27T13:43:46.775Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：24 - 咸鱼Blog</title>
+  <title>每日一题：25 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Swap Nodes in Pairs">
+            <span class="h2" id="subtitle" title="Reverse Nodes in k-Group">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-27 12:23" pubdate>
-        2022年3月27日 中午
+      <time datetime="2022-03-28 21:42" pubdate>
+        2022年3月28日 晚上
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      892 字
+      1.4k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      12 分钟
     </span>
   
 
@@ -254,26 +254,34 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Swap Nodes in Pairs</h1>
+            <h1 style="display: none">Reverse Nodes in k-Group</h1>
             
             <div class="markdown-body">
-              <h4 id="24-Swap-Nodes-in-Pairs"><a href="#24-Swap-Nodes-in-Pairs" class="headerlink" title="24. Swap Nodes in Pairs"></a>24. Swap Nodes in Pairs</h4><p>Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list’s nodes (i.e., only nodes themselves may be changed.)</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202203271223141.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
+              <h4 id="25-Reverse-Nodes-in-k-Group"><a href="#25-Reverse-Nodes-in-k-Group" class="headerlink" title="25. Reverse Nodes in k-Group"></a>25. Reverse Nodes in k-Group</h4><p>Given the <code>head</code> of a linked list, reverse the nodes of the list <code>k</code> at a time, and return <em>the modified list</em>.</p>
+<p><code>k</code> is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of <code>k</code> then left-out nodes, in the end, should remain as it is.</p>
+<p>You may not alter the values in the list’s nodes, only nodes themselves may be changed.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202203272143091.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>], k = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = []<br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
-
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>]<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202203272143254.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>], k = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>The number of nodes in the list is in the range <code>[0, 100]</code>.</li>
-<li><code>0 &lt;= Node.val &lt;= 100</code></li>
+<li>The number of nodes in the list is <code>n</code>.</li>
+<li><code>1 &lt;= k &lt;= n &lt;= 5000</code></li>
+<li><code>0 &lt;= Node.val &lt;= 1000</code></li>
 </ul>
-<h5 id="Solutioncode"><a href="#Solutioncode" class="headerlink" title="Solutioncode"></a>Solution<a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/24.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">swapPairs</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head)</span>&#123;<br>    <span class="hljs-keyword">if</span>(head&amp;&amp;head-&gt;next)&#123;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">pre</span>=</span><span class="hljs-literal">NULL</span>;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">first</span>=</span>head;<br>        <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">second</span>=</span>head-&gt;next;<br>        head=head-&gt;next;<br>        <span class="hljs-keyword">while</span>(first&amp;&amp;second)&#123;<br>            first-&gt;next=second-&gt;next;<br>            second-&gt;next=first;<br>            <span class="hljs-keyword">if</span>(pre)pre-&gt;next=second;<br>            pre=first;<br>            <span class="hljs-keyword">if</span>(first-&gt;next)first=first-&gt;next;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">if</span>(first-&gt;next)second=first-&gt;next;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> head;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/25.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">reverseKGroup</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head, <span class="hljs-type">int</span> k)</span>&#123;<br>    <span class="hljs-type">int</span> length=<span class="hljs-number">0</span>;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span>*<span class="hljs-title">p</span>=</span>head;<br>    <span class="hljs-keyword">while</span>(p)&#123;<br>        length++;<br>        p=p-&gt;next;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(length&lt;k)<span class="hljs-keyword">return</span> head;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span> *<span class="hljs-title">dummy</span>=</span>(<span class="hljs-keyword">struct</span> ListNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> ListNode));<br>    dummy-&gt;val=<span class="hljs-number">0</span>;<br>    dummy-&gt;next=head;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span> *<span class="hljs-title">pre</span>,*<span class="hljs-title">tail</span>,*<span class="hljs-title">newhead</span>;</span><br>    pre=dummy;<br>    tail=pre-&gt;next;<br>    newhead=tail-&gt;next;<br>    <span class="hljs-type">int</span> count=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(newhead)&#123;<br>        <span class="hljs-keyword">while</span>(count&lt;k)&#123;<br>            tail-&gt;next=newhead-&gt;next;<br>            newhead-&gt;next=pre-&gt;next;<br>            pre-&gt;next=newhead;<br>            newhead=tail-&gt;next;<br>            count++;<br>        &#125;<br>        length-=k;<br>        <span class="hljs-keyword">if</span>(length&lt;k)<span class="hljs-keyword">break</span>;<br>        pre=tail;<br>        tail=pre-&gt;next;<br>        newhead=tail-&gt;next;<br>        count=<span class="hljs-number">1</span>;<br>    &#125;<br>    head=dummy-&gt;next;<br>    <span class="hljs-built_in">free</span>(dummy);<br>    <span class="hljs-keyword">return</span> head;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>只需要两两交换直到凑不出一对即可；</li>
-<li>注意很多节点的不存在情况即可</li>
+<li>好像并不困难，主要是想清楚一个组之内如何实现反向；</li>
+<li>在这里主要标记了下面几个位置：<ol>
+<li><code>pre</code> 标记的是前一组指向这一组的指针，即前一组尾部</li>
+<li><code>tail</code> 本组的最终尾部，也就是初始头部；</li>
+<li><code>newhead</code> 每次需要前移的节点；</li>
+</ol>
+</li>
+<li>每次完成一组之后更新节点位置，以及剩余长度，判断是否需要反转。</li>
 </ol>
 
             </div>
@@ -286,7 +294,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/">中等</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
                     
                   </div>
                 
@@ -313,18 +321,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/28/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A25/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：25</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A23/">
-                        <span class="hidden-mobile">每日一题：23</span>
+                      <a href="/2022/03/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A24/">
+                        <span class="hidden-mobile">每日一题：24</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
