@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：28</title>
+    <link href="/2022/03/31/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A28/"/>
+    <url>/2022/03/31/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A28/</url>
+    
+    <content type="html"><![CDATA[<h4 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a>28. Implement strStr()</h4><p>Implement <a href="http://www.cplusplus.com/reference/cstring/strstr/">strStr()</a>.</p><p>Return the index of the first occurrence of needle in haystack, or <code>-1</code> if <code>needle</code> is not part of <code>haystack</code>.</p><h5 id="Clarification"><a href="#Clarification" class="headerlink" title="Clarification"></a>Clarification</h5><p>What should we return when <code>needle</code> is an empty string? This is a great question to ask during an interview.</p><p>For the purpose of this problem, we will return 0 when <code>needle</code> is an empty string. This is consistent to C’s <a href="http://www.cplusplus.com/reference/cstring/strstr/">strstr()</a> and Java’s <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)">indexOf()</a>.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: haystack = <span class="hljs-string">&quot;hello&quot;</span>, needle = <span class="hljs-string">&quot;ll&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: haystack = <span class="hljs-string">&quot;aaaaa&quot;</span>, needle = <span class="hljs-string">&quot;bba&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: haystack = <span class="hljs-string">&quot;&quot;</span>, needle = <span class="hljs-string">&quot;&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$0 &lt;&#x3D; haystack.length, needle.length &lt;&#x3D; 5 * 10^4$</li><li><code>haystack</code> and <code>needle</code> consist of only lower-case English characters.</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/28.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">strStr</span><span class="hljs-params">(<span class="hljs-type">char</span> * haystack, <span class="hljs-type">char</span> * needle)</span>&#123;<br>    <span class="hljs-keyword">if</span>(needle[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;\0&#x27;</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> ret=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(haystack[ret]!=<span class="hljs-string">&#x27;\0&#x27;</span>)&#123;<br>        <span class="hljs-keyword">if</span>(haystack[ret]==needle[<span class="hljs-number">0</span>])&#123;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strncmp</span>(&amp;haystack[ret],needle,<span class="hljs-built_in">strlen</span>(needle))==<span class="hljs-number">0</span>)<br>                <span class="hljs-keyword">return</span> ret;<br>        &#125;<br>        ret++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>比较简单，只需要依次比对就好了</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>简单</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：27</title>
     <link href="/2022/03/30/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A27/"/>
     <url>/2022/03/30/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A27/</url>

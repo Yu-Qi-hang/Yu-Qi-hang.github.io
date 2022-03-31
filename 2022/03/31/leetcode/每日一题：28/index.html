@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第27题：Remove Element">
+    <meta name="description" content="Leetcode题库第28题：Implement strStr()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：27">
-<meta property="og:url" content="http://example.com/2022/03/30/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A27/index.html">
+<meta property="og:title" content="每日一题：28">
+<meta property="og:url" content="http://example.com/2022/03/31/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A28/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第27题：Remove Element">
+<meta property="og:description" content="Leetcode题库第28题：Implement strStr()">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-03-30T03:17:01.000Z">
-<meta property="article:modified_time" content="2022-03-30T03:17:32.433Z">
+<meta property="article:published_time" content="2022-03-31T04:26:50.000Z">
+<meta property="article:modified_time" content="2022-03-31T04:27:20.156Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：27 - 咸鱼Blog</title>
+  <title>每日一题：28 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Remove Element">
+            <span class="h2" id="subtitle" title="Implement strStr()">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-30 11:17" pubdate>
-        2022年3月30日 上午
+      <time datetime="2022-03-31 12:26" pubdate>
+        2022年3月31日 中午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      985 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      17 分钟
+      9 分钟
     </span>
   
 
@@ -254,31 +254,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Remove Element</h1>
+            <h1 style="display: none">Implement strStr()</h1>
             
             <div class="markdown-body">
-              <h4 id="27-Remove-Element"><a href="#27-Remove-Element" class="headerlink" title="27. Remove Element"></a>27. Remove Element</h4><p>Given an integer array <code>nums</code> and an integer <code>val</code>, remove all occurrences of <code>val</code> in <code>nums</code> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/In-place_algorithm"><strong>in-place</strong></a>. The relative order of the elements may be changed.</p>
-<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first <code>k</code> elements of <code>nums</code> should hold the final result. It does not matter what you leave beyond the first <code>k</code> elements.</p>
-<p>Return <code>k</code> <em>after placing the final result in the first</em> <code>k</code> <em>slots of</em> <code>nums</code>.</p>
-<p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/In-place_algorithm">in-place</a></strong> with O(1) extra memory.</p>
-<h5 id="Custom-Judge"><a href="#Custom-Judge" class="headerlink" title="Custom Judge"></a>Custom Judge</h5><p>The judge will test your solution with the following code:</p>
-<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-title">int</span>[] nums = [...]; // <span class="hljs-type">Input</span> array<br><span class="hljs-title">int</span> val = ...; // <span class="hljs-type">Value</span> to remove<br><span class="hljs-title">int</span>[] expectedNums = [...]; // <span class="hljs-type">The</span> expected answer with correct length.<br>                            // <span class="hljs-type">It</span> is sorted with no values equaling val.<br><br><span class="hljs-title">int</span> k = removeElement(nums, val); // <span class="hljs-type">Calls</span> your implementation<br><br><span class="hljs-title">assert</span> k == expectedNums.length;<br><span class="hljs-title">sort</span>(nums, <span class="hljs-number">0</span>, k); // <span class="hljs-type">Sort</span> the first k elements <span class="hljs-keyword">of</span> nums<br><span class="hljs-title">for</span> (int i = <span class="hljs-number">0</span>; i &lt; actualLength; i++) &#123;<br>    assert nums[i] == expectedNums[i];<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h4 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a>28. Implement strStr()</h4><p>Implement <a target="_blank" rel="noopener" href="http://www.cplusplus.com/reference/cstring/strstr/">strStr()</a>.</p>
+<p>Return the index of the first occurrence of needle in haystack, or <code>-1</code> if <code>needle</code> is not part of <code>haystack</code>.</p>
+<h5 id="Clarification"><a href="#Clarification" class="headerlink" title="Clarification"></a>Clarification</h5><p>What should we return when <code>needle</code> is an empty string? This is a great question to ask during an interview.</p>
+<p>For the purpose of this problem, we will return 0 when <code>needle</code> is an empty string. This is consistent to C’s <a target="_blank" rel="noopener" href="http://www.cplusplus.com/reference/cstring/strstr/">strstr()</a> and Java’s <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)">indexOf()</a>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: haystack = <span class="hljs-string">&quot;hello&quot;</span>, needle = <span class="hljs-string">&quot;ll&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
 
-<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], val = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span>, nums = [<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,_,_]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Your</span> function should return k = <span class="hljs-number">2</span>, with the first two elements <span class="hljs-keyword">of</span> nums being <span class="hljs-number">2.</span><br><span class="hljs-type">It</span> does not matter what you leave beyond the returned k (hence they are underscores).<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: haystack = <span class="hljs-string">&quot;aaaaa&quot;</span>, needle = <span class="hljs-string">&quot;bba&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">2</span>], val = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">5</span>, nums = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,_,_,_]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Your</span> function should return k = <span class="hljs-number">5</span>, with the first five elements <span class="hljs-keyword">of</span> nums containing <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, and <span class="hljs-number">4.</span><br><span class="hljs-type">Note</span> that the five elements can be returned <span class="hljs-keyword">in</span> any order.<br><span class="hljs-type">It</span> does not matter what you leave beyond the returned k (hence they are underscores).<br></code></pre></td></tr></table></figure>
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: haystack = <span class="hljs-string">&quot;&quot;</span>, needle = <span class="hljs-string">&quot;&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>0 &lt;= nums.length &lt;= 100</code></li>
-<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
-<li><code>0 &lt;= val &lt;= 100</code></li>
+<li>$0 &lt;&#x3D; haystack.length, needle.length &lt;&#x3D; 5 * 10^4$</li>
+<li><code>haystack</code> and <code>needle</code> consist of only lower-case English characters.</li>
 </ul>
-<h5 id="Solutioncode"><a href="#Solutioncode" class="headerlink" title="Solutioncode"></a>Solution<a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/27.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">removeElement</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize, <span class="hljs-type">int</span> val)</span>&#123;<br>    <span class="hljs-type">int</span> offset=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;numsSize;i++)&#123;<br>        <span class="hljs-keyword">if</span>(offset)nums[i]=nums[i+offset];<br>        <span class="hljs-keyword">while</span>(nums[i]==val)&#123;<br>            offset++;<br>            <span class="hljs-keyword">if</span>(offset+i&lt;=numsSize<span class="hljs-number">-1</span>)nums[i]=nums[i+offset];<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(offset+i&gt;=numsSize<span class="hljs-number">-1</span>)<span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> numsSize-offset;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/28.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">strStr</span><span class="hljs-params">(<span class="hljs-type">char</span> * haystack, <span class="hljs-type">char</span> * needle)</span>&#123;<br>    <span class="hljs-keyword">if</span>(needle[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;\0&#x27;</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> ret=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(haystack[ret]!=<span class="hljs-string">&#x27;\0&#x27;</span>)&#123;<br>        <span class="hljs-keyword">if</span>(haystack[ret]==needle[<span class="hljs-number">0</span>])&#123;<br>            <span class="hljs-keyword">if</span>(<span class="hljs-built_in">strncmp</span>(&amp;haystack[ret],needle,<span class="hljs-built_in">strlen</span>(needle))==<span class="hljs-number">0</span>)<br>                <span class="hljs-keyword">return</span> ret;<br>        &#125;<br>        ret++;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>比较简单，和昨天的移去重复元素几乎一样</li>
-<li>只需要把起始改为第一个元素，把和前一个比较改为和给定值比较即可</li>
+<li>比较简单，只需要依次比对就好了</li>
 </ol>
 
             </div>
@@ -318,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/31/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A28/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：28</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/29/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A26/">
-                        <span class="hidden-mobile">每日一题：26</span>
+                      <a href="/2022/03/30/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A27/">
+                        <span class="hidden-mobile">每日一题：27</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
