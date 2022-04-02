@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第29题：Divide Two Integers">
+    <meta name="description" content="Leetcode题库第30题：Substring with Concatenation of All Words">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：29">
-<meta property="og:url" content="http://example.com/2022/04/01/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A29/index.html">
+<meta property="og:title" content="每日一题：30">
+<meta property="og:url" content="http://example.com/2022/04/02/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A30/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第29题：Divide Two Integers">
+<meta property="og:description" content="Leetcode题库第30题：Substring with Concatenation of All Words">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-01T13:35:52.000Z">
-<meta property="article:modified_time" content="2022-04-01T13:36:24.247Z">
+<meta property="article:published_time" content="2022-04-02T14:08:08.000Z">
+<meta property="article:modified_time" content="2022-04-02T14:09:53.037Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：29 - 咸鱼Blog</title>
+  <title>每日一题：30 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Divide Two Integers">
+            <span class="h2" id="subtitle" title="Substring with Concatenation of All Words">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-01 21:35" pubdate>
-        2022年4月1日 晚上
+      <time datetime="2022-04-02 22:08" pubdate>
+        2022年4月2日 晚上
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      8 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      1 分钟
     </span>
   
 
@@ -254,31 +254,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Divide Two Integers</h1>
+            <h1 style="display: none">Substring with Concatenation of All Words</h1>
             
             <div class="markdown-body">
-              <h4 id="29-Divide-Two-Integers"><a href="#29-Divide-Two-Integers" class="headerlink" title="29. Divide Two Integers"></a>29. Divide Two Integers</h4><p>Given two integers <code>dividend</code> and <code>divisor</code>, divide two integers <strong>without</strong> using multiplication, division, and mod operator.</p>
-<p>The integer division should truncate toward zero, which means losing its fractional part. For example, <code>8.345</code> would be truncated to <code>8</code>, and <code>-2.7335</code> would be truncated to <code>-2</code>.</p>
-<p>Return <em>the <strong>quotient</strong> after dividing</em> <code>dividend</code> <em>by</em> <code>divisor</code>.</p>
-<p><strong>Note:</strong> Assume we are dealing with an environment that could only store integers within the <strong>32-bit</strong> signed integer range: $[−2^{31}, 2^{31} − 1]$. For this problem, if the quotient is <strong>strictly greater than</strong> <code>231 - 1</code>, then return $2^{31} - 1$, and if the quotient is <strong>strictly less than</strong> , $-2^{31}$then return $-2^{31}$.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: dividend = <span class="hljs-number">10</span>, divisor = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-number">10</span>/<span class="hljs-number">3</span> = <span class="hljs-number">3.33333</span>.. which is truncated to <span class="hljs-number">3.</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: dividend = <span class="hljs-number">7</span>, divisor = <span class="hljs-number">-3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">-2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-number">7</span>/<span class="hljs-number">-3</span> = <span class="hljs-number">-2.33333</span>.. which is truncated to <span class="hljs-number">-2.</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>$-2^{31} &lt;&#x3D; dividend, divisor &lt;&#x3D; 2^{31} - 1$</li>
-<li><code>divisor != 0</code></li>
-</ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/29.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">dividerecursive</span><span class="hljs-params">(<span class="hljs-type">int</span> dividend, <span class="hljs-type">int</span> divisor)</span>&#123;<br>    <span class="hljs-keyword">if</span>(dividend&lt;divisor)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> ret=<span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> batch=divisor;<br>    <span class="hljs-type">int</span> new;<br>    <span class="hljs-keyword">if</span>(dividend&gt;divisor)new=dividend&gt;&gt;<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(batch&lt;new)&#123;<br>        ret=ret&lt;&lt;<span class="hljs-number">1</span>;<br>        batch=batch&lt;&lt;<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(dividend&gt;=batch)&#123;<br>        cnt+=ret;<br>        dividend-=batch;<br>    &#125;<br>    <span class="hljs-keyword">return</span> cnt+dividerecursive(dividend,divisor);<br>&#125;<br><span class="hljs-type">int</span> <span class="hljs-title function_">divide</span><span class="hljs-params">(<span class="hljs-type">int</span> dividend, <span class="hljs-type">int</span> divisor)</span>&#123;<br>    <span class="hljs-type">int</span> ret=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">if</span>(divisor==<span class="hljs-number">-2147483648</span>)&#123;<br>        <span class="hljs-keyword">if</span>(dividend==<span class="hljs-number">-2147483648</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(divisor==<span class="hljs-number">2147483647</span>)&#123;<br>        <span class="hljs-keyword">if</span>(dividend&lt;=<span class="hljs-number">-2147483647</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">if</span>(dividend==<span class="hljs-number">2147483647</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(divisor==<span class="hljs-number">-2147483647</span>)&#123;<br>        <span class="hljs-keyword">if</span>(dividend&lt;=<span class="hljs-number">-2147483647</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span>(dividend==<span class="hljs-number">2147483647</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(dividend==<span class="hljs-number">-2147483648</span>)&#123;<br>        <span class="hljs-keyword">if</span>(divisor==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> dividend;<br>        <span class="hljs-keyword">if</span>(divisor==<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">2147483647</span>;<br>        ret++;<br>        dividend=dividend+<span class="hljs-built_in">abs</span>(divisor);<br>    &#125;<br>    <span class="hljs-type">int</span> flag=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span>(dividend&lt;<span class="hljs-number">0</span>)&#123;<br>        dividend=<span class="hljs-number">0</span>-dividend;<br>        flag=<span class="hljs-number">0</span>-flag;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(divisor&lt;<span class="hljs-number">0</span>)&#123;<br>        divisor=<span class="hljs-number">0</span>-divisor;<br>        flag=<span class="hljs-number">0</span>-flag;<br>    &#125;<br>    ret+=dividerecursive(dividend,divisor);<br>    <span class="hljs-keyword">if</span>(flag&lt;<span class="hljs-number">0</span>)ret=<span class="hljs-number">0</span>-ret;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>一直超时过不去；</li>
-<li>因为用的是一个一个减，循环次数过多；</li>
-<li>后来打卡时候想到，可以先进行边界处理，然后递归调用下面的方法：</li>
-<li>先将被除数减半，右移会比较快，然后将除数通过左移的方式直到大于一半的被除数，然后用被除数减去现在的除数，直到小于除数，此时可以得到一个部分的商，接着重新计算除数，最后累加返回即可；</li>
-<li>可以看出，移位运算是比较快的。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204012135960.png" srcset="/img/loading.gif" lazyload alt="image-20220401213513598"></p>
+              <p><a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/1.c">code</a></p>
+<p>没写出来</p>
 
             </div>
             <hr>
@@ -290,7 +270,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/">中等</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
                     
                   </div>
                 
@@ -321,8 +301,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/31/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A28/">
-                        <span class="hidden-mobile">每日一题：28</span>
+                      <a href="/2022/04/01/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A29/">
+                        <span class="hidden-mobile">每日一题：29</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
