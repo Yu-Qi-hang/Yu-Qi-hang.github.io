@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：33</title>
+    <link href="/2022/04/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A33/"/>
+    <url>/2022/04/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A33/</url>
+    
+    <content type="html"><![CDATA[<h4 id="33-Search-in-Rotated-Sorted-Array"><a href="#33-Search-in-Rotated-Sorted-Array" class="headerlink" title="33. Search in Rotated Sorted Array"></a>33. Search in Rotated Sorted Array</h4><p>There is an integer array <code>nums</code> sorted in ascending order (with <strong>distinct</strong> values).</p><p>Prior to being passed to your function, <code>nums</code> is <strong>possibly rotated</strong> at an unknown pivot index <code>k</code> (<code>1 &lt;= k &lt; nums.length</code>) such that the resulting array is <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>0-indexed</strong>). For example, <code>[0,1,2,4,5,6,7]</code> might be rotated at pivot index <code>3</code> and become <code>[4,5,6,7,0,1,2]</code>.</p><p>Given the array <code>nums</code> <strong>after</strong> the possible rotation and an integer <code>target</code>, return <em>the index of</em> <code>target</code> <em>if it is in</em> <code>nums</code><em>, or</em> <code>-1</code> <em>if it is not in</em> <code>nums</code>.</p><p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], target = <span class="hljs-number">0</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">4</span><br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], target = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">1</span>], target = <span class="hljs-number">0</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">-1</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 5000$</li><li>$-10^4 &lt;&#x3D; nums[i] &lt;&#x3D; 10^4$</li><li>All values of <code>nums</code> are <strong>unique</strong>.</li><li><code>nums</code> is an ascending array that is possibly rotated.</li><li>$-10^4 &lt;&#x3D; target &lt;&#x3D; 10^4$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/33.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">search</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize, <span class="hljs-type">int</span> target)</span>&#123;<br>    <span class="hljs-type">int</span> re;<br>    <span class="hljs-keyword">if</span>(target&gt;=nums[<span class="hljs-number">0</span>])&#123;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;<br>        re=nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">while</span>(nums[i]&gt;=re&amp;&amp;nums[i]&lt;target&amp;&amp;i&lt;numsSize<span class="hljs-number">-1</span>)i++;<br>        <span class="hljs-keyword">if</span>(nums[i]==target)<span class="hljs-keyword">return</span> i;<br>    &#125;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(target&lt;=nums[numsSize<span class="hljs-number">-1</span>])&#123;<br>        <span class="hljs-type">int</span> i=numsSize<span class="hljs-number">-1</span>;<br>        re=nums[numsSize<span class="hljs-number">-1</span>];<br>        <span class="hljs-keyword">while</span>(nums[i]&lt;=re&amp;&amp;nums[i]&gt;target&amp;&amp;i&gt;<span class="hljs-number">0</span>)i--;<br>        <span class="hljs-keyword">if</span>(nums[i]==target)<span class="hljs-keyword">return</span> i;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>比开始大，则从头开始搜索，直到数字比开头小；</li><li>比结尾小的，从尾开始搜索，直到数字比尾大；</li><li>否则返回-1</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：31</title>
     <link href="/2022/04/02/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A31/"/>
     <url>/2022/04/02/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A31/</url>
