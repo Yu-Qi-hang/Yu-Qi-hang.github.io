@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>update:2</title>
+    <link href="/2022/04/04/update/update-2/"/>
+    <url>/2022/04/04/update/update-2/</url>
+    
+    <content type="html"><![CDATA[<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ol><li>时不时更新背景图</li></ol><h4 id="友链"><a href="#友链" class="headerlink" title="友链"></a>友链</h4><ol><li>拉室友入坑</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>更新日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>update</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>每日一题：32</title>
+    <link href="/2022/04/04/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A32/"/>
+    <url>/2022/04/04/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A32/</url>
+    
+    <content type="html"><![CDATA[<h4 id="32-Longest-Valid-Parentheses"><a href="#32-Longest-Valid-Parentheses" class="headerlink" title="32. Longest Valid Parentheses"></a>32. Longest Valid Parentheses</h4><p>Given a string containing just the characters <code>&#39;(&#39;</code> and <code>&#39;)&#39;</code>, find the length of the longest valid (well-formed) parentheses substring.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;(()&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> longest valid parentheses substring is <span class="hljs-string">&quot;()&quot;</span>.<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;)()())&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">4</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> longest valid parentheses substring is <span class="hljs-string">&quot;()()&quot;</span>.<br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$0 &lt;&#x3D; s.length &lt;&#x3D; 3 * 10^4$</li><li><code>s[i]</code> is <code>&#39;(&#39;</code>, or <code>&#39;)&#39;</code>.</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/32.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">longestValidParentheses</span><span class="hljs-params">(<span class="hljs-type">char</span> * s)</span>&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-built_in">stack</span>=<span class="hljs-number">0</span>,idx=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> slen=<span class="hljs-built_in">strlen</span>(s);<br>    <span class="hljs-keyword">while</span>(s[idx]==<span class="hljs-string">&#x27;)&#x27;</span>&amp;&amp;idx&lt;slen)idx++;<br>    <span class="hljs-keyword">if</span>(idx==slen)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> head=idx;<span class="hljs-comment">//the first &quot;(&quot;</span><br>    <span class="hljs-keyword">while</span>(s[idx]==<span class="hljs-string">&#x27;(&#x27;</span>&amp;&amp;idx&lt;slen)idx++;<span class="hljs-comment">//the first &quot;)&quot;</span><br>    <span class="hljs-keyword">if</span>(idx==slen)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">stack</span>=idx<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(idx&lt;slen)&#123;<br>        <span class="hljs-keyword">if</span>(s[<span class="hljs-built_in">stack</span>]==<span class="hljs-string">&#x27;(&#x27;</span>&amp;&amp;s[idx]==<span class="hljs-string">&#x27;)&#x27;</span>)&#123;<br>            s[<span class="hljs-built_in">stack</span>]=s[idx]=<span class="hljs-string">&#x27;0&#x27;</span>;<br>            idx++;<br>            <span class="hljs-keyword">while</span>(s[idx]==<span class="hljs-string">&#x27;(&#x27;</span>&amp;&amp;idx&lt;slen)idx++;<span class="hljs-comment">//the first &quot;)&quot;</span><br>            <span class="hljs-keyword">if</span>(idx==slen)<span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">if</span>(s[idx<span class="hljs-number">-1</span>]==<span class="hljs-string">&#x27;(&#x27;</span>)<span class="hljs-built_in">stack</span>=idx<span class="hljs-number">-1</span>;<br>            <span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-keyword">while</span>(<span class="hljs-built_in">stack</span>&gt;=head&amp;&amp;s[<span class="hljs-built_in">stack</span>]==<span class="hljs-string">&#x27;0&#x27;</span>)<span class="hljs-built_in">stack</span>--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">stack</span>&lt;head)&#123;            <br>            <span class="hljs-keyword">while</span>(s[idx]==<span class="hljs-string">&#x27;)&#x27;</span>&amp;&amp;idx&lt;slen)idx++;<span class="hljs-comment">//the first &quot;)&quot;</span><br>            <span class="hljs-keyword">if</span>(idx==slen)<span class="hljs-keyword">break</span>;<br>            head=idx;<br>            <span class="hljs-keyword">while</span>(s[idx]==<span class="hljs-string">&#x27;(&#x27;</span>&amp;&amp;idx&lt;slen)idx++;<span class="hljs-comment">//the first &quot;)&quot;</span><br>            <span class="hljs-keyword">if</span>(idx==slen)<span class="hljs-keyword">break</span>;<br>            <span class="hljs-built_in">stack</span>=idx<span class="hljs-number">-1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-type">int</span> temp=<span class="hljs-number">0</span>,max_len=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;slen;i++)&#123;<br>        <span class="hljs-keyword">if</span>(s[i]==<span class="hljs-string">&#x27;0&#x27;</span>)temp++;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">if</span>(max_len&lt;temp)max_len=temp;<br>            temp=<span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(max_len&lt;temp)max_len=temp;<br>    <span class="hljs-keyword">return</span> max_len;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>昨天尝试了好几种方法，一直没成功，就写了[33]；还得是睡前和醒后；</li><li>想到可以用两个指针，一个作为先锋寻找之后每个<code>)</code>，一个作为加的栈顶指针，一旦匹配成功就将字符改为<code>0</code>。</li><li>先锋到达结尾之后，退出循环；</li><li>循环计算最长的<code>0</code>串长度。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>困难</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：33</title>
     <link href="/2022/04/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A33/"/>
     <url>/2022/04/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A33/</url>
@@ -498,8 +552,8 @@
   
   <entry>
     <title>update:1</title>
-    <link href="/2022/03/20/update-1/"/>
-    <url>/2022/03/20/update-1/</url>
+    <link href="/2022/03/20/update/update-1/"/>
+    <url>/2022/03/20/update/update-1/</url>
     
     <content type="html"><![CDATA[<h4 id="打字机"><a href="#打字机" class="headerlink" title="打字机"></a>打字机</h4><ol><li>设置了随机语句</li><li>设置了渐变颜色</li></ol><h4 id="滚动条"><a href="#滚动条" class="headerlink" title="滚动条"></a>滚动条</h4><ol><li>调整了尺寸</li><li>调整了背景色</li></ol><h4 id="PDF"><a href="#PDF" class="headerlink" title="PDF"></a>PDF</h4><ol><li>可以嵌入PDF</li></ol><h4 id="媒体文件"><a href="#媒体文件" class="headerlink" title="媒体文件"></a>媒体文件</h4><ol><li>可以嵌入歌曲、歌单</li><li>可以嵌入视频</li></ol>]]></content>
     
@@ -672,8 +726,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="/2022/03/17/hello-world/"/>
-    <url>/2022/03/17/hello-world/</url>
+    <link href="/2022/03/17/update/hello-world/"/>
+    <url>/2022/03/17/update/hello-world/</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
