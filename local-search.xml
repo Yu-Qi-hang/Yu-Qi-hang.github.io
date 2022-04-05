@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：34</title>
+    <link href="/2022/04/05/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A34/"/>
+    <url>/2022/04/05/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A34/</url>
+    
+    <content type="html"><![CDATA[<h4 id="34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><a href="#34-Find-First-and-Last-Position-of-Element-in-Sorted-Array" class="headerlink" title="34. Find First and Last Position of Element in Sorted Array"></a>34. Find First and Last Position of Element in Sorted Array</h4><p>Given an array of integers <code>nums</code> sorted in non-decreasing order, find the starting and ending position of a given <code>target</code> value.</p><p>If <code>target</code> is not found in the array, return <code>[-1, -1]</code>.</p><p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">8</span>,<span class="hljs-number">10</span>], target = <span class="hljs-number">8</span><br><span class="hljs-type">Output</span>: [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">8</span>,<span class="hljs-number">10</span>], target = <span class="hljs-number">6</span><br><span class="hljs-type">Output</span>: [<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>]<br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [], target = <span class="hljs-number">0</span><br><span class="hljs-type">Output</span>: [<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>]<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$0 &lt;&#x3D; nums.length &lt;&#x3D; 10^5$</li><li>$-10^9 &lt;&#x3D; nums[i] &lt;&#x3D; 10^9$</li><li><code>nums</code> is a non-decreasing array.</li><li>$-10^9 &lt;&#x3D; target &lt;&#x3D; 10^9$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/34.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span>* <span class="hljs-title function_">searchRange</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize, <span class="hljs-type">int</span> target, <span class="hljs-type">int</span>* returnSize)</span>&#123;<br>    <span class="hljs-type">int</span> *ret=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*<span class="hljs-number">2</span>);<br>    *returnSize=<span class="hljs-number">2</span>;<br>    ret[<span class="hljs-number">0</span>]=<span class="hljs-number">-1</span>;<br>    ret[<span class="hljs-number">1</span>]=<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">if</span>(numsSize==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> ret;<br>    <span class="hljs-keyword">if</span>(target&lt;nums[<span class="hljs-number">0</span>]||target&gt;nums[numsSize<span class="hljs-number">-1</span>])<span class="hljs-keyword">return</span> ret;<br>    <span class="hljs-type">int</span> idx=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(idx&lt;numsSize)&#123;<br>        <span class="hljs-keyword">if</span>(nums[idx]&lt;target)idx++;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(nums[idx]!=target)<span class="hljs-keyword">return</span> ret;<br>    <span class="hljs-keyword">else</span>&#123;<br>        ret[<span class="hljs-number">0</span>]=ret[<span class="hljs-number">1</span>]=idx;<br>    &#125;<br>    <span class="hljs-keyword">while</span>(idx&lt;numsSize)&#123;<br>        <span class="hljs-keyword">if</span>(nums[idx]==target)idx++;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>    &#125;<br>    ret[<span class="hljs-number">1</span>]=idx<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>比较简单，就是简单的查询</li><li>只需要注意为空的情况就可以</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>update:2</title>
     <link href="/2022/04/04/update/update-2/"/>
     <url>/2022/04/04/update/update-2/</url>
