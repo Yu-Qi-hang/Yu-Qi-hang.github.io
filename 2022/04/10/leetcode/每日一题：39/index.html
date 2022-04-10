@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第38题：Count and Say">
+    <meta name="description" content="Leetcode题库第39题：Combination Sum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：38">
-<meta property="og:url" content="http://example.com/2022/04/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A38/index.html">
+<meta property="og:title" content="每日一题：39">
+<meta property="og:url" content="http://example.com/2022/04/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A39/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第38题：Count and Say">
+<meta property="og:description" content="Leetcode题库第39题：Combination Sum">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-09T09:26:29.000Z">
-<meta property="article:modified_time" content="2022-04-09T09:27:09.769Z">
+<meta property="article:published_time" content="2022-04-10T04:53:03.000Z">
+<meta property="article:modified_time" content="2022-04-10T04:53:30.873Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：38 - 咸鱼Blog</title>
+  <title>每日一题：39 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Count and Say">
+            <span class="h2" id="subtitle" title="Combination Sum">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-09 17:26" pubdate>
-        2022年4月9日 下午
+      <time datetime="2022-04-10 12:53" pubdate>
+        2022年4月10日 下午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      2.1k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      15 分钟
+      18 分钟
     </span>
   
 
@@ -254,30 +254,31 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Count and Say</h1>
+            <h1 style="display: none">Combination Sum</h1>
             
             <div class="markdown-body">
-              <h4 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a>38. Count and Say</h4><p>The <strong>count-and-say</strong> sequence is a sequence of digit strings defined by the recursive formula:</p>
-<ul>
-<li><code>countAndSay(1) = &quot;1&quot;</code></li>
-<li><code>countAndSay(n)</code> is the way you would “say” the digit string from <code>countAndSay(n-1)</code>, which is then converted into a different digit string.</li>
-</ul>
-<p>To determine how you “say” a digit string, split it into the <strong>minimal</strong> number of groups so that each group is a contiguous section all of the <strong>same character.</strong> Then for each group, say the number of characters, then say the character. To convert the saying into a digit string, replace the counts with a number and concatenate every saying.</p>
-<p>For example, the saying and conversion for digit string <code>&quot;3322251&quot;</code>:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204091726585.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<p>Given a positive integer <code>n</code>, return <em>the</em> <code>nth</code> <em>term of the <strong>count-and-say</strong> sequence</em>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">1</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;1&quot;</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">This</span> is the base <span class="hljs-keyword">case</span>.<br></code></pre></td></tr></table></figure>
+              <h4 id="39-Combination-Sum"><a href="#39-Combination-Sum" class="headerlink" title="39. Combination Sum"></a>39. Combination Sum</h4><p>Given an array of <strong>distinct</strong> integers <code>candidates</code> and a target integer <code>target</code>, return <em>a list of all <strong>unique combinations</strong> of</em> <code>candidates</code> <em>where the chosen numbers sum to</em> <code>target</code><em>.</em> You may return the combinations in <strong>any order</strong>.</p>
+<p>The <strong>same</strong> number may be chosen from <code>candidates</code> an <strong>unlimited number of times</strong>. Two combinations are unique if the frequency of at least one of the chosen numbers is different.</p>
+<p>It is <strong>guaranteed</strong> that the number of unique combinations that sum up to <code>target</code> is less than <code>150</code> combinations for the given input.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>], target = <span class="hljs-number">7</span><br><span class="hljs-type">Output</span>: [[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">7</span>]]<br><span class="hljs-type">Explanation</span>:<br><span class="hljs-number">2</span> and <span class="hljs-number">3</span> are candidates, and <span class="hljs-number">2</span> + <span class="hljs-number">2</span> + <span class="hljs-number">3</span> = <span class="hljs-number">7.</span> <span class="hljs-type">Note</span> that <span class="hljs-number">2</span> can be used multiple times.<br><span class="hljs-number">7</span> is a candidate, and <span class="hljs-number">7</span> = <span class="hljs-number">7.</span><br><span class="hljs-type">These</span> are the only two combinations.<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">4</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;1211&quot;</span><br><span class="hljs-type">Explanation</span>:<br><span class="hljs-title">countAndSay</span>(<span class="hljs-number">1</span>) = <span class="hljs-string">&quot;1&quot;</span><br><span class="hljs-title">countAndSay</span>(<span class="hljs-number">2</span>) = say <span class="hljs-string">&quot;1&quot;</span> = one <span class="hljs-number">1</span> = <span class="hljs-string">&quot;11&quot;</span><br><span class="hljs-title">countAndSay</span>(<span class="hljs-number">3</span>) = say <span class="hljs-string">&quot;11&quot;</span> = two <span class="hljs-number">1</span><span class="hljs-string">&#x27;s = &quot;21&quot;</span><br><span class="hljs-string">countAndSay(4) = say &quot;21&quot; = one 2 + one 1 = &quot;12&quot; + &quot;11&quot; = &quot;1211&quot;</span><br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>], target = <span class="hljs-number">8</span><br><span class="hljs-type">Output</span>: [[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">5</span>]]<br></code></pre></td></tr></table></figure>
+
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">2</span>], target = <span class="hljs-number">1</span><br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= n &lt;= 30</code></li>
+<li><code>1 &lt;= candidates.length &lt;= 30</code></li>
+<li><code>1 &lt;= candidates[i] &lt;= 200</code></li>
+<li>All elements of <code>candidates</code> are <strong>distinct</strong>.</li>
+<li><code>1 &lt;= target &lt;= 500</code></li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/38.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">char</span> * <span class="hljs-title function_">countAndSay</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-type">char</span> *ret=(<span class="hljs-type">char</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>)*<span class="hljs-number">2</span>);<br>        <span class="hljs-built_in">memset</span>(ret,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>);<br>        ret[<span class="hljs-number">0</span>]=<span class="hljs-string">&#x27;1&#x27;</span>;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>    <span class="hljs-type">char</span> *temp=countAndSay(n<span class="hljs-number">-1</span>);<br>    <span class="hljs-type">int</span> len=<span class="hljs-built_in">strlen</span>(temp);<br>    <span class="hljs-type">char</span> *sum=<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>));<br>    <span class="hljs-type">char</span> *sub=<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>)*<span class="hljs-number">2</span>);<br>    <span class="hljs-type">char</span> *num=<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>)*<span class="hljs-number">2</span>);<br>    <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> idx=<span class="hljs-number">0</span>;<br>    <span class="hljs-built_in">memset</span>(sum,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>);<br>    <span class="hljs-built_in">memset</span>(sub,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>);<br>    <span class="hljs-built_in">memset</span>(num,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">while</span>(idx&lt;len)&#123;<br>        cnt=<span class="hljs-number">0</span>;<br>        sub[<span class="hljs-number">0</span>]=temp[idx];<br>        <span class="hljs-keyword">while</span>(temp[idx]==sub[<span class="hljs-number">0</span>])&#123;<br>            cnt++;<br>            idx++;<br>        &#125;<br>        sum=(<span class="hljs-type">char</span>*)<span class="hljs-built_in">realloc</span>(sum,<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>)*(<span class="hljs-built_in">strlen</span>(sum)+<span class="hljs-number">3</span>));<br>        <span class="hljs-comment">// sprintf(num, &quot;%d&quot;, cnt);</span><br>        num[<span class="hljs-number">0</span>]=cnt+<span class="hljs-string">&#x27;0&#x27;</span>;<br>        <span class="hljs-built_in">strcat</span>(sum,num);<br>        <span class="hljs-built_in">strcat</span>(sum,sub);<br>    &#125;<br>    <span class="hljs-built_in">free</span>(temp);<br>    <span class="hljs-keyword">return</span> sum;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/39.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span>* candidates, <span class="hljs-type">int</span> layers, <span class="hljs-type">int</span> idx, <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> target, <span class="hljs-type">int</span>* temp, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>* ColumnSizes,<span class="hljs-type">int</span> **ret)</span>&#123;<br>    <span class="hljs-keyword">if</span>(idx==layers)<span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span>(target==<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-type">int</span> *ans=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*len);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++)ans[i]=temp[i];<br>        ret[*returnSize]=ans;<br>        ColumnSizes[*returnSize]=len;<br>        (*returnSize)++;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    dfs(candidates,layers,idx+<span class="hljs-number">1</span>,len,target,temp,returnSize,ColumnSizes,ret);<br>    <span class="hljs-keyword">if</span>(target&gt;=candidates[idx])&#123;<br>        temp[len]=candidates[idx];<br>        dfs(candidates,layers,idx,len+<span class="hljs-number">1</span>,target-candidates[idx],temp,returnSize,ColumnSizes,ret);<br>        temp[len]=<span class="hljs-string">&#x27;\0&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br><span class="hljs-type">int</span>** <span class="hljs-title function_">combinationSum</span><span class="hljs-params">(<span class="hljs-type">int</span>* candidates, <span class="hljs-type">int</span> candidatesSize, <span class="hljs-type">int</span> target, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>** returnColumnSizes)</span>&#123;<br>    <span class="hljs-type">int</span> *returnsize=<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>));<br>    <span class="hljs-type">int</span> **ret=(<span class="hljs-type">int</span>**)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>*)*<span class="hljs-number">150</span>);<br>    <span class="hljs-type">int</span> *ColumnSizes=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*<span class="hljs-number">150</span>);<br>    <span class="hljs-type">int</span> *temp=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*<span class="hljs-number">500</span>);<br>    <span class="hljs-built_in">memset</span>(ColumnSizes,<span class="hljs-number">0</span>,<span class="hljs-number">150</span>);<br>    <span class="hljs-built_in">memset</span>(temp,<span class="hljs-number">0</span>,<span class="hljs-number">500</span>);<br>    *returnsize=<span class="hljs-number">0</span>;<br>    dfs(candidates,candidatesSize,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,target,temp,returnsize,ColumnSizes,ret);<br>    *returnSize=*returnsize;<br>    *returnColumnSizes=ColumnSizes;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>这段代码非常慢</li>
-<li>性能非常差，但我不想改了</li>
+<li>给的数组是排号序的，如果没排好需要先排序；</li>
+<li>采取回溯加上递归的方式，每次可能的方向有两个，继续采取当前数组和采用下一个数字，就从这两个方向去搜索；</li>
+<li>遇到恰巧可以的情况就加到解的最后面，遇到不合理的情况则直接返回；</li>
+<li>在尝试写完整代码时候发现接口存在问题，不知道怎么解决。</li>
 </ol>
 
             </div>
@@ -317,18 +318,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A39/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：39</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/08/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A37/">
-                        <span class="hidden-mobile">每日一题：37</span>
+                      <a href="/2022/04/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A38/">
+                        <span class="hidden-mobile">每日一题：38</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
