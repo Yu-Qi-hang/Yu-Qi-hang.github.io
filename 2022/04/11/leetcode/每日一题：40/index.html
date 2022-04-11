@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第39题：Combination Sum">
+    <meta name="description" content="Leetcode题库第40题：Combination Sum II">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：39">
-<meta property="og:url" content="http://example.com/2022/04/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A39/index.html">
+<meta property="og:title" content="每日一题：40">
+<meta property="og:url" content="http://example.com/2022/04/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A40/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第39题：Combination Sum">
+<meta property="og:description" content="Leetcode题库第40题：Combination Sum II">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-10T04:53:03.000Z">
-<meta property="article:modified_time" content="2022-04-10T04:53:30.873Z">
+<meta property="article:published_time" content="2022-04-11T11:08:52.000Z">
+<meta property="article:modified_time" content="2022-04-11T11:09:23.446Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：39 - 咸鱼Blog</title>
+  <title>每日一题：40 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Combination Sum">
+            <span class="h2" id="subtitle" title="Combination Sum II">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-10 12:53" pubdate>
-        2022年4月10日 下午
+      <time datetime="2022-04-11 19:08" pubdate>
+        2022年4月11日 晚上
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.3k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      20 分钟
     </span>
   
 
@@ -254,31 +254,39 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Combination Sum</h1>
+            <h1 style="display: none">Combination Sum II</h1>
             
             <div class="markdown-body">
-              <h4 id="39-Combination-Sum"><a href="#39-Combination-Sum" class="headerlink" title="39. Combination Sum"></a>39. Combination Sum</h4><p>Given an array of <strong>distinct</strong> integers <code>candidates</code> and a target integer <code>target</code>, return <em>a list of all <strong>unique combinations</strong> of</em> <code>candidates</code> <em>where the chosen numbers sum to</em> <code>target</code><em>.</em> You may return the combinations in <strong>any order</strong>.</p>
-<p>The <strong>same</strong> number may be chosen from <code>candidates</code> an <strong>unlimited number of times</strong>. Two combinations are unique if the frequency of at least one of the chosen numbers is different.</p>
-<p>It is <strong>guaranteed</strong> that the number of unique combinations that sum up to <code>target</code> is less than <code>150</code> combinations for the given input.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>], target = <span class="hljs-number">7</span><br><span class="hljs-type">Output</span>: [[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">7</span>]]<br><span class="hljs-type">Explanation</span>:<br><span class="hljs-number">2</span> and <span class="hljs-number">3</span> are candidates, and <span class="hljs-number">2</span> + <span class="hljs-number">2</span> + <span class="hljs-number">3</span> = <span class="hljs-number">7.</span> <span class="hljs-type">Note</span> that <span class="hljs-number">2</span> can be used multiple times.<br><span class="hljs-number">7</span> is a candidate, and <span class="hljs-number">7</span> = <span class="hljs-number">7.</span><br><span class="hljs-type">These</span> are the only two combinations.<br></code></pre></td></tr></table></figure>
+              <h4 id="40-Combination-Sum-II"><a href="#40-Combination-Sum-II" class="headerlink" title="40. Combination Sum II"></a>40. Combination Sum II</h4><p>Given a collection of candidate numbers (<code>candidates</code>) and a target number (<code>target</code>), find all unique combinations in <code>candidates</code> where the candidate numbers sum to <code>target</code>.</p>
+<p>Each number in <code>candidates</code> may only be used <strong>once</strong> in the combination.</p>
+<p><strong>Note:</strong> The solution set must not contain duplicate combinations.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">10</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>], target = <span class="hljs-number">8</span><br><span class="hljs-type">Output</span>: <br>[<br>[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">6</span>],<br>[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>],<br>[<span class="hljs-number">1</span>,<span class="hljs-number">7</span>],<br>[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>]<br>]<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>], target = <span class="hljs-number">8</span><br><span class="hljs-type">Output</span>: [[<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">5</span>]]<br></code></pre></td></tr></table></figure>
-
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">2</span>], target = <span class="hljs-number">1</span><br><span class="hljs-type">Output</span>: []<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: candidates = [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], target = <span class="hljs-number">5</span><br><span class="hljs-type">Output</span>: <br>[<br>[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>],<br>[<span class="hljs-number">5</span>]<br>]<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= candidates.length &lt;= 30</code></li>
-<li><code>1 &lt;= candidates[i] &lt;= 200</code></li>
-<li>All elements of <code>candidates</code> are <strong>distinct</strong>.</li>
-<li><code>1 &lt;= target &lt;= 500</code></li>
+<li><code>1 &lt;= candidates.length &lt;= 100</code></li>
+<li><code>1 &lt;= candidates[i] &lt;= 50</code></li>
+<li><code>1 &lt;= target &lt;= 30</code></li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/39.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span>* candidates, <span class="hljs-type">int</span> layers, <span class="hljs-type">int</span> idx, <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> target, <span class="hljs-type">int</span>* temp, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>* ColumnSizes,<span class="hljs-type">int</span> **ret)</span>&#123;<br>    <span class="hljs-keyword">if</span>(idx==layers)<span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span>(target==<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-type">int</span> *ans=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*len);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++)ans[i]=temp[i];<br>        ret[*returnSize]=ans;<br>        ColumnSizes[*returnSize]=len;<br>        (*returnSize)++;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    dfs(candidates,layers,idx+<span class="hljs-number">1</span>,len,target,temp,returnSize,ColumnSizes,ret);<br>    <span class="hljs-keyword">if</span>(target&gt;=candidates[idx])&#123;<br>        temp[len]=candidates[idx];<br>        dfs(candidates,layers,idx,len+<span class="hljs-number">1</span>,target-candidates[idx],temp,returnSize,ColumnSizes,ret);<br>        temp[len]=<span class="hljs-string">&#x27;\0&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br><span class="hljs-type">int</span>** <span class="hljs-title function_">combinationSum</span><span class="hljs-params">(<span class="hljs-type">int</span>* candidates, <span class="hljs-type">int</span> candidatesSize, <span class="hljs-type">int</span> target, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>** returnColumnSizes)</span>&#123;<br>    <span class="hljs-type">int</span> *returnsize=<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>));<br>    <span class="hljs-type">int</span> **ret=(<span class="hljs-type">int</span>**)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>*)*<span class="hljs-number">150</span>);<br>    <span class="hljs-type">int</span> *ColumnSizes=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*<span class="hljs-number">150</span>);<br>    <span class="hljs-type">int</span> *temp=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*<span class="hljs-number">500</span>);<br>    <span class="hljs-built_in">memset</span>(ColumnSizes,<span class="hljs-number">0</span>,<span class="hljs-number">150</span>);<br>    <span class="hljs-built_in">memset</span>(temp,<span class="hljs-number">0</span>,<span class="hljs-number">500</span>);<br>    *returnsize=<span class="hljs-number">0</span>;<br>    dfs(candidates,candidatesSize,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,target,temp,returnsize,ColumnSizes,ret);<br>    *returnSize=*returnsize;<br>    *returnColumnSizes=ColumnSizes;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/40.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">cmp</span><span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">void</span>* a,<span class="hljs-type">const</span> <span class="hljs-type">void</span>* b)</span>&#123;<br>    <span class="hljs-keyword">return</span> (*(<span class="hljs-type">int</span>*)a-*(<span class="hljs-type">int</span>*)b);<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span>* candidates, <span class="hljs-type">int</span> layers, <span class="hljs-type">int</span> idx, <span class="hljs-type">int</span> len, <span class="hljs-type">int</span> target, <span class="hljs-type">int</span>* temp, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>* ColumnSizes,<span class="hljs-type">int</span> **ret)</span>&#123;<br>    <span class="hljs-keyword">if</span>(target==<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-type">int</span> flag=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;(*returnSize);i++)&#123;<br>            <span class="hljs-keyword">if</span>(ColumnSizes[i]==len)&#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;len;j++)&#123;<br>                    flag=<span class="hljs-number">0</span>;<br>                    <span class="hljs-keyword">if</span>(ret[i][j]!=temp[j])&#123;<br>                        flag=<span class="hljs-number">1</span>;<br>                        <span class="hljs-keyword">break</span>;<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span>(flag==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(flag==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span>;<br>        <span class="hljs-type">int</span> *ans=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*len);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;len;i++)ans[i]=temp[i];<br>        ret[*returnSize]=ans;<br>        ColumnSizes[*returnSize]=len;<br>        (*returnSize)++;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(idx==layers)<span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span>(len==<span class="hljs-number">0</span>||temp[len<span class="hljs-number">-1</span>]!=candidates[idx])<br>    dfs(candidates,layers,idx+<span class="hljs-number">1</span>,len,target,temp,returnSize,ColumnSizes,ret);<br>    <span class="hljs-keyword">if</span>(target&gt;=candidates[idx])&#123;<br>        temp[len]=candidates[idx];<br>        dfs(candidates,layers,idx+<span class="hljs-number">1</span>,len+<span class="hljs-number">1</span>,target-candidates[idx],temp,returnSize,ColumnSizes,ret);<br>        temp[len]=<span class="hljs-string">&#x27;\0&#x27;</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br><span class="hljs-type">int</span>** <span class="hljs-title function_">combinationSum2</span><span class="hljs-params">(<span class="hljs-type">int</span>* candidates, <span class="hljs-type">int</span> candidatesSize, <span class="hljs-type">int</span> target, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>** returnColumnSizes)</span>&#123;<br>    qsort(candidates,candidatesSize,<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>),cmp);<br>    <span class="hljs-type">int</span> *returnsize=<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>));<br>    <span class="hljs-type">int</span> **ret=(<span class="hljs-type">int</span>**)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>*)*<span class="hljs-number">100</span>);<br>    <span class="hljs-type">int</span> *ColumnSizes=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*<span class="hljs-number">100</span>);<br>    <span class="hljs-type">int</span> *temp=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*<span class="hljs-number">50</span>);<br>    <span class="hljs-built_in">memset</span>(ColumnSizes,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>);<br>    <span class="hljs-built_in">memset</span>(temp,<span class="hljs-number">0</span>,<span class="hljs-number">50</span>);<br>    *returnsize=<span class="hljs-number">0</span>;<br>    dfs(candidates,candidatesSize,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,target,temp,returnsize,ColumnSizes,ret);<br>    *returnSize=*returnsize;<br>    *returnColumnSizes=ColumnSizes;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>给的数组是排号序的，如果没排好需要先排序；</li>
-<li>采取回溯加上递归的方式，每次可能的方向有两个，继续采取当前数组和采用下一个数字，就从这两个方向去搜索；</li>
-<li>遇到恰巧可以的情况就加到解的最后面，遇到不合理的情况则直接返回；</li>
-<li>在尝试写完整代码时候发现接口存在问题，不知道怎么解决。</li>
+<li><p>和昨天的类似，不同的是这次给从不是排好序的数字，所以先采取排序的方式；</p>
+</li>
+<li><p>数字也不能重复使用，所以每次都必须去往下一层；</p>
+</li>
+<li><p>另外，由于是有重复数字的，因此可能出现重复答案，开始考虑的是先全部找出来，然后按照长度排序，再按照每一位进行排序，遍历去重，但是这样子会消耗空间，并且排序确实耗时；</p>
+</li>
+<li><p>最后采取的方式是每次找到一个合法解之后，寻找到结果中一样长的，判断是否相等，没有相等的就加到结果中；但是还是超时；</p>
+</li>
+<li><p>考虑到存在重复数字的场景：</p>
+<ol>
+<li>每次可以选择是否使用，本次使用之后，下一次可以选择是否使用；</li>
+<li>本次未使用，下次如果也选择使用，就会出现与上一种情况的未使用重复的情况，所以只选择不使用；</li>
+</ol>
+<p>于是可以通过。</p>
+</li>
 </ol>
 
             </div>
@@ -318,18 +326,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A40/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：40</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A38/">
-                        <span class="hidden-mobile">每日一题：38</span>
+                      <a href="/2022/04/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A39/">
+                        <span class="hidden-mobile">每日一题：39</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
