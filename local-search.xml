@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：41</title>
+    <link href="/2022/04/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A41/"/>
+    <url>/2022/04/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A41/</url>
+    
+    <content type="html"><![CDATA[<h4 id="41-First-Missing-Positive"><a href="#41-First-Missing-Positive" class="headerlink" title="41. First Missing Positive"></a>41. First Missing Positive</h4><p>Given an unsorted integer array <code>nums</code>, return the smallest missing positive integer.</p><p>You must implement an algorithm that runs in <code>O(n)</code> time and uses constant extra space.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">11</span>,<span class="hljs-number">12</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 5 * 10^5$</li><li>$-2^{31} &lt;&#x3D; nums[i] &lt;&#x3D; 2^{31} - 1$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/41.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">firstMissingPositive</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize)</span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;numsSize;i++)&#123;<br>        <span class="hljs-keyword">if</span>(nums[i]&lt;=<span class="hljs-number">0</span>)nums[i]=numsSize+<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;numsSize;i++)&#123;<br>        <span class="hljs-keyword">if</span>(nums[i]&gt;=<span class="hljs-number">1</span>&amp;&amp;nums[i]&lt;=numsSize)&#123;<br>            <span class="hljs-type">int</span> idx=nums[i]<span class="hljs-number">-1</span>;<br>            nums[idx]=nums[idx]&lt;<span class="hljs-number">0</span>?nums[idx]:<span class="hljs-number">-1</span>*nums[idx];<br>        &#125;<br>        <span class="hljs-keyword">if</span>(nums[i]&lt;=<span class="hljs-number">-1</span>&amp;&amp;nums[i]&gt;=<span class="hljs-number">-1</span>*numsSize)&#123;<br>            <span class="hljs-type">int</span> idx=<span class="hljs-number">-1</span>*nums[i]<span class="hljs-number">-1</span>;<br>            nums[idx]=nums[idx]&lt;<span class="hljs-number">0</span>?nums[idx]:<span class="hljs-number">-1</span>*nums[idx];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;numsSize;i++)&#123;<br>        <span class="hljs-keyword">if</span>(nums[i]&gt;<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> i+<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> numsSize+<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>要求比较严格，要求时间复杂度为$O(N)$, 额外空间使用为$constant$.</li><li>没要求的话直接排序加上遍历即可；</li><li>现在考虑在原数组的基础上进行记录每次的数字；</li><li>首先一个只有$1-numsSize$这些可能性，大于这些或者小于这些的都不可能，第一次遍历将小的全部置为大的数，将负数部分空出来；</li><li>第二次遍历时候，遇到一个数，将该数字对应的下标位置的数字置为负数，那么所有存在的数字对应位置的值皆为负数；</li><li>第三遍遍历找到第一个不为负数的位置返回下标对应值即可，若全部为负数，则返回$numsSize+1$</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>困难</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：40</title>
     <link href="/2022/04/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A40/"/>
     <url>/2022/04/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A40/</url>
