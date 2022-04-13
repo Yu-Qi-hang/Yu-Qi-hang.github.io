@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第41题：First Missing Positive">
+    <meta name="description" content="Leetcode题库第42题：Trapping Rain Water">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：41">
-<meta property="og:url" content="http://example.com/2022/04/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A41/index.html">
+<meta property="og:title" content="每日一题：42">
+<meta property="og:url" content="http://example.com/2022/04/13/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A42/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第41题：First Missing Positive">
+<meta property="og:description" content="Leetcode题库第42题：Trapping Rain Water">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-12T02:50:11.000Z">
-<meta property="article:modified_time" content="2022-04-12T02:50:38.156Z">
+<meta property="article:published_time" content="2022-04-13T03:09:22.000Z">
+<meta property="article:modified_time" content="2022-04-13T03:09:55.739Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：41 - 咸鱼Blog</title>
+  <title>每日一题：42 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="First Missing Positive">
+            <span class="h2" id="subtitle" title="Trapping Rain Water">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-12 10:50" pubdate>
-        2022年4月12日 上午
+      <time datetime="2022-04-13 11:09" pubdate>
+        2022年4月13日 上午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      1.3k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10 分钟
+      11 分钟
     </span>
   
 
@@ -254,30 +254,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">First Missing Positive</h1>
+            <h1 style="display: none">Trapping Rain Water</h1>
             
             <div class="markdown-body">
-              <h4 id="41-First-Missing-Positive"><a href="#41-First-Missing-Positive" class="headerlink" title="41. First Missing Positive"></a>41. First Missing Positive</h4><p>Given an unsorted integer array <code>nums</code>, return the smallest missing positive integer.</p>
-<p>You must implement an algorithm that runs in <code>O(n)</code> time and uses constant extra space.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+              <h4 id="42-Trapping-Rain-Water"><a href="#42-Trapping-Rain-Water" class="headerlink" title="42. Trapping Rain Water"></a>42. Trapping Rain Water</h4><p>Given <code>n</code> non-negative integers representing an elevation map where the width of each bar is <code>1</code>, compute how much water it can trap after raining.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204131109161.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: height = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">6</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> above elevation map (black section) is represented by array [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]. <span class="hljs-type">In</span> this <span class="hljs-keyword">case</span>, <span class="hljs-number">6</span> units <span class="hljs-keyword">of</span> rain water (blue section) are being trapped.<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">11</span>,<span class="hljs-number">12</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: height = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 5 * 10^5$</li>
-<li>$-2^{31} &lt;&#x3D; nums[i] &lt;&#x3D; 2^{31} - 1$</li>
+<li>$n &#x3D;&#x3D; height.length$</li>
+<li>$1 &lt;&#x3D; n &lt;&#x3D; 2 * 10^4$</li>
+<li>$0 &lt;&#x3D; height[i] &lt;&#x3D; 10^5$</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/41.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">firstMissingPositive</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize)</span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;numsSize;i++)&#123;<br>        <span class="hljs-keyword">if</span>(nums[i]&lt;=<span class="hljs-number">0</span>)nums[i]=numsSize+<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;numsSize;i++)&#123;<br>        <span class="hljs-keyword">if</span>(nums[i]&gt;=<span class="hljs-number">1</span>&amp;&amp;nums[i]&lt;=numsSize)&#123;<br>            <span class="hljs-type">int</span> idx=nums[i]<span class="hljs-number">-1</span>;<br>            nums[idx]=nums[idx]&lt;<span class="hljs-number">0</span>?nums[idx]:<span class="hljs-number">-1</span>*nums[idx];<br>        &#125;<br>        <span class="hljs-keyword">if</span>(nums[i]&lt;=<span class="hljs-number">-1</span>&amp;&amp;nums[i]&gt;=<span class="hljs-number">-1</span>*numsSize)&#123;<br>            <span class="hljs-type">int</span> idx=<span class="hljs-number">-1</span>*nums[i]<span class="hljs-number">-1</span>;<br>            nums[idx]=nums[idx]&lt;<span class="hljs-number">0</span>?nums[idx]:<span class="hljs-number">-1</span>*nums[idx];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;numsSize;i++)&#123;<br>        <span class="hljs-keyword">if</span>(nums[i]&gt;<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> i+<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> numsSize+<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/42.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">trap</span><span class="hljs-params">(<span class="hljs-type">int</span>* height, <span class="hljs-type">int</span> heightSize)</span>&#123;<br>    <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>,left=<span class="hljs-number">0</span>,right=heightSize<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(left&lt;right&amp;&amp;height[left]&lt;=height[left+<span class="hljs-number">1</span>])left++;<br>    <span class="hljs-keyword">while</span>(left&lt;right&amp;&amp;height[right]&lt;=height[right<span class="hljs-number">-1</span>])right--;<br>    <span class="hljs-type">int</span> lefth=height[left],righth=height[right];<br>    <span class="hljs-keyword">while</span>(left&lt;right)&#123;<br>        <span class="hljs-keyword">if</span>(lefth&lt;=righth)&#123;<br>            <span class="hljs-keyword">while</span>(height[left]&lt;=lefth&amp;&amp;left&lt;right)&#123;<br>                sum+=lefth-height[left++];<br>            &#125;<br>            lefth=height[left];<br>        &#125;<br>        <span class="hljs-keyword">if</span>(righth&lt;=lefth)&#123;<br>            <span class="hljs-keyword">while</span>(height[right]&lt;=righth&amp;&amp;left&lt;right)&#123;<br>                sum+=righth-height[right--];<br>            &#125;<br>            righth=height[right];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> sum;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>要求比较严格，要求时间复杂度为$O(N)$, 额外空间使用为$constant$.</li>
-<li>没要求的话直接排序加上遍历即可；</li>
-<li>现在考虑在原数组的基础上进行记录每次的数字；</li>
-<li>首先一个只有$1-numsSize$这些可能性，大于这些或者小于这些的都不可能，第一次遍历将小的全部置为大的数，将负数部分空出来；</li>
-<li>第二次遍历时候，遇到一个数，将该数字对应的下标位置的数字置为负数，那么所有存在的数字对应位置的值皆为负数；</li>
-<li>第三遍遍历找到第一个不为负数的位置返回下标对应值即可，若全部为负数，则返回$numsSize+1$</li>
+<li>开始实现了递归的方式，每次寻找区间的最大值位置，大于两侧就分成两半计算，小于两侧就计算该区间蓄水量；</li>
+<li>但是最后一个测试点超时；</li>
+<li>后来想到从两侧向中间逼近，高度较小的一侧向内移动，累加该高度下蓄水量直到遇到一个高度超过当前记录高度的位置，更新该侧记录的高度；</li>
+<li>重复3直到两侧逼近到同一位置；</li>
 </ol>
 
             </div>
@@ -317,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/13/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A42/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：42</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A40/">
-                        <span class="hidden-mobile">每日一题：40</span>
+                      <a href="/2022/04/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A41/">
+                        <span class="hidden-mobile">每日一题：41</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

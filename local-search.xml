@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：42</title>
+    <link href="/2022/04/13/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A42/"/>
+    <url>/2022/04/13/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A42/</url>
+    
+    <content type="html"><![CDATA[<h4 id="42-Trapping-Rain-Water"><a href="#42-Trapping-Rain-Water" class="headerlink" title="42. Trapping Rain Water"></a>42. Trapping Rain Water</h4><p>Given <code>n</code> non-negative integers representing an elevation map where the width of each bar is <code>1</code>, compute how much water it can trap after raining.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204131109161.png" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: height = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">6</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> above elevation map (black section) is represented by array [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]. <span class="hljs-type">In</span> this <span class="hljs-keyword">case</span>, <span class="hljs-number">6</span> units <span class="hljs-keyword">of</span> rain water (blue section) are being trapped.<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: height = [<span class="hljs-number">4</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">9</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$n &#x3D;&#x3D; height.length$</li><li>$1 &lt;&#x3D; n &lt;&#x3D; 2 * 10^4$</li><li>$0 &lt;&#x3D; height[i] &lt;&#x3D; 10^5$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/42.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">trap</span><span class="hljs-params">(<span class="hljs-type">int</span>* height, <span class="hljs-type">int</span> heightSize)</span>&#123;<br>    <span class="hljs-type">int</span> sum=<span class="hljs-number">0</span>,left=<span class="hljs-number">0</span>,right=heightSize<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(left&lt;right&amp;&amp;height[left]&lt;=height[left+<span class="hljs-number">1</span>])left++;<br>    <span class="hljs-keyword">while</span>(left&lt;right&amp;&amp;height[right]&lt;=height[right<span class="hljs-number">-1</span>])right--;<br>    <span class="hljs-type">int</span> lefth=height[left],righth=height[right];<br>    <span class="hljs-keyword">while</span>(left&lt;right)&#123;<br>        <span class="hljs-keyword">if</span>(lefth&lt;=righth)&#123;<br>            <span class="hljs-keyword">while</span>(height[left]&lt;=lefth&amp;&amp;left&lt;right)&#123;<br>                sum+=lefth-height[left++];<br>            &#125;<br>            lefth=height[left];<br>        &#125;<br>        <span class="hljs-keyword">if</span>(righth&lt;=lefth)&#123;<br>            <span class="hljs-keyword">while</span>(height[right]&lt;=righth&amp;&amp;left&lt;right)&#123;<br>                sum+=righth-height[right--];<br>            &#125;<br>            righth=height[right];<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> sum;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>开始实现了递归的方式，每次寻找区间的最大值位置，大于两侧就分成两半计算，小于两侧就计算该区间蓄水量；</li><li>但是最后一个测试点超时；</li><li>后来想到从两侧向中间逼近，高度较小的一侧向内移动，累加该高度下蓄水量直到遇到一个高度超过当前记录高度的位置，更新该侧记录的高度；</li><li>重复3直到两侧逼近到同一位置；</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>困难</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：41</title>
     <link href="/2022/04/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A41/"/>
     <url>/2022/04/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A41/</url>
