@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：45</title>
+    <link href="/2022/04/16/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A45/"/>
+    <url>/2022/04/16/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A45/</url>
+    
+    <content type="html"><![CDATA[<h4 id="45-Jump-Game-II"><a href="#45-Jump-Game-II" class="headerlink" title="45. Jump Game II"></a>45. Jump Game II</h4><p>Given an array of non-negative integers <code>nums</code>, you are initially positioned at the first index of the array.</p><p>Each element in the array represents your maximum jump length at that position.</p><p>Your goal is to reach the last index in the minimum number of jumps.</p><p>You can assume that you can always reach the last index.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> minimum number <span class="hljs-keyword">of</span> jumps to reach the last index is <span class="hljs-number">2.</span> <span class="hljs-type">Jump</span> <span class="hljs-number">1</span> step from index <span class="hljs-number">0</span> to <span class="hljs-number">1</span>, <span class="hljs-keyword">then</span> <span class="hljs-number">3</span> steps to the last index.<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 10^4$</li><li>$0 &lt;&#x3D; nums[i] &lt;&#x3D; 1000$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/45.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">jump</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize)</span>&#123;<br>    <span class="hljs-keyword">if</span>(numsSize==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>]&gt;=numsSize<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> max=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> idx=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=nums[<span class="hljs-number">0</span>];i++)&#123;<br>        <span class="hljs-keyword">if</span>(i+nums[i]&gt;max)&#123;<br>            max=i+nums[i];<br>            idx=i;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>+jump(&amp;nums[idx],numsSize-idx);<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>开始采取的是枚举加回溯，每次枚举范围内的每一组情况，但是超时了；</li><li>想起来昨天题目中的贪心，发现这题很合适用贪心；</li><li>每次循环判断，当前位置能到达范围内的那些数加上已有的位置构成的的总偏移，选择最大的作为下一步的位置，这样保证了每次跨度最大；</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：44</title>
     <link href="/2022/04/15/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A44/"/>
     <url>/2022/04/15/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A44/</url>
