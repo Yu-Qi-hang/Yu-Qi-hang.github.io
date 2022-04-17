@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第45题：Jump Game II">
+    <meta name="description" content="Leetcode题库第46题：Permutations">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：45">
-<meta property="og:url" content="http://example.com/2022/04/16/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A45/index.html">
+<meta property="og:title" content="每日一题：46">
+<meta property="og:url" content="http://example.com/2022/04/17/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A46/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第45题：Jump Game II">
+<meta property="og:description" content="Leetcode题库第46题：Permutations">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-16T05:57:40.000Z">
-<meta property="article:modified_time" content="2022-04-16T05:58:08.228Z">
+<meta property="article:published_time" content="2022-04-17T07:46:46.000Z">
+<meta property="article:modified_time" content="2022-04-17T07:47:16.762Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：45 - 咸鱼Blog</title>
+  <title>每日一题：46 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Jump Game II">
+            <span class="h2" id="subtitle" title="Permutations">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-16 13:57" pubdate>
-        2022年4月16日 下午
+      <time datetime="2022-04-17 15:46" pubdate>
+        2022年4月17日 下午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      943 字
+      1.4k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      12 分钟
     </span>
   
 
@@ -254,27 +254,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Jump Game II</h1>
+            <h1 style="display: none">Permutations</h1>
             
             <div class="markdown-body">
-              <h4 id="45-Jump-Game-II"><a href="#45-Jump-Game-II" class="headerlink" title="45. Jump Game II"></a>45. Jump Game II</h4><p>Given an array of non-negative integers <code>nums</code>, you are initially positioned at the first index of the array.</p>
-<p>Each element in the array represents your maximum jump length at that position.</p>
-<p>Your goal is to reach the last index in the minimum number of jumps.</p>
-<p>You can assume that you can always reach the last index.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> minimum number <span class="hljs-keyword">of</span> jumps to reach the last index is <span class="hljs-number">2.</span> <span class="hljs-type">Jump</span> <span class="hljs-number">1</span> step from index <span class="hljs-number">0</span> to <span class="hljs-number">1</span>, <span class="hljs-keyword">then</span> <span class="hljs-number">3</span> steps to the last index.<br></code></pre></td></tr></table></figure>
+              <h4 id="46-Permutations"><a href="#46-Permutations" class="headerlink" title="46. Permutations"></a>46. Permutations</h4><p>Given an array <code>nums</code> of distinct integers, return <em>all the possible permutations</em>. You can return the answer in <strong>any order</strong>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]]<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]]<br></code></pre></td></tr></table></figure>
+
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>]]<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 10^4$</li>
-<li>$0 &lt;&#x3D; nums[i] &lt;&#x3D; 1000$</li>
+<li><code>1 &lt;= nums.length &lt;= 6</code></li>
+<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
+<li>All the integers of <code>nums</code> are <strong>unique</strong>.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/45.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">jump</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize)</span>&#123;<br>    <span class="hljs-keyword">if</span>(numsSize==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>]&gt;=numsSize<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> max=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> idx=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=nums[<span class="hljs-number">0</span>];i++)&#123;<br>        <span class="hljs-keyword">if</span>(i+nums[i]&gt;max)&#123;<br>            max=i+nums[i];<br>            idx=i;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>+jump(&amp;nums[idx],numsSize-idx);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/46.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span> * nums,<span class="hljs-type">int</span> indexA,<span class="hljs-type">int</span> indexB)</span><br>&#123;<br>    <span class="hljs-type">int</span> temp=nums[indexA];<br>    nums[indexA]=nums[indexB];<br>    nums[indexB]=temp;<br>&#125;<br><span class="hljs-type">void</span> <span class="hljs-title function_">BackTrace</span><span class="hljs-params">(<span class="hljs-type">int</span> **result,<span class="hljs-type">int</span> layer,<span class="hljs-type">int</span> idx,<span class="hljs-type">int</span> *returnSize,<span class="hljs-type">int</span> *nums,<span class="hljs-type">int</span> *col)</span>&#123;<br>    <span class="hljs-keyword">if</span>(idx==layer)&#123;<br>        result[*returnSize]=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*layer);<br>        <span class="hljs-built_in">memcpy</span>(result[*returnSize],nums,layer*<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>));<br>        col[*returnSize]=layer;<br>        (*returnSize)++;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=idx;i&lt;layer;i++)&#123;<br>            swap(nums,idx,i);<br>            BackTrace(result,layer,idx+<span class="hljs-number">1</span>,returnSize,nums,col);<br>            swap(nums,idx,i);<br>        &#125;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>&#125;<br><span class="hljs-type">int</span>** <span class="hljs-title function_">permute</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>** returnColumnSizes)</span>&#123;<br>    <span class="hljs-type">int</span> sum=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=numsSize;i++)sum*=i;<br>    <span class="hljs-type">int</span> **ret=(<span class="hljs-type">int</span>**)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>*)*sum);<br>    *returnColumnSizes=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*sum);<br>    *returnSize=<span class="hljs-number">0</span>;<br>    BackTrace(ret,numsSize,<span class="hljs-number">0</span>,returnSize,nums,*returnColumnSizes);<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>开始采取的是枚举加回溯，每次枚举范围内的每一组情况，但是超时了；</li>
-<li>想起来昨天题目中的贪心，发现这题很合适用贪心；</li>
-<li>每次循环判断，当前位置能到达范围内的那些数加上已有的位置构成的的总偏移，选择最大的作为下一步的位置，这样保证了每次跨度最大；</li>
+<li>全排列问题，可以采取回溯法加上递归实现；</li>
+<li>从前到后每次确定一个位置，确定方法可以是采取每次与一个交换的方式，将左侧的确定下来；另一种是采取一个数组来记录当前数字是否已经使用；</li>
+<li>到达最后一层之后加到结果数组里面。</li>
 </ol>
 
             </div>
@@ -314,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/17/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A46/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：46</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/15/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A44/">
-                        <span class="hidden-mobile">每日一题：44</span>
+                      <a href="/2022/04/16/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A45/">
+                        <span class="hidden-mobile">每日一题：45</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
