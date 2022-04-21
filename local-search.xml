@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：50</title>
+    <link href="/2022/04/21/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A50/"/>
+    <url>/2022/04/21/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A50/</url>
+    
+    <content type="html"><![CDATA[<h4 id="50-Pow-x-n"><a href="#50-Pow-x-n" class="headerlink" title="50. Pow(x, n)"></a>50. Pow(x, n)</h4><p>Implement <a href="http://www.cplusplus.com/reference/valarray/pow/">pow(x, n)</a>, which calculates <code>x</code> raised to the power <code>n</code> (i.e., $x^n$).</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: x = <span class="hljs-number">2.00000</span>, n = <span class="hljs-number">10</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">1024.00000</span><br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: x = <span class="hljs-number">2.10000</span>, n = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">9.26100</span><br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: x = <span class="hljs-number">2.00000</span>, n = <span class="hljs-number">-2</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">0.25000</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-number">2</span><span class="hljs-number">-2</span> = <span class="hljs-number">1</span>/<span class="hljs-number">22</span> = <span class="hljs-number">1</span>/<span class="hljs-number">4</span> = <span class="hljs-number">0.25</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$-100.0 &lt; x &lt; 100.0$</li><li>$-2^{31} &lt;&#x3D; n &lt;&#x3D; 2^{31}-1$</li><li>$-10^4 &lt;&#x3D; xn &lt;&#x3D; 10^4$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/50.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">double</span> <span class="hljs-title function_">myPow</span><span class="hljs-params">(<span class="hljs-type">double</span> x, <span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1.0</span>;<br>    <span class="hljs-type">double</span> ret=<span class="hljs-number">1.0</span>;<br>    <span class="hljs-keyword">if</span>(n&lt;<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/x*myPow(x*x,(n+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> myPow(x*x,n/<span class="hljs-number">2</span>);<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>)<span class="hljs-keyword">return</span> x*myPow(x*x,(n<span class="hljs-number">-1</span>)/<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> myPow(x*x,n/<span class="hljs-number">2</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>题目不难，利用循环也能计算，难的是快；</li><li>可以递归，也可以迭代，主要考虑到是，乘数本身需要不断长大，一直保持原先的大小需要的计算次数过多；</li><li>这边使用了递归，每次查看指数是奇数还是偶数，对于奇数，需要使用当前底数，如果是偶数，直接将底数的二次作为底数，计算新的幂值；</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：49</title>
     <link href="/2022/04/20/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A49/"/>
     <url>/2022/04/20/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A49/</url>

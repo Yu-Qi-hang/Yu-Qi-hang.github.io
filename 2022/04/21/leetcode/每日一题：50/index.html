@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第49题：Group Anagrams">
+    <meta name="description" content="Leetcode题库第50题：Pow(x, n)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：49">
-<meta property="og:url" content="http://example.com/2022/04/20/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A49/index.html">
+<meta property="og:title" content="每日一题：50">
+<meta property="og:url" content="http://example.com/2022/04/21/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A50/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第49题：Group Anagrams">
+<meta property="og:description" content="Leetcode题库第50题：Pow(x, n)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-20T03:32:56.000Z">
-<meta property="article:modified_time" content="2022-04-20T03:33:28.208Z">
+<meta property="article:published_time" content="2022-04-21T05:30:15.000Z">
+<meta property="article:modified_time" content="2022-04-21T05:30:51.680Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：49 - 咸鱼Blog</title>
+  <title>每日一题：50 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Group Anagrams">
+            <span class="h2" id="subtitle" title="Pow(x, n)">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-20 11:32" pubdate>
-        2022年4月20日 中午
+      <time datetime="2022-04-21 13:30" pubdate>
+        2022年4月21日 下午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      743 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12 分钟
+      7 分钟
     </span>
   
 
@@ -254,42 +254,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Group Anagrams</h1>
+            <h1 style="display: none">Pow(x, n)</h1>
             
             <div class="markdown-body">
-              <h4 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h4><p>Given an array of strings <code>strs</code>, group <strong>the anagrams</strong> together. You can return the answer in <strong>any order</strong>.</p>
-<p>An <strong>Anagram</strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: strs = [<span class="hljs-string">&quot;eat&quot;</span>,<span class="hljs-string">&quot;tea&quot;</span>,<span class="hljs-string">&quot;tan&quot;</span>,<span class="hljs-string">&quot;ate&quot;</span>,<span class="hljs-string">&quot;nat&quot;</span>,<span class="hljs-string">&quot;bat&quot;</span>]<br><span class="hljs-type">Output</span>: [[<span class="hljs-string">&quot;bat&quot;</span>],[<span class="hljs-string">&quot;nat&quot;</span>,<span class="hljs-string">&quot;tan&quot;</span>],[<span class="hljs-string">&quot;ate&quot;</span>,<span class="hljs-string">&quot;eat&quot;</span>,<span class="hljs-string">&quot;tea&quot;</span>]]<br></code></pre></td></tr></table></figure>
+              <h4 id="50-Pow-x-n"><a href="#50-Pow-x-n" class="headerlink" title="50. Pow(x, n)"></a>50. Pow(x, n)</h4><p>Implement <a target="_blank" rel="noopener" href="http://www.cplusplus.com/reference/valarray/pow/">pow(x, n)</a>, which calculates <code>x</code> raised to the power <code>n</code> (i.e., $x^n$).</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: x = <span class="hljs-number">2.00000</span>, n = <span class="hljs-number">10</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">1024.00000</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: strs = [<span class="hljs-string">&quot;&quot;</span>]<br><span class="hljs-type">Output</span>: [[<span class="hljs-string">&quot;&quot;</span>]]<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: x = <span class="hljs-number">2.10000</span>, n = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">9.26100</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: strs = [<span class="hljs-string">&quot;a&quot;</span>]<br><span class="hljs-type">Output</span>: [[<span class="hljs-string">&quot;a&quot;</span>]]<br></code></pre></td></tr></table></figure>
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: x = <span class="hljs-number">2.00000</span>, n = <span class="hljs-number">-2</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">0.25000</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-number">2</span><span class="hljs-number">-2</span> = <span class="hljs-number">1</span>/<span class="hljs-number">22</span> = <span class="hljs-number">1</span>/<span class="hljs-number">4</span> = <span class="hljs-number">0.25</span><br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>$1 &lt;&#x3D; strs.length &lt;&#x3D; 10^4$</li>
-<li>$0 &lt;&#x3D; strs[i].length &lt;&#x3D; 100$</li>
-<li><code>strs[i]</code> consists of lowercase English letters.</li>
+<li>$-100.0 &lt; x &lt; 100.0$</li>
+<li>$-2^{31} &lt;&#x3D; n &lt;&#x3D; 2^{31}-1$</li>
+<li>$-10^4 &lt;&#x3D; xn &lt;&#x3D; 10^4$</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/49.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;string&gt;&gt; <span class="hljs-built_in">groupAnagrams</span>(vector&lt;string&gt;&amp; strs) &#123;<br>        unordered_map&lt;string,vector&lt;string&gt;&gt; record;<br>        vector&lt;string&gt;::iterator it;<br>        <span class="hljs-keyword">for</span>(it=strs.<span class="hljs-built_in">begin</span>();it!=strs.<span class="hljs-built_in">end</span>();it++)&#123;<br>            string key=*it;<br>            <span class="hljs-built_in">sort</span>(key.<span class="hljs-built_in">begin</span>(),key.<span class="hljs-built_in">end</span>());<br>            record[key].<span class="hljs-built_in">emplace_back</span>(*it);<br>        &#125;<br>        vector&lt;vector&lt;string&gt;&gt; ret;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> iter = record.<span class="hljs-built_in">begin</span>(); iter != record.<span class="hljs-built_in">end</span>(); ++iter) &#123;<br>            ret.<span class="hljs-built_in">emplace_back</span>(iter-&gt;second);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/50.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">double</span> <span class="hljs-title function_">myPow</span><span class="hljs-params">(<span class="hljs-type">double</span> x, <span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1.0</span>;<br>    <span class="hljs-type">double</span> ret=<span class="hljs-number">1.0</span>;<br>    <span class="hljs-keyword">if</span>(n&lt;<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>/x*myPow(x*x,(n+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> myPow(x*x,n/<span class="hljs-number">2</span>);<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">if</span>(n%<span class="hljs-number">2</span>)<span class="hljs-keyword">return</span> x*myPow(x*x,(n<span class="hljs-number">-1</span>)/<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> myPow(x*x,n/<span class="hljs-number">2</span>);<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>练习使用<code>C++</code>;</li>
-<li>题目不难，思路就是将每个字符串进行内部的排序，之后每组包含相同字符的就会变成统一的字符串，将此字符串作为键值进行存储；</li>
-<li>迭代器的使用：<ol>
-<li>vector 中元素类型加上迭代器类型构成总的类型；</li>
-<li>从<code>begin</code>到<code>end</code>的遍历，采取简单的自增；</li>
-<li>真正的值的调用需要加<code>*</code>才行；</li>
-</ol>
-</li>
-<li>vector:<ol>
-<li><code>push_back()</code>尾部加入新的元素；</li>
-</ol>
-</li>
-<li>unordered_map:<ol>
-<li>auto 遍历；</li>
-<li>first对应键，second对应值</li>
-</ol>
-</li>
+<li>题目不难，利用循环也能计算，难的是快；</li>
+<li>可以递归，也可以迭代，主要考虑到是，乘数本身需要不断长大，一直保持原先的大小需要的计算次数过多；</li>
+<li>这边使用了递归，每次查看指数是奇数还是偶数，对于奇数，需要使用当前底数，如果是偶数，直接将底数的二次作为底数，计算新的幂值；</li>
 </ol>
 
             </div>
@@ -329,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/21/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A50/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：50</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/19/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A48/">
-                        <span class="hidden-mobile">每日一题：48</span>
+                      <a href="/2022/04/20/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A49/">
+                        <span class="hidden-mobile">每日一题：49</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
