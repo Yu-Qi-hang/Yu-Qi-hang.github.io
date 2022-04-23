@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：52</title>
+    <link href="/2022/04/23/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A52/"/>
+    <url>/2022/04/23/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A52/</url>
+    
+    <content type="html"><![CDATA[<h4 id="52-N-Queens-II"><a href="#52-N-Queens-II" class="headerlink" title="52. N-Queens II"></a>52. N-Queens II</h4><p>The <strong>n-queens</strong> puzzle is the problem of placing <code>n</code> queens on an <code>n x n</code> chessboard such that no two queens attack each other.</p><p>Given an integer <code>n</code>, return <em>the number of distinct solutions to the <strong>n-queens puzzle</strong></em>.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204231650115.jpeg" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">4</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">There</span> are two distinct solutions to the <span class="hljs-number">4</span>-queens puzzle <span class="hljs-keyword">as</span> shown.<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">1</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li><code>1 &lt;= n &lt;= 9</code></li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/52.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">void</span> <span class="hljs-title function_">Backtrace</span><span class="hljs-params">(<span class="hljs-type">int</span>*place,<span class="hljs-type">int</span> n,<span class="hljs-type">int</span> row,<span class="hljs-type">int</span> *returnSize,<span class="hljs-type">int</span> *column,<span class="hljs-type">int</span> *diag1,<span class="hljs-type">int</span> *diag2)</span>&#123;<br>    <span class="hljs-keyword">if</span>(row==n)&#123;<br>        (*returnSize)++;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            <span class="hljs-keyword">if</span>(column[i])<span class="hljs-keyword">continue</span>;<br>            <span class="hljs-type">int</span> diagidx1=row-i+n<span class="hljs-number">-1</span>;<br>            <span class="hljs-keyword">if</span>(diag1[diagidx1])<span class="hljs-keyword">continue</span>;<br>            <span class="hljs-type">int</span> diagidx2=row+i;<br>            <span class="hljs-keyword">if</span>(diag2[diagidx2])<span class="hljs-keyword">continue</span>;<br>            place[row]=i;<br>            column[i]=<span class="hljs-number">1</span>;<br>            diag1[diagidx1]=<span class="hljs-number">1</span>;<br>            diag2[diagidx2]=<span class="hljs-number">1</span>;<br>            Backtrace(place,n,row+<span class="hljs-number">1</span>,returnSize,column,diag1,diag2);<br>            place[row]=<span class="hljs-number">-1</span>;<br>            column[i]=<span class="hljs-number">0</span>;<br>            diag1[diagidx1]=<span class="hljs-number">0</span>;<br>            diag2[diagidx2]=<span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-type">int</span> <span class="hljs-title function_">totalNQueens</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-type">int</span> place[n],column[n],diag1[n+n],diag2[n+n];<br>    <span class="hljs-built_in">memset</span>(place,<span class="hljs-number">-1</span>,<span class="hljs-keyword">sizeof</span>(place));<br>    <span class="hljs-built_in">memset</span>(column,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(column));<br>    <span class="hljs-built_in">memset</span>(diag1,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(diag1));<br>    <span class="hljs-built_in">memset</span>(diag2,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(diag2));<br>    <span class="hljs-type">int</span> returnSize[<span class="hljs-number">1</span>]=&#123;<span class="hljs-number">0</span>&#125;;<br>    Backtrace(place,n,<span class="hljs-number">0</span>,returnSize,column,diag1,diag2);<br>    <span class="hljs-keyword">return</span> *returnSize;      <br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>和上一题一样的思路</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>困难</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：51</title>
     <link href="/2022/04/22/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A51/"/>
     <url>/2022/04/22/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A51/</url>
