@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：55</title>
+    <link href="/2022/04/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A55/"/>
+    <url>/2022/04/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A55/</url>
+    
+    <content type="html"><![CDATA[<h4 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a>55. Jump Game</h4><p>You are given an integer array <code>nums</code>. You are initially positioned at the array’s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p><p>Return <code>true</code> <em>if you can reach the last index, or</em> <code>false</code> <em>otherwise</em>.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: true<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Jump</span> <span class="hljs-number">1</span> step from index <span class="hljs-number">0</span> to <span class="hljs-number">1</span>, <span class="hljs-keyword">then</span> <span class="hljs-number">3</span> steps to the last index.<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: false<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">You</span> will always arrive at index <span class="hljs-number">3</span> no matter what. <span class="hljs-type">Its</span> maximum jump length is <span class="hljs-number">0</span>, which makes it impossible to reach the last index.<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 10^4$</li><li>$0 &lt;&#x3D; nums[i] &lt;&#x3D; 10^5$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/55.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">bool</span> <span class="hljs-title function_">canJump</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize)</span>&#123;<br>    <span class="hljs-type">int</span> now=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> max=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(now&lt;numsSize<span class="hljs-number">-1</span>)&#123;<br>        <span class="hljs-keyword">if</span>(nums[now]==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<br>        max=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=nums[now];i++)&#123;<br>            <span class="hljs-keyword">if</span>(now+i&gt;=numsSize)<span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">if</span>(nums[now+i]+i&gt;=nums[now+max]+max)max=i;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(max==<span class="hljs-number">0</span>)now+=nums[now];<br>        <span class="hljs-keyword">else</span> now+=max;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(now&gt;=numsSize<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>贪心即可，每次选择能到达的最远距离下标进行更新；</li><li>遇到当前值为0时，退出循环</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：54</title>
     <link href="/2022/04/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A54/"/>
     <url>/2022/04/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A54/</url>

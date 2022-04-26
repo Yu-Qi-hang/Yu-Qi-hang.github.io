@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第54题：Spiral Matrix">
+    <meta name="description" content="Leetcode题库第55题：Jump Game">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：54">
-<meta property="og:url" content="http://example.com/2022/04/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A54/index.html">
+<meta property="og:title" content="每日一题：55">
+<meta property="og:url" content="http://example.com/2022/04/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A55/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第54题：Spiral Matrix">
+<meta property="og:description" content="Leetcode题库第55题：Jump Game">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-25T08:37:30.000Z">
-<meta property="article:modified_time" content="2022-04-25T08:37:58.945Z">
+<meta property="article:published_time" content="2022-04-26T08:07:25.000Z">
+<meta property="article:modified_time" content="2022-04-26T08:07:54.327Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：54 - 咸鱼Blog</title>
+  <title>每日一题：55 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Spiral Matrix">
+            <span class="h2" id="subtitle" title="Jump Game">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-25 16:37" pubdate>
-        2022年4月25日 下午
+      <time datetime="2022-04-26 16:07" pubdate>
+        2022年4月26日 下午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      969 字
     </span>
   
 
@@ -254,27 +254,24 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Spiral Matrix</h1>
+            <h1 style="display: none">Jump Game</h1>
             
             <div class="markdown-body">
-              <h4 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54. Spiral Matrix"></a>54. Spiral Matrix</h4><p>Given an <code>m x n</code> <code>matrix</code>, return <em>all elements of the</em> <code>matrix</code> <em>in spiral order</em>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204251637918.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: matrix = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>]]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">9</span>,<span class="hljs-number">8</span>,<span class="hljs-number">7</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
+              <h4 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a>55. Jump Game</h4><p>You are given an integer array <code>nums</code>. You are initially positioned at the array’s <strong>first index</strong>, and each element in the array represents your maximum jump length at that position.</p>
+<p>Return <code>true</code> <em>if you can reach the last index, or</em> <code>false</code> <em>otherwise</em>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: true<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Jump</span> <span class="hljs-number">1</span> step from index <span class="hljs-number">0</span> to <span class="hljs-number">1</span>, <span class="hljs-keyword">then</span> <span class="hljs-number">3</span> steps to the last index.<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204251633430.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: matrix = [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>],[<span class="hljs-number">9</span>,<span class="hljs-number">10</span>,<span class="hljs-number">11</span>,<span class="hljs-number">12</span>]]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">8</span>,<span class="hljs-number">12</span>,<span class="hljs-number">11</span>,<span class="hljs-number">10</span>,<span class="hljs-number">9</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Output</span>: false<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">You</span> will always arrive at index <span class="hljs-number">3</span> no matter what. <span class="hljs-type">Its</span> maximum jump length is <span class="hljs-number">0</span>, which makes it impossible to reach the last index.<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>m == matrix.length</code></li>
-<li><code>n == matrix[i].length</code></li>
-<li><code>1 &lt;= m, n &lt;= 10</code></li>
-<li><code>-100 &lt;= matrix[i][j] &lt;= 100</code></li>
+<li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 10^4$</li>
+<li>$0 &lt;&#x3D; nums[i] &lt;&#x3D; 10^5$</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/54.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span>* <span class="hljs-title function_">spiralOrder</span><span class="hljs-params">(<span class="hljs-type">int</span>** matrix, <span class="hljs-type">int</span> matrixSize, <span class="hljs-type">int</span>* matrixColSize, <span class="hljs-type">int</span>* returnSize)</span>&#123;<br>    <span class="hljs-type">int</span> *ret=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*matrixSize*matrixColSize[<span class="hljs-number">0</span>]);<br>    <span class="hljs-type">int</span> col=<span class="hljs-number">0</span>,k=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;(matrixSize+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=col;j&lt;matrixColSize[i]-col;j++)ret[k++]=matrix[i][j];<br>        <span class="hljs-keyword">if</span>(i&gt;=matrixSize/<span class="hljs-number">2</span>)<span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> y=i+<span class="hljs-number">1</span>;y&lt;matrixSize-i;y++)ret[k++]=matrix[y][matrixColSize[i]-col<span class="hljs-number">-1</span>];<br>        <span class="hljs-keyword">if</span>(col&gt;=matrixColSize[i]/<span class="hljs-number">2</span>)<span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x=matrixColSize[i]-col<span class="hljs-number">-2</span>;x&gt;=col;x--)ret[k++]=matrix[matrixSize-i<span class="hljs-number">-1</span>][x];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> z=matrixSize-i<span class="hljs-number">-2</span>;z&gt;i;z--)ret[k++]=matrix[z][col];<br>        col++;<br>        <span class="hljs-keyword">if</span>(col&gt;=(matrixColSize[<span class="hljs-number">0</span>]+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)<span class="hljs-keyword">break</span>;<br>    &#125;<br>    *returnSize=k;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/55.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">bool</span> <span class="hljs-title function_">canJump</span><span class="hljs-params">(<span class="hljs-type">int</span>* nums, <span class="hljs-type">int</span> numsSize)</span>&#123;<br>    <span class="hljs-type">int</span> now=<span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> max=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(now&lt;numsSize<span class="hljs-number">-1</span>)&#123;<br>        <span class="hljs-keyword">if</span>(nums[now]==<span class="hljs-number">0</span>)<span class="hljs-keyword">break</span>;<br>        max=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=nums[now];i++)&#123;<br>            <span class="hljs-keyword">if</span>(now+i&gt;=numsSize)<span class="hljs-keyword">break</span>;<br>            <span class="hljs-keyword">if</span>(nums[now+i]+i&gt;=nums[now+max]+max)max=i;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(max==<span class="hljs-number">0</span>)now+=nums[now];<br>        <span class="hljs-keyword">else</span> now+=max;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(now&gt;=numsSize<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>每次加一圈的值到数组里面即可；</li>
-<li>需要判断好每次的横纵坐标以及边界条件</li>
+<li>贪心即可，每次选择能到达的最远距离下标进行更新；</li>
+<li>遇到当前值为0时，退出循环</li>
 </ol>
 
             </div>
@@ -314,18 +311,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A55/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：55</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/24/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A53/">
-                        <span class="hidden-mobile">每日一题：53</span>
+                      <a href="/2022/04/25/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A54/">
+                        <span class="hidden-mobile">每日一题：54</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
