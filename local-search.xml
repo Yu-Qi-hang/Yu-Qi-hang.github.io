@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：56</title>
+    <link href="/2022/04/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A56/"/>
+    <url>/2022/04/27/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A56/</url>
+    
+    <content type="html"><![CDATA[<h4 id="56-Merge-Intervals"><a href="#56-Merge-Intervals" class="headerlink" title="56. Merge Intervals"></a>56. Merge Intervals</h4><p>Given an array of <code>intervals</code> where <code>intervals[i] = [starti, endi]</code>, merge all overlapping intervals, and return <em>an array of the non-overlapping intervals that cover all the intervals in the input</em>.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: intervals = [[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">8</span>,<span class="hljs-number">10</span>],[<span class="hljs-number">15</span>,<span class="hljs-number">18</span>]]<br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>,<span class="hljs-number">6</span>],[<span class="hljs-number">8</span>,<span class="hljs-number">10</span>],[<span class="hljs-number">15</span>,<span class="hljs-number">18</span>]]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Since</span> intervals [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>] and [<span class="hljs-number">2</span>,<span class="hljs-number">6</span>] overlaps, merge them into [<span class="hljs-number">1</span>,<span class="hljs-number">6</span>].<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: intervals = [[<span class="hljs-number">1</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]]<br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>,<span class="hljs-number">5</span>]]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Intervals</span> [<span class="hljs-number">1</span>,<span class="hljs-number">4</span>] and [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>] are considered overlapping.<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$1 &lt;&#x3D; intervals.length &lt;&#x3D; 10^4$</li><li>$intervals[i].length &#x3D;&#x3D; 2$</li><li>$0 &lt;&#x3D; starti &lt;&#x3D; endi &lt;&#x3D; 10^4$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/56.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">merge</span>(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; intervals) &#123;<br>        <span class="hljs-built_in">sort</span>(intervals.<span class="hljs-built_in">begin</span>(),intervals.<span class="hljs-built_in">end</span>());<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; ret;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;intervals.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-type">int</span> start=intervals[i][<span class="hljs-number">0</span>],finish=intervals[i][<span class="hljs-number">1</span>];<br>            <span class="hljs-keyword">if</span>(ret.<span class="hljs-built_in">size</span>()==<span class="hljs-number">0</span>||(ret.<span class="hljs-built_in">back</span>())[<span class="hljs-number">1</span>]&lt;start)ret.<span class="hljs-built_in">push_back</span>(&#123;start,finish&#125;);<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(ret.<span class="hljs-built_in">back</span>()[<span class="hljs-number">1</span>]&lt;finish)ret.<span class="hljs-built_in">back</span>()[<span class="hljs-number">1</span>]=finish;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>看到一对数字就想用C++；</li><li>先按开始位置进行排序，那么能合并的必然是相邻的数对；</li><li>只需要比较当前数对开始位置和前一个数对的结束位置的先后即可</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：55</title>
     <link href="/2022/04/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A55/"/>
     <url>/2022/04/26/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A55/</url>
