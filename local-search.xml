@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：58</title>
+    <link href="/2022/04/29/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A58/"/>
+    <url>/2022/04/29/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A58/</url>
+    
+    <content type="html"><![CDATA[<h4 id="58-Length-of-Last-Word"><a href="#58-Length-of-Last-Word" class="headerlink" title="58. Length of Last Word"></a>58. Length of Last Word</h4><p>Given a string <code>s</code> consisting of some words separated by some number of spaces, return <em>the length of the <strong>last</strong> word in the string.</em></p><p>A <strong>word</strong> is a maximal substring consisting of non-space characters only.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;Hello World&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">5</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> last word is <span class="hljs-string">&quot;World&quot;</span> with length <span class="hljs-number">5.</span><br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;   fly me   to   the moon  &quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">4</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> last word is <span class="hljs-string">&quot;moon&quot;</span> with length <span class="hljs-number">4.</span><br></code></pre></td></tr></table></figure><h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;luffy is still joyboy&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">6</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> last word is <span class="hljs-string">&quot;joyboy&quot;</span> with length <span class="hljs-number">6.</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$1 &lt;&#x3D; s.length &lt;&#x3D; 10^4$</li><li><code>s</code> consists of only English letters and spaces <code>&#39; &#39;</code>.</li><li>There will be at least one word in <code>s</code>.</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/58.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">lengthOfLastWord</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        <span class="hljs-type">int</span> end,start;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=s.<span class="hljs-built_in">length</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<br>            <span class="hljs-keyword">if</span>(s[i]!=<span class="hljs-string">&#x27; &#x27;</span>)&#123;<br>                end=i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=end;i&gt;=<span class="hljs-number">0</span>;i--)<br>            <span class="hljs-keyword">if</span>(s[i]==<span class="hljs-string">&#x27; &#x27;</span>)&#123;<br>                start=i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        <span class="hljs-keyword">return</span> end-start;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>很简单，只需要倒着遍历，根据空格确定最后一个单词的首尾即可</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：57</title>
     <link href="/2022/04/28/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A57/"/>
     <url>/2022/04/28/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A57/</url>
