@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第59题：Spiral Matrix II">
+    <meta name="description" content="Leetcode题库第60题：Permutation Sequence">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：59">
-<meta property="og:url" content="http://example.com/2022/04/30/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A59/index.html">
+<meta property="og:title" content="每日一题：60">
+<meta property="og:url" content="http://example.com/2022/05/01/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A60/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第59题：Spiral Matrix II">
+<meta property="og:description" content="Leetcode题库第60题：Permutation Sequence">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-04-30T03:16:08.000Z">
-<meta property="article:modified_time" content="2022-04-30T03:16:39.200Z">
+<meta property="article:published_time" content="2022-05-01T06:05:23.000Z">
+<meta property="article:modified_time" content="2022-05-01T06:06:08.315Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：59 - 咸鱼Blog</title>
+  <title>每日一题：60 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Spiral Matrix II">
+            <span class="h2" id="subtitle" title="Permutation Sequence">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-30 11:16" pubdate>
-        2022年4月30日 上午
+      <time datetime="2022-05-01 14:05" pubdate>
+        2022年5月1日 下午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      887 字
+      1.2k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      11 分钟
     </span>
   
 
@@ -254,22 +254,35 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Spiral Matrix II</h1>
+            <h1 style="display: none">Permutation Sequence</h1>
             
             <div class="markdown-body">
-              <h4 id="59-Spiral-Matrix-II"><a href="#59-Spiral-Matrix-II" class="headerlink" title="59. Spiral Matrix II"></a>59. Spiral Matrix II</h4><p>Given a positive integer <code>n</code>, generate an <code>n x n</code> <code>matrix</code> filled with elements from <code>1</code> to <code>n2</code> in spiral order.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202204301116408.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">4</span>],[<span class="hljs-number">7</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>]]<br></code></pre></td></tr></table></figure>
+              <h4 id="60-Permutation-Sequence"><a href="#60-Permutation-Sequence" class="headerlink" title="60. Permutation Sequence"></a>60. Permutation Sequence</h4><p>The set <code>[1, 2, 3, ..., n]</code> contains a total of <code>n!</code> unique permutations.</p>
+<p>By listing and labeling all of the permutations in order, we get the following sequence for <code>n = 3</code>:</p>
+<ol>
+<li><code>&quot;123&quot;</code></li>
+<li><code>&quot;132&quot;</code></li>
+<li><code>&quot;213&quot;</code></li>
+<li><code>&quot;231&quot;</code></li>
+<li><code>&quot;312&quot;</code></li>
+<li><code>&quot;321&quot;</code></li>
+</ol>
+<p>Given <code>n</code> and <code>k</code>, return the <code>kth</code> permutation sequence.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">3</span>, k = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;213&quot;</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">1</span><br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>]]<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">4</span>, k = <span class="hljs-number">9</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;2314&quot;</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Input</span>: n = <span class="hljs-number">3</span>, k = <span class="hljs-number">1</span><br><span class="hljs-attribute">Output</span>: <span class="hljs-string">&quot;123&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= n &lt;= 20</code></li>
+<li><code>1 &lt;= n &lt;= 9</code></li>
+<li><code>1 &lt;= k &lt;= n!</code></li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/59.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span>** <span class="hljs-title function_">generateMatrix</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span>* returnSize, <span class="hljs-type">int</span>** returnColumnSizes)</span>&#123;<br>    <span class="hljs-type">int</span> **matrix=(<span class="hljs-type">int</span>**)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>*)*n);<br>    *returnColumnSizes=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*n);<br>    <span class="hljs-type">int</span> col=<span class="hljs-number">0</span>,k=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        matrix[i]=(<span class="hljs-type">int</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)*n);<br>        (*returnColumnSizes)[i]=n;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;(n+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=col;j&lt;n-col;j++)matrix[i][j]=k++;<br>        <span class="hljs-keyword">if</span>(i&gt;=n/<span class="hljs-number">2</span>)<span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> y=i+<span class="hljs-number">1</span>;y&lt;n-i;y++)matrix[y][n-col<span class="hljs-number">-1</span>]=k++;<br>        <span class="hljs-keyword">if</span>(col&gt;=n/<span class="hljs-number">2</span>)<span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> x=n-col<span class="hljs-number">-2</span>;x&gt;=col;x--)matrix[n-i<span class="hljs-number">-1</span>][x]=k++;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> z=n-i<span class="hljs-number">-2</span>;z&gt;i;z--)matrix[z][col]=k++;<br>        col++;<br>        <span class="hljs-keyword">if</span>(col&gt;=(n+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>)<span class="hljs-keyword">break</span>;<br>    &#125;<br>    *returnSize=n;<br>    <span class="hljs-keyword">return</span> matrix;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/60.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">char</span>* <span class="hljs-title function_">backtracer</span><span class="hljs-params">(<span class="hljs-type">char</span>* now,<span class="hljs-type">int</span> k)</span>&#123;<br>    <span class="hljs-keyword">if</span>(k==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> now;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-type">int</span> numsSize=<span class="hljs-built_in">strlen</span>(now);<br>        <span class="hljs-type">int</span> right=numsSize<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(right&gt;<span class="hljs-number">0</span>&amp;&amp;now[right]&lt;=now[right<span class="hljs-number">-1</span>])right--;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;(numsSize-right)/<span class="hljs-number">2</span>;i++)&#123;<br>            <span class="hljs-type">char</span> temp=now[right+i];<br>            now[right+i]=now[numsSize<span class="hljs-number">-1</span>-i];<br>            now[numsSize<span class="hljs-number">-1</span>-i]=temp;<br>        &#125;<br>        <span class="hljs-type">int</span> left=right<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(right&lt;numsSize<span class="hljs-number">-1</span>&amp;&amp;now[right]&lt;=now[left])right++;<br>        <span class="hljs-type">char</span> temp=now[right];<br>        now[right]=now[left];<br>        now[left]=temp;<br>        <span class="hljs-keyword">return</span> backtracer(now,k<span class="hljs-number">-1</span>);<br>    &#125;<br>&#125;<br><span class="hljs-type">char</span> * <span class="hljs-title function_">getPermutation</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> k)</span>&#123;<br>    <span class="hljs-type">char</span> *ret=(<span class="hljs-type">char</span>*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-type">char</span>)*(n+<span class="hljs-number">1</span>));<br>    <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        ret[i]=i+<span class="hljs-number">1</span>+<span class="hljs-string">&#x27;0&#x27;</span>;<br>    &#125;<br>    ret[i]=<span class="hljs-string">&#x27;\0&#x27;</span>;<br>    ret=backtracer(ret,k);<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>在上次螺旋矩阵基础上改改就好了，将赋值左右对调即可；</li>
+<li>回溯法，每次找下一个；</li>
+<li>利用上次写过的全排列找下一个的函数</li>
 </ol>
 
             </div>
@@ -282,7 +295,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/">中等</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
                     
                   </div>
                 
@@ -309,18 +322,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/01/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A60/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：60</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/29/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A58/">
-                        <span class="hidden-mobile">每日一题：58</span>
+                      <a href="/2022/04/30/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A59/">
+                        <span class="hidden-mobile">每日一题：59</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
