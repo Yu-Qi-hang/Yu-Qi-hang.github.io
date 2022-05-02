@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：61</title>
+    <link href="/2022/05/02/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A61/"/>
+    <url>/2022/05/02/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A61/</url>
+    
+    <content type="html"><![CDATA[<h4 id="61-Rotate-List"><a href="#61-Rotate-List" class="headerlink" title="61. Rotate List"></a>61. Rotate List</h4><p>Given the <code>head</code> of a linked list, rotate the list to the right by <code>k</code> places.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205011437542.jpeg" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>], k = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>: [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205021111847.jpeg" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], k = <span class="hljs-number">4</span><br><span class="hljs-type">Output</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>] <br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>The number of nodes in the list is in the range <code>[0, 500]</code>.</li><li>$-100 &lt;&#x3D; Node.val &lt;&#x3D; 100$</li><li>$0 &lt;&#x3D; k &lt;&#x3D; 2 * 10^9$</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/61.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">rotateRight</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head, <span class="hljs-type">int</span> k)</span>&#123;<br>    <span class="hljs-keyword">if</span>(!head||!head-&gt;next||k==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> head;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span> *<span class="hljs-title">p</span>=</span>head,*q=head;<br>    <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(cnt&lt;k)&#123;<br>        <span class="hljs-keyword">if</span>(q-&gt;next)&#123;<br>            q=q-&gt;next;<br>            cnt++;<br>        &#125;<br>        <span class="hljs-keyword">else</span> &#123;<br>            q=p;<br>            k=k%(cnt+<span class="hljs-number">1</span>);<br>            cnt=<span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">while</span>(q-&gt;next)&#123;<br>        q=q-&gt;next;<br>        p=p-&gt;next;<br>    &#125;<br>    q-&gt;next=head;<br>    head=p-&gt;next;<br>    p-&gt;next=<span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">return</span> head;<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>只需要找到应该断开的位置重新连接即可；</li><li>采取双针的方式，一个指针先移动<code>k</code>，然后两个指针一起移动直到第一个指针到达结尾；</li><li>可能<code>k</code>远大于链表长度，直接移动造成不必要的冗余，因此第一次移动到结尾后，取模以减小<code>k</code>。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：60</title>
     <link href="/2022/05/01/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A60/"/>
     <url>/2022/05/01/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A60/</url>
