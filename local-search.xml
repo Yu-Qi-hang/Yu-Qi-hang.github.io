@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：62</title>
+    <link href="/2022/05/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A62/"/>
+    <url>/2022/05/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A62/</url>
+    
+    <content type="html"><![CDATA[<h4 id="62-Unique-Paths"><a href="#62-Unique-Paths" class="headerlink" title="62. Unique Paths"></a>62. Unique Paths</h4><p>There is a robot on an <code>m x n</code> grid. The robot is initially located at the <strong>top-left corner</strong> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m - 1][n - 1]</code>). The robot can only move either down or right at any point in time.</p><p>Given the two integers <code>m</code> and <code>n</code>, return <em>the number of possible unique paths that the robot can take to reach the bottom-right corner</em>.</p><p>The test cases are generated so that the answer will be less than or equal to <code>2 * 109</code>.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205031133104.png" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: m = <span class="hljs-number">3</span>, n = <span class="hljs-number">7</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">28</span><br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: m = <span class="hljs-number">3</span>, n = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">From</span> the top-left corner, there are a total <span class="hljs-keyword">of</span> <span class="hljs-number">3</span> ways to reach the bottom-right corner:<br><span class="hljs-number">1.</span> <span class="hljs-type">Right</span> -&gt; <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Down</span><br><span class="hljs-number">2.</span> <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Right</span><br><span class="hljs-number">3.</span> <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Right</span> -&gt; <span class="hljs-type">Down</span><br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li><code>1 &lt;= m, n &lt;= 100</code></li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/62.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-type">int</span> path[m][n];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)path[<span class="hljs-number">0</span>][i]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)path[i][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;m;i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;n;j++)<br>            path[i][j]=path[i<span class="hljs-number">-1</span>][j]+path[i][j<span class="hljs-number">-1</span>];<br>    &#125;<br>    <span class="hljs-keyword">return</span> path[m<span class="hljs-number">-1</span>][n<span class="hljs-number">-1</span>];<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>动态规划，每个位置都是从左侧或者上侧过来的，该位置的路线可能性为两条来路之和；</li><li>基础情况是最左侧和最上侧，初始化为1</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：61</title>
     <link href="/2022/05/02/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A61/"/>
     <url>/2022/05/02/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A61/</url>
