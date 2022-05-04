@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第62题：Unique Paths">
+    <meta name="description" content="Leetcode题库第63题：Unique Paths II">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：62">
-<meta property="og:url" content="http://example.com/2022/05/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A62/index.html">
+<meta property="og:title" content="每日一题：63">
+<meta property="og:url" content="http://example.com/2022/05/04/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A63/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第62题：Unique Paths">
+<meta property="og:description" content="Leetcode题库第63题：Unique Paths II">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-03T03:32:55.000Z">
-<meta property="article:modified_time" content="2022-05-03T03:33:23.676Z">
+<meta property="article:published_time" content="2022-05-04T02:16:50.000Z">
+<meta property="article:modified_time" content="2022-05-04T02:17:26.643Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：62 - 咸鱼Blog</title>
+  <title>每日一题：63 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Unique Paths">
+            <span class="h2" id="subtitle" title="Unique Paths II">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-03 11:32" pubdate>
-        2022年5月3日 中午
+      <time datetime="2022-05-04 10:16" pubdate>
+        2022年5月4日 上午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      970 字
+      1.8k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9 分钟
+      15 分钟
     </span>
   
 
@@ -254,25 +254,31 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Unique Paths</h1>
+            <h1 style="display: none">Unique Paths II</h1>
             
             <div class="markdown-body">
-              <h4 id="62-Unique-Paths"><a href="#62-Unique-Paths" class="headerlink" title="62. Unique Paths"></a>62. Unique Paths</h4><p>There is a robot on an <code>m x n</code> grid. The robot is initially located at the <strong>top-left corner</strong> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m - 1][n - 1]</code>). The robot can only move either down or right at any point in time.</p>
-<p>Given the two integers <code>m</code> and <code>n</code>, return <em>the number of possible unique paths that the robot can take to reach the bottom-right corner</em>.</p>
-<p>The test cases are generated so that the answer will be less than or equal to <code>2 * 109</code>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205031133104.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: m = <span class="hljs-number">3</span>, n = <span class="hljs-number">7</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">28</span><br></code></pre></td></tr></table></figure>
+              <h4 id="63-Unique-Paths-II"><a href="#63-Unique-Paths-II" class="headerlink" title="63. Unique Paths II"></a>63. Unique Paths II</h4><p>You are given an <code>m x n</code> integer array <code>grid</code>. There is a robot initially located at the <strong>top-left corner</strong> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m-1][n-1]</code>). The robot can only move either down or right at any point in time.</p>
+<p>An obstacle and space are marked as <code>1</code> or <code>0</code> respectively in <code>grid</code>. A path that the robot takes cannot include <strong>any</strong> square that is an obstacle.</p>
+<p>Return <em>the number of possible unique paths that the robot can take to reach the bottom-right corner</em>.</p>
+<p>The testcases are generated so that the answer will be less than or equal to <code>2 * 109</code>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205041016087.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: obstacleGrid = [[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]]<br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">There</span> is one obstacle <span class="hljs-keyword">in</span> the middle <span class="hljs-keyword">of</span> the <span class="hljs-number">3</span>x3 grid above.<br><span class="hljs-type">There</span> are two ways to reach the bottom-right corner:<br><span class="hljs-number">1.</span> <span class="hljs-type">Right</span> -&gt; <span class="hljs-type">Right</span> -&gt; <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Down</span><br><span class="hljs-number">2.</span> <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Right</span> -&gt; <span class="hljs-type">Right</span><br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: m = <span class="hljs-number">3</span>, n = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">From</span> the top-left corner, there are a total <span class="hljs-keyword">of</span> <span class="hljs-number">3</span> ways to reach the bottom-right corner:<br><span class="hljs-number">1.</span> <span class="hljs-type">Right</span> -&gt; <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Down</span><br><span class="hljs-number">2.</span> <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Right</span><br><span class="hljs-number">3.</span> <span class="hljs-type">Down</span> -&gt; <span class="hljs-type">Right</span> -&gt; <span class="hljs-type">Down</span><br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205041016951.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: obstacleGrid = [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]]<br><span class="hljs-type">Output</span>: <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
+<li><code>m == obstacleGrid.length</code></li>
+<li><code>n == obstacleGrid[i].length</code></li>
 <li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>obstacleGrid[i][j]</code> is <code>0</code> or <code>1</code>.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/62.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">uniquePaths</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-type">int</span> path[m][n];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)path[<span class="hljs-number">0</span>][i]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)path[i][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;m;i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;n;j++)<br>            path[i][j]=path[i<span class="hljs-number">-1</span>][j]+path[i][j<span class="hljs-number">-1</span>];<br>    &#125;<br>    <span class="hljs-keyword">return</span> path[m<span class="hljs-number">-1</span>][n<span class="hljs-number">-1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/63.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">uniquePathsWithObstacles</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; obstacleGrid)</span> </span>&#123;<br>        <span class="hljs-type">int</span> m=obstacleGrid.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> n=obstacleGrid[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();<br>        obstacleGrid[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>-obstacleGrid[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n;i++)&#123;<br>            <span class="hljs-keyword">if</span>(obstacleGrid[<span class="hljs-number">0</span>][i])obstacleGrid[<span class="hljs-number">0</span>][i]=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">else</span>&#123;<br>                obstacleGrid[<span class="hljs-number">0</span>][i]=obstacleGrid[<span class="hljs-number">0</span>][i<span class="hljs-number">-1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;m;j++)&#123;<br>            <span class="hljs-keyword">if</span>(obstacleGrid[j][<span class="hljs-number">0</span>])obstacleGrid[j][<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">else</span>&#123;<br>                obstacleGrid[j][<span class="hljs-number">0</span>]=obstacleGrid[j<span class="hljs-number">-1</span>][<span class="hljs-number">0</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;m;i++)<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;n;j++)&#123;<br>                <span class="hljs-keyword">if</span>(obstacleGrid[i][j])obstacleGrid[i][j]=<span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">else</span>&#123;<br>                    obstacleGrid[i][j]=obstacleGrid[i][j<span class="hljs-number">-1</span>]+obstacleGrid[i<span class="hljs-number">-1</span>][j];<br>                &#125;<br>            &#125;<br>        <span class="hljs-keyword">return</span> obstacleGrid[m<span class="hljs-number">-1</span>][n<span class="hljs-number">-1</span>];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>动态规划，每个位置都是从左侧或者上侧过来的，该位置的路线可能性为两条来路之和；</li>
-<li>基础情况是最左侧和最上侧，初始化为1</li>
+<li>基本思路和昨天的思路一样，额外考虑的是，面对障碍物的位置，能到达的路径为0；</li>
+<li>另外这次采用了<code>vector</code>，知道了二维时候，需要借助临时的一维的变量辅助读入；</li>
+<li>以及定义的时候需要注意空格<code>vector&lt;vector&lt;int&gt; &gt; obstacleGrid;</code>.</li>
 </ol>
 
             </div>
@@ -312,18 +318,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/04/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A63/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：63</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/02/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A61/">
-                        <span class="hidden-mobile">每日一题：61</span>
+                      <a href="/2022/05/03/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A62/">
+                        <span class="hidden-mobile">每日一题：62</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
