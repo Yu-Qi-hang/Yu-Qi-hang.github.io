@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第65题：Valid Number">
+    <meta name="description" content="Leetcode题库第66题：Plus One">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：65">
-<meta property="og:url" content="http://example.com/2022/05/06/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A65/index.html">
+<meta property="og:title" content="每日一题：66">
+<meta property="og:url" content="http://example.com/2022/05/07/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A66/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第65题：Valid Number">
+<meta property="og:description" content="Leetcode题库第66题：Plus One">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-06T02:31:01.000Z">
-<meta property="article:modified_time" content="2022-05-06T02:31:35.121Z">
+<meta property="article:published_time" content="2022-05-07T03:42:18.000Z">
+<meta property="article:modified_time" content="2022-05-07T03:43:11.075Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：65 - 咸鱼Blog</title>
+  <title>每日一题：66 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Valid Number">
+            <span class="h2" id="subtitle" title="Plus One">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-06 10:31" pubdate>
-        2022年5月6日 上午
+      <time datetime="2022-05-07 11:42" pubdate>
+        2022年5月7日 中午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3k 字
+      1.2k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      25 分钟
+      11 分钟
     </span>
   
 
@@ -254,50 +254,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Valid Number</h1>
+            <h1 style="display: none">Plus One</h1>
             
             <div class="markdown-body">
-              <h4 id="65-Valid-Number"><a href="#65-Valid-Number" class="headerlink" title="65. Valid Number"></a>65. Valid Number</h4><p>A <strong>valid number</strong> can be split up into these components (in order):</p>
-<ol>
-<li>A <strong>decimal number</strong> or an <strong>integer</strong>.</li>
-<li>(Optional) An <code>&#39;e&#39;</code> or <code>&#39;E&#39;</code>, followed by an <strong>integer</strong>.</li>
-</ol>
-<p>A <strong>decimal number</strong> can be split up into these components (in order):</p>
-<ol>
-<li>(Optional) A sign character (either <code>&#39;+&#39;</code> or <code>&#39;-&#39;</code>).</li>
-<li>One of the following formats:<ol>
-<li>One or more digits, followed by a dot <code>&#39;.&#39;</code>.</li>
-<li>One or more digits, followed by a dot <code>&#39;.&#39;</code>, followed by one or more digits.</li>
-<li>A dot <code>&#39;.&#39;</code>, followed by one or more digits.</li>
-</ol>
-</li>
-</ol>
-<p>An <strong>integer</strong> can be split up into these components (in order):</p>
-<ol>
-<li>(Optional) A sign character (either <code>&#39;+&#39;</code> or <code>&#39;-&#39;</code>).</li>
-<li>One or more digits.</li>
-</ol>
-<p>For example, all the following are valid numbers: <code>[&quot;2&quot;, &quot;0089&quot;, &quot;-0.1&quot;, &quot;+3.14&quot;, &quot;4.&quot;, &quot;-.9&quot;, &quot;2e10&quot;, &quot;-90E3&quot;, &quot;3e+7&quot;, &quot;+6e-1&quot;, &quot;53.5e93&quot;, &quot;-123.456e789&quot;]</code>, while the following are not valid numbers: <code>[&quot;abc&quot;, &quot;1a&quot;, &quot;1e&quot;, &quot;e3&quot;, &quot;99e2.5&quot;, &quot;--6&quot;, &quot;-+3&quot;, &quot;95a54e53&quot;]</code>.</p>
-<p>Given a string <code>s</code>, return <code>true</code> <em>if</em> <code>s</code> <em>is a <strong>valid number</strong></em>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;0&quot;</span><br><span class="hljs-type">Output</span>: true<br></code></pre></td></tr></table></figure>
+              <h4 id="66-Plus-One"><a href="#66-Plus-One" class="headerlink" title="66. Plus One"></a>66. Plus One</h4><p>You are given a <strong>large integer</strong> represented as an integer array <code>digits</code>, where each <code>digits[i]</code> is the <code>ith</code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading <code>0</code>‘s.</p>
+<p>Increment the large integer by one and return <em>the resulting array of digits</em>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: digits = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> array represents the integer <span class="hljs-number">123.</span><br><span class="hljs-type">Incrementing</span> by one gives <span class="hljs-number">123</span> + <span class="hljs-number">1</span> = <span class="hljs-number">124.</span><br><span class="hljs-type">Thus</span>, the result should be [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>].<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;e&quot;</span><br><span class="hljs-type">Output</span>: false<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: digits = [<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> array represents the integer <span class="hljs-number">4321.</span><br><span class="hljs-type">Incrementing</span> by one gives <span class="hljs-number">4321</span> + <span class="hljs-number">1</span> = <span class="hljs-number">4322.</span><br><span class="hljs-type">Thus</span>, the result should be [<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>].<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: s = <span class="hljs-string">&quot;.&quot;</span><br><span class="hljs-type">Output</span>: false<br></code></pre></td></tr></table></figure>
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: digits = [<span class="hljs-number">9</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">The</span> array represents the integer <span class="hljs-number">9.</span><br><span class="hljs-type">Incrementing</span> by one gives <span class="hljs-number">9</span> + <span class="hljs-number">1</span> = <span class="hljs-number">10.</span><br><span class="hljs-type">Thus</span>, the result should be [<span class="hljs-number">1</span>,<span class="hljs-number">0</span>].<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= s.length &lt;= 20</code></li>
-<li><code>s</code> consists of only English letters (both uppercase and lowercase), digits (<code>0-9</code>), plus <code>&#39;+&#39;</code>, minus <code>&#39;-&#39;</code>, or dot <code>&#39;.&#39;</code>.</li>
+<li><code>1 &lt;= digits.length &lt;= 100</code></li>
+<li><code>0 &lt;= digits[i] &lt;= 9</code></li>
+<li><code>digits</code> does not contain any leading <code>0</code>‘s.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/65.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isNumber</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        string head;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(i&lt;s.<span class="hljs-built_in">size</span>()&amp;&amp;s[i]!=<span class="hljs-string">&#x27;e&#x27;</span>&amp;&amp;s[i]!=<span class="hljs-string">&#x27;E&#x27;</span>)&#123;<br>            i++;<br>        &#125;<br>        head=s.<span class="hljs-built_in">substr</span>(<span class="hljs-number">0</span>,i);<br>        <span class="hljs-keyword">if</span>(i==s.<span class="hljs-built_in">size</span>())&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">isinteger</span>(head)||<span class="hljs-built_in">isdecimal</span>(head);<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            i++;<br>            string tail;<br>            tail=s.<span class="hljs-built_in">substr</span>(i);<br>            <span class="hljs-keyword">return</span> (<span class="hljs-built_in">isinteger</span>(head)||<span class="hljs-built_in">isdecimal</span>(head))&amp;&amp;<span class="hljs-built_in">isinteger</span>(tail);<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isinteger</span><span class="hljs-params">(string s)</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(s.<span class="hljs-built_in">size</span>()==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;+&#x27;</span>||s[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;-&#x27;</span>)&#123;<br>            <span class="hljs-keyword">if</span>(s.<span class="hljs-built_in">size</span>()==<span class="hljs-number">1</span>||s[<span class="hljs-number">1</span>]==<span class="hljs-string">&#x27;+&#x27;</span>||s[<span class="hljs-number">1</span>]==<span class="hljs-string">&#x27;-&#x27;</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">isinteger</span>(&amp;s[<span class="hljs-number">1</span>]);<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;s.<span class="hljs-built_in">size</span>();i++)&#123;<br>                <span class="hljs-keyword">if</span>(s[i]&gt;=<span class="hljs-string">&#x27;0&#x27;</span>&amp;&amp;s[i]&lt;=<span class="hljs-string">&#x27;9&#x27;</span>)<span class="hljs-keyword">continue</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">isdecimal</span><span class="hljs-params">(string s)</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(s.<span class="hljs-built_in">size</span>()==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;+&#x27;</span>||s[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;-&#x27;</span>)&#123;<br>            <span class="hljs-keyword">if</span>(s.<span class="hljs-built_in">size</span>()==<span class="hljs-number">1</span>||s[<span class="hljs-number">1</span>]==<span class="hljs-string">&#x27;+&#x27;</span>||s[<span class="hljs-number">1</span>]==<span class="hljs-string">&#x27;-&#x27;</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">isdecimal</span>(&amp;s[<span class="hljs-number">1</span>]);<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            string head;<br>            <span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span>(i&lt;s.<span class="hljs-built_in">size</span>()&amp;&amp;s[i]!=<span class="hljs-string">&#x27;.&#x27;</span>)i++;<br>            <span class="hljs-keyword">if</span>(i==<span class="hljs-number">0</span>&amp;&amp;s[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;.&#x27;</span>)&#123;<br>                <span class="hljs-keyword">if</span>(s[<span class="hljs-number">1</span>]==<span class="hljs-string">&#x27;+&#x27;</span>||s[<span class="hljs-number">1</span>]==<span class="hljs-string">&#x27;-&#x27;</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                <span class="hljs-keyword">return</span> <span class="hljs-built_in">isinteger</span>(&amp;s[<span class="hljs-number">1</span>]);<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(i==s.<span class="hljs-built_in">size</span>())&#123;<br>                head=s.<span class="hljs-built_in">substr</span>(<span class="hljs-number">0</span>,i);<br>                <span class="hljs-keyword">return</span> <span class="hljs-built_in">isinteger</span>(head);<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-keyword">if</span>(s[i]!=<span class="hljs-string">&#x27;.&#x27;</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                head=s.<span class="hljs-built_in">substr</span>(<span class="hljs-number">0</span>,i);<br>                <span class="hljs-keyword">if</span>(i==s.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span> <span class="hljs-built_in">isinteger</span>(head);<br>                string tail=s.<span class="hljs-built_in">substr</span>(i+<span class="hljs-number">1</span>);<br>                <span class="hljs-keyword">if</span>(tail[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;+&#x27;</span>||tail[<span class="hljs-number">0</span>]==<span class="hljs-string">&#x27;-&#x27;</span>)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                <span class="hljs-keyword">return</span> <span class="hljs-built_in">isinteger</span>(head)&amp;&amp;<span class="hljs-built_in">isinteger</span>(tail);<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/66.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">plusOne</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; digits)</span> </span>&#123;<br>        <span class="hljs-type">int</span> carry=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=digits.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>            digits[i]=digits[i]+carry;<br>            carry=digits[i]/<span class="hljs-number">10</span>;<br>            digits[i]=digits[i]%<span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(digits[<span class="hljs-number">0</span>]==<span class="hljs-number">0</span>)digits.<span class="hljs-built_in">insert</span>(digits.<span class="hljs-built_in">begin</span>(),<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">return</span> digits;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>采取的思路是，找到明显的分段位置进行划分，对两侧分别进行判断；</li>
-<li>容易出错的是：<ol>
-<li>不符合规则的字符的出现</li>
-<li>多余的符号出现</li>
-</ol>
-</li>
+<li>比较简单，从后往前计算进位即可</li>
+<li>如果刚好第一位也产生进位，在开头插入一个 <code>1</code>。</li>
 </ol>
 
             </div>
@@ -310,7 +287,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E7%AE%80%E5%8D%95/">简单</a>
                     
                   </div>
                 
@@ -337,18 +314,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/07/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A66/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：66</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/05/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A64/">
-                        <span class="hidden-mobile">每日一题：64</span>
+                      <a href="/2022/05/06/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A65/">
+                        <span class="hidden-mobile">每日一题：65</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
