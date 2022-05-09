@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第67题：Add Binary">
+    <meta name="description" content="Leetcode题库第68题：Text Justification">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：67">
-<meta property="og:url" content="http://example.com/2022/05/08/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A67/index.html">
+<meta property="og:title" content="每日一题：68">
+<meta property="og:url" content="http://example.com/2022/05/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A68/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第67题：Add Binary">
+<meta property="og:description" content="Leetcode题库第68题：Text Justification">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-08T03:04:59.000Z">
-<meta property="article:modified_time" content="2022-05-08T03:05:31.595Z">
+<meta property="article:published_time" content="2022-05-09T01:41:43.000Z">
+<meta property="article:modified_time" content="2022-05-09T01:42:11.954Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：67 - 咸鱼Blog</title>
+  <title>每日一题：68 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Add Binary">
+            <span class="h2" id="subtitle" title="Text Justification">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-08 11:04" pubdate>
-        2022年5月8日 上午
+      <time datetime="2022-05-09 09:41" pubdate>
+        2022年5月9日 上午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      3.5k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12 分钟
+      30 分钟
     </span>
   
 
@@ -254,24 +254,41 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Add Binary</h1>
+            <h1 style="display: none">Text Justification</h1>
             
             <div class="markdown-body">
-              <h4 id="67-Add-Binary"><a href="#67-Add-Binary" class="headerlink" title="67. Add Binary"></a>67. Add Binary</h4><p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: a = <span class="hljs-string">&quot;11&quot;</span>, b = <span class="hljs-string">&quot;1&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;100&quot;</span><br></code></pre></td></tr></table></figure>
+              <h4 id="68-Text-Justification"><a href="#68-Text-Justification" class="headerlink" title="68. Text Justification"></a>68. Text Justification</h4><p>Given an array of strings <code>words</code> and a width <code>maxWidth</code>, format the text such that each line has exactly <code>maxWidth</code> characters and is fully (left and right) justified.</p>
+<p>You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces <code>&#39; &#39;</code> when necessary so that each line has exactly <code>maxWidth</code> characters.</p>
+<p>Extra spaces between words should be distributed as evenly as possible. If the number of spaces on a line does not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.</p>
+<p>For the last line of text, it should be left-justified and no extra space is inserted between words.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>A word is defined as a character sequence consisting of non-space characters only.</li>
+<li>Each word’s length is guaranteed to be greater than 0 and not exceed maxWidth.</li>
+<li>The input array <code>words</code> contains at least one word.</li>
+</ul>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: words = [<span class="hljs-string">&quot;This&quot;</span>, <span class="hljs-string">&quot;is&quot;</span>, <span class="hljs-string">&quot;an&quot;</span>, <span class="hljs-string">&quot;example&quot;</span>, <span class="hljs-string">&quot;of&quot;</span>, <span class="hljs-string">&quot;text&quot;</span>, <span class="hljs-string">&quot;justification.&quot;</span>], maxWidth = <span class="hljs-number">16</span><br><span class="hljs-type">Output</span>:<br>[<br>   <span class="hljs-string">&quot;This    is    an&quot;</span>,<br>   <span class="hljs-string">&quot;example  of text&quot;</span>,<br>   <span class="hljs-string">&quot;justification.  &quot;</span><br>]<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: a = <span class="hljs-string">&quot;1010&quot;</span>, b = <span class="hljs-string">&quot;1011&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;10101&quot;</span><br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: words = [<span class="hljs-string">&quot;What&quot;</span>,<span class="hljs-string">&quot;must&quot;</span>,<span class="hljs-string">&quot;be&quot;</span>,<span class="hljs-string">&quot;acknowledgment&quot;</span>,<span class="hljs-string">&quot;shall&quot;</span>,<span class="hljs-string">&quot;be&quot;</span>], maxWidth = <span class="hljs-number">16</span><br><span class="hljs-type">Output</span>:<br>[<br>  <span class="hljs-string">&quot;What   must   be&quot;</span>,<br>  <span class="hljs-string">&quot;acknowledgment  &quot;</span>,<br>  <span class="hljs-string">&quot;shall be        &quot;</span><br>]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Note</span> that the last line is <span class="hljs-string">&quot;shall be    &quot;</span> instead <span class="hljs-keyword">of</span> <span class="hljs-string">&quot;shall     be&quot;</span>, because the last line must be left-justified instead <span class="hljs-keyword">of</span> fully-justified.<br><span class="hljs-type">Note</span> that the second line is also left-justified becase it contains only one word.<br></code></pre></td></tr></table></figure>
+
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: words = [<span class="hljs-string">&quot;Science&quot;</span>,<span class="hljs-string">&quot;is&quot;</span>,<span class="hljs-string">&quot;what&quot;</span>,<span class="hljs-string">&quot;we&quot;</span>,<span class="hljs-string">&quot;understand&quot;</span>,<span class="hljs-string">&quot;well&quot;</span>,<span class="hljs-string">&quot;enough&quot;</span>,<span class="hljs-string">&quot;to&quot;</span>,<span class="hljs-string">&quot;explain&quot;</span>,<span class="hljs-string">&quot;to&quot;</span>,<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;computer.&quot;</span>,<span class="hljs-string">&quot;Art&quot;</span>,<span class="hljs-string">&quot;is&quot;</span>,<span class="hljs-string">&quot;everything&quot;</span>,<span class="hljs-string">&quot;else&quot;</span>,<span class="hljs-string">&quot;we&quot;</span>,<span class="hljs-string">&quot;do&quot;</span>], maxWidth = <span class="hljs-number">20</span><br><span class="hljs-type">Output</span>:<br>[<br>  <span class="hljs-string">&quot;Science  is  what we&quot;</span>,<br>  <span class="hljs-string">&quot;understand      well&quot;</span>,<br>  <span class="hljs-string">&quot;enough to explain to&quot;</span>,<br>  <span class="hljs-string">&quot;a  computer.  Art is&quot;</span>,<br>  <span class="hljs-string">&quot;everything  else  we&quot;</span>,<br>  <span class="hljs-string">&quot;do                  &quot;</span><br>]<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>$1 &lt;&#x3D; a.length, b.length &lt;&#x3D; 10^4$</li>
-<li><code>a</code> and <code>b</code> consist only of <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code> characters.</li>
-<li>Each string does not contain leading zeros except for the zero itself.</li>
+<li><code>1 &lt;= words.length &lt;= 300</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 20</code></li>
+<li><code>words[i]</code> consists of only English letters and symbols.</li>
+<li><code>1 &lt;= maxWidth &lt;= 100</code></li>
+<li><code>words[i].length &lt;= maxWidth</code></li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/67.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">addBinary</span><span class="hljs-params">(string a, string b)</span> </span>&#123;<br>        <span class="hljs-type">int</span> lena=a.<span class="hljs-built_in">length</span>()<span class="hljs-number">-1</span>,lenb=b.<span class="hljs-built_in">length</span>()<span class="hljs-number">-1</span>;<br>        string sum;<br>        <span class="hljs-type">int</span> carry=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> add=a[lena]-<span class="hljs-string">&#x27;0&#x27;</span>+b[lenb]-<span class="hljs-string">&#x27;0&#x27;</span>;<br>        <span class="hljs-keyword">while</span>(lena&gt;=<span class="hljs-number">0</span>||lenb&gt;=<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">if</span>(add==<span class="hljs-number">0</span>)&#123;<br>                sum.<span class="hljs-built_in">insert</span>(sum.<span class="hljs-built_in">begin</span>(),<span class="hljs-string">&#x27;0&#x27;</span>);<br>                carry=<span class="hljs-number">0</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(add==<span class="hljs-number">1</span>)&#123;<br>                sum.<span class="hljs-built_in">insert</span>(sum.<span class="hljs-built_in">begin</span>(),<span class="hljs-string">&#x27;1&#x27;</span>);<br>                carry=<span class="hljs-number">0</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(add==<span class="hljs-number">2</span>)&#123;<br>                sum.<span class="hljs-built_in">insert</span>(sum.<span class="hljs-built_in">begin</span>(),<span class="hljs-string">&#x27;0&#x27;</span>);<br>                carry=<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(add==<span class="hljs-number">3</span>)&#123;<br>                sum.<span class="hljs-built_in">insert</span>(sum.<span class="hljs-built_in">begin</span>(),<span class="hljs-string">&#x27;1&#x27;</span>);<br>                carry=<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(lena&gt;<span class="hljs-number">0</span>&amp;&amp;lenb&gt;<span class="hljs-number">0</span>)&#123;<br>                lena--;<br>                lenb--;<br>                add=a[lena]-<span class="hljs-string">&#x27;0&#x27;</span>+b[lenb]-<span class="hljs-string">&#x27;0&#x27;</span>+carry;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(lena&gt;<span class="hljs-number">0</span>)&#123;<br>                lena--;<br>                add=a[lena]-<span class="hljs-string">&#x27;0&#x27;</span>+carry;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(lenb&gt;<span class="hljs-number">0</span>)&#123;<br>                lenb--;<br>                add=b[lenb]-<span class="hljs-string">&#x27;0&#x27;</span>+carry;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(carry)sum.<span class="hljs-built_in">insert</span>(sum.<span class="hljs-built_in">begin</span>(),<span class="hljs-string">&#x27;1&#x27;</span>);<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/68.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;string&gt; <span class="hljs-title">fullJustify</span><span class="hljs-params">(vector&lt;string&gt;&amp; words, <span class="hljs-type">int</span> maxWidth)</span> </span>&#123;<br>        <span class="hljs-type">int</span> curlen=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> idx=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> head=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> idxlen=<span class="hljs-number">0</span>;<br>        string temp;<br>        vector&lt;string&gt; lines;<br>        <span class="hljs-keyword">while</span>(idx&lt;words.<span class="hljs-built_in">size</span>())&#123;<br>            idxlen=words[idx].<span class="hljs-built_in">length</span>();<br>            <span class="hljs-keyword">if</span>(curlen==<span class="hljs-number">0</span>)&#123;<br>                curlen+=idxlen;<br>                idx++;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(idxlen+curlen+<span class="hljs-number">1</span>&lt;=maxWidth)&#123;<br>                curlen+=idxlen+<span class="hljs-number">1</span>;<br>                idx++;<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-type">int</span> num_space=idx-head<span class="hljs-number">-1</span>;<br>                <span class="hljs-type">int</span> space=maxWidth-curlen+num_space;<br>                temp=words[head];<br>                <span class="hljs-type">int</span> i=head+<span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">while</span>(num_space&gt;<span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-type">int</span> thespace;<br>                    <span class="hljs-keyword">if</span>(space%num_space)thespace=space/num_space+<span class="hljs-number">1</span>;<br>                    <span class="hljs-keyword">else</span> thespace=space/num_space;      <br>                    <span class="hljs-function">string <span class="hljs-title">ad</span> <span class="hljs-params">(thespace,<span class="hljs-string">&#x27; &#x27;</span>)</span></span>;<br>                    temp+=ad;<br>                    temp+=words[i++];<br>                    space-=thespace;<br>                    num_space-=<span class="hljs-number">1</span>;              <br>                &#125;<br>                <span class="hljs-keyword">if</span>(space)&#123;<br>                    <span class="hljs-function">string <span class="hljs-title">ad</span> <span class="hljs-params">(space,<span class="hljs-string">&#x27; &#x27;</span>)</span></span>;<br>                    temp+=ad;<br>                &#125;<br>                lines.<span class="hljs-built_in">push_back</span>(temp);<br>                head=idx;<br>                curlen=<span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> num_space=idx-head<span class="hljs-number">-1</span>;<br>        <span class="hljs-type">int</span> space=maxWidth-curlen+num_space;<br>        temp=words[head];<br>        <span class="hljs-type">int</span> i=head+<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span>(num_space&gt;<span class="hljs-number">0</span>)&#123;    <br>            temp+=<span class="hljs-string">&quot; &quot;</span>;<br>            temp+=words[i++];<br>            space-=<span class="hljs-number">1</span>;<br>            num_space-=<span class="hljs-number">1</span>;              <br>        &#125;<br>        <span class="hljs-keyword">if</span>(space)&#123;<br>            <span class="hljs-function">string <span class="hljs-title">ad</span> <span class="hljs-params">(space,<span class="hljs-string">&#x27; &#x27;</span>)</span></span>;<br>            temp+=ad;<br>        &#125;<br>        lines.<span class="hljs-built_in">push_back</span>(temp);<br>        <span class="hljs-keyword">return</span> lines;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>比较简单，二进制加法，从后往前加即可；</li>
-<li>考虑进位的因素，首位可能由于进位变成0，此时需要增加新的首位1</li>
+<li>其实也不难，每次考虑当前串长度，如果加到已有串中不超过限制，就加进去<ol>
+<li>需要注意的是，每两个串之间需要空格隔开，空格长度也要计算进去</li>
+</ol>
+</li>
+<li>考虑到左侧空格长度不小于右侧，因此需要计算空格长度，我们采取取模判断是否整除的方式进行限制</li>
+<li>另外最后一行采取的是左对齐，每两个串之间加一个空格即可，右边需要空格补齐</li>
 </ol>
 
             </div>
@@ -284,7 +301,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E7%AE%80%E5%8D%95/">简单</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
                     
                   </div>
                 
@@ -311,18 +328,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A68/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：68</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/07/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A66/">
-                        <span class="hidden-mobile">每日一题：66</span>
+                      <a href="/2022/05/08/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A67/">
+                        <span class="hidden-mobile">每日一题：67</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
