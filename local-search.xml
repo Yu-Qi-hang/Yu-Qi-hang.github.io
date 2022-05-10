@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：70</title>
+    <link href="/2022/05/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A70/"/>
+    <url>/2022/05/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A70/</url>
+    
+    <content type="html"><![CDATA[<h4 id="70-Climbing-Stairs"><a href="#70-Climbing-Stairs" class="headerlink" title="70. Climbing Stairs"></a>70. Climbing Stairs</h4><p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p><p>Each time you can either climb <code>1</code> or <code>2</code> steps. In how many distinct ways can you climb to the top?</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">There</span> are two ways to climb to the top.<br><span class="hljs-number">1.</span> <span class="hljs-number">1</span> step + <span class="hljs-number">1</span> step<br><span class="hljs-number">2.</span> <span class="hljs-number">2</span> steps<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">There</span> are three ways to climb to the top.<br><span class="hljs-number">1.</span> <span class="hljs-number">1</span> step + <span class="hljs-number">1</span> step + <span class="hljs-number">1</span> step<br><span class="hljs-number">2.</span> <span class="hljs-number">1</span> step + <span class="hljs-number">2</span> steps<br><span class="hljs-number">3.</span> <span class="hljs-number">2</span> steps + <span class="hljs-number">1</span> step<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li><code>1 &lt;= n &lt;= 45</code></li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/70.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> step[n];<br>    step[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>    step[<span class="hljs-number">1</span>]=<span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;n;i++)step[i]=step[i<span class="hljs-number">-1</span>]+step[i<span class="hljs-number">-2</span>];<br>    <span class="hljs-keyword">return</span> step[n<span class="hljs-number">-1</span>];<br>&#125;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>一个简单的动态规划问题<ol><li>base：第一阶梯有一种走法，第二阶梯有两种走法</li><li>递归：每个阶梯可由前一个阶梯走一步或者两个前的阶梯走两格到达</li></ol></li><li>相当于斐波那契数列</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>简单</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>c</tag>
+      
+      <tag>Leetcode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：68</title>
     <link href="/2022/05/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A68/"/>
     <url>/2022/05/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A68/</url>
