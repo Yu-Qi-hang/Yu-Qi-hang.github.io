@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第70题：Climbing Stairs">
+    <meta name="description" content="Leetcode题库第71题：Simplify Path">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：70">
-<meta property="og:url" content="http://example.com/2022/05/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A70/index.html">
+<meta property="og:title" content="每日一题：71">
+<meta property="og:url" content="http://example.com/2022/05/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A71/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第70题：Climbing Stairs">
+<meta property="og:description" content="Leetcode题库第71题：Simplify Path">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-10T05:09:24.000Z">
-<meta property="article:modified_time" content="2022-05-10T05:10:00.364Z">
+<meta property="article:published_time" content="2022-05-11T02:23:48.000Z">
+<meta property="article:modified_time" content="2022-05-11T02:24:16.721Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：70 - 咸鱼Blog</title>
+  <title>每日一题：71 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Climbing Stairs">
+            <span class="h2" id="subtitle" title="Simplify Path">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-10 13:09" pubdate>
-        2022年5月10日 下午
+      <time datetime="2022-05-11 10:23" pubdate>
+        2022年5月11日 上午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      631 字
+      2.4k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      20 分钟
     </span>
   
 
@@ -254,27 +254,35 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Climbing Stairs</h1>
+            <h1 style="display: none">Simplify Path</h1>
             
             <div class="markdown-body">
-              <h4 id="70-Climbing-Stairs"><a href="#70-Climbing-Stairs" class="headerlink" title="70. Climbing Stairs"></a>70. Climbing Stairs</h4><p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>
-<p>Each time you can either climb <code>1</code> or <code>2</code> steps. In how many distinct ways can you climb to the top?</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">2</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">There</span> are two ways to climb to the top.<br><span class="hljs-number">1.</span> <span class="hljs-number">1</span> step + <span class="hljs-number">1</span> step<br><span class="hljs-number">2.</span> <span class="hljs-number">2</span> steps<br></code></pre></td></tr></table></figure>
+              <h4 id="71-Simplify-Path"><a href="#71-Simplify-Path" class="headerlink" title="71. Simplify Path"></a>71. Simplify Path</h4><p>Given a string <code>path</code>, which is an <strong>absolute path</strong> (starting with a slash <code>&#39;/&#39;</code>) to a file or directory in a Unix-style file system, convert it to the simplified <strong>canonical path</strong>.</p>
+<p>In a Unix-style file system, a period <code>&#39;.&#39;</code> refers to the current directory, a double period <code>&#39;..&#39;</code> refers to the directory up a level, and any multiple consecutive slashes (i.e. <code>&#39;//&#39;</code>) are treated as a single slash <code>&#39;/&#39;</code>. For this problem, any other format of periods such as <code>&#39;...&#39;</code> are treated as file&#x2F;directory names.</p>
+<p>The <strong>canonical path</strong> should have the following format:</p>
+<ul>
+<li>The path starts with a single slash <code>&#39;/&#39;</code>.</li>
+<li>Any two directories are separated by a single slash <code>&#39;/&#39;</code>.</li>
+<li>The path does not end with a trailing <code>&#39;/&#39;</code>.</li>
+<li>The path only contains the directories on the path from the root directory to the target file or directory (i.e., no period <code>&#39;.&#39;</code> or double period <code>&#39;..&#39;</code>)</li>
+</ul>
+<p>Return <em>the simplified <strong>canonical path</strong></em>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: path = <span class="hljs-string">&quot;/home/&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;/home&quot;</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Note</span> that there is no trailing slash after the last directory name.<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">3</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">There</span> are three ways to climb to the top.<br><span class="hljs-number">1.</span> <span class="hljs-number">1</span> step + <span class="hljs-number">1</span> step + <span class="hljs-number">1</span> step<br><span class="hljs-number">2.</span> <span class="hljs-number">1</span> step + <span class="hljs-number">2</span> steps<br><span class="hljs-number">3.</span> <span class="hljs-number">2</span> steps + <span class="hljs-number">1</span> step<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: path = <span class="hljs-string">&quot;/../&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;/&quot;</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Going</span> one level up from the root directory is a no-op, <span class="hljs-keyword">as</span> the root level is the highest level you can go.<br></code></pre></td></tr></table></figure>
+
+<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: path = <span class="hljs-string">&quot;/home//foo/&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;/home/foo&quot;</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">In</span> the canonical path, multiple consecutive slashes are replaced by a single one.<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= n &lt;= 45</code></li>
+<li><code>1 &lt;= path.length &lt;= 3000</code></li>
+<li><code>path</code> consists of English letters, digits, period <code>&#39;.&#39;</code>, slash <code>&#39;/&#39;</code> or <code>&#39;_&#39;</code>.</li>
+<li><code>path</code> is a valid absolute Unix path.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/70.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> <span class="hljs-title function_">climbStairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span>&#123;<br>    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-type">int</span> step[n];<br>    step[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>    step[<span class="hljs-number">1</span>]=<span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;n;i++)step[i]=step[i<span class="hljs-number">-1</span>]+step[i<span class="hljs-number">-2</span>];<br>    <span class="hljs-keyword">return</span> step[n<span class="hljs-number">-1</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/71.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;string&gt; <span class="hljs-title">split</span><span class="hljs-params">(string &amp;path)</span></span>&#123;<br>        string temp;<br>        vector&lt;string&gt; ret;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;path.<span class="hljs-built_in">length</span>();i++)&#123;<br>            <span class="hljs-keyword">if</span>(path[i]==<span class="hljs-string">&#x27;/&#x27;</span>)&#123;<br>                <span class="hljs-keyword">if</span>(!temp.<span class="hljs-built_in">empty</span>())&#123;<br>                    ret.<span class="hljs-built_in">push_back</span>(temp);<br>                    temp.<span class="hljs-built_in">clear</span>();<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                temp+=path[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(!temp.<span class="hljs-built_in">empty</span>())ret.<span class="hljs-built_in">push_back</span>(temp);<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>    <span class="hljs-function">string <span class="hljs-title">simplifyPath</span><span class="hljs-params">(string path)</span> </span>&#123;<br>        string ret=<span class="hljs-string">&quot;&quot;</span>;<br>        vector&lt;string&gt; stack;<br>        vector&lt;string&gt; tokens=<span class="hljs-built_in">split</span>(path);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;tokens.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">if</span>(tokens[i]==<span class="hljs-string">&quot;.&quot;</span>)<span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(tokens[i]==<span class="hljs-string">&quot;..&quot;</span>)&#123;<br>                <span class="hljs-keyword">if</span>(!stack.<span class="hljs-built_in">empty</span>())stack.<span class="hljs-built_in">pop_back</span>();<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                stack.<span class="hljs-built_in">push_back</span>(tokens[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;stack.<span class="hljs-built_in">size</span>();i++)&#123;<br>            ret+=<span class="hljs-string">&quot;/&quot;</span>+stack[i];<br>        &#125;<br>        <span class="hljs-keyword">if</span>(!ret.<span class="hljs-built_in">length</span>())ret+=<span class="hljs-string">&quot;/&quot;</span>;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>一个简单的动态规划问题<ol>
-<li>base：第一阶梯有一种走法，第二阶梯有两种走法</li>
-<li>递归：每个阶梯可由前一个阶梯走一步或者两个前的阶梯走两格到达</li>
-</ol>
-</li>
-<li>相当于斐波那契数列</li>
+<li>想法很简单，只需要按照<code>/</code>把所有的目录结构分开来，然后遇到特殊的情况就进行特殊处理，即遇到 <code>.</code> 不做操作，遇到 <code>..</code> 在栈不为空的时候pop掉尾部目录；</li>
+<li>通过栈来维护整体的路径，注意的是以 <code>/</code> 进行分隔和开始。</li>
 </ol>
 
             </div>
@@ -287,7 +295,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E7%AE%80%E5%8D%95/">简单</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E5%9B%B0%E9%9A%BE/">困难</a>
                     
                   </div>
                 
@@ -314,18 +322,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A71/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：71</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/09/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A68/">
-                        <span class="hidden-mobile">每日一题：68</span>
+                      <a href="/2022/05/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A70/">
+                        <span class="hidden-mobile">每日一题：70</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
