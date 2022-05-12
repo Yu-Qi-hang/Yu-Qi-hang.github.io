@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第71题：Simplify Path">
+    <meta name="description" content="Leetcode题库第72题：Edit Distance">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：71">
-<meta property="og:url" content="http://example.com/2022/05/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A71/index.html">
+<meta property="og:title" content="每日一题：72">
+<meta property="og:url" content="http://example.com/2022/05/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A72/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第71题：Simplify Path">
+<meta property="og:description" content="Leetcode题库第72题：Edit Distance">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-11T02:23:48.000Z">
-<meta property="article:modified_time" content="2022-05-11T02:24:16.721Z">
+<meta property="article:published_time" content="2022-05-12T02:08:41.000Z">
+<meta property="article:modified_time" content="2022-05-12T02:09:08.340Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：71 - 咸鱼Blog</title>
+  <title>每日一题：72 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Simplify Path">
+            <span class="h2" id="subtitle" title="Edit Distance">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-11 10:23" pubdate>
-        2022年5月11日 上午
+      <time datetime="2022-05-12 10:08" pubdate>
+        2022年5月12日 上午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.4k 字
+      1.5k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      20 分钟
+      13 分钟
     </span>
   
 
@@ -254,36 +254,31 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Simplify Path</h1>
+            <h1 style="display: none">Edit Distance</h1>
             
             <div class="markdown-body">
-              <h4 id="71-Simplify-Path"><a href="#71-Simplify-Path" class="headerlink" title="71. Simplify Path"></a>71. Simplify Path</h4><p>Given a string <code>path</code>, which is an <strong>absolute path</strong> (starting with a slash <code>&#39;/&#39;</code>) to a file or directory in a Unix-style file system, convert it to the simplified <strong>canonical path</strong>.</p>
-<p>In a Unix-style file system, a period <code>&#39;.&#39;</code> refers to the current directory, a double period <code>&#39;..&#39;</code> refers to the directory up a level, and any multiple consecutive slashes (i.e. <code>&#39;//&#39;</code>) are treated as a single slash <code>&#39;/&#39;</code>. For this problem, any other format of periods such as <code>&#39;...&#39;</code> are treated as file&#x2F;directory names.</p>
-<p>The <strong>canonical path</strong> should have the following format:</p>
+              <h4 id="72-Edit-Distance"><a href="#72-Edit-Distance" class="headerlink" title="72. Edit Distance"></a>72. Edit Distance</h4><p>Given two strings <code>word1</code> and <code>word2</code>, return <em>the minimum number of operations required to convert <code>word1</code> to <code>word2</code></em>.</p>
+<p>You have the following three operations permitted on a word:</p>
 <ul>
-<li>The path starts with a single slash <code>&#39;/&#39;</code>.</li>
-<li>Any two directories are separated by a single slash <code>&#39;/&#39;</code>.</li>
-<li>The path does not end with a trailing <code>&#39;/&#39;</code>.</li>
-<li>The path only contains the directories on the path from the root directory to the target file or directory (i.e., no period <code>&#39;.&#39;</code> or double period <code>&#39;..&#39;</code>)</li>
+<li>Insert a character</li>
+<li>Delete a character</li>
+<li>Replace a character</li>
 </ul>
-<p>Return <em>the simplified <strong>canonical path</strong></em>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: path = <span class="hljs-string">&quot;/home/&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;/home&quot;</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Note</span> that there is no trailing slash after the last directory name.<br></code></pre></td></tr></table></figure>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: word1 = <span class="hljs-string">&quot;horse&quot;</span>, word2 = <span class="hljs-string">&quot;ros&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">3</span><br><span class="hljs-type">Explanation</span>: <br><span class="hljs-title">horse</span> -&gt; rorse (replace <span class="hljs-string">&#x27;h&#x27;</span> with <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-title">rorse</span> -&gt; rose (remove <span class="hljs-string">&#x27;r&#x27;</span>)<br><span class="hljs-title">rose</span> -&gt; ros (remove <span class="hljs-string">&#x27;e&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: path = <span class="hljs-string">&quot;/../&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;/&quot;</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Going</span> one level up from the root directory is a no-op, <span class="hljs-keyword">as</span> the root level is the highest level you can go.<br></code></pre></td></tr></table></figure>
-
-<h5 id="Example-3"><a href="#Example-3" class="headerlink" title="Example 3"></a>Example 3</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: path = <span class="hljs-string">&quot;/home//foo/&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-string">&quot;/home/foo&quot;</span><br><span class="hljs-type">Explanation</span>: <span class="hljs-type">In</span> the canonical path, multiple consecutive slashes are replaced by a single one.<br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: word1 = <span class="hljs-string">&quot;intention&quot;</span>, word2 = <span class="hljs-string">&quot;execution&quot;</span><br><span class="hljs-type">Output</span>: <span class="hljs-number">5</span><br><span class="hljs-type">Explanation</span>: <br><span class="hljs-title">intention</span> -&gt; inention (remove <span class="hljs-string">&#x27;t&#x27;</span>)<br><span class="hljs-title">inention</span> -&gt; enention (replace <span class="hljs-string">&#x27;i&#x27;</span> with <span class="hljs-string">&#x27;e&#x27;</span>)<br><span class="hljs-title">enention</span> -&gt; exention (replace <span class="hljs-string">&#x27;n&#x27;</span> with <span class="hljs-string">&#x27;x&#x27;</span>)<br><span class="hljs-title">exention</span> -&gt; exection (replace <span class="hljs-string">&#x27;n&#x27;</span> with <span class="hljs-string">&#x27;c&#x27;</span>)<br><span class="hljs-title">exection</span> -&gt; execution (insert <span class="hljs-string">&#x27;u&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= path.length &lt;= 3000</code></li>
-<li><code>path</code> consists of English letters, digits, period <code>&#39;.&#39;</code>, slash <code>&#39;/&#39;</code> or <code>&#39;_&#39;</code>.</li>
-<li><code>path</code> is a valid absolute Unix path.</li>
+<li><code>0 &lt;= word1.length, word2.length &lt;= 500</code></li>
+<li><code>word1</code> and <code>word2</code> consist of lowercase English letters.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/71.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;string&gt; <span class="hljs-title">split</span><span class="hljs-params">(string &amp;path)</span></span>&#123;<br>        string temp;<br>        vector&lt;string&gt; ret;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;path.<span class="hljs-built_in">length</span>();i++)&#123;<br>            <span class="hljs-keyword">if</span>(path[i]==<span class="hljs-string">&#x27;/&#x27;</span>)&#123;<br>                <span class="hljs-keyword">if</span>(!temp.<span class="hljs-built_in">empty</span>())&#123;<br>                    ret.<span class="hljs-built_in">push_back</span>(temp);<br>                    temp.<span class="hljs-built_in">clear</span>();<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                temp+=path[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(!temp.<span class="hljs-built_in">empty</span>())ret.<span class="hljs-built_in">push_back</span>(temp);<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>    <span class="hljs-function">string <span class="hljs-title">simplifyPath</span><span class="hljs-params">(string path)</span> </span>&#123;<br>        string ret=<span class="hljs-string">&quot;&quot;</span>;<br>        vector&lt;string&gt; stack;<br>        vector&lt;string&gt; tokens=<span class="hljs-built_in">split</span>(path);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;tokens.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">if</span>(tokens[i]==<span class="hljs-string">&quot;.&quot;</span>)<span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(tokens[i]==<span class="hljs-string">&quot;..&quot;</span>)&#123;<br>                <span class="hljs-keyword">if</span>(!stack.<span class="hljs-built_in">empty</span>())stack.<span class="hljs-built_in">pop_back</span>();<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                stack.<span class="hljs-built_in">push_back</span>(tokens[i]);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;stack.<span class="hljs-built_in">size</span>();i++)&#123;<br>            ret+=<span class="hljs-string">&quot;/&quot;</span>+stack[i];<br>        &#125;<br>        <span class="hljs-keyword">if</span>(!ret.<span class="hljs-built_in">length</span>())ret+=<span class="hljs-string">&quot;/&quot;</span>;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/72.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">minDistance</span><span class="hljs-params">(string word1, string word2)</span> </span>&#123;<br>        <span class="hljs-type">int</span> m=word1.<span class="hljs-built_in">length</span>(),n=word2.<span class="hljs-built_in">length</span>();<br>        <span class="hljs-type">int</span> dp[m+<span class="hljs-number">1</span>][n+<span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n;i++)dp[<span class="hljs-number">0</span>][i]=i;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;=m;j++)dp[j][<span class="hljs-number">0</span>]=j;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;j++)&#123;<br>                <span class="hljs-type">int</span> left=dp[j][i<span class="hljs-number">-1</span>]+<span class="hljs-number">1</span>;<br>                <span class="hljs-type">int</span> up=dp[j<span class="hljs-number">-1</span>][i]+<span class="hljs-number">1</span>;<br>                <span class="hljs-type">int</span> dig=dp[j<span class="hljs-number">-1</span>][i<span class="hljs-number">-1</span>];<br>                <span class="hljs-keyword">if</span>(word2[i<span class="hljs-number">-1</span>]!=word1[j<span class="hljs-number">-1</span>])dig++;<br>                dp[j][i]=<span class="hljs-built_in">min</span>(left,<span class="hljs-built_in">min</span>(up,dig));<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[m][n];<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>想法很简单，只需要按照<code>/</code>把所有的目录结构分开来，然后遇到特殊的情况就进行特殊处理，即遇到 <code>.</code> 不做操作，遇到 <code>..</code> 在栈不为空的时候pop掉尾部目录；</li>
-<li>通过栈来维护整体的路径，注意的是以 <code>/</code> 进行分隔和开始。</li>
+<li>两个字符串匹配问题，可执行操作可视为对两者进行插入或者修改字符；</li>
+<li>我们可以构建动态规划的方法来求解，考虑要对 <code>word1</code> 的前 <code>i</code> 位和 <code>word2</code> 的前 <code>j</code></li>
 </ol>
+<p> 位执行匹配，那么可以从两者各减少一位的情况下产生，如果最后一位相同，则步数不变，否则步数加一；也可以从两者之一少一位的情况产生，需要该情况步数加一，三个之中最小值，为当前串长度下最小执行步数。</p>
 
             </div>
             <hr>
@@ -322,18 +317,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A72/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：72</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/10/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A70/">
-                        <span class="hidden-mobile">每日一题：70</span>
+                      <a href="/2022/05/11/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A71/">
+                        <span class="hidden-mobile">每日一题：71</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
