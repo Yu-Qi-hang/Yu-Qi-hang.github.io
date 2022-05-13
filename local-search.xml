@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：73</title>
+    <link href="/2022/05/13/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A73/"/>
+    <url>/2022/05/13/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A73/</url>
+    
+    <content type="html"><![CDATA[<h4 id="73-Set-Matrix-Zeroes"><a href="#73-Set-Matrix-Zeroes" class="headerlink" title="73. Set Matrix Zeroes"></a>73. Set Matrix Zeroes</h4><p>Given an <code>m x n</code> integer matrix <code>matrix</code>, if an element is <code>0</code>, set its entire row and column to <code>0</code>‘s.</p><p>You must do it <a href="https://en.wikipedia.org/wiki/In-place_algorithm">in place</a>.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205130940978.jpeg" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: matrix = [[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]]<br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>]]<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205130940146.jpeg" alt="img"></p><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: matrix = [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">5</span>]]<br><span class="hljs-type">Output</span>: [[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]]<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li>$m &#x3D;&#x3D; matrix.length$</li><li>$n &#x3D;&#x3D; matrix[0].length$</li><li>$1 &lt;&#x3D; m, n &lt;&#x3D; 200$</li><li>$-2^{31} &lt;&#x3D; matrix[i][j] &lt;&#x3D; 2^{31} - 1$</li></ul><h5 id="Follow-up"><a href="#Follow-up" class="headerlink" title="Follow up"></a>Follow up</h5><ul><li>A straightforward solution using <code>O(mn)</code> space is probably a bad idea.</li><li>A simple improvement uses <code>O(m + n)</code> space, but still not the best solution.</li><li>Could you devise a constant space solution?</li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/73.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">setZeroes</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;<br>        <span class="hljs-type">int</span> m=matrix.<span class="hljs-built_in">size</span>(),n=matrix[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> col_zero=<span class="hljs-number">0</span>,row_zero=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)&#123;<br>            <span class="hljs-keyword">if</span>(!matrix[i][<span class="hljs-number">0</span>])&#123;<br>                col_zero=<span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            <span class="hljs-keyword">if</span>(!matrix[<span class="hljs-number">0</span>][i])&#123;<br>                row_zero=<span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;m;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;n;j++)&#123;<br>                <span class="hljs-keyword">if</span>(!matrix[i][j])&#123;<br>                    matrix[<span class="hljs-number">0</span>][j]=matrix[i][<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;m;i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>;j&lt;n;j++)&#123;<br>                <span class="hljs-keyword">if</span>(!matrix[i][<span class="hljs-number">0</span>]||!matrix[<span class="hljs-number">0</span>][j])&#123;<br>                    matrix[i][j]=<span class="hljs-number">0</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(col_zero)<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)matrix[i][<span class="hljs-number">0</span>]=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span>(row_zero)<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)matrix[<span class="hljs-number">0</span>][i]=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">return</span>;        <br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>开始想的是用两个数组记录各行以及各列的是否出现 0 的情况，但是这样空间复杂度就会达到$O(m+n)$</li><li>于是考虑借助矩阵自身来记录，也就是利用其第一行和第一列来记录各行各列是否存在 0</li><li>但是这样子会破坏其本身是否存在 0 的情况，因此先利用两个变量来存储其本身是否存在0</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：72</title>
     <link href="/2022/05/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A72/"/>
     <url>/2022/05/12/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A72/</url>
@@ -22,9 +51,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -51,9 +80,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -109,9 +138,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -138,9 +167,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -167,9 +196,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -196,9 +225,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -225,9 +254,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -254,9 +283,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -399,9 +428,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -428,9 +457,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -457,9 +486,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
@@ -660,9 +689,9 @@
     
     <tags>
       
-      <tag>c</tag>
-      
       <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
       
     </tags>
     
