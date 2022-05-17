@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>每日一题：77</title>
+    <link href="/2022/05/17/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A77/"/>
+    <url>/2022/05/17/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A77/</url>
+    
+    <content type="html"><![CDATA[<h4 id="77-Combinations"><a href="#77-Combinations" class="headerlink" title="77. Combinations"></a>77. Combinations</h4><p>Given two integers <code>n</code> and <code>k</code>, return <em>all possible combinations of</em> <code>k</code> <em>numbers out of the range</em> <code>[1, n]</code>.</p><p>You may return the answer in <strong>any order</strong>.</p><h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">4</span>, k = <span class="hljs-number">2</span><br><span class="hljs-type">Output</span>:<br>[<br>  [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>],<br>  [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>],<br>  [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],<br>  [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],<br>  [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>],<br>  [<span class="hljs-number">1</span>,<span class="hljs-number">4</span>],<br>]<br></code></pre></td></tr></table></figure><h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: n = <span class="hljs-number">1</span>, k = <span class="hljs-number">1</span><br><span class="hljs-type">Output</span>: [[<span class="hljs-number">1</span>]]<br></code></pre></td></tr></table></figure><h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul><li><code>1 &lt;= n &lt;= 20</code></li><li><code>1 &lt;= k &lt;= n</code></li></ul><h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/77.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">back</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; &amp;result, vector&lt;<span class="hljs-type">int</span>&gt;&amp;temp, <span class="hljs-type">int</span> k,<span class="hljs-type">int</span> n,<span class="hljs-type">int</span> idx)</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(idx==k)&#123;<br>            result.<span class="hljs-built_in">push_back</span>(temp);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=temp[idx<span class="hljs-number">-1</span>]+<span class="hljs-number">1</span>;i&lt;=n-k+<span class="hljs-number">1</span>+idx;i++)&#123;<br>                temp.<span class="hljs-built_in">push_back</span>(i);<br>                <span class="hljs-built_in">back</span>(result,temp,k,n,idx+<span class="hljs-number">1</span>);<br>                temp.<span class="hljs-built_in">pop_back</span>();<br>            &#125;<br>        &#125;<br>    &#125;<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">combine</span>(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> k) &#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt; &gt; result;<br>        vector&lt;<span class="hljs-type">int</span>&gt; temp;<br>        <span class="hljs-type">int</span> idx=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n-k+<span class="hljs-number">1</span>;i++)&#123;<br>            temp.<span class="hljs-built_in">push_back</span>(i);<br>            <span class="hljs-built_in">back</span>(result,temp,k,n,idx+<span class="hljs-number">1</span>);<br>            temp.<span class="hljs-built_in">pop_back</span>();<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol><li>回溯法就可以了</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Leetcode每日一题</category>
+      
+      <category>中等</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Leetcode</tag>
+      
+      <tag>c++</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>每日一题：76</title>
     <link href="/2022/05/16/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A76/"/>
     <url>/2022/05/16/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A76/</url>
