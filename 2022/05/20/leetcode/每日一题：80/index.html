@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第78题：Subsets">
+    <meta name="description" content="Leetcode题库第80题：Remove Duplicates from Sorted Array II">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：78">
-<meta property="og:url" content="http://example.com/2022/05/18/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A78/index.html">
+<meta property="og:title" content="每日一题：80">
+<meta property="og:url" content="http://example.com/2022/05/20/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A80/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第78题：Subsets">
+<meta property="og:description" content="Leetcode题库第80题：Remove Duplicates from Sorted Array II">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-18T13:36:26.000Z">
-<meta property="article:modified_time" content="2022-05-18T13:36:53.520Z">
+<meta property="article:published_time" content="2022-05-20T04:36:35.000Z">
+<meta property="article:modified_time" content="2022-05-20T04:37:10.631Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="Leetcode">
 <meta property="article:tag" content="c++">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：78 - 咸鱼Blog</title>
+  <title>每日一题：80 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Subsets">
+            <span class="h2" id="subtitle" title="Remove Duplicates from Sorted Array II">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-18 21:36" pubdate>
-        2022年5月18日 晚上
+      <time datetime="2022-05-20 12:36" pubdate>
+        2022年5月20日 下午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.2k 字
+      2k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10 分钟
+      17 分钟
     </span>
   
 
@@ -254,24 +254,32 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Subsets</h1>
+            <h1 style="display: none">Remove Duplicates from Sorted Array II</h1>
             
             <div class="markdown-body">
-              <h4 id="78-Subsets"><a href="#78-Subsets" class="headerlink" title="78. Subsets"></a>78. Subsets</h4><p>Given an integer array <code>nums</code> of <strong>unique</strong> elements, return <em>all possible subsets (the power set)</em>.</p>
-<p>The solution set <strong>must not</strong> contain duplicate subsets. Return the solution in <strong>any order</strong>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: [[],[<span class="hljs-number">1</span>],[<span class="hljs-number">2</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>],[<span class="hljs-number">3</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]]<br></code></pre></td></tr></table></figure>
+              <h4 id="80-Remove-Duplicates-from-Sorted-Array-II"><a href="#80-Remove-Duplicates-from-Sorted-Array-II" class="headerlink" title="80. Remove Duplicates from Sorted Array II"></a>80. Remove Duplicates from Sorted Array II</h4><p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove some duplicates <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/In-place_algorithm"><strong>in-place</strong></a> such that each unique element appears <strong>at most twice</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>
+<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first <code>k</code> elements of <code>nums</code> should hold the final result. It does not matter what you leave beyond the first <code>k</code> elements.</p>
+<p>Return <code>k</code> <em>after placing the final result in the first</em> <code>k</code> <em>slots of</em> <code>nums</code>.</p>
+<p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/In-place_algorithm">in-place</a></strong> with O(1) extra memory.</p>
+<h5 id="Custom-Judge"><a href="#Custom-Judge" class="headerlink" title="Custom Judge"></a>Custom Judge</h5><p>The judge will test your solution with the following code:</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-title">int</span>[] nums = [...]; // <span class="hljs-type">Input</span> array<br><span class="hljs-title">int</span>[] expectedNums = [...]; // <span class="hljs-type">The</span> expected answer with correct length<br><br><span class="hljs-title">int</span> k = removeDuplicates(nums); // <span class="hljs-type">Calls</span> your implementation<br><br><span class="hljs-title">assert</span> k == expectedNums.length;<br><span class="hljs-title">for</span> (int i = <span class="hljs-number">0</span>; i &lt; k; i++) &#123;<br>    assert nums[i] == expectedNums[i];<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">0</span>]<br><span class="hljs-type">Output</span>: [[],[<span class="hljs-number">0</span>] <br></code></pre></td></tr></table></figure>
+<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">5</span>, nums = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,_]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Your</span> function should return k = <span class="hljs-number">5</span>, with the first five elements <span class="hljs-keyword">of</span> nums being <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span> and <span class="hljs-number">3</span> respectively.<br><span class="hljs-type">It</span> does not matter what you leave beyond the returned k (hence they are underscores).<br></code></pre></td></tr></table></figure>
+
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: nums = [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: <span class="hljs-number">7</span>, nums = [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,_,_]<br><span class="hljs-type">Explanation</span>: <span class="hljs-type">Your</span> function should return k = <span class="hljs-number">7</span>, with the first seven elements <span class="hljs-keyword">of</span> nums being <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> and <span class="hljs-number">3</span> respectively.<br><span class="hljs-type">It</span> does not matter what you leave beyond the returned k (hence they are underscores).<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li><code>1 &lt;= nums.length &lt;= 10</code></li>
-<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
-<li>All the numbers of <code>nums</code> are <strong>unique</strong>.</li>
+<li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 3 * 10^4$</li>
+<li>$-10^4 &lt;&#x3D; nums[i] &lt;&#x3D; 10^4$</li>
+<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/78.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">back</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; &amp;result, vector&lt;<span class="hljs-type">int</span>&gt;&amp;temp,vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> k,<span class="hljs-type">int</span> n,<span class="hljs-type">int</span> idx,<span class="hljs-type">int</span> start)</span></span>&#123;<br>        <span class="hljs-keyword">if</span>(idx==k)&#123;<br>            result.<span class="hljs-built_in">push_back</span>(temp);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=start;i&lt;=n-k+idx;i++)&#123;<br>                temp.<span class="hljs-built_in">push_back</span>(nums[i]);<br>                <span class="hljs-built_in">back</span>(result,temp,nums,k,n,idx+<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>);<br>                temp.<span class="hljs-built_in">pop_back</span>();<br>            &#125;<br>        &#125;<br>    &#125;<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">subsets</span>(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums) &#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt; &gt; result;<br>        <span class="hljs-type">int</span> n=nums.<span class="hljs-built_in">size</span>() ,k=nums.<span class="hljs-built_in">size</span>();<br>        vector&lt;<span class="hljs-type">int</span>&gt; temp;<br>        <span class="hljs-type">int</span> idx=<span class="hljs-number">0</span>;<br>        result.<span class="hljs-built_in">push_back</span>(temp);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> t=<span class="hljs-number">1</span>;t&lt;=k;t++)<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;=n-t;i++)&#123;<br>            temp.<span class="hljs-built_in">push_back</span>(nums[i]);<br>            <span class="hljs-built_in">back</span>(result,temp,nums,t,n,idx+<span class="hljs-number">1</span>,i+<span class="hljs-number">1</span>);<br>            temp.<span class="hljs-built_in">pop_back</span>();<br>        &#125;      <br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/80.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">removeDuplicates</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> idx=<span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;nums.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i]==nums[idx<span class="hljs-number">-1</span>])&#123;<br>                cnt++;<br>            &#125;<br>            <span class="hljs-keyword">else</span> cnt=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">if</span>(cnt==<span class="hljs-number">2</span>)&#123;<br>                cnt--;<br>            &#125;<br>            <span class="hljs-keyword">else</span> nums[idx++]=nums[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> idx;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>和77差不多，只是将数据换成了自定义数组，以及需要生成各种大小的组合</li>
+<li>就是简单的去重；</li>
+<li>一个指针用来记录当前不超过新数组的末尾位置；</li>
+<li>一个变量记录重复数字个数，最后遍历一遍即可。</li>
 </ol>
 
             </div>
@@ -311,18 +319,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/19/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A79/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：79</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/17/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A77/">
-                        <span class="hidden-mobile">每日一题：77</span>
+                      <a href="/2022/05/19/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A79/">
+                        <span class="hidden-mobile">每日一题：79</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
