@@ -16,24 +16,24 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第81题：Search in Rotated Sorted Array II">
+    <meta name="description" content="Leetcode题库第82题：Remove Duplicates from Sorted List II">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：81">
-<meta property="og:url" content="http://example.com/2022/05/21/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A81/index.html">
+<meta property="og:title" content="每日一题：82">
+<meta property="og:url" content="http://example.com/2022/05/22/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A82/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第81题：Search in Rotated Sorted Array II">
+<meta property="og:description" content="Leetcode题库第82题：Remove Duplicates from Sorted List II">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-21T05:05:33.000Z">
-<meta property="article:modified_time" content="2022-05-21T05:06:02.707Z">
+<meta property="article:published_time" content="2022-05-22T02:51:01.000Z">
+<meta property="article:modified_time" content="2022-05-22T02:51:33.520Z">
 <meta property="article:author" content="Sailing_咸鱼">
+<meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
-<meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：81 - 咸鱼Blog</title>
+  <title>每日一题：82 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Search in Rotated Sorted Array II">
+            <span class="h2" id="subtitle" title="Remove Duplicates from Sorted List II">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-21 13:05" pubdate>
-        2022年5月21日 下午
+      <time datetime="2022-05-22 10:51" pubdate>
+        2022年5月22日 上午
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.5k 字
+      1.3k 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22 分钟
+      11 分钟
     </span>
   
 
@@ -254,29 +254,28 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Search in Rotated Sorted Array II</h1>
+            <h1 style="display: none">Remove Duplicates from Sorted List II</h1>
             
             <div class="markdown-body">
-              <h4 id="81-Search-in-Rotated-Sorted-Array-II"><a href="#81-Search-in-Rotated-Sorted-Array-II" class="headerlink" title="81. Search in Rotated Sorted Array II"></a>81. Search in Rotated Sorted Array II</h4><p>There is an integer array <code>nums</code> sorted in non-decreasing order (not necessarily with <strong>distinct</strong> values).</p>
-<p>Before being passed to your function, <code>nums</code> is <strong>rotated</strong> at an unknown pivot index <code>k</code> (<code>0 &lt;= k &lt; nums.length</code>) such that the resulting array is <code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]</code> (<strong>0-indexed</strong>). For example, <code>[0,1,2,4,4,4,5,6,6,7]</code> might be rotated at pivot index <code>5</code> and become <code>[4,5,6,6,7,0,1,2,4,4]</code>.</p>
-<p>Given the array <code>nums</code> <strong>after</strong> the rotation and an integer <code>target</code>, return <code>true</code> <em>if</em> <code>target</code> <em>is in</em> <code>nums</code><em>, or</em> <code>false</code> <em>if it is not in</em> <code>nums</code><em>.</em></p>
-<p>You must decrease the overall operation steps as much as possible.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><figure class="highlight yaml"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Input:</span> <span class="hljs-string">nums</span> <span class="hljs-string">=</span> [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<span class="hljs-string">,</span> <span class="hljs-string">target</span> <span class="hljs-string">=</span> <span class="hljs-number">0</span><br><span class="hljs-attr">Output:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+              <h4 id="82-Remove-Duplicates-from-Sorted-List-II"><a href="#82-Remove-Duplicates-from-Sorted-List-II" class="headerlink" title="82. Remove Duplicates from Sorted List II"></a>82. Remove Duplicates from Sorted List II</h4><p>Given the <code>head</code> of a sorted linked list, <em>delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list</em>. Return <em>the linked list <strong>sorted</strong> as well</em>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205221046525.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">Input:</span> <span class="hljs-string">nums</span> <span class="hljs-string">=</span> [<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<span class="hljs-string">,</span> <span class="hljs-string">target</span> <span class="hljs-string">=</span> <span class="hljs-number">3</span><br><span class="hljs-attr">Output:</span> <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205221045182.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
-<li>$1 &lt;&#x3D; nums.length &lt;&#x3D; 5000$</li>
-<li>$-10^4 &lt;&#x3D; nums[i] &lt;&#x3D; 10^4$</li>
-<li><code>nums</code> is guaranteed to be rotated at some pivot.</li>
-<li>$-10^4 &lt;&#x3D; target &lt;&#x3D; 10^4$</li>
+<li>The number of nodes in the list is in the range <code>[0, 300]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+<li>The list is guaranteed to be <strong>sorted</strong> in ascending order.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/81.cpp">code</a></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">binary_search</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums,<span class="hljs-type">int</span> left,<span class="hljs-type">int</span> right,<span class="hljs-type">int</span> target)</span></span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;binery:&quot;</span>&lt;&lt;left&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;right&lt;&lt;endl;<br>        <span class="hljs-keyword">if</span>(left&gt;right)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(left==right)&#123;<br>            <span class="hljs-keyword">if</span>(nums[left]==target)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">if</span>(target&lt;nums[left]||target&gt;nums[right])<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            <span class="hljs-type">int</span> mid=(left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]==target)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&gt;target)<span class="hljs-keyword">return</span> <span class="hljs-built_in">binary_search</span>(nums,left,mid<span class="hljs-number">-1</span>,target);<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">binary_search</span>(nums,mid+<span class="hljs-number">1</span>,right,target);<br>        &#125;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">split_search</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums,<span class="hljs-type">int</span> left,<span class="hljs-type">int</span> right,<span class="hljs-type">int</span> target)</span></span>&#123;<br>        cout&lt;&lt;<span class="hljs-string">&quot;split:&quot;</span>&lt;&lt;left&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;right&lt;&lt;endl;<br>        <span class="hljs-keyword">if</span>(left&gt;right)<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(left==right)&#123;<br>            <span class="hljs-keyword">if</span>(nums[left]==target)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-type">int</span> mid=(left+right)/<span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span>(nums[mid]==target)<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-keyword">if</span>(nums[mid]&gt;=nums[right])&#123;<br>                    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">split_search</span>(nums,mid+<span class="hljs-number">1</span>,right,target))<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>                &#125;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&lt;nums[right])&#123;<br>                    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">binary_search</span>(nums,mid+<span class="hljs-number">1</span>,right,target))<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>                &#125;<br>                <span class="hljs-keyword">if</span>(nums[left]&gt;=nums[mid])&#123;<br>                    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">split_search</span>(nums,left,mid<span class="hljs-number">-1</span>,target))<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>                &#125;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[mid]&gt;nums[left])&#123;<br>                    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">binary_search</span>(nums,left,mid<span class="hljs-number">-1</span>,target))<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>                &#125;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125; <br>        &#125;<br><br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">search</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n=nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>]&gt;=nums[n<span class="hljs-number">-1</span>])<span class="hljs-keyword">return</span> <span class="hljs-built_in">split_search</span>(nums,<span class="hljs-number">0</span>,n<span class="hljs-number">-1</span>,target);<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-built_in">binary_search</span>(nums,<span class="hljs-number">0</span>,n<span class="hljs-number">-1</span>,target);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/82.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     struct ListNode *next;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><br><br><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">deleteDuplicates</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head)</span>&#123;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span> *<span class="hljs-title">p</span>,*<span class="hljs-title">q</span>,*<span class="hljs-title">tail</span>;</span><br>    tail=(<span class="hljs-keyword">struct</span> ListNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> ListNode));<br>    tail-&gt;next=head;<br>    head=tail; <br>    p=head-&gt;next;<br>    <span class="hljs-keyword">if</span>(p)q=p-&gt;next;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-built_in">free</span>(head);<br>        <span class="hljs-keyword">return</span> p;<br>    &#125;<br>    <span class="hljs-type">int</span> record=p-&gt;val<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(q)&#123;<br>        <span class="hljs-keyword">if</span>(p-&gt;val==q-&gt;val||p-&gt;val==record)&#123;<br>            record=p-&gt;val;<br>            tail-&gt;next=q;<br>            <span class="hljs-built_in">free</span>(p);<br>            p=q;<br>            q=p-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">if</span>(record==p-&gt;val)&#123;<br>                tail-&gt;next=q;<br>                <span class="hljs-built_in">free</span>(p);<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                tail=p;<br>            &#125;<br>            p=q;<br>            q=q-&gt;next;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(p-&gt;val==record)&#123;<br>        tail-&gt;next=<span class="hljs-literal">NULL</span>;<br>        <span class="hljs-built_in">free</span>(p);<br>    &#125;<br>    tail=head-&gt;next;<br>    <span class="hljs-built_in">free</span>(head);<br>    <span class="hljs-keyword">return</span> tail;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>采取二分法来做，此时，可以根据每段的首位判断是否有序，对于有序的，调用原来的二分查找，对于无需的，继续划分；</li>
-<li>这样子，在有序的条件下，能更快判断出是否存在的问题</li>
-<li>其实也是$O(N)$，直接线性查找差别不大。</li>
+<li>为了统一一下首部是否需要删除的情况，增加了一个虚头节点；</li>
+<li>需要注意各种为空条件；</li>
+<li>利用一个整型记录需要删除的节点的值，避免漏删最后一个节点；</li>
+<li>最后需要查看最后一个节点是否需要删除，因为脱离循环只考虑<code>q</code>是否存在</li>
 </ol>
 
             </div>
@@ -297,9 +296,9 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Leetcode/">Leetcode</a>
+                      <a class="hover-with-bg" href="/tags/c/">c</a>
                     
-                      <a class="hover-with-bg" href="/tags/c/">c++</a>
+                      <a class="hover-with-bg" href="/tags/Leetcode/">Leetcode</a>
                     
                   </div>
                 
@@ -316,18 +315,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/22/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A82/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：82</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/20/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A80/">
-                        <span class="hidden-mobile">每日一题：80</span>
+                      <a href="/2022/05/21/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A81/">
+                        <span class="hidden-mobile">每日一题：81</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
