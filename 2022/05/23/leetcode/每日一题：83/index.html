@@ -16,16 +16,16 @@
   <meta name="author" content="Sailing_咸鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Leetcode题库第82题：Remove Duplicates from Sorted List II">
+    <meta name="description" content="Leetcode题库第83题：Remove Duplicates from Sorted List">
 <meta property="og:type" content="article">
-<meta property="og:title" content="每日一题：82">
-<meta property="og:url" content="http://example.com/2022/05/22/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A82/index.html">
+<meta property="og:title" content="每日一题：83">
+<meta property="og:url" content="http://example.com/2022/05/23/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A83/index.html">
 <meta property="og:site_name" content="咸鱼Blog">
-<meta property="og:description" content="Leetcode题库第82题：Remove Duplicates from Sorted List II">
+<meta property="og:description" content="Leetcode题库第83题：Remove Duplicates from Sorted List">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
-<meta property="article:published_time" content="2022-05-22T02:51:01.000Z">
-<meta property="article:modified_time" content="2022-05-22T02:51:33.520Z">
+<meta property="article:published_time" content="2022-05-23T00:05:56.000Z">
+<meta property="article:modified_time" content="2022-05-23T00:06:34.634Z">
 <meta property="article:author" content="Sailing_咸鱼">
 <meta property="article:tag" content="c">
 <meta property="article:tag" content="Leetcode">
@@ -33,7 +33,7 @@
 <meta name="twitter:image" content="http://example.com/img/cover/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98.jpg">
   
   
-  <title>每日一题：82 - 咸鱼Blog</title>
+  <title>每日一题：83 - 咸鱼Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -195,7 +195,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Remove Duplicates from Sorted List II">
+            <span class="h2" id="subtitle" title="Remove Duplicates from Sorted List">
               
             </span>
 
@@ -205,8 +205,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-22 10:51" pubdate>
-        2022年5月22日 上午
+      <time datetime="2022-05-23 08:05" pubdate>
+        2022年5月23日 早上
       </time>
     </span>
   
@@ -216,7 +216,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.3k 字
+      713 字
     </span>
   
 
@@ -225,7 +225,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      11 分钟
+      6 分钟
     </span>
   
 
@@ -254,28 +254,26 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Remove Duplicates from Sorted List II</h1>
+            <h1 style="display: none">Remove Duplicates from Sorted List</h1>
             
             <div class="markdown-body">
-              <h4 id="82-Remove-Duplicates-from-Sorted-List-II"><a href="#82-Remove-Duplicates-from-Sorted-List-II" class="headerlink" title="82. Remove Duplicates from Sorted List II"></a>82. Remove Duplicates from Sorted List II</h4><p>Given the <code>head</code> of a sorted linked list, <em>delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list</em>. Return <em>the linked list <strong>sorted</strong> as well</em>.</p>
-<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205221046525.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>]<br></code></pre></td></tr></table></figure>
+              <h4 id="83-Remove-Duplicates-from-Sorted-List"><a href="#83-Remove-Duplicates-from-Sorted-List" class="headerlink" title="83. Remove Duplicates from Sorted List"></a>83. Remove Duplicates from Sorted List</h4><p>Given the <code>head</code> of a sorted linked list, <em>delete all duplicates such that each element appears only once</em>. Return <em>the linked list <strong>sorted</strong> as well</em>.</p>
+<h5 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205230803067.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br></code></pre></td></tr></table></figure>
 
-<h5 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h5><p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205221045182.jpeg" srcset="/img/loading.gif" lazyload alt="img"></p>
-<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Yu-Qi-hang/imgrepo@master/img/202205230803555.jpg" srcset="/img/loading.gif" lazyload alt="img"></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-type">Input</span>: head = [<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>]<br><span class="hljs-type">Output</span>: [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br></code></pre></td></tr></table></figure>
 
 <h5 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h5><ul>
 <li>The number of nodes in the list is in the range <code>[0, 300]</code>.</li>
 <li><code>-100 &lt;= Node.val &lt;= 100</code></li>
 <li>The list is guaranteed to be <strong>sorted</strong> in ascending order.</li>
 </ul>
-<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/82.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * struct ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     struct ListNode *next;</span><br><span class="hljs-comment"> * &#125;;</span><br><span class="hljs-comment"> */</span><br><br><br><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">deleteDuplicates</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head)</span>&#123;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span> *<span class="hljs-title">p</span>,*<span class="hljs-title">q</span>,*<span class="hljs-title">tail</span>;</span><br>    tail=(<span class="hljs-keyword">struct</span> ListNode*)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">struct</span> ListNode));<br>    tail-&gt;next=head;<br>    head=tail; <br>    p=head-&gt;next;<br>    <span class="hljs-keyword">if</span>(p)q=p-&gt;next;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-built_in">free</span>(head);<br>        <span class="hljs-keyword">return</span> p;<br>    &#125;<br>    <span class="hljs-type">int</span> record=p-&gt;val<span class="hljs-number">-1</span>;<br>    <span class="hljs-keyword">while</span>(q)&#123;<br>        <span class="hljs-keyword">if</span>(p-&gt;val==q-&gt;val||p-&gt;val==record)&#123;<br>            record=p-&gt;val;<br>            tail-&gt;next=q;<br>            <span class="hljs-built_in">free</span>(p);<br>            p=q;<br>            q=p-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">if</span>(record==p-&gt;val)&#123;<br>                tail-&gt;next=q;<br>                <span class="hljs-built_in">free</span>(p);<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                tail=p;<br>            &#125;<br>            p=q;<br>            q=q-&gt;next;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(p-&gt;val==record)&#123;<br>        tail-&gt;next=<span class="hljs-literal">NULL</span>;<br>        <span class="hljs-built_in">free</span>(p);<br>    &#125;<br>    tail=head-&gt;next;<br>    <span class="hljs-built_in">free</span>(head);<br>    <span class="hljs-keyword">return</span> tail;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="Solution-code"><a href="#Solution-code" class="headerlink" title="Solution code"></a>Solution <a target="_blank" rel="noopener" href="https://github.com/Yu-Qi-hang/Leetcode/blob/master/source/83.c">code</a></h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-keyword">struct</span> ListNode* <span class="hljs-title function_">deleteDuplicates</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> ListNode* head)</span>&#123;<br>    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">ListNode</span> *<span class="hljs-title">p</span>,*<span class="hljs-title">q</span>;</span><br>    p=head;<br>    <span class="hljs-keyword">if</span>(p)q=p-&gt;next;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">return</span> p;<br>    &#125;<br>    <span class="hljs-keyword">while</span>(q)&#123;<br>        <span class="hljs-keyword">if</span>(p-&gt;val==q-&gt;val)&#123;<br>            p-&gt;next=q-&gt;next;<br>            <span class="hljs-built_in">free</span>(q);<br>            q=p-&gt;next;<br>        &#125;<br>        <span class="hljs-keyword">else</span>&#123;<br>            p=q;<br>            q=q-&gt;next;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> head;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h5 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h5><ol>
-<li>为了统一一下首部是否需要删除的情况，增加了一个虚头节点；</li>
-<li>需要注意各种为空条件；</li>
-<li>利用一个整型记录需要删除的节点的值，避免漏删最后一个节点；</li>
-<li>最后需要查看最后一个节点是否需要删除，因为脱离循环只考虑<code>q</code>是否存在</li>
+<li>双指针遍历，发现所指节点值相同时，删去后一个节点</li>
 </ol>
 
             </div>
@@ -288,7 +286,7 @@
                     
                       <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">Leetcode每日一题</a>
                     
-                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E4%B8%AD%E7%AD%89/">中等</a>
+                      <a class="hover-with-bg" href="/categories/Leetcode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/%E7%AE%80%E5%8D%95/">简单</a>
                     
                   </div>
                 
@@ -315,18 +313,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/23/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A83/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">每日一题：83</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/21/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A81/">
-                        <span class="hidden-mobile">每日一题：81</span>
+                      <a href="/2022/05/22/leetcode/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%9A82/">
+                        <span class="hidden-mobile">每日一题：82</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
