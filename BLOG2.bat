@@ -1,0 +1,1 @@
+start C:\Environments\Git\git-bash.exe --cd=C:\MyFiles\BLOG2 -c "echo Push Source && git add . && git commit -m \"Update articles\" && git push -f && echo New Pages && hexo clean && hexo g && hexo d && echo Update Pages && cd git-update-pages && git-update-pages;bash"

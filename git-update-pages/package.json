@@ -1,0 +1,10 @@
+{
+    "dependencies": {
+        "puppeteer": "^@19.7.1",
+        "xmlhttprequest":"^1.8.0"
+    },
+    "name": "git-update-pages",
+    "bin": {
+        "git-update-pages": "index.js"
+    }
+}

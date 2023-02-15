@@ -1,0 +1,85 @@
+<%
+page.layout = "about"
+page.title = theme.about.title || __('about.title')
+page.subtitle = theme.about.subtitle || __('about.subtitle')
+page.banner_img = page.banner_img || theme.about.banner_img
+page.banner_img_height = page.banner_img_height || theme.about.banner_img_height
+page.banner_mask_alpha = page.banner_mask_alpha || theme.about.banner_mask_alpha
+%>
+
+<div class="text-center">
+  <div class="about-info">
+    <div class="about-name"><%- theme.about.name %></div>
+    <div class="about-intro"><%- theme.about.introduce || theme.about.intro %></div>
+    <div class="about-icons">
+      <% for(const each of theme.about.icons || []) { %>
+        <% if (!each.class) continue; %>
+        <% var cls = each.class %>
+        <% var isQr = each.qrcode %>
+        <a <%= isQr ? '' : ('href=' + url_for(each.link)) %> class="<%= isQr ? 'qr-trigger' : '' %>
+          <%= !isQr && each.tip ? 'hint--bottom hint--rounded' : '' %>"
+          <%= !isQr && each.tip ? 'aria-label=' + each.tip : '' %>
+          target="<%= isQr ? '_self' : '_blank' %>"
+        >
+          <i class="<%= cls %>" aria-hidden="true"></i>
+          <% if (isQr) { %>
+            <img class="qr-img" src="<%= url_for(each.qrcode) %>" alt="qrcode" />
+          <% } %>
+        </a>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<!--来自links.ejs-->
+<div class="row links">
+  <% for(const each of theme.about.items || []) { %>
+    <% if (!each.title || !each.link) continue %>
+    <div class="card col-lg-4 col-md-6 col-sm-12">
+      <a href="<%= url_for(each.link) %>" class="card-body hover-with-bg" target="_blank" rel="noopener">
+        <div class="card-content">
+          <% if (each.avatar || each.image) { %>
+            <div class="link-avatar my-auto">
+              <img src="<%= url_for(each.avatar || each.image) %>" alt="<%= each.title %>"
+                onerror="this.onerror=null; this.src=this.srcset='<%= url_for(theme.about.onerror_avatar) %>'"/>
+            </div>
+          <% } %>
+          <div class="link-text">
+            <div class="link-title"><%- each.title %></div>
+            <div class="link-intro"><%- each.intro || '' %></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  <% } %>
+</div>
+
+<% if(theme.about.custom && theme.about.custom.enable && theme.about.custom.content) { %>
+  <!-- Custom -->
+  <div class="custom mx-auto">
+    <%- theme.about.custom.content %>
+  </div>
+<% } %>
+<!--来自links.ejs-->
+
+
+<article class="about-content page-content mt-5">
+  <div class="markdown-body">
+    <%- page.content %>
+  </div>
+
+  <% if(page.comments) { %>
+    <!-- Comments -->
+    <article id="comments">
+      <% var type %>
+      <% if (typeof page.comment === 'string' && page.comment !== '') { %>
+        <% type = '_partials/comments/' + page.comment %>
+      <% } else { %>
+        <% type = '_partials/comments/' + theme.post.comments.type %>
+      <% } %>
+      <%- partial(type) %>
+    </article>
+  <% } %>
+</article>
+
+<%- partial('_partials/markdown-plugins') %>
