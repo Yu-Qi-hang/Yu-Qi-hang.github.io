@@ -1,0 +1,1 @@
+start C:\Environments\Git\git-bash.exe --cd=C:\MyFiles\BLOG -c "echo Update Pages && cd git-update-pages && git-update-pages;bash"

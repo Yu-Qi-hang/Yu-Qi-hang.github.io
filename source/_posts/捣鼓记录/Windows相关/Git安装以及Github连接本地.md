@@ -4,6 +4,8 @@ date: 2023-01-14
 abbrlink: 22d931cf
 tags:
 - Git
+categories:
+- Git
 ---
 
 ### 一、Windows安装Git

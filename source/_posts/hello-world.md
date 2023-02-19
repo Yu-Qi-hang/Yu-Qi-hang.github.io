@@ -1,15 +1,18 @@
 ---
-title: test
+title: Hello World
 index_img: /img/cover.jpg
 math: true
 mermaid: false
-abbrlink: d87f7e0c
+abbrlink: 4a17b156
 date: 2023-02-15 21:41:18
 tags:
+- test
 categories:
 ---
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+
+<!-- more -->
 
 ## Quick Start
 
@@ -32,18 +35,16 @@ int main(){
 
 
 
-### image
+### 图片
 
-![image-20230215205117188](test/image-20230215205117188.png)
-
-
-
-### video
-
-<iframe src="//player.bilibili.com/player.html?bvid=BV1vb4y1p7k6&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"  style="position: relative; width: 100%;height: 100%"> </iframe>
+![image-20230219204217865](hello-world/image-20230219204217865.png)
 
 
 
-### 部署
+### 视频
 
-<a href="https://yu-qi-hang.github.io">切换主题</a>
+<iframe src="//player.bilibili.com/player.html?aid=990700650&bvid=BV1cx4y1M7ci&cid=975414937&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+
+<a href="https://yu-qi-hang.github.io/posts/4a17b156/">切换主题</a>
