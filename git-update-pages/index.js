@@ -6,7 +6,7 @@ const puppeteer = require("puppeteer")
 async function giteeUpdate(pwd) {
   const browser = await puppeteer.launch({
     // 此处可以使用 false 有头模式进行调试, 调试完注释即可
-    headless: false
+    headless: true
   })
   const page = await browser.newPage()
   
@@ -55,7 +55,7 @@ async function giteeUpdate(pwd) {
   }
   await page.waitForTimeout(500)
   // 8.更新完毕，关闭浏览器
-  // browser.close()
+  browser.close()
 }
 
 const fs = require('fs');

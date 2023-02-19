@@ -1,18 +1,19 @@
 ---
 title: git合并commit
-index_img: /img/cover.png
+index_img: /img/cover.jpg
 math: false
 mermaid: false
-date: 2023-02-19 20:04:19
 tags:
-- Git
+  - Git
 categories:
-- Git
+  - Git
+abbrlink: af721f80
+date: 2023-02-19 20:04:19
 ---
 
 ### 一、目的
 
-有时候很多简短的commit完全可以合并，没必要独占一个。有时候分支开发之后，想要合并，合并成一个commit更方便。
+有时候很多简短的commit完全可以合并，没必要独占一个。有时候分支开发之后，想要合并，合并成一个commit更方便。<!--more-->
 
 ### 二、步骤
 
