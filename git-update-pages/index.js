@@ -24,8 +24,8 @@ async function giteeUpdate(pwd) {
   
   // 3. 获取登录按钮，触发点击事件
   let loginButtons = await page.$x('//*[@class="git-login-form-fields"]/div[4]/input')
-  // await loginButtons[0].click()
-  await loginButtons[0].evaluate((h)=>{h.click()})
+  await loginButtons[0].click()
+  // await loginButtons[0].evaluate((h)=>{h.click()})
   // 4. 等待登录成功
   await page.waitForTimeout(1000)
   // 🚨需要设置自己的gitee pages页面🚨
@@ -40,8 +40,8 @@ async function giteeUpdate(pwd) {
   
   // 6. 点击更新按钮，并弹出确认弹窗
   let updateButtons = await page.$x('//*[@id="pages-branch"]/div[6]')
-  // await updateButtons[0].click()
-  await updateButtons[0].evaluate((h)=>{h.click()})
+  await updateButtons[0].click()
+  // await updateButtons[0].evaluate((h)=>{h.click()})
   // await console.log(updateButtons)
   
   //7. 确认是否更新
