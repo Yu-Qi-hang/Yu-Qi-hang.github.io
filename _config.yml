@@ -120,5 +120,6 @@ theme: fluid
 deploy:
   type: git
   repository:
+    github: git@github.com:Yu-Qi-hang/Yu-Qi-hang.github.io.git
     gitee: git@gitee.com:Yu-Qi-hang/yu-qi-hang.git
   branch: master

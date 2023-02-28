@@ -1041,6 +1041,18 @@ about:
       link: "https://github.com/fluid-dev/hexo-theme-fluid",
       avatar: "/img/favicon.png"
     }
+    - {
+      title: "Github Pages",
+      intro: "我的博客",
+      link: "https://yu-qi-hang.github.io",
+      avatar: "/img/logo.png"
+    }
+    - {
+      title: "Gitee Pages",
+      intro: "我的博客",
+      link: "https://yu-qi-hang.gitee.io",
+      avatar: "/img/logo.png"
+    }
 
   onerror_avatar: /img/avatar.png
 
