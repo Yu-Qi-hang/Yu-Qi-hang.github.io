@@ -1,4 +1,1 @@
-cd ./git-update-pages
-start /wait push.bat
-start /wait deploy.bat
-start /wait update.bat
+start C:\Environments\Git\git-bash.exe --cd=C:\MyFiles\BLOG -c "echo Push Source && git add . && git commit -m \"Update articles\" && git push -f && echo New Pages && hexo clean && hexo g && hexo d && hexo clean && echo Update Pages && cd git-update-pages && git-update-pages;bash"
