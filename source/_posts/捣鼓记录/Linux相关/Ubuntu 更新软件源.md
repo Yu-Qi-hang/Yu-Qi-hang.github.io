@@ -1,11 +1,12 @@
 ---
 title: Ubuntu 更新软件源
-date: 2023-03-02
 tags:
-- Ubuntu
-- 软件源
+  - Ubuntu
+  - 软件源
 categories:
-- Linux
+  - Linux
+abbrlink: 4e2b2d43
+date: 2023-03-02 00:00:00
 ---
 
 ### 一、备份软件源配置
@@ -18,7 +19,7 @@ cp /etc/apt/sources.list /etc/apt/sources.list.bak
 ```bash
 vim /etc/apt/sources.list
 ```
-按下 `i` 进入编辑模式，将文件内容替换为需要使用的文件源，国内常见如下<br />依次按下`ESC``:` 之后输入`wq`回车保存
+按下 `i` 进入编辑模式，将文件内容替换为需要使用的文件源，国内常见如下<br />依次按下`ESC` `:` 之后输入`wq`回车保存
 ### 三、更新
 执行下面命令
 ```bash

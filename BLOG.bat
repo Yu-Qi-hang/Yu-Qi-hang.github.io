@@ -1,4 +1,4 @@
 cd ./git-update-pages
-call push.bat
-call deploy.bat
-call update.bat
+start /wait push.bat
+start /wait deploy.bat
+start /wait update.bat
