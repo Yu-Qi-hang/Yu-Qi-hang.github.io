@@ -8,19 +8,21 @@ date: 2023-02-15 21:52:02
 ---
 
 <head>
-    <link rel="stylesheet" type="text/css" href="card.css">
+    <link rel="stylesheet" type="text/css" href="/css/card.css">
 </head>
+
 
 <body><div>
 <!--start-->
 
-<div class="card" draggable="true"   scale="true">
+<div class="card" draggable="true"   scale="true" onclick="window.open('https://yu-qi-hang.gitee.io')">
 <img width=100%  src="/img/cover.jpg" draggable="false"/>
 <div class="card-text">
 <h3>测试标题</h3>
 <span>海内存知己，天涯若比邻</span>
 <h4>2023-02-13</h4>
 </div></div>
+
 
 
 
@@ -56,8 +58,9 @@ date: 2023-02-15 21:52:02
 
 
 <div style="text-align: center">
-<i class="iconfont icon-pen"></i>
+<i class="iconfont icon-feather-alt"></i>
 </div>
+
 
 
 
