@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yu-qi-hang.github.io/img/AI.png">
 <meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-26T13:59:20.277Z">
+<meta property="article:modified_time" content="2023-10-26T16:04:46.948Z">
 <meta property="article:author" content="围墙里的鱼">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="神经网络">
@@ -630,15 +630,6 @@
     
       
       
-        <a href="/posts/70cf/" title="StarGAN"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">StarGAN</span>
-        </a>
-      
-    
-      
-      
         <a href="/posts/2a1/" title="StackGAN"
            class="list-group-item list-group-item-action
            ">
@@ -652,6 +643,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">生成对抗网络</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/70cf/" title="StarGAN"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">StarGAN</span>
         </a>
       
     
@@ -689,24 +689,6 @@
     
       
       
-        <a href="/posts/775/" title="卷积反卷积计算"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">卷积反卷积计算</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/7401/" title="激活函数"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">激活函数</span>
-        </a>
-      
-    
-      
-      
         <a href="/posts/b5d6/" title="Dropout"
            class="list-group-item list-group-item-action
            ">
@@ -716,10 +698,28 @@
     
       
       
+        <a href="/posts/775/" title="卷积反卷积计算"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">卷积反卷积计算</span>
+        </a>
+      
+    
+      
+      
         <a href="/posts/c64/" title="超网络"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">超网络</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/7401/" title="激活函数"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">激活函数</span>
         </a>
       
     
@@ -758,13 +758,13 @@
                 <p>变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从 <strong>隐变量Z</strong> 生成 <strong>目标数据X</strong> 的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型 $X&#x3D;g(Z)$，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。 </p>
 <h3 id="AE"><a href="#AE" class="headerlink" title="AE"></a>AE</h3><p>encoder：从“旧特征”表示生成“新特征”表示，降维</p>
 <p>decoder：encoder相反</p>
-<img src="/posts/undefined/Encoder_Decoder.png" srcset="/img/loading.gif" lazyload class="" title="image-1">
+<img src="/posts/ad84/Encoder_Decoder.png" srcset="/img/loading.gif" lazyload class="" title="image-1">
 
 <p>找到一组最合适的编码解码器使得重建的数据与原始数据误差测量最小。</p>
 <p>$$loss &#x3D; \parallel{x-\hat{x}}\parallel^{2}&#x3D;\parallel{x-d(z)}\parallel^{2}&#x3D;\parallel{x-e(d(x))}\parallel^{2}$$</p>
 <p>将编码器和解码器设置为<strong>神经网络</strong>并使用迭代优化过程学习最佳编码-解码方案，在每次迭代中，我们都会向<strong>Auto-Encoder</strong>架构（编码器后跟解码器）提供一些数据，我们将编码-解码输出与初始数据进行比较，并通过架构<strong>反向传播</strong>误差以更新网络的权重。</p>
 <p>一旦自动编码器被训练，我们既有编码器又有解码器，但仍然没有真正的方法来产生任何<strong>新内容</strong>。乍一看，我们可能会认为，如果<strong>潜在空间足够规则</strong>（在训练过程中由编码器很好地“组织”），我们可以从该潜在空间中随机获取一个点并对其进行解码以获得新内容。然后，解码器的行为或多或少类似于生成对抗网络的生成器。然而，自动编码器的潜在空间的规律性是一个难题，它取决于初始空间中数据的分布、潜在空间的维度和编码器的架构。</p>
-<img src="/posts/undefined/latent_space.png" srcset="/img/loading.gif" lazyload class="" title="image-2">
+<img src="/posts/ad84/latent_space.png" srcset="/img/loading.gif" lazyload class="" title="image-2">
 
 <h3 id="VAE"><a href="#VAE" class="headerlink" title="VAE"></a>VAE</h3><p>为了能够将自动编码器的解码器用于<strong>生成目的</strong>，我们必须确保潜在空间足够规则。获得这种规律性的一种可能的解决方案是在训练过程中引入<strong>明确的正则化</strong>。因此，变分自编码器可以定义为一个自动编码器，其训练被正则化以避免过度拟合并确保潜在空间具有良好的属性，从而实现生成过程。</p>
 <p>为了引入一些潜在空间的正则化，我们对编码-解码过程进行了轻微的修改：我们不是将输入编码为单个点，而是将其<strong>编码为潜在空间上的分布</strong>。</p>
@@ -774,18 +774,18 @@
 <li>第三，对采样点进行<strong>解码</strong>并计算重建误差</li>
 <li>最后，<strong>重建误差</strong>通过网络反向传播</li>
 </ol>
-<img src="/posts/undefined/data_flow.png" srcset="/img/loading.gif" lazyload class="" title="image-3">
+<img src="/posts/ad84/data_flow.png" srcset="/img/loading.gif" lazyload class="" title="image-3">
 
 <p>编码分布被选择为<strong>正态分布</strong>，以便可以训练编码器返回描述这些高斯的<strong>均值和协方差矩阵</strong>。我们以这种方式确保潜在空间的局部和全局正则化（局部因为方差控制，全局因为均值控制）。</p>
 <p>训练VAE时最小化的损失函数由“重建项”（在最后一层）和“正则化项”（在潜伏层上）组成，前者倾向于使编码-解码方案尽可能<strong>高性能</strong>，后者通过使编码器返回的分布<strong>接近标准正态分布</strong>来正则化潜在空间的组织。</p>
-<img src="/posts/undefined/VAE_loss.png" srcset="/img/loading.gif" lazyload class="" title="image-4">
+<img src="/posts/ad84/VAE_loss.png" srcset="/img/loading.gif" lazyload class="" title="image-4">
 
 <p>$$loss &#x3D; \parallel{x-\hat{x}}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]&#x3D;\parallel{x-d(z)}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]$$</p>
 <p>为了使生成过程成为可能而期望从潜在空间获得的规律性可以通过两个主要属性来表示：<strong>连续性</strong>（潜在空间中的两个接近点在解码后不应给出两个完全不同的内容）和<strong>完整性</strong>（对于选定的分布，从潜在空间采样的点在解码后应该给出“有意义的”内容）。</p>
-<img src="/posts/undefined/latent_sample.png" srcset="/img/loading.gif" lazyload class="" title="image-5">
+<img src="/posts/ad84/latent_sample.png" srcset="/img/loading.gif" lazyload class="" title="image-5">
 
 <p>通过正则化项，我们可以满足预期的连续性和完整性条件，但这是以训练数据上更高的重建误差为代价的。然而，重建误差和KL散度之间的权重是可以调整的。</p>
-<img src="/posts/undefined/reparameter.png" srcset="/img/loading.gif" lazyload class="" title="image-6">
+<img src="/posts/ad84/reparameter.png" srcset="/img/loading.gif" lazyload class="" title="image-6">
 
 <p>$$loss &#x3D; C\parallel{x-\hat{x}}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]&#x3D;C\parallel{x-f(z)}\parallel^{2}+KL[N(g(x),h(x))),N(0,1)]$$</p>
 
@@ -923,8 +923,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/70cf/" title="StarGAN">
-                        <span class="hidden-mobile">StarGAN</span>
+                      <a href="/posts/276c/" title="条件变分自编码器CVAE">
+                        <span class="hidden-mobile">条件变分自编码器CVAE</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

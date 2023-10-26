@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yu-qi-hang.github.io/img/blog.png">
 <meta property="article:published_time" content="2022-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-26T16:01:08.104Z">
+<meta property="article:modified_time" content="2023-10-26T16:04:46.907Z">
 <meta property="article:author" content="围墙里的鱼">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="blog">
@@ -462,15 +462,6 @@
     
       
       
-        <a href="/posts/efdd/" title="Nodejs安装以及更新"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Nodejs安装以及更新</span>
-        </a>
-      
-    
-      
-      
         <a href="/posts/d435/" title="增加右键文件夹打开方式"
            class="list-group-item list-group-item-action
            ">
@@ -484,6 +475,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">阿里云盘挂载</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/efdd/" title="Nodejs安装以及更新"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Nodejs安装以及更新</span>
         </a>
       
     
@@ -621,19 +621,19 @@
     
       
       
-        <a href="/posts/6c58/" title="Next主题导入JQuery"
+        <a href="/posts/d52e/" title="Next8-x标签归档美化"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Next主题导入JQuery</span>
+          <span class="category-post">Next8-x标签归档美化</span>
         </a>
       
     
       
       
-        <a href="/posts/d52e/" title="Next8-x标签归档美化"
+        <a href="/posts/6c58/" title="Next主题导入JQuery"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Next8-x标签归档美化</span>
+          <span class="category-post">Next主题导入JQuery</span>
         </a>
       
     
@@ -825,7 +825,7 @@
 <p>配置文件<br>在 BLOG\themes\next\layout_macro\sidebar.njk 文件中添加代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;% <span class="hljs-keyword">if</span> site.tags.length &gt; 1 %&#125;<br>&lt;script <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> charset=<span class="hljs-string">&quot;utf-8&quot;</span> src=<span class="hljs-string">&quot;/js/tagcloud.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;script <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> charset=<span class="hljs-string">&quot;utf-8&quot;</span> src=<span class="hljs-string">&quot;/js/tagcanvas.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;div class=<span class="hljs-string">&quot;widget-wrap&quot;</span>&gt;<br>    &lt;h3 class=<span class="hljs-string">&quot;widget-title&quot;</span>&gt;Tag Cloud&lt;/h3&gt;<br>    &lt;div <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;myCanvasContainer&quot;</span> class=<span class="hljs-string">&quot;widget tagcloud&quot;</span>&gt;<br>        &lt;canvas width=<span class="hljs-string">&quot;250&quot;</span> height=<span class="hljs-string">&quot;250&quot;</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;resCanvas&quot;</span> style=<span class="hljs-string">&quot;width=100%&quot;</span>&gt;<br>            &#123;&#123; list_tags() &#125;&#125;<br>        &lt;/canvas&gt;<br>    &lt;/div&gt;<br>&lt;/div&gt;<br>&#123;% endif %&#125;<br></code></pre></td></tr></table></figure>
 
-<p>添加完效果如图<img src="/posts/undefined/highlight.png" srcset="/img/loading.gif" lazyload class="" title="image.png"></p>
+<p>添加完效果如图<img src="/posts/2cc5/highlight.png" srcset="/img/loading.gif" lazyload class="" title="image.png"></p>
 <h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><p>Next 8.x 已经集成了需要的插件<br>编辑需要插入的代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;!--音乐插件--&gt;<br>&lt;!-- require APlayer --&gt;<br>&lt;<span class="hljs-built_in">link</span> rel=<span class="hljs-string">&quot;stylesheet&quot;</span> href=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;</span>&gt;<br>&lt;script src=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;!-- require MetingJS--&gt;<br>&lt;script src=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&quot;</span>&gt;&lt;/script&gt; <br>&lt;!--QQ音乐外链地址--&gt;   <br>&lt;meting-js<br>    server=<span class="hljs-string">&quot;tencent&quot;</span><br>    <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;song&quot;</span> <br>    <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;001oqXcA34gsMM&quot;</span><br>    mini=<span class="hljs-string">&quot;false&quot;</span><br>    fixed=<span class="hljs-string">&quot;false&quot;</span><br>    list-folded=<span class="hljs-string">&quot;true&quot;</span><br>    autoplay=<span class="hljs-string">&quot;false&quot;</span><br>    volume=<span class="hljs-string">&quot;0.4&quot;</span><br>    theme=<span class="hljs-string">&quot;#FADFA3&quot;</span><br>    order=<span class="hljs-string">&quot;list&quot;</span><br>    loop=<span class="hljs-string">&quot;all&quot;</span><br>    preload=<span class="hljs-string">&quot;auto&quot;</span><br>    mutex=<span class="hljs-string">&quot;true&quot;</span>&gt;<br>&lt;/meting-js&gt;<br></code></pre></td></tr></table></figure>
 
@@ -924,11 +924,11 @@
 </tr>
 </tbody></table>
 <p>这就是ID的获取方式，其他平台类似</p>
-<img src="/posts/undefined/id.png" srcset="/img/loading.gif" lazyload class="" title="image.png">
-<p>插入代码到需要的位置，打开主题文件夹下的 <code>layout/_macro/sidebar.njk</code>   文件，插入到如图所示位置，不同位置会导致显示位置不同。<img src="/posts/undefined/layout.png" srcset="/img/loading.gif" lazyload class="" title="image.png"><br>为了避免切换页面引起重新播放，需要进行全局设置，在主题文件夹下的 <code>layout/_layout.njk</code> 里面添加</p>
+<img src="/posts/2cc5/id.png" srcset="/img/loading.gif" lazyload class="" title="image.png">
+<p>插入代码到需要的位置，打开主题文件夹下的 <code>layout/_macro/sidebar.njk</code>   文件，插入到如图所示位置，不同位置会导致显示位置不同。<img src="/posts/2cc5/layout.png" srcset="/img/loading.gif" lazyload class="" title="image.png"><br>为了避免切换页面引起重新播放，需要进行全局设置，在主题文件夹下的 <code>layout/_layout.njk</code> 里面添加</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;!--pjax：防止跳转页面音乐暂停--&gt;<br> &lt;script src=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
 
-<img src="/posts/undefined/refresh.png" srcset="/img/loading.gif" lazyload class="" title="image.png">
+<img src="/posts/2cc5/refresh.png" srcset="/img/loading.gif" lazyload class="" title="image.png">
 <p>在主题配置文件中修改 <code>pjax: true</code>。<br>该操作有一个问题，本质上是是sidebar不刷新，因此进入新页面会导致sidebar依然显示站点概览而不是文章目录，所以我去掉了该功能。</p>
 
                 
@@ -1052,8 +1052,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/6c58/" title="Next主题导入JQuery">
-                        <span class="hidden-mobile">Next主题导入JQuery</span>
+                      <a href="/posts/d52e/" title="Next8-x标签归档美化">
+                        <span class="hidden-mobile">Next8-x标签归档美化</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
