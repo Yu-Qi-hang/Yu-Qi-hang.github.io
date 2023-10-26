@@ -1,0 +1,1382 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="围墙里的鱼">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、Hexo主题选择进入主题网站 https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F; 选择自己喜欢的主题，我选择的是Next主题，比较简洁美观，而且不需要封面图片。参考github的仓库 https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next 可以进行安装。  进入博客根目录  执行下面代码。  1git clone https:&#x2F;&#x2F;github.com&#x2F;next-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo主题选择以及自定义配置">
+<meta property="og:url" content="https://yu-qi-hang.github.io/posts/2cc5/index.html">
+<meta property="og:site_name" content="围墙里的鱼的围墙">
+<meta property="og:description" content="一、Hexo主题选择进入主题网站 https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F; 选择自己喜欢的主题，我选择的是Next主题，比较简洁美观，而且不需要封面图片。参考github的仓库 https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next 可以进行安装。  进入博客根目录  执行下面代码。  1git clone https:&#x2F;&#x2F;github.com&#x2F;next-">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yu-qi-hang.github.io/img/blog.png">
+<meta property="article:published_time" content="2022-05-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-26T16:01:08.104Z">
+<meta property="article:author" content="围墙里的鱼">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yu-qi-hang.github.io/img/blog.png">
+  
+  
+  
+  <title>Hexo主题选择以及自定义配置 - 围墙里的鱼的围墙</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yu-qi-hang.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2LhEQXmS0x6R9O2auCHyApcW-gzGzoHsz","app_key":"DvgE8I4PVPIxcc2uN9VuQq93","server_url":"https://2lheqxms.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>围墙里的鱼的围墙</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/write/">
+                <i class="iconfont icon-pen"></i>
+                <span>小记</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Hexo主题选择以及自定义配置"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-05-04 00:00" pubdate>
+          2022年5月4日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          56 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="计算机"
+        id="heading-8a2b56e293ee788f1057ad236e06559e" role="tab" data-toggle="collapse" href="#collapse-8a2b56e293ee788f1057ad236e06559e"
+        aria-expanded="true"
+      >
+        计算机
+        <span class="list-group-count">(22)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-8a2b56e293ee788f1057ad236e06559e"
+           role="tabpanel" aria-labelledby="heading-8a2b56e293ee788f1057ad236e06559e">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="学习记录"
+        id="heading-7f2ecb9c4d10981cd40468b79a104150" role="tab" data-toggle="collapse" href="#collapse-7f2ecb9c4d10981cd40468b79a104150"
+        aria-expanded="false"
+      >
+        学习记录
+        <span class="list-group-count">(9)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-7f2ecb9c4d10981cd40468b79a104150"
+           role="tabpanel" aria-labelledby="heading-7f2ecb9c4d10981cd40468b79a104150">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/7a22/" title="命令行程序控制"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">命令行程序控制</span>
+        </a>
+      
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Linux相关"
+        id="heading-a0a7a4095bc027fe26883103b78803cd" role="tab" data-toggle="collapse" href="#collapse-a0a7a4095bc027fe26883103b78803cd"
+        aria-expanded="false"
+      >
+        Linux相关
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-a0a7a4095bc027fe26883103b78803cd"
+           role="tabpanel" aria-labelledby="heading-a0a7a4095bc027fe26883103b78803cd">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/15d3/" title="Ubuntu 更新软件源"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Ubuntu 更新软件源</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Windows相关"
+        id="heading-9bc3f5b64bf3bcf94829b96dd93a7a8a" role="tab" data-toggle="collapse" href="#collapse-9bc3f5b64bf3bcf94829b96dd93a7a8a"
+        aria-expanded="false"
+      >
+        Windows相关
+        <span class="list-group-count">(6)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-9bc3f5b64bf3bcf94829b96dd93a7a8a"
+           role="tabpanel" aria-labelledby="heading-9bc3f5b64bf3bcf94829b96dd93a7a8a">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/8c26/" title="Anaconda下载、安装与使用"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Anaconda下载、安装与使用</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/5911/" title="Microsoft_store消失"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Microsoft_store消失</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/f446/" title="Git安装以及Github连接本地"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Git安装以及Github连接本地</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/efdd/" title="Nodejs安装以及更新"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Nodejs安装以及更新</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/d435/" title="增加右键文件夹打开方式"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">增加右键文件夹打开方式</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/c68c/" title="阿里云盘挂载"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">阿里云盘挂载</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="服务器管理"
+        id="heading-010343580c8b38568eafe59d9b6221bd" role="tab" data-toggle="collapse" href="#collapse-010343580c8b38568eafe59d9b6221bd"
+        aria-expanded="false"
+      >
+        服务器管理
+        <span class="list-group-count">(1)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-010343580c8b38568eafe59d9b6221bd"
+           role="tabpanel" aria-labelledby="heading-010343580c8b38568eafe59d9b6221bd">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/f111/" title="从零开始使用服务器"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">从零开始使用服务器</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="捣鼓记录"
+        id="heading-4dd737e10628d02926336e687c855e14" role="tab" data-toggle="collapse" href="#collapse-4dd737e10628d02926336e687c855e14"
+        aria-expanded="true"
+      >
+        捣鼓记录
+        <span class="list-group-count">(13)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-4dd737e10628d02926336e687c855e14"
+           role="tabpanel" aria-labelledby="heading-4dd737e10628d02926336e687c855e14">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/7713/" title="导出语雀知识库"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">导出语雀知识库</span>
+        </a>
+      
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="博客搭建"
+        id="heading-5015cfdc68085d8b3157455484121939" role="tab" data-toggle="collapse" href="#collapse-5015cfdc68085d8b3157455484121939"
+        aria-expanded="true"
+      >
+        博客搭建
+        <span class="list-group-count">(10)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-5015cfdc68085d8b3157455484121939"
+           role="tabpanel" aria-labelledby="heading-5015cfdc68085d8b3157455484121939">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/fa96/" title="GithubPages_Hexo搭建个人博客"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">GithubPages_Hexo搭建个人博客</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/5934/" title="Hexo_Typora实现相对路径图片显示"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo_Typora实现相对路径图片显示</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/2cc5/" title="Hexo主题选择以及自定义配置"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">Hexo主题选择以及自定义配置</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/6c58/" title="Next主题导入JQuery"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Next主题导入JQuery</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/d52e/" title="Next8-x标签归档美化"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Next8-x标签归档美化</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/e307/" title="添加文末感谢阅读"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">添加文末感谢阅读</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/c96c/" title="Hexo实现在线编辑"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo实现在线编辑</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/66a1/" title="指定页面侧边栏不显示目录"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">指定页面侧边栏不显示目录</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/a8c2/" title="添加小记页面"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">添加小记页面</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/3aa1/" title="AddThis分享文章"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">AddThis分享文章</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="双系统"
+        id="heading-6d226acca84fab543b03dc81c5fb452f" role="tab" data-toggle="collapse" href="#collapse-6d226acca84fab543b03dc81c5fb452f"
+        aria-expanded="false"
+      >
+        双系统
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-6d226acca84fab543b03dc81c5fb452f"
+           role="tabpanel" aria-labelledby="heading-6d226acca84fab543b03dc81c5fb452f">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/764/" title="Win10安装Ubuntu22.04双系统"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Win10安装Ubuntu22.04双系统</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/9e30/" title="双系统切换界面"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">双系统切换界面</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Hexo主题选择以及自定义配置</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="一、Hexo主题选择"><a href="#一、Hexo主题选择" class="headerlink" title="一、Hexo主题选择"></a>一、Hexo主题选择</h3><p>进入主题网站 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a> 选择自己喜欢的主题，我选择的是Next主题，比较简洁美观，而且不需要封面图片。<br>参考github的仓库 <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a> 可以进行安装。</p>
+<ol>
+<li><p>进入博客根目录</p>
+</li>
+<li><p>执行下面代码。</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">git</span> <span class="hljs-string">clone</span> <span class="hljs-string">https://github.com/next-theme/hexo-theme-next</span> <span class="hljs-string">themes/next</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>这时候进入 **themes **文件夹可以发现一个 <strong>next</strong> 文件夹，说明安装成功。</p>
+</li>
+<li><p>打开 _config.yml ，拉到最后，找到 theme</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">landscape</span><br><span class="hljs-comment">#改成</span><br><span class="hljs-attr">theme:</span> <span class="hljs-string">next</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>执行网页生成和预览命令可以查看</p>
+</li>
+</ol>
+<h3 id="二、个性化配置"><a href="#二、个性化配置" class="headerlink" title="二、个性化配置"></a>二、个性化配置</h3><p>参考 <a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">Next使用文档</a> 进行各种配置。需要注意的是在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于<strong>站点根目录</strong>下，主要包含 Hexo 本身的配置；另一份位于<strong>主题目录</strong>下，这份配置由主题作者提供，主要用于配置主题相关的选项。<br>为了描述方便，在以下说明中，将前者称为 <strong>站点配置文件</strong>， 后者称为 <strong>主题配置文件</strong>。</p>
+<ol>
+<li><p>主题配置文件可以选择 scheme，最新版有四种外观，这里选择最新增加的 Gemini。</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Schemes</span><br><span class="hljs-comment"># scheme: Muse</span><br><span class="hljs-comment"># scheme: Mist</span><br><span class="hljs-comment"># scheme: Pisces</span><br><span class="hljs-attr">scheme:</span> <span class="hljs-string">Gemini</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>站点配置文件可以选择语言，这里选择简体中文</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在主题配置文件设置菜单，找到 menu，可以先全部打开，显得比较丰富，之后选择性关闭部分菜单页面，但是除了归档页，其他页面都需要自己生成。</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">menu:</span><br>  <span class="hljs-attr">home:</span> <span class="hljs-string">/</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-home</span><br>  <span class="hljs-attr">about:</span> <span class="hljs-string">/about/</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-user</span><br>  <span class="hljs-attr">tags:</span> <span class="hljs-string">/tags/</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-tags</span><br>  <span class="hljs-attr">categories:</span> <span class="hljs-string">/categories/</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-th</span><br>  <span class="hljs-attr">archives:</span> <span class="hljs-string">/archives/</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-archive</span><br>  <span class="hljs-attr">schedule:</span> <span class="hljs-string">/schedule/</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-calendar</span><br>  <span class="hljs-attr">sitemap:</span> <span class="hljs-string">/sitemap.xml</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-sitemap</span><br>  <span class="hljs-attr">commonweal:</span> <span class="hljs-string">/404/</span> <span class="hljs-string">||</span> <span class="hljs-string">fa</span> <span class="hljs-string">fa-heartbeat</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>生成分类页，在博客根目录执行 <code>hexo new page categories</code> 即可生成页面，打开根目录下的<code>source/categories/index.md</code>，默认内容是</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">categories</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2023-01-05 22:02:23</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>我们增加一行，使其变成</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">categories</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2023-01-05 22:02:23</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">&quot;categories&quot;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>标签页做法类似，只需要把categories改成tags即可，关于页则是生成page about之后自己编辑即可。</p>
+</li>
+<li><p>在站点配置文件设置个人信息</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">title:</span> <span class="hljs-string">围墙里的鱼的围墙</span><br><span class="hljs-attr">description:</span> <span class="hljs-string">&#x27;个人博客&#x27;</span><br><span class="hljs-attr">author:</span> <span class="hljs-string">围墙里的鱼</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在主题配置文件设置个人头像，文件放在主题目录的<code>source/images/</code>文件夹下面</p>
+ <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">avatar:</span><br>  <span class="hljs-attr">url:</span> <span class="hljs-string">/images/avatar.jpg</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>侧边栏社交功能，只显示图标</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">social:<br>  GitHub: https://github.com/yu-qi-hang || fab fa-github<br>  E-Mail: 2659464450@qq.com || fa fa-envelope<br>social_icons:<br>  <span class="hljs-built_in">enable</span>: <span class="hljs-literal">true</span><br>  icons_only: <span class="hljs-literal">true</span><br>  transition: <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>右上角添加fork your github。在themes&#x2F;next&#x2F;layout&#x2F;_layout.njk中添加代码</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#在body的headband div后面添加如下代码</span><br>&lt;div class=<span class="hljs-string">&quot;forkme&quot;</span>&gt;<br>  &lt;a href=<span class="hljs-string">&quot;https://github.com/yu-qi-hang&quot;</span> class=<span class="hljs-string">&quot;github-corner&quot;</span> aria-label=<span class="hljs-string">&quot;View source on GitHub&quot;</span>&gt;&lt;svg width=<span class="hljs-string">&quot;80&quot;</span> height=<span class="hljs-string">&quot;80&quot;</span> viewBox=<span class="hljs-string">&quot;0 0 250 250&quot;</span> style=<span class="hljs-string">&quot;fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;&quot;</span> aria-hidden=<span class="hljs-string">&quot;true&quot;</span>&gt;&lt;path d=<span class="hljs-string">&quot;M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z&quot;</span>&gt;&lt;/path&gt;&lt;path d=<span class="hljs-string">&quot;M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2&quot;</span> fill=<span class="hljs-string">&quot;currentColor&quot;</span> style=<span class="hljs-string">&quot;transform-origin: 130px 106px;&quot;</span> class=<span class="hljs-string">&quot;octo-arm&quot;</span>&gt;&lt;/path&gt;&lt;path d=<span class="hljs-string">&quot;M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z&quot;</span> fill=<span class="hljs-string">&quot;currentColor&quot;</span> class=<span class="hljs-string">&quot;octo-body&quot;</span>&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;style&gt;.github-corner:hover .octo-arm&#123;animation:octocat-wave 560ms ease-in-out&#125;@keyframes octocat-wave&#123;0%,100%&#123;transform:rotate(0)&#125;20%,60%&#123;transform:rotate(-25deg)&#125;40%,80%&#123;transform:rotate(10deg)&#125;&#125;@media (max-width:500px)&#123;.github-corner:hover .octo-arm&#123;animation:none&#125;.github-corner .octo-arm&#123;animation:octocat-wave 560ms ease-in-out&#125;&#125;&lt;/style&gt;<br>&lt;/div&gt;<br><span class="hljs-comment">#如果要实现屏幕变小之后不显示，在head的title后面添加如下代码</span><br>  &lt;style&gt;<br>  .forkme&#123;<br>		display: none;<br>	&#125;<br>  @media (min-width: 768px) &#123;<br>	.forkme&#123;<br>		display: inline;<br>	&#125;<br>  &#125;<br>  &lt;/style&gt;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>增加版权声明，在主题配置文件中找到下面的并且修改</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">creative_commons:<br>  license: by-nc-sa<br>  sidebar: <span class="hljs-literal">false</span><br>  post: <span class="hljs-literal">true</span><br>  language:<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>增加加载进度条，在主题配置文件中找到pace，设为true。</p>
+</li>
+</ol>
+<h3 id="三、第三方服务集成"><a href="#三、第三方服务集成" class="headerlink" title="三、第三方服务集成"></a>三、第三方服务集成</h3><h4 id="数学公式渲染"><a href="#数学公式渲染" class="headerlink" title="数学公式渲染"></a>数学公式渲染</h4><p>主题配置文件把 mathjax 的 enable 设为 true</p>
+<h4 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h4><p>登录 <a target="_blank" rel="noopener" href="https://tongji.baidu.com/">百度统计</a> 添加网站信息，到代码获取页面，复制打码部分字段，修改主题配置文件的 baidu_analytics 值为此字段。<br><img src="/..%5C..%5C..%5Cassets%5Ccp0svstigr17mp8r%5C1672991290945-302a055a-acaf-4f85-b8d9-e1cddada52bb.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h4 id="Local-Search"><a href="#Local-Search" class="headerlink" title="Local Search"></a>Local Search</h4><p>修改 BLOG\node_modules\hexo-generator-searchdb\dist 文件夹下的js后缀为json</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#安装插件</span><br>npm install hexo-generator-searchdb --save<br><br><span class="hljs-comment">#修改站点配置文件</span><br>search:<br>  path: search.json<br>  field: post<br>  format: html<br>  <span class="hljs-built_in">limit</span>: 10000<br><span class="hljs-comment">#修改主题配置文件</span><br>local_search:<br>  <span class="hljs-built_in">enable</span>: <span class="hljs-literal">true</span><br>	top_n_per_article: -1<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="标签云"><a href="#标签云" class="headerlink" title="标签云"></a>标签云</h4><p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-tag-cloud<br></code></pre></td></tr></table></figure>
+
+<p>配置文件<br>在 BLOG\themes\next\layout_macro\sidebar.njk 文件中添加代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash">&#123;% <span class="hljs-keyword">if</span> site.tags.length &gt; 1 %&#125;<br>&lt;script <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> charset=<span class="hljs-string">&quot;utf-8&quot;</span> src=<span class="hljs-string">&quot;/js/tagcloud.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;script <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> charset=<span class="hljs-string">&quot;utf-8&quot;</span> src=<span class="hljs-string">&quot;/js/tagcanvas.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;div class=<span class="hljs-string">&quot;widget-wrap&quot;</span>&gt;<br>    &lt;h3 class=<span class="hljs-string">&quot;widget-title&quot;</span>&gt;Tag Cloud&lt;/h3&gt;<br>    &lt;div <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;myCanvasContainer&quot;</span> class=<span class="hljs-string">&quot;widget tagcloud&quot;</span>&gt;<br>        &lt;canvas width=<span class="hljs-string">&quot;250&quot;</span> height=<span class="hljs-string">&quot;250&quot;</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;resCanvas&quot;</span> style=<span class="hljs-string">&quot;width=100%&quot;</span>&gt;<br>            &#123;&#123; list_tags() &#125;&#125;<br>        &lt;/canvas&gt;<br>    &lt;/div&gt;<br>&lt;/div&gt;<br>&#123;% endif %&#125;<br></code></pre></td></tr></table></figure>
+
+<p>添加完效果如图<img src="/posts/undefined/highlight.png" srcset="/img/loading.gif" lazyload class="" title="image.png"></p>
+<h4 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h4><p>Next 8.x 已经集成了需要的插件<br>编辑需要插入的代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;!--音乐插件--&gt;<br>&lt;!-- require APlayer --&gt;<br>&lt;<span class="hljs-built_in">link</span> rel=<span class="hljs-string">&quot;stylesheet&quot;</span> href=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;</span>&gt;<br>&lt;script src=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;</span>&gt;&lt;/script&gt;<br>&lt;!-- require MetingJS--&gt;<br>&lt;script src=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js&quot;</span>&gt;&lt;/script&gt; <br>&lt;!--QQ音乐外链地址--&gt;   <br>&lt;meting-js<br>    server=<span class="hljs-string">&quot;tencent&quot;</span><br>    <span class="hljs-built_in">type</span>=<span class="hljs-string">&quot;song&quot;</span> <br>    <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;001oqXcA34gsMM&quot;</span><br>    mini=<span class="hljs-string">&quot;false&quot;</span><br>    fixed=<span class="hljs-string">&quot;false&quot;</span><br>    list-folded=<span class="hljs-string">&quot;true&quot;</span><br>    autoplay=<span class="hljs-string">&quot;false&quot;</span><br>    volume=<span class="hljs-string">&quot;0.4&quot;</span><br>    theme=<span class="hljs-string">&quot;#FADFA3&quot;</span><br>    order=<span class="hljs-string">&quot;list&quot;</span><br>    loop=<span class="hljs-string">&quot;all&quot;</span><br>    preload=<span class="hljs-string">&quot;auto&quot;</span><br>    mutex=<span class="hljs-string">&quot;true&quot;</span>&gt;<br>&lt;/meting-js&gt;<br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><strong>选项</strong></th>
+<th><strong>默认</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>id(编号)</td>
+<td>require</td>
+<td>歌曲ID &#x2F;播放列表ID &#x2F;专辑ID &#x2F;搜索关键字</td>
+</tr>
+<tr>
+<td>server(平台)</td>
+<td>require</td>
+<td>音乐平台：netease，tencent，kugou，xiami，baidu</td>
+</tr>
+<tr>
+<td>type（类型）</td>
+<td>require</td>
+<td>song，playlist，album，search，artist</td>
+</tr>
+<tr>
+<td>auto（支持类种 类）</td>
+<td>options</td>
+<td>音乐链接，支持：netease，tencent，xiami</td>
+</tr>
+<tr>
+<td>fixed（固定模式）</td>
+<td>false</td>
+<td>启用固定模式</td>
+</tr>
+<tr>
+<td>mini（迷你模式）</td>
+<td>false</td>
+<td>启用迷你模式</td>
+</tr>
+<tr>
+<td>autoplay（自动播放）</td>
+<td>false</td>
+<td>音频自动播放</td>
+</tr>
+<tr>
+<td>theme(主题颜色)</td>
+<td><code>#2980b9</code></td>
+<td>默认#2980b9</td>
+</tr>
+<tr>
+<td>loop（循环）</td>
+<td>all</td>
+<td>播放器循环播放，值：“all”，one”，“none”</td>
+</tr>
+<tr>
+<td>order(顺序)</td>
+<td>list</td>
+<td>播放器播放顺序，值：“list”，“random”</td>
+</tr>
+<tr>
+<td>preload(加载)</td>
+<td>auto</td>
+<td>值：“none”，“metadata”，“’auto”</td>
+</tr>
+<tr>
+<td>volume（声量）</td>
+<td>0.7</td>
+<td>默认音量，请注意播放器会记住用户设置，用户自己设置音量后默认音量将不起作用</td>
+</tr>
+<tr>
+<td>mutex（限制）</td>
+<td>true</td>
+<td>防止同时播放多个玩家，在该玩家开始播放时暂停其他玩家</td>
+</tr>
+<tr>
+<td>lrc-type（歌词）</td>
+<td>0</td>
+<td>歌词显示</td>
+</tr>
+<tr>
+<td>list-folded（列表折叠）</td>
+<td>false</td>
+<td>指示列表是否应该首先折叠</td>
+</tr>
+<tr>
+<td>list-max-height（最大高度）</td>
+<td>340px</td>
+<td>列出最大高度</td>
+</tr>
+<tr>
+<td>storage-name（储存名称）</td>
+<td>metingjs</td>
+<td>存储播放器设置的localStorage键</td>
+</tr>
+</tbody></table>
+<p>这就是ID的获取方式，其他平台类似</p>
+<img src="/posts/undefined/id.png" srcset="/img/loading.gif" lazyload class="" title="image.png">
+<p>插入代码到需要的位置，打开主题文件夹下的 <code>layout/_macro/sidebar.njk</code>   文件，插入到如图所示位置，不同位置会导致显示位置不同。<img src="/posts/undefined/layout.png" srcset="/img/loading.gif" lazyload class="" title="image.png"><br>为了避免切换页面引起重新播放，需要进行全局设置，在主题文件夹下的 <code>layout/_layout.njk</code> 里面添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;!--pjax：防止跳转页面音乐暂停--&gt;<br> &lt;script src=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+
+<img src="/posts/undefined/refresh.png" srcset="/img/loading.gif" lazyload class="" title="image.png">
+<p>在主题配置文件中修改 <code>pjax: true</code>。<br>该操作有一个问题，本质上是是sidebar不刷新，因此进入新页面会导致sidebar依然显示站点概览而不是文章目录，所以我去掉了该功能。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="category-chain-item">计算机</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8D%A3%E9%BC%93%E8%AE%B0%E5%BD%95/" class="category-chain-item">捣鼓记录</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%8D%A3%E9%BC%93%E8%AE%B0%E5%BD%95/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="category-chain-item">博客搭建</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Hexo/">#Hexo</a>
+      
+        <a href="/tags/blog/">#blog</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Hexo主题选择以及自定义配置</div>
+      <div>https://yu-qi-hang.github.io/posts/2cc5/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>围墙里的鱼</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年5月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/5934/" title="Hexo_Typora实现相对路径图片显示">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Hexo_Typora实现相对路径图片显示</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/6c58/" title="Next主题导入JQuery">
+                        <span class="hidden-mobile">Next主题导入JQuery</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"2LhEQXmS0x6R9O2auCHyApcW-gzGzoHsz","appKey":"DvgE8I4PVPIxcc2uN9VuQq93","path":"window.location.pathname","placeholder":"欢迎评论探讨(>-<)","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://2lheqxms.lc-cn-n1-shared.com","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"},"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
