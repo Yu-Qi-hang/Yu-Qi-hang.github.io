@@ -1018,7 +1018,7 @@ about:
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/Yu-Qi-hang", tip: "GitHub" }
     - { class: "iconfont icon-gitee-fill", link: "https://gitee.com/yu-qi-hang", tip: "Gitee" }
-    - { class: "iconfont icon-zhihu-fill", link: "https://www.zhihu.com/people/yu-qi-hang-8", tip: "码云"}
+    - { class: "iconfont icon-zhihu-fill", link: "https://www.zhihu.com/people/yu-qi-hang-8", tip: "知乎"}
     - { class: "iconfont icon-copyright", link: "https://blog.csdn.net/weixin_49334987", tip: "CSDN"}
     - { class: "iconfont icon-bilibili-fill", link: "https://space.bilibili.com/487751526", tip: "B站"}
     # - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
