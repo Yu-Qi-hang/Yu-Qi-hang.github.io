@@ -1,5 +1,6 @@
 ---
 title: 网络训练中的train和eval模式
+aliases: model.train()与model.eval()
 tags:
   - AI
   - Pytorch

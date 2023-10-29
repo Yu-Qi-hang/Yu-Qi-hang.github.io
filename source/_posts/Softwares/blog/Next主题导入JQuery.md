@@ -9,6 +9,7 @@ tags:
   - blog/Hexo
   - blog/Hexo/Next
 abbrlink: 6c58
+math: true
 date: 2022-05-04 00:00:00
 ---
 

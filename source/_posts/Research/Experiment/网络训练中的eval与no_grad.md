@@ -1,5 +1,6 @@
 ---
 title: 网络训练中的eval与no_grad
+aliases: model.eval()与torch.no_grad()
 tags:
   - AI
   - Pytorch

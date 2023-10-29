@@ -13,6 +13,7 @@ tags:
   - model/神经网络
   - model/VAE
 abbrlink: ad84
+math: true
 date: 2023-05-04 00:00:00
 ---
 

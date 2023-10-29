@@ -13,6 +13,7 @@ tags:
   - model
   - model/VAE
 abbrlink: 276c
+math: true
 date: 2023-05-04 00:00:00
 ---
 
