@@ -1,0 +1,1182 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="围墙里的鱼">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="结合 Stable Diffusion 的人体编辑以及驱动 Text-guided Reconstruction of Lifelike Clothed Humans   2Dtwo3D  background 从单个图像中重建穿着衣物的人物时，准确还原“看不见的区域”并保留高级细节仍然是一个未解决的具有较少关注的挑战。现有方法通常会生成过于平滑的背面表面和模糊的纹理。 从单一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字人编辑">
+<meta property="og:url" content="https://yu-qi-hang.github.io/posts/6d7d/index.html">
+<meta property="og:site_name" content="围墙里的鱼的围墙">
+<meta property="og:description" content="结合 Stable Diffusion 的人体编辑以及驱动 Text-guided Reconstruction of Lifelike Clothed Humans   2Dtwo3D  background 从单个图像中重建穿着衣物的人物时，准确还原“看不见的区域”并保留高级细节仍然是一个未解决的具有较少关注的挑战。现有方法通常会生成过于平滑的背面表面和模糊的纹理。 从单一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yu-qi-hang.github.io/img/digitalhuman.png">
+<meta property="article:published_time" content="2023-10-29T15:48:30.525Z">
+<meta property="article:modified_time" content="2023-10-29T16:00:30.450Z">
+<meta property="article:author" content="围墙里的鱼">
+<meta property="article:tag" content="media&#x2F;video">
+<meta property="article:tag" content="paper">
+<meta property="article:tag" content="media&#x2F;text">
+<meta property="article:tag" content="model&#x2F;difussion">
+<meta property="article:tag" content="数字人&#x2F;数字人编辑">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yu-qi-hang.github.io/img/digitalhuman.png">
+  
+  
+  
+  <title>数字人编辑 - 围墙里的鱼的围墙</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"yu-qi-hang.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"2LhEQXmS0x6R9O2auCHyApcW-gzGzoHsz","app_key":"DvgE8I4PVPIxcc2uN9VuQq93","server_url":"https://2lheqxms.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>围墙里的鱼的围墙</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/write/">
+                <i class="iconfont icon-pen"></i>
+                <span>小记</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/bg.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="数字人编辑"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-29 23:48" pubdate>
+          2023年10月29日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          40 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-right: -1rem">
+    
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Research"
+        id="heading-f027f27d0d548351e4d362e9b90678a9" role="tab" data-toggle="collapse" href="#collapse-f027f27d0d548351e4d362e9b90678a9"
+        aria-expanded="true"
+      >
+        Research
+        <span class="list-group-count">(11)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-f027f27d0d548351e4d362e9b90678a9"
+           role="tabpanel" aria-labelledby="heading-f027f27d0d548351e4d362e9b90678a9">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Experiment"
+        id="heading-05aeba473f4906b85c7627ba045e890a" role="tab" data-toggle="collapse" href="#collapse-05aeba473f4906b85c7627ba045e890a"
+        aria-expanded="false"
+      >
+        Experiment
+        <span class="list-group-count">(5)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-05aeba473f4906b85c7627ba045e890a"
+           role="tabpanel" aria-labelledby="heading-05aeba473f4906b85c7627ba045e890a">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/7a22/" title="命令行程序控制"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">命令行程序控制</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/f111/" title="从零开始使用服务器"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">从零开始使用服务器</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/be0b/" title="网络训练中的eval与no_grad"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网络训练中的eval与no_grad</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/aac5/" title="网络训练中的train和eval模式"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网络训练中的train和eval模式</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/8e9f/" title="常用数据集"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">常用数据集</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Reading"
+        id="heading-26fccddf2f94b1685b184267996e10f8" role="tab" data-toggle="collapse" href="#collapse-26fccddf2f94b1685b184267996e10f8"
+        aria-expanded="true"
+      >
+        Reading
+        <span class="list-group-count">(6)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-26fccddf2f94b1685b184267996e10f8"
+           role="tabpanel" aria-labelledby="heading-26fccddf2f94b1685b184267996e10f8">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/a5bb/" title="NeRF"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">NeRF</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/6d7d/" title="数字人编辑"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">数字人编辑</span>
+        </a>
+      
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="语音驱动"
+        id="heading-356ee79fb40c0000d8d58668cdb8e1c6" role="tab" data-toggle="collapse" href="#collapse-356ee79fb40c0000d8d58668cdb8e1c6"
+        aria-expanded="false"
+      >
+        语音驱动
+        <span class="list-group-count">(4)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-356ee79fb40c0000d8d58668cdb8e1c6"
+           role="tabpanel" aria-labelledby="heading-356ee79fb40c0000d8d58668cdb8e1c6">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/be41/" title="2D数字人驱动合集"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">2D数字人驱动合集</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/c16a/" title="SyncTalkFace"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">SyncTalkFace</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/5f49/" title="唇读专家"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">唇读专家</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/253c/" title="数字人驱动"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">数字人驱动</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+        
+      </div>
+    </div>
+  
+</div>
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数字人编辑</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="结合-stable-diffusion-的人体编辑以及驱动">结合 Stable Diffusion
+的人体编辑以及驱动</h1>
+<h2
+id="text-guided-reconstruction-of-lifelike-clothed-humans">Text-guided
+Reconstruction of Lifelike Clothed Humans</h2>
+<figure>
+<img src="../../../image/paper/2310292Dtwo3D.png" srcset="/img/loading.gif" lazyload alt="2Dtwo3D" />
+<figcaption aria-hidden="true">2Dtwo3D</figcaption>
+</figure>
+<h3 id="background">background</h3>
+<p>从单个图像中重建穿着衣物的人物时，准确还原“看不见的区域”并保留高级细节仍然是一个未解决的具有较少关注的挑战。现有方法通常会生成过于平滑的背面表面和模糊的纹理。</p>
+<p>从单一图像重建衣着的人类方面取得了进展，但准确地恢复具有高级细节的"看不见的区域"仍然是一个尚未解决的挑战，缺乏关注。
+现有的方法往往生成纹理模糊的过度平滑的背面表面。
+但是如何有效地从单张图像中捕获个体的所有视觉属性，这些视觉属性足以重建出看不见的区域(例如,后视图)</p>
+<h3 id="motivation">motivation</h3>
+<p>给定一幅图像，TeCH重建出一个逼真的3D衣服人体，"Lifelike"是指：</p>
+<ol type="1">
+<li>在额区和看不见的区域都有详细的全身几何图形，包括面部特征和服装皱纹；</li>
+<li>颜色一致、图案错综复杂的高质量纹理。</li>
+</ol>
+<p>关键的insight是：</p>
+<ol type="1">
+<li>通过garment parsing model和Visual Questioning
+Answering（VQA）自动生成的描述性文本提示（例如服装，颜色，发型）来重建3D人;</li>
+<li>个性化的微调Text-to-Image (T2I) diffusion
+model，赋能该模型学习“难以形容”的外观。</li>
+</ol>
+<p>为了以可承受的成本表示高分辨率的3D穿衣服的人，我们提出了一种基于DMTet的混合3D表示，它由明确的身体形状网格和一个隐式距离场组成。
+在描述性提示+个性化T2I扩散模型的指导下，通过multi-view Score
+Distillation
+Sampling（SDS）和基于原始观测的重建损失来优化3D人的几何形状和纹理。
+TeCH生产高保真3D服装人，具有一致和细腻的纹理，以及详细的全身几何形状。
+定量和定性实验表明，TeCH在重建精度和渲染质量方面优于最先进的方法。</p>
+<h3 id="method">Method</h3>
+<p><img src="../../../image/paper/231029prompt.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+人体解析模型SegFormer和视觉问答模型BLIP用于生成图像中的人物的描述信息
+<span class="math inline">\(P_{VQA}\)</span>。 DreamBooth
+是一种通过少量镜头调整（3∼5 张图像）来“个性化”扩散模型的方法。 描述信息
+<span class="math inline">\(P_{VQA}\)</span>
+用于指导DreamBooth的生成过程，获得涵盖独特外观的标识符token <span
+class="math inline">\([V]\)</span>。 将 <span
+class="math inline">\([V]\)</span> 结合 <span
+class="math inline">\(P_{VQA}\)</span> 获得最终的提示 <span
+class="math inline">\(P\)</span>，用于指导个性化的DreamBooth <span
+class="math inline">\(D&#39;\)</span>。</p>
+<p><img src="../../../image/paper/2310293Dmodel.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+初始化人体<span
+class="math inline">\(M_{body}\)</span>,通过网格膨胀和上下采样创建<span
+class="math inline">\(M_{shell}\)</span>。 多层感知机<span
+class="math inline">\(\Psi_{g},\Psi_{c}\)</span>学习几何和颜色的知识。
+多阶段、从粗到细的优化过程，按顺序恢复主体的几何形状和纹理。
+利用四面体表示来模拟主体的几何形状，使用从四面体网格中提取的网格恢复外观
+这两个阶段都使用个性化的DreamBooth模型利用基于SDS的损失，该模型通过对新的摄像机视图进行采样来提供多视图监督。</p>
+<h3 id="experiment">Experiment</h3>
+<p><img src="../../../image/paper/231029result.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+TeCH在3D指标和2D图像质量指标方面都超过了SOTA基线。这证明了其在精确重建具有复杂细节的服装人体几何形状以及产生具有一致外观的高质量纹理方面的卓越性能。
+使用倒角（Chamfer，双向点到面）和 P2S（1
+向点到面）距离定量评估几何体和外观的重建质量，以测量重建网格和真实网格之间的差异。从两个网格渲染的L2
+Normal误差，以通过将相机旋转{0◦，90◦，180◦，270◦}
+w.r.t.到输入视图来测量局部表面细节的一致性和精细度。
+为了评估纹理的质量，我们在以与正常图像相同的方式渲染的多视图彩色图像上报告了2D图像质量指标，包括PSNR（峰值信噪比），SSIM（结构相似性）和LPIPS（学习的感知图像路径相似性）。
+TeCH 在 CAPE 上的所有 2D 指标和 3D
+指标上都表现出卓越的性能。这表明TeCH可以准确地重建几何形状和纹理，即使是具有挑战性的姿势（CAPE）或宽松的衣服（THuman2.0）。然而，在THuman2.0上，它实现了与基于先前的方法相当的重建精度。这可以归因于这样一个事实，即幻觉的背面可能与真相不同，但仍然看起来很真实。
+<img src="../../../image/paper/231029favor.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+报告了与其他基线相比，用户对TeCH的偏好百分比。大多数参与者在几何和彩色渲染（纹理）方面都更喜欢TeCH。
+<img src="../../../image/paper/231029compare.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+为了评估TeCH在野外图像上的泛化并评估结果的感知质量，我们使用来自SHHQ数据集的90张随机采样图像进行了一项感知研究。向参与者展示了由TeCH重建的旋转3D人类的视频，以及基线（PaMIR
+[136]，PIFu [103]，ICON[120]，ECON [121]和PHORHUM
+[5]）。他们被要求根据输入图像选择更真实和一致的结果。我们从63名参与者那里收集了总共3，150个成对比较，均匀地涵盖了90个SHHQ受试者。选项卡
+2 中的结果表明，在几何形状和纹理方面，TeCH
+都是首选。如图8所示，与其他倾向于重建过于光滑的表面和模糊纹理的方法不同，TeCH在应用于具有不同服装风格和手势的野外图像时表现出显着的泛化性。它可以产生更逼真的服装、发型和面部细节，即使是看不见的背面视图。</p>
+<p><img src="../../../image/paper/231029Ablation.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+VQA 提示有助于恢复服装的整体结构，而 DreamBooth
+增强了纹理图案的精细细节</p>
+<h2 id="editing-conditional-radiance-fields">Editing Conditional
+Radiance Fields</h2>
+<p>神经辐射场 （NeRF）
+是支持高质量视图合成的场景模型，并针对每个场景进行优化。在本文中，我们探讨了允许用户编辑在形状类别上训练的类别级
+NeRF（也称为条件辐射场）。
+具体来说，我们介绍了一种将粗略的2D用户涂鸦传播到3D空间的方法，以修改局部区域的颜色或形状。</p>
+<p>首先，我们提出了一个条件辐射场，其中包含新的模块化网络组件，包括跨对象实例共享的形状分支。通过观察同一类别的多个实例，我们的模型在没有任何监督的情况下学习底层部分语义，从而允许将粗略的2D用户涂鸦传播到整个3D区域（例如，椅子座位）。
+接下来，我们提出了一种针对特定网络组件的混合网络更新策略，以平衡效率和准确性。在用户交互过程中，我们制定了一个既满足用户约束又保留原始对象结构的优化问题。我们在三个形状数据集的渲染视图上演示了我们的编辑方法，并表明它优于以前的神经编辑方法。
+最后，我们编辑单视图真实照片的外观和形状，并显示编辑传播到外推的新视图。</p>
+<h3 id="background-1">background</h3>
+<p>3D内容创建通常涉及为视觉效果或增强现实应用程序操作高质量的3D资产，3D艺术家工作流程的一部分包括对3D场景的外观和形状进行局部调整。
+显式表示使艺术家能够控制 3D
+场景的不同元素。例如，艺术家可以使用网格处理工具对场景几何形状进行局部调整，或通过操纵纹理图集来更改表面外观。在艺术家的工作流程中，这种明确的表示通常是手工创建或程序生成的。
+虽然显式表示功能强大，但由于依赖于视图的外观、复杂的场景拓扑和不同的表面不透明度，在自动获取真实场景的高质量显式表示方面仍然存在重大技术挑战。
+最近，隐式连续体积表示显示了各种3D场景的高保真捕获和渲染，并克服了上述许多技术挑战。这种表示以神经网络的权重对捕获的场景进行编码。神经网络学习从点样本沿投射光线渲染与视图相关的颜色，并通过
+alpha 合成获得最终渲染 。这种表示支持许多逼真的视图合成应用。
+然而，我们缺乏关于如何使艺术家在这种表现形式中进行控制和编辑的关键知识。</p>
+<h3 id="motivation-1">motivation</h3>
+<p>编辑隐式连续体积表示具有挑战性。首先，我们如何有效地传播稀疏的 2D
+用户编辑以填充此表示中的整个相应 3D
+区域？其次，隐式表示的神经网络有数百万个参数。目前尚不清楚哪些参数控制渲染形状的不同方面，以及如何根据稀疏的本地用户输入更改参数。虽然3D编辑的先前工作主要集中在编辑显式表示，但它们不适用于神经表示。
+<img src="../../../image/paper/2310293conditions.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+在本文中，我们研究了如何使用户能够编辑和控制3D对象的隐式连续体积表示。如图
+1 所示，我们考虑了三种类型的用户编辑： 1.
+将局部部件的外观更改为新的目标颜色（例如，将椅子座椅的颜色从米色更改为红色），
+2. 修改局部形状（例如，移除椅子的轮子或从不同的椅子换入新手臂）， 3.
+从目标对象实例转移颜色或形状。用户通过在编辑应进行的位置的所需位置上涂鸦并选择目标颜色或局部形状来执行
+2D 本地编辑。</p>
+<h3 id="method-1">method</h3>
+<p>我们通过研究如何有效地更新条件辐射场以与目标本地用户编辑保持一致来解决编辑隐式连续表示的挑战。我们做出以下贡献。
+首先，我们学习整个对象类上的条件辐射场，以模拟看似合理的对象的丰富先验。出乎意料的是，此先验通常允许传播稀疏的用户涂鸦编辑以填充所选区域。我们演示了复杂的编辑，而无需施加明确的空间或边界约束。此外，当从不同视点渲染对象时，编辑显示一致。
+其次，为了更准确地重建形状实例，我们在条件辐射字段中引入了一个在对象实例之间共享的形状分支，这隐式地偏向网络以尽可能编码共享表示。
+第三，我们研究了条件辐射场网络的哪些部分影响不同的编辑任务。我们表明，形状和颜色编辑可以有效地在网络的后期层中进行。这一发现促使我们只更新这些图层，并使我们能够以显着的计算速度生成有效的用户编辑。
+最后，我们引入了颜色和形状编辑损失，以满足用户指定的目标，同时保留原始对象结构。
+我们提出的解决方案，如图2 ( c
+)所示，通过更新网络的特定层来实现精度和效率。为了减少计算量，我们只对网络的后几层进行微调。这些选择只计算后面层的梯度，而不是整个网络的梯度，从而加快了优化的速度。在编辑颜色时，只更新网络中的Frad和z
+( c )，比优化整个网络(从972秒到260秒)减少了3.7
+×的优化时间。在编辑形状时，只更新Ffuse和Fdens，优化时间减少了3.2 × ( 1
+081 ~ 342
+s)。在4.3节中，我们进一步量化了编辑精度和效率之间的权衡。为了进一步减少计算量，我们在编辑过程中增加了两个步骤。</p>
+<h3 id="experiment-1">experiment</h3>
+<p><img src="../../../image/paper/231029evaluation.png" srcset="/img/loading.gif" lazyload
+alt="image.png" />
+我们评估了我们的模型和几个关于视图重建的消融。注意形状和颜色编码的分离以及共享/实例网络的使用是如何提高视图合成质量的。我们的模型甚至优于单实例NeRF模型(每个人在一个对象上进行训练)。
+<img src="../../../image/paper/231029benchmark.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+我们评估源对象实例的颜色编辑，以匹配目标实例。值得注意的是，我们的方法在所有标准上都优于基线。
+<img src="../../../image/paper/231029edit.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+我们将颜色编辑结果可视化，目标是将源实例的颜色与目标匹配。我们的方法在一个视图上进行涂鸦的情况下，准确地捕获了目标实例的颜色。注意到(
+c )编辑单实例NeRF会导致视觉伪影，( d
+)重写GAN无法将编辑传播到看不见的视图并产生不切实际的输出。</p>
+<p><img src="../../../image/paper/231029para.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+注意到我们的混合网络更新方法如何在平衡计算成本的同时实现高视觉编辑质量。
+<img src="../../../image/paper/231029combine.png" srcset="/img/loading.gif" lazyload alt="image.png" />
+我们的方法成功地移除了手臂并填充了椅子的孔洞。注意，仅仅优化形状代码或分支是无法同时适应这两种编辑的。优化整个网络是缓慢的，并且会导致实例中不必要的变化。</p>
+<p>我们在三个形状数据集的渲染视图上演示了结果，这些数据集具有不同级别的外观、形状和训练视图复杂性。与以前的神经编辑方法相比，我们展示了我们的方法在对象视图合成以及颜色和形状编辑方面的有效性。此外，我们展示了我们可以编辑真实单视图照片的外观和形状，并且编辑传播到外推的新视图。我们强烈建议观看我们的视频，看看我们的编辑演示。代码和更多结果可在我们的
+GitHub 存储库和网站上找到。</p>
+<p>我们介绍了一种从3D物体集合中学习条件辐射场的方法。此外，我们还展示了如何使用我们学习到的解耦表示来执行直观的编辑操作。我们方法的一个局限性是形状编辑的交互性。目前，用户需要花费超过一分钟的时间来获得形状编辑的反馈。编辑操作计算的大部分花费在绘制视图上，而不是编辑本身。我们乐观地认为，NeRF渲染时间的改进将有助于[
+46、75
+]。另一个限制是我们的方法未能重建出与其他类实例有很大差异的新对象实例。尽管存在这些局限性，我们的方法为探索其他高级编辑操作开辟了新的途径，例如r</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Research/" class="category-chain-item">Research</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Research/Reading/" class="category-chain-item">Reading</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/media-video/">#media/video</a>
+      
+        <a href="/tags/paper/">#paper</a>
+      
+        <a href="/tags/media-text/">#media/text</a>
+      
+        <a href="/tags/model-difussion/">#model/difussion</a>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%97%E4%BA%BA-%E6%95%B0%E5%AD%97%E4%BA%BA%E7%BC%96%E8%BE%91/">#数字人/数字人编辑</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>数字人编辑</div>
+      <div>https://yu-qi-hang.github.io/posts/6d7d/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>围墙里的鱼</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月29日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/be41/" title="2D数字人驱动合集">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2D数字人驱动合集</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/a5bb/" title="NeRF">
+                        <span class="hidden-mobile">NeRF</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"2LhEQXmS0x6R9O2auCHyApcW-gzGzoHsz","appKey":"DvgE8I4PVPIxcc2uN9VuQq93","path":"window.location.pathname","placeholder":"欢迎评论探讨(>-<)","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"https://2lheqxms.lc-cn-n1-shared.com","emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"},"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

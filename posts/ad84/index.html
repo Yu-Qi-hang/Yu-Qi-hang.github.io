@@ -16,22 +16,22 @@
   <meta name="author" content="围墙里的鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从 隐变量Z 生成 目标数据X 的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型 $X&#x3D;g(Z)$，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。  AEencoder：从“旧特征”表示生成">
+    <meta name="description" content="变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从 隐变量Z 生成 目标数据X 的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型 \(X&#x3D;g(Z)\)，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。 AE encoder：从“旧特征”表示">
 <meta property="og:type" content="article">
 <meta property="og:title" content="变分自编码器VAE">
 <meta property="og:url" content="https://yu-qi-hang.github.io/posts/ad84/index.html">
 <meta property="og:site_name" content="围墙里的鱼的围墙">
-<meta property="og:description" content="变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从 隐变量Z 生成 目标数据X 的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型 $X&#x3D;g(Z)$，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。  AEencoder：从“旧特征”表示生成">
+<meta property="og:description" content="变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从 隐变量Z 生成 目标数据X 的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型 \(X&#x3D;g(Z)\)，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。 AE encoder：从“旧特征”表示">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yu-qi-hang.github.io/img/AI.png">
 <meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-26T16:04:46.948Z">
+<meta property="article:modified_time" content="2023-10-29T16:00:29.878Z">
 <meta property="article:author" content="围墙里的鱼">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="神经网络">
 <meta property="article:tag" content="distribution">
 <meta property="article:tag" content="model">
-<meta property="article:tag" content="VAE">
+<meta property="article:tag" content="model&#x2F;神经网络">
+<meta property="article:tag" content="model&#x2F;VAE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://yu-qi-hang.github.io/img/AI.png">
   
@@ -319,17 +319,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="人工智能"
-        id="heading-f068f0dad74789bee210163c40a4b50d" role="tab" data-toggle="collapse" href="#collapse-f068f0dad74789bee210163c40a4b50d"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Concept"
+        id="heading-d99a604c79ce3c2e76a2f43488d5d4c3" role="tab" data-toggle="collapse" href="#collapse-d99a604c79ce3c2e76a2f43488d5d4c3"
         aria-expanded="true"
       >
-        人工智能
-        <span class="list-group-count">(18)</span>
+        Concept
+        <span class="list-group-count">(25)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-f068f0dad74789bee210163c40a4b50d"
-           role="tabpanel" aria-labelledby="heading-f068f0dad74789bee210163c40a4b50d">
+      <div class="category-collapse collapse show" id="collapse-d99a604c79ce3c2e76a2f43488d5d4c3"
+           role="tabpanel" aria-labelledby="heading-d99a604c79ce3c2e76a2f43488d5d4c3">
         
         
           
@@ -340,69 +340,23 @@
   </div>
 
           
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="PyTorch学习"
-        id="heading-8628c0686a7c465fa7ba493cb1c3fe76" role="tab" data-toggle="collapse" href="#collapse-8628c0686a7c465fa7ba493cb1c3fe76"
-        aria-expanded="false"
-      >
-        PyTorch学习
-        <span class="list-group-count">(2)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-8628c0686a7c465fa7ba493cb1c3fe76"
-           role="tabpanel" aria-labelledby="heading-8628c0686a7c465fa7ba493cb1c3fe76">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/be0b/" title="网络训练中的eval与no_grad"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">网络训练中的eval与no_grad</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/aac5/" title="网络训练中的train和eval模式"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">网络训练中的train和eval模式</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
   
     
     
     
     <div class="category-sub row nomargin-x">
       <a class="category-subitem 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="概念记录"
-        id="heading-6e55b2782cd4537cfd01ce7f3ab8d31e" role="tab" data-toggle="collapse" href="#collapse-6e55b2782cd4537cfd01ce7f3ab8d31e"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="AI"
+        id="heading-0a40e3c91a3a55c9a37428c6d194d0e5" role="tab" data-toggle="collapse" href="#collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
         aria-expanded="true"
       >
-        概念记录
-        <span class="list-group-count">(16)</span>
+        AI
+        <span class="list-group-count">(18)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-6e55b2782cd4537cfd01ce7f3ab8d31e"
-           role="tabpanel" aria-labelledby="heading-6e55b2782cd4537cfd01ce7f3ab8d31e">
+      <div class="category-collapse collapse show" id="collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
+           role="tabpanel" aria-labelledby="heading-0a40e3c91a3a55c9a37428c6d194d0e5">
         
         
           
@@ -425,6 +379,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">多模态跨模态</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/b23/" title="概率分布的基本采样方法"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">概率分布的基本采样方法</span>
         </a>
       
     
@@ -543,7 +506,7 @@
         aria-expanded="true"
       >
         生成模型
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -555,6 +518,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/posts/27f2/" title="DreamBooth"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">DreamBooth</span>
+        </a>
+      
     
   </div>
 
@@ -630,6 +602,15 @@
     
       
       
+        <a href="/posts/70cf/" title="StarGAN"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">StarGAN</span>
+        </a>
+      
+    
+      
+      
         <a href="/posts/2a1/" title="StackGAN"
            class="list-group-item list-group-item-action
            ">
@@ -643,15 +624,6 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">生成对抗网络</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/70cf/" title="StarGAN"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">StarGAN</span>
         </a>
       
     
@@ -689,15 +661,6 @@
     
       
       
-        <a href="/posts/b5d6/" title="Dropout"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Dropout</span>
-        </a>
-      
-    
-      
-      
         <a href="/posts/775/" title="卷积反卷积计算"
            class="list-group-item list-group-item-action
            ">
@@ -707,10 +670,10 @@
     
       
       
-        <a href="/posts/c64/" title="超网络"
+        <a href="/posts/b5d6/" title="Dropout"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">超网络</span>
+          <span class="category-post">Dropout</span>
         </a>
       
     
@@ -723,12 +686,140 @@
         </a>
       
     
+      
+      
+        <a href="/posts/c64/" title="超网络"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">超网络</span>
+        </a>
+      
+    
   </div>
 
         
       </div>
     </div>
   
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="CG"
+        id="heading-5202c6586cac8bee468e86d1ff854231" role="tab" data-toggle="collapse" href="#collapse-5202c6586cac8bee468e86d1ff854231"
+        aria-expanded="false"
+      >
+        CG
+        <span class="list-group-count">(5)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-5202c6586cac8bee468e86d1ff854231"
+           role="tabpanel" aria-labelledby="heading-5202c6586cac8bee468e86d1ff854231">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/9319/" title="Quadric_Decimation"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Quadric_Decimation</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/10ec/" title="SMPL-X"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">SMPL-X</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/8540/" title="TetGen"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">TetGen</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/1dd2/" title="三种坐标系"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">三种坐标系</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/efcb/" title="体渲染"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">体渲染</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="相似度"
+        id="heading-678cd56320ea4d43c35aafe803ddf7f9" role="tab" data-toggle="collapse" href="#collapse-678cd56320ea4d43c35aafe803ddf7f9"
+        aria-expanded="false"
+      >
+        相似度
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-678cd56320ea4d43c35aafe803ddf7f9"
+           role="tabpanel" aria-labelledby="heading-678cd56320ea4d43c35aafe803ddf7f9">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/f512/" title="KL散度"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">KL散度</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/f19a/" title="余弦相似度"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">余弦相似度</span>
+        </a>
+      
+    
+  </div>
+
         
       </div>
     </div>
@@ -755,39 +846,60 @@
             
               <div class="markdown-body">
                 
-                <p>变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从 <strong>隐变量Z</strong> 生成 <strong>目标数据X</strong> 的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型 $X&#x3D;g(Z)$，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。 </p>
-<h3 id="AE"><a href="#AE" class="headerlink" title="AE"></a>AE</h3><p>encoder：从“旧特征”表示生成“新特征”表示，降维</p>
+                <p>变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从
+<strong>隐变量Z</strong> 生成 <strong>目标数据X</strong>
+的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型
+<span
+class="math inline">\(X=g(Z)\)</span>，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。</p>
+<h3 id="ae">AE</h3>
+<p>encoder：从“旧特征”表示生成“新特征”表示，降维</p>
 <p>decoder：encoder相反</p>
-<img src="/posts/ad84/Encoder_Decoder.png" srcset="/img/loading.gif" lazyload class="" title="image-1">
-
+<figure>
+<img src="../../../../../image/VAE/Encoder_Decoder.png" srcset="/img/loading.gif" lazyload alt="image-1" />
+<figcaption aria-hidden="true">image-1</figcaption>
+</figure>
 <p>找到一组最合适的编码解码器使得重建的数据与原始数据误差测量最小。</p>
-<p>$$loss &#x3D; \parallel{x-\hat{x}}\parallel^{2}&#x3D;\parallel{x-d(z)}\parallel^{2}&#x3D;\parallel{x-e(d(x))}\parallel^{2}$$</p>
+<p><span class="math display">\[loss =
+\parallel{x-\hat{x}}\parallel^{2}=\parallel{x-d(z)}\parallel^{2}=\parallel{x-e(d(x))}\parallel^{2}\]</span></p>
 <p>将编码器和解码器设置为<strong>神经网络</strong>并使用迭代优化过程学习最佳编码-解码方案，在每次迭代中，我们都会向<strong>Auto-Encoder</strong>架构（编码器后跟解码器）提供一些数据，我们将编码-解码输出与初始数据进行比较，并通过架构<strong>反向传播</strong>误差以更新网络的权重。</p>
 <p>一旦自动编码器被训练，我们既有编码器又有解码器，但仍然没有真正的方法来产生任何<strong>新内容</strong>。乍一看，我们可能会认为，如果<strong>潜在空间足够规则</strong>（在训练过程中由编码器很好地“组织”），我们可以从该潜在空间中随机获取一个点并对其进行解码以获得新内容。然后，解码器的行为或多或少类似于生成对抗网络的生成器。然而，自动编码器的潜在空间的规律性是一个难题，它取决于初始空间中数据的分布、潜在空间的维度和编码器的架构。</p>
-<img src="/posts/ad84/latent_space.png" srcset="/img/loading.gif" lazyload class="" title="image-2">
-
-<h3 id="VAE"><a href="#VAE" class="headerlink" title="VAE"></a>VAE</h3><p>为了能够将自动编码器的解码器用于<strong>生成目的</strong>，我们必须确保潜在空间足够规则。获得这种规律性的一种可能的解决方案是在训练过程中引入<strong>明确的正则化</strong>。因此，变分自编码器可以定义为一个自动编码器，其训练被正则化以避免过度拟合并确保潜在空间具有良好的属性，从而实现生成过程。</p>
+<figure>
+<img src="../../../../../image/VAE/latent_space.png" srcset="/img/loading.gif" lazyload alt="image-2" />
+<figcaption aria-hidden="true">image-2</figcaption>
+</figure>
+<h3 id="vae">VAE</h3>
+<p>为了能够将自动编码器的解码器用于<strong>生成目的</strong>，我们必须确保潜在空间足够规则。获得这种规律性的一种可能的解决方案是在训练过程中引入<strong>明确的正则化</strong>。因此，变分自编码器可以定义为一个自动编码器，其训练被正则化以避免过度拟合并确保潜在空间具有良好的属性，从而实现生成过程。</p>
 <p>为了引入一些潜在空间的正则化，我们对编码-解码过程进行了轻微的修改：我们不是将输入编码为单个点，而是将其<strong>编码为潜在空间上的分布</strong>。</p>
-<ol>
+<ol type="1">
 <li>首先，将输入编码为在潜在空间上的<strong>分布</strong></li>
 <li>其次，从该分布中<strong>采样</strong>来自潜在空间的点</li>
 <li>第三，对采样点进行<strong>解码</strong>并计算重建误差</li>
 <li>最后，<strong>重建误差</strong>通过网络反向传播</li>
 </ol>
-<img src="/posts/ad84/data_flow.png" srcset="/img/loading.gif" lazyload class="" title="image-3">
-
+<figure>
+<img src="../../../../../image/VAE/data_flow.png" srcset="/img/loading.gif" lazyload alt="image-3" />
+<figcaption aria-hidden="true">image-3</figcaption>
+</figure>
 <p>编码分布被选择为<strong>正态分布</strong>，以便可以训练编码器返回描述这些高斯的<strong>均值和协方差矩阵</strong>。我们以这种方式确保潜在空间的局部和全局正则化（局部因为方差控制，全局因为均值控制）。</p>
 <p>训练VAE时最小化的损失函数由“重建项”（在最后一层）和“正则化项”（在潜伏层上）组成，前者倾向于使编码-解码方案尽可能<strong>高性能</strong>，后者通过使编码器返回的分布<strong>接近标准正态分布</strong>来正则化潜在空间的组织。</p>
-<img src="/posts/ad84/VAE_loss.png" srcset="/img/loading.gif" lazyload class="" title="image-4">
-
-<p>$$loss &#x3D; \parallel{x-\hat{x}}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]&#x3D;\parallel{x-d(z)}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]$$</p>
+<figure>
+<img src="../../../../../image/VAE/VAE_loss.png" srcset="/img/loading.gif" lazyload alt="image-4" />
+<figcaption aria-hidden="true">image-4</figcaption>
+</figure>
+<p><span class="math display">\[loss =
+\parallel{x-\hat{x}}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]=\parallel{x-d(z)}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]\]</span></p>
 <p>为了使生成过程成为可能而期望从潜在空间获得的规律性可以通过两个主要属性来表示：<strong>连续性</strong>（潜在空间中的两个接近点在解码后不应给出两个完全不同的内容）和<strong>完整性</strong>（对于选定的分布，从潜在空间采样的点在解码后应该给出“有意义的”内容）。</p>
-<img src="/posts/ad84/latent_sample.png" srcset="/img/loading.gif" lazyload class="" title="image-5">
-
+<figure>
+<img src="../../../../../image/VAE/latent_sample.png" srcset="/img/loading.gif" lazyload alt="image-5" />
+<figcaption aria-hidden="true">image-5</figcaption>
+</figure>
 <p>通过正则化项，我们可以满足预期的连续性和完整性条件，但这是以训练数据上更高的重建误差为代价的。然而，重建误差和KL散度之间的权重是可以调整的。</p>
-<img src="/posts/ad84/reparameter.png" srcset="/img/loading.gif" lazyload class="" title="image-6">
-
-<p>$$loss &#x3D; C\parallel{x-\hat{x}}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]&#x3D;C\parallel{x-f(z)}\parallel^{2}+KL[N(g(x),h(x))),N(0,1)]$$</p>
+<figure>
+<img src="../../../../../image/VAE/reparameter.png" srcset="/img/loading.gif" lazyload alt="image-6" />
+<figcaption aria-hidden="true">image-6</figcaption>
+</figure>
+<p><span class="math display">\[loss =
+C\parallel{x-\hat{x}}\parallel^{2}+KL[N(\mu_{x},\sigma_{x}),N(0,1)]=C\parallel{x-f(z)}\parallel^{2}+KL[N(g(x),h(x))),N(0,1)]\]</span></p>
 
                 
               </div>
@@ -806,22 +918,22 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="category-chain-item">人工智能</a>
+  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%A6%82%E5%BF%B5%E8%AE%B0%E5%BD%95/" class="category-chain-item">概念记录</a>
+  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%A6%82%E5%BF%B5%E8%AE%B0%E5%BD%95/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
+  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%A6%82%E5%BF%B5%E8%AE%B0%E5%BD%95/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/VAE/" class="category-chain-item">VAE</a>
+  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/VAE/" class="category-chain-item">VAE</a>
   
   
 
@@ -844,13 +956,13 @@
       
         <a href="/tags/AI/">#AI</a>
       
-        <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#神经网络</a>
-      
         <a href="/tags/distribution/">#distribution</a>
       
         <a href="/tags/model/">#model</a>
       
-        <a href="/tags/VAE/">#VAE</a>
+        <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
+      
+        <a href="/tags/model-VAE/">#model/VAE</a>
       
     </div>
   
@@ -913,9 +1025,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/f111/" title="从零开始使用服务器">
+                      <a href="/posts/c64/" title="超网络">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">从零开始使用服务器</span>
+                        <span class="hidden-mobile">超网络</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1012,6 +1124,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -1230,6 +1348,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 

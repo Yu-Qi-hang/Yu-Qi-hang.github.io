@@ -16,21 +16,21 @@
   <meta name="author" content="围墙里的鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="激活函数本质是向神经网络中引入非线性因素，通过激活函数，神经网络可以拟合各种曲线。如果不用激活函数，每一层输出都会是上一层输入的线性函数，引入非线性函数作为激活函数，输出将可以逼近任意函数。 Sigmoid公式：$f(x)&#x3D;\frac{1}{1+e^{-x}}$  梯度：$f’(x)&#x3D;\frac{e^{-x}}{(1+e^{-x})^2}&#x3D;\frac{1}{1+e^{">
+    <meta name="description" content="激活函数本质是向神经网络中引入非线性因素，通过激活函数，神经网络可以拟合各种曲线。如果不用激活函数，每一层输出都会是上一层输入的线性函数，引入非线性函数作为激活函数，输出将可以逼近任意函数。 Sigmoid 公式：\(f(x)&#x3D;\frac{1}{1+e^{-x}}\) 梯度：\(f&#39;(x)&#x3D;\frac{e^{-x}}{(1+e^{-x})^2}&#x3D;\frac{1}{1+e^{-x}}-">
 <meta property="og:type" content="article">
 <meta property="og:title" content="激活函数">
 <meta property="og:url" content="https://yu-qi-hang.github.io/posts/7401/index.html">
 <meta property="og:site_name" content="围墙里的鱼的围墙">
-<meta property="og:description" content="激活函数本质是向神经网络中引入非线性因素，通过激活函数，神经网络可以拟合各种曲线。如果不用激活函数，每一层输出都会是上一层输入的线性函数，引入非线性函数作为激活函数，输出将可以逼近任意函数。 Sigmoid公式：$f(x)&#x3D;\frac{1}{1+e^{-x}}$  梯度：$f’(x)&#x3D;\frac{e^{-x}}{(1+e^{-x})^2}&#x3D;\frac{1}{1+e^{">
+<meta property="og:description" content="激活函数本质是向神经网络中引入非线性因素，通过激活函数，神经网络可以拟合各种曲线。如果不用激活函数，每一层输出都会是上一层输入的线性函数，引入非线性函数作为激活函数，输出将可以逼近任意函数。 Sigmoid 公式：\(f(x)&#x3D;\frac{1}{1+e^{-x}}\) 梯度：\(f&#39;(x)&#x3D;\frac{e^{-x}}{(1+e^{-x})^2}&#x3D;\frac{1}{1+e^{-x}}-">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yu-qi-hang.github.io/img/AI.png">
 <meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-26T16:04:46.925Z">
+<meta property="article:modified_time" content="2023-10-29T16:00:29.878Z">
 <meta property="article:author" content="围墙里的鱼">
 <meta property="article:tag" content="AI">
-<meta property="article:tag" content="神经网络">
-<meta property="article:tag" content="模型训练">
-<meta property="article:tag" content="激活函数">
+<meta property="article:tag" content="model&#x2F;神经网络">
+<meta property="article:tag" content="model&#x2F;模型训练">
+<meta property="article:tag" content="model&#x2F;激活函数">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://yu-qi-hang.github.io/img/AI.png">
   
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.8k 字
+          2.9k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          24 分钟
+          25 分钟
         
       </span>
     
@@ -318,17 +318,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="人工智能"
-        id="heading-f068f0dad74789bee210163c40a4b50d" role="tab" data-toggle="collapse" href="#collapse-f068f0dad74789bee210163c40a4b50d"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Concept"
+        id="heading-d99a604c79ce3c2e76a2f43488d5d4c3" role="tab" data-toggle="collapse" href="#collapse-d99a604c79ce3c2e76a2f43488d5d4c3"
         aria-expanded="true"
       >
-        人工智能
-        <span class="list-group-count">(18)</span>
+        Concept
+        <span class="list-group-count">(25)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-f068f0dad74789bee210163c40a4b50d"
-           role="tabpanel" aria-labelledby="heading-f068f0dad74789bee210163c40a4b50d">
+      <div class="category-collapse collapse show" id="collapse-d99a604c79ce3c2e76a2f43488d5d4c3"
+           role="tabpanel" aria-labelledby="heading-d99a604c79ce3c2e76a2f43488d5d4c3">
         
         
           
@@ -339,69 +339,23 @@
   </div>
 
           
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="PyTorch学习"
-        id="heading-8628c0686a7c465fa7ba493cb1c3fe76" role="tab" data-toggle="collapse" href="#collapse-8628c0686a7c465fa7ba493cb1c3fe76"
-        aria-expanded="false"
-      >
-        PyTorch学习
-        <span class="list-group-count">(2)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-8628c0686a7c465fa7ba493cb1c3fe76"
-           role="tabpanel" aria-labelledby="heading-8628c0686a7c465fa7ba493cb1c3fe76">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/be0b/" title="网络训练中的eval与no_grad"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">网络训练中的eval与no_grad</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/aac5/" title="网络训练中的train和eval模式"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">网络训练中的train和eval模式</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
   
     
     
     
     <div class="category-sub row nomargin-x">
       <a class="category-subitem 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="概念记录"
-        id="heading-6e55b2782cd4537cfd01ce7f3ab8d31e" role="tab" data-toggle="collapse" href="#collapse-6e55b2782cd4537cfd01ce7f3ab8d31e"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="AI"
+        id="heading-0a40e3c91a3a55c9a37428c6d194d0e5" role="tab" data-toggle="collapse" href="#collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
         aria-expanded="true"
       >
-        概念记录
-        <span class="list-group-count">(16)</span>
+        AI
+        <span class="list-group-count">(18)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-6e55b2782cd4537cfd01ce7f3ab8d31e"
-           role="tabpanel" aria-labelledby="heading-6e55b2782cd4537cfd01ce7f3ab8d31e">
+      <div class="category-collapse collapse show" id="collapse-0a40e3c91a3a55c9a37428c6d194d0e5"
+           role="tabpanel" aria-labelledby="heading-0a40e3c91a3a55c9a37428c6d194d0e5">
         
         
           
@@ -424,6 +378,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">多模态跨模态</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/b23/" title="概率分布的基本采样方法"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">概率分布的基本采样方法</span>
         </a>
       
     
@@ -542,7 +505,7 @@
         aria-expanded="false"
       >
         生成模型
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -554,6 +517,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/posts/27f2/" title="DreamBooth"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">DreamBooth</span>
+        </a>
+      
     
   </div>
 
@@ -629,6 +601,15 @@
     
       
       
+        <a href="/posts/70cf/" title="StarGAN"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">StarGAN</span>
+        </a>
+      
+    
+      
+      
         <a href="/posts/2a1/" title="StackGAN"
            class="list-group-item list-group-item-action
            ">
@@ -642,15 +623,6 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">生成对抗网络</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/70cf/" title="StarGAN"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">StarGAN</span>
         </a>
       
     
@@ -688,15 +660,6 @@
     
       
       
-        <a href="/posts/b5d6/" title="Dropout"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Dropout</span>
-        </a>
-      
-    
-      
-      
         <a href="/posts/775/" title="卷积反卷积计算"
            class="list-group-item list-group-item-action
            ">
@@ -706,10 +669,10 @@
     
       
       
-        <a href="/posts/c64/" title="超网络"
+        <a href="/posts/b5d6/" title="Dropout"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">超网络</span>
+          <span class="category-post">Dropout</span>
         </a>
       
     
@@ -722,12 +685,140 @@
         </a>
       
     
+      
+      
+        <a href="/posts/c64/" title="超网络"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">超网络</span>
+        </a>
+      
+    
   </div>
 
         
       </div>
     </div>
   
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="CG"
+        id="heading-5202c6586cac8bee468e86d1ff854231" role="tab" data-toggle="collapse" href="#collapse-5202c6586cac8bee468e86d1ff854231"
+        aria-expanded="false"
+      >
+        CG
+        <span class="list-group-count">(5)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-5202c6586cac8bee468e86d1ff854231"
+           role="tabpanel" aria-labelledby="heading-5202c6586cac8bee468e86d1ff854231">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/9319/" title="Quadric_Decimation"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Quadric_Decimation</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/10ec/" title="SMPL-X"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">SMPL-X</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/8540/" title="TetGen"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">TetGen</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/1dd2/" title="三种坐标系"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">三种坐标系</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/efcb/" title="体渲染"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">体渲染</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="相似度"
+        id="heading-678cd56320ea4d43c35aafe803ddf7f9" role="tab" data-toggle="collapse" href="#collapse-678cd56320ea4d43c35aafe803ddf7f9"
+        aria-expanded="false"
+      >
+        相似度
+        <span class="list-group-count">(2)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-678cd56320ea4d43c35aafe803ddf7f9"
+           role="tabpanel" aria-labelledby="heading-678cd56320ea4d43c35aafe803ddf7f9">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/f512/" title="KL散度"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">KL散度</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/f19a/" title="余弦相似度"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">余弦相似度</span>
+        </a>
+      
+    
+  </div>
+
         
       </div>
     </div>
@@ -755,66 +846,108 @@
               <div class="markdown-body">
                 
                 <p>激活函数本质是向神经网络中<strong>引入非线性因素</strong>，通过激活函数，神经网络可以<strong>拟合各种曲线</strong>。如果不用激活函数，每一层输出都会是上一层输入的线性函数，引入非线性函数作为激活函数，输出将可以<strong>逼近任意函数</strong>。</p>
-<h3 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h3><p><strong>公式</strong>：$f(x)&#x3D;\frac{1}{1+e^{-x}}$ </p>
-<p><strong>梯度</strong>：$f’(x)&#x3D;\frac{e^{-x}}{(1+e^{-x})^2}&#x3D;\frac{1}{1+e^{-x}}-(\frac{1}{1+e^{-x}})^2&#x3D;f(x)-f^2(x)$</p>
+<h3 id="sigmoid">Sigmoid</h3>
+<p><strong>公式</strong>：<span
+class="math inline">\(f(x)=\frac{1}{1+e^{-x}}\)</span></p>
+<p><strong>梯度</strong>：<span
+class="math inline">\(f&#39;(x)=\frac{e^{-x}}{(1+e^{-x})^2}=\frac{1}{1+e^{-x}}-(\frac{1}{1+e^{-x}})^2=f(x)-f^2(x)\)</span></p>
 <p><strong>图像以及梯度图像</strong>：</p>
-<img src="/posts/7401/sigmoid.png" srcset="/img/loading.gif" lazyload class="" title="sigmoid">
-
+<figure>
+<img src="../../../../image/ActivateFunction/231029sigmoid.png" srcset="/img/loading.gif" lazyload
+alt="sigmoid" />
+<figcaption aria-hidden="true">sigmoid</figcaption>
+</figure>
 <p>Sigmoid函数的输出<strong>值域在0到1之间</strong>，具有连续可导、单调递增的性质。但是，当输入值较大或较小的时候，Sigmoid函数的梯度会趋近于0，导致<strong>梯度消失</strong>的问题，从而影响模型的训练效果。而且，Sigmoid函数的输出恒为正值，不是以零为中心的，这会导致权值更新时只能朝一个方向更新，从而<strong>影响收敛速度</strong>。</p>
 <p>一般Sigmoid函数只用于<strong>二分类的输出层</strong>。</p>
-<h3 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h3><p><strong>公式</strong>：$f(x) &#x3D; max(0, x)$ </p>
-<p><strong>梯度</strong>：$f’(x)&#x3D;\begin{cases}0,&amp;x&lt;0\1,&amp;x&gt;0 \end{cases}$</p>
+<h3 id="relu">ReLU</h3>
+<p><strong>公式</strong>：<span class="math inline">\(f(x) = max(0,
+x)\)</span></p>
+<p><strong>梯度</strong>：<span
+class="math inline">\(f&#39;(x)=\begin{cases}0,&amp;x&lt;0\\1,&amp;x&gt;0
+\end{cases}\)</span></p>
 <p><strong>函数图像</strong>：</p>
-<img src="/posts/7401/relu.png" srcset="/img/loading.gif" lazyload class="" title="ReLU">
-
+<figure>
+<img src="../../../../image/ActivateFunction/231029relu.png" srcset="/img/loading.gif" lazyload
+alt="ReLU" />
+<figcaption aria-hidden="true">ReLU</figcaption>
+</figure>
 <p>ReLU是一种常用的激活函数，ReLU提出就是为了解决梯度消失问题。它将输入值在<strong>负数区域输出0</strong>，在<strong>正数区域输出该数值</strong>本身。</p>
 <p>ReLU函数具有以下几个优点：</p>
-<ol>
+<ol type="1">
 <li>加速收敛：ReLU函数的导数在输入大于0时恒等于1，使得网络的<strong>反向传播更加稳定</strong>，可以加速模型的训练。</li>
 <li>稀疏性：ReLU函数的输出值在负数区域恒等于0，可以使得网络的隐藏层的神经元出现稀疏性，进一步<strong>减少计算量和存储空间</strong>。</li>
 <li>解决梯度消失问题：在较深的网络结构中，使用Sigmoid或tanh等激活函数容易导致梯度消失的问题，而ReLU可以有效地避免这个问题。</li>
 </ol>
-<p>ReLU函数在深度学习中得到广泛应用，但是它也存在一些问题，例如输出为0的区域梯度为0，这会导致<strong>梯度更新停止</strong>，进而导致<strong>神经元“死亡”</strong>的问题。因此，一些变种的ReLU函数被提出，例如Leaky ReLU和ELU等。</p>
-<h3 id="LeakyReLU"><a href="#LeakyReLU" class="headerlink" title="LeakyReLU"></a>LeakyReLU</h3><p><strong>公式</strong>：$f(x)&#x3D;\begin{cases} x, &amp; x&gt;0 \ \alpha x, &amp; x\leq 0 \end{cases}$ </p>
-<p><strong>梯度</strong>：$f’(x)&#x3D;\begin{cases} 1, &amp; x&gt;0 \ \alpha , &amp; x\leq 0 \end{cases}$</p>
-<p><strong>图像如下</strong>：</p>
-<img src="/posts/7401/leakyrelu.png" srcset="/img/loading.gif" lazyload class="" title="LeakyReLU">
-
+<p>ReLU函数在深度学习中得到广泛应用，但是它也存在一些问题，例如输出为0的区域梯度为0，这会导致<strong>梯度更新停止</strong>，进而导致<strong>神经元“死亡”</strong>的问题。因此，一些变种的ReLU函数被提出，例如Leaky
+ReLU和ELU等。</p>
+<h3 id="leakyrelu">LeakyReLU</h3>
+<p><strong>公式</strong>：<span class="math inline">\(f(x)=\begin{cases}
+x, &amp; x&gt;0 \\ \alpha x, &amp; x\leq 0 \end{cases}\)</span></p>
+<p><strong>梯度</strong>：<span
+class="math inline">\(f&#39;(x)=\begin{cases} 1, &amp; x&gt;0 \\ \alpha
+, &amp; x\leq 0 \end{cases}\)</span></p>
+<p><strong>图像如下</strong>： <img
+src="../../../../image/ActivateFunction/231029leakyrelu.png" srcset="/img/loading.gif" lazyload
+alt="LeakyReLU" /></p>
 <p>LeakyReLU的提出就是为了解决神经元”死亡“问题，LeakyReLU与ReLU很相似，仅在输入小于0的部分有差别，ReLU输入小于0的部分值都为0，而LeakyReLU输入小于0的部分，值为负，且有微小的梯度，从而增加模型的<strong>稳定性</strong>。实际中，LeakyReLU的α取值一般为<strong>0.01</strong>。</p>
-<p>超参数α的取值也已经被很多实验研究过，有一种取值方法是 对α随机取值，α的分布满足均值为0,标准差为1的正态分布，该方法叫做<strong>随机LeakyReLU</strong>(Randomized LeakyReLU)。原论文指出随机LeakyReLU相比LeakyReLU能得更好的结果，且给出了参数α的经验值<strong>1&#x2F;5.5</strong>(好于0.01)。至于为什么随机LeakyReLU能取得更好的结果，解释之一就是随机LeakyReLU小于0部分的随机梯度，为优化方法引入了随机性，这些随机噪声可以帮助参数取值跳出局部最优和鞍点。正是由于α的取值至关重要，人们不满足与随机取样α，有论文将α作为了需要学习的参数，该激活函数为<strong>PReLU</strong>(Parametrized ReLU)。</p>
-<h3 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h3><p><strong>公式</strong>：$f(x)&#x3D;\frac{e^x-e^{-x}}{e^x+e^{-x}}$ </p>
+<p>超参数α的取值也已经被很多实验研究过，有一种取值方法是
+对α随机取值，α的分布满足均值为0,标准差为1的正态分布，该方法叫做<strong>随机LeakyReLU</strong>(Randomized
+LeakyReLU)。原论文指出随机LeakyReLU相比LeakyReLU能得更好的结果，且给出了参数α的经验值<strong>1/5.5</strong>(好于0.01)。至于为什么随机LeakyReLU能取得更好的结果，解释之一就是随机LeakyReLU小于0部分的随机梯度，为优化方法引入了随机性，这些随机噪声可以帮助参数取值跳出局部最优和鞍点。正是由于α的取值至关重要，人们不满足与随机取样α，有论文将α作为了需要学习的参数，该激活函数为<strong>PReLU</strong>(Parametrized
+ReLU)。</p>
+<h3 id="tanh">Tanh</h3>
+<p><strong>公式</strong>：<span
+class="math inline">\(f(x)=\frac{e^x-e^{-x}}{e^x+e^{-x}}\)</span></p>
 <p><strong>梯度</strong>：</p>
 <p><strong>图像</strong>：</p>
-<img src="/posts/7401/tanh.png" srcset="/img/loading.gif" lazyload class="" title="Tanh">
-
-<p>Tanh函数的优点在于它的<strong>输出值在[-1, 1]<strong>之间，比Sigmoid函数的输出范围更广，因此可以更好地避免梯度消失问题，当输入的值趋于正无穷或负无穷时，tanh的梯度同样会趋近零，造成</strong>梯度消失</strong>。与Sigmoid函数相似，Tanh函数也具有Sigmoid函数的非线性特性，能够帮助模型学习<strong>非线性关系</strong>。同时，Tanh函数也具有零均值，这使得其收敛速度比Sigmoid快，也可以对数据进行中心化。</p>
+<figure>
+<img src="../../../../image/ActivateFunction/231029tanh.png" srcset="/img/loading.gif" lazyload
+alt="Tanh" />
+<figcaption aria-hidden="true">Tanh</figcaption>
+</figure>
+<p>Tanh函数的优点在于它的<strong>输出值在[-1,
+1]</strong>之间，比Sigmoid函数的输出范围更广，因此可以更好地避免梯度消失问题，当输入的值趋于正无穷或负无穷时，tanh的梯度同样会趋近零，造成<strong>梯度消失</strong>。与Sigmoid函数相似，Tanh函数也具有Sigmoid函数的非线性特性，能够帮助模型学习<strong>非线性关系</strong>。同时，Tanh函数也具有零均值，这使得其收敛速度比Sigmoid快，也可以对数据进行中心化。</p>
 <p>在深度学习中，Tanh函数通常作为激活函数使用在<strong>隐藏层</strong>中，而不是输出层中，因为输出层通常需要正值或者是概率。</p>
-<h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p><strong>公式</strong>：$f(x_i)&#x3D;\frac{e^{x_i}}{\sum_{j}e^{x_j}}$</p>
-<p><strong>梯度</strong>：$\frac{\partial f(x_i)}{\partial x_i}<br>&#x3D;\frac{e^{x_i}\sum_{j}e^{x_j}-e^{x_i}e^{x_i}}{(\sum_{j}e^{x_j})^2}<br>&#x3D;\frac{e^{x_i}}{\sum_{j}e^{x_j}}(1-\frac{e^{x_i}}{\sum_{j}e^{x_j}})<br>&#x3D;f(x_i)(1-f(x_i))$</p>
+<p>^tanh</p>
+<h3 id="softmax">Softmax</h3>
+<p><strong>公式</strong>：<span
+class="math inline">\(f(x_i)=\frac{e^{x_i/\tau}}{\sum_{j}e^{x_j/\tau}}\)</span></p>
+<p><strong>梯度</strong>：<span class="math inline">\(\frac{\partial
+f(x_i)}{\partial x_i}
+=\frac{e^{x_i}\sum_{j}e^{x_j}-e^{x_i}e^{x_i}}{(\sum_{j}e^{x_j})^2}
+=\frac{e^{x_i}}{\sum_{j}e^{x_j}}(1-\frac{e^{x_i}}{\sum_{j}e^{x_j}})
+=f(x_i)(1-f(x_i))\)</span></p>
 <p>Softmax常用于<strong>多分类</strong>问题中，他是二分类函数Sigmoid在多分类上的推广，目的是将多分类的结果<strong>以概率的形式</strong>展现出来，同时，可以将为负值的输出转化为正的概率值。它将一个K维的向量（K为类别数量）映射到一个概率分布上，使得每个元素的取值在0和1之间，而且它们的<strong>和等于1</strong>。</p>
+<p><span
+class="math inline">\(\tau\)</span>是温度参数，可以调整分布的平滑程度。</p>
 <p>Softmax函数的输出具有归一化性质，即各个类别的概率和为1。因此，在进行多分类问题时，输入数据需要进行one-hot编码，而在计算损失时，使用交叉熵损失函数。</p>
-<h3 id="ELU-Exponential-Linear-Unit"><a href="#ELU-Exponential-Linear-Unit" class="headerlink" title="ELU(Exponential Linear Unit)"></a>ELU(Exponential Linear Unit)</h3><p><strong>公式</strong>：$f(x)&#x3D;\begin{cases}x,&amp;x&gt;0\\alpha(e^x-1),&amp;x&lt;0\end{cases}$</p>
-<p><strong>梯度</strong>：$f’(x)&#x3D;\begin{cases}1,&amp;x&gt;0\\alpha e^x,&amp;x&lt;0\end{cases}$</p>
+<p>^softmax</p>
+<h3 id="eluexponential-linear-unit">ELU(Exponential Linear Unit)</h3>
+<p><strong>公式</strong>：<span
+class="math inline">\(f(x)=\begin{cases}x,&amp;x&gt;0\\\alpha(e^x-1),&amp;x&lt;0\end{cases}\)</span></p>
+<p><strong>梯度</strong>：<span
+class="math inline">\(f&#39;(x)=\begin{cases}1,&amp;x&gt;0\\\alpha
+e^x,&amp;x&lt;0\end{cases}\)</span></p>
 <p><strong>图像</strong>：</p>
-<img src="/posts/7401/ELU.png" srcset="/img/loading.gif" lazyload class="" title="ELU">
-
-<p>输入大于0部分的梯度为1,输入小于0的部分无限趋近于-α，超参数取值一般为1.<br>ELU相比于ReLU和LeakyReLU的优点在于：</p>
-<ol>
-<li>对于负数的输出，ELU可以使梯度<strong>不会变得太小</strong>，因为当x小于0 时，导数会趋近于0而不是被截断为一个常数值。</li>
+<figure>
+<img src="../../../../image/ActivateFunction/231029ELU.png" srcset="/img/loading.gif" lazyload alt="ELU" />
+<figcaption aria-hidden="true">ELU</figcaption>
+</figure>
+<p>输入大于0部分的梯度为1,输入小于0的部分无限趋近于-α，超参数取值一般为1.
+ELU相比于ReLU和LeakyReLU的优点在于：</p>
+<ol type="1">
+<li>对于负数的输出，ELU可以使梯度<strong>不会变得太小</strong>，因为当x小于0
+时，导数会趋近于0而不是被截断为一个常数值。</li>
 <li>当x的值较大时，ELU仍然可以保持一个较大的导数，从而<strong>加速学习过程</strong>。</li>
 </ol>
-<p>但是，ELU的缺点在于，<strong>计算复杂度</strong>比ReLU和LeakyReLU高，因为它涉及到指数运算。<br>总的来说，如果网络需要处理的数据集有很多负数，或者你需要防止梯度消失或爆炸，那么可以尝试使用ELU。</p>
-<h3 id="选择方式"><a href="#选择方式" class="headerlink" title="选择方式"></a>选择方式</h3><p><strong>隐藏层：</strong></p>
-<ol>
-<li>优先选择ReLu函数，如果效果不好，尝试其他，比如LeakyReLu；</li>
-<li>不要使用Sigmoid函数，可以尝试Tanh函数。</li>
-</ol>
-<p><strong>输出层：</strong></p>
-<ol>
-<li>二分类问题选择Sigmoid函数；</li>
-<li>多分类问题选择Softmax函数；</li>
-<li>回归问题选择Identity函数。$（f(x)&#x3D;x）$</li>
-</ol>
+<p>但是，ELU的缺点在于，<strong>计算复杂度</strong>比ReLU和LeakyReLU高，因为它涉及到指数运算。
+总的来说，如果网络需要处理的数据集有很多负数，或者你需要防止梯度消失或爆炸，那么可以尝试使用ELU。</p>
+<h3 id="选择方式">选择方式</h3>
+<p><strong>隐藏层：</strong> 1.
+优先选择ReLu函数，如果效果不好，尝试其他，比如LeakyReLu； 2.
+不要使用Sigmoid函数，可以尝试Tanh函数。</p>
+<p><strong>输出层：</strong> 1. 二分类问题选择Sigmoid函数； 2.
+多分类问题选择Softmax函数； 3. 回归问题选择Identity函数。<span
+class="math inline">\(（f(x)=x）\)</span></p>
 
                 
               </div>
@@ -833,17 +966,17 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="category-chain-item">人工智能</a>
+  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%A6%82%E5%BF%B5%E8%AE%B0%E5%BD%95/" class="category-chain-item">概念记录</a>
+  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%A6%82%E5%BF%B5%E8%AE%B0%E5%BD%95/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="category-chain-item">神经网络</a>
+  <a href="/categories/Concept/AI/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="category-chain-item">神经网络</a>
   
   
 
@@ -864,11 +997,11 @@
       
         <a href="/tags/AI/">#AI</a>
       
-        <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#神经网络</a>
+        <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
       
-        <a href="/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#模型训练</a>
+        <a href="/tags/model-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#model/模型训练</a>
       
-        <a href="/tags/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">#激活函数</a>
+        <a href="/tags/model-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">#model/激活函数</a>
       
     </div>
   
@@ -931,9 +1064,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/c64/" title="超网络">
+                      <a href="/posts/b5d6/" title="Dropout">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">超网络</span>
+                        <span class="hidden-mobile">Dropout</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -941,8 +1074,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/f111/" title="从零开始使用服务器">
-                        <span class="hidden-mobile">从零开始使用服务器</span>
+                      <a href="/posts/c64/" title="超网络">
+                        <span class="hidden-mobile">超网络</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -1030,6 +1163,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -1248,6 +1387,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 

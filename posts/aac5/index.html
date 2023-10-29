@@ -16,22 +16,22 @@
   <meta name="author" content="围墙里的鱼">
   <meta name="keywords" content="">
   
-    <meta name="description" content="model.train()model.train()的作用是启用 Batch Normalization 和 Dropout。 如果模型中有BN层(Batch Normalization）和Dropout，需要在训练时添加model.train()。 model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连接来训练更新">
+    <meta name="description" content="model.train() model.train()的作用是启用 Batch Normalization 和 Dropout。 如果模型中有BN层(Batch Normalization）和Dropout，需要在训练时添加model.train()。 model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络训练中的train和eval模式">
 <meta property="og:url" content="https://yu-qi-hang.github.io/posts/aac5/index.html">
 <meta property="og:site_name" content="围墙里的鱼的围墙">
-<meta property="og:description" content="model.train()model.train()的作用是启用 Batch Normalization 和 Dropout。 如果模型中有BN层(Batch Normalization）和Dropout，需要在训练时添加model.train()。 model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连接来训练更新">
+<meta property="og:description" content="model.train() model.train()的作用是启用 Batch Normalization 和 Dropout。 如果模型中有BN层(Batch Normalization）和Dropout，需要在训练时添加model.train()。 model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yu-qi-hang.github.io/img/AI.png">
 <meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-26T16:04:46.892Z">
+<meta property="article:modified_time" content="2023-10-29T16:00:29.878Z">
 <meta property="article:author" content="围墙里的鱼">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="Pytorch">
 <meta property="article:tag" content="Python">
-<meta property="article:tag" content="神经网络">
-<meta property="article:tag" content="模型训练">
+<meta property="article:tag" content="model&#x2F;神经网络">
+<meta property="article:tag" content="model&#x2F;模型训练">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://yu-qi-hang.github.io/img/AI.png">
   
@@ -319,17 +319,17 @@
     
     <div class="category row nomargin-x">
       <a class="category-item 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="人工智能"
-        id="heading-f068f0dad74789bee210163c40a4b50d" role="tab" data-toggle="collapse" href="#collapse-f068f0dad74789bee210163c40a4b50d"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Research"
+        id="heading-f027f27d0d548351e4d362e9b90678a9" role="tab" data-toggle="collapse" href="#collapse-f027f27d0d548351e4d362e9b90678a9"
         aria-expanded="true"
       >
-        人工智能
-        <span class="list-group-count">(18)</span>
+        Research
+        <span class="list-group-count">(11)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-f068f0dad74789bee210163c40a4b50d"
-           role="tabpanel" aria-labelledby="heading-f068f0dad74789bee210163c40a4b50d">
+      <div class="category-collapse collapse show" id="collapse-f027f27d0d548351e4d362e9b90678a9"
+           role="tabpanel" aria-labelledby="heading-f027f27d0d548351e4d362e9b90678a9">
         
         
           
@@ -346,22 +346,40 @@
     
     <div class="category-sub row nomargin-x">
       <a class="category-subitem 
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="PyTorch学习"
-        id="heading-8628c0686a7c465fa7ba493cb1c3fe76" role="tab" data-toggle="collapse" href="#collapse-8628c0686a7c465fa7ba493cb1c3fe76"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Experiment"
+        id="heading-05aeba473f4906b85c7627ba045e890a" role="tab" data-toggle="collapse" href="#collapse-05aeba473f4906b85c7627ba045e890a"
         aria-expanded="true"
       >
-        PyTorch学习
-        <span class="list-group-count">(2)</span>
+        Experiment
+        <span class="list-group-count">(5)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-8628c0686a7c465fa7ba493cb1c3fe76"
-           role="tabpanel" aria-labelledby="heading-8628c0686a7c465fa7ba493cb1c3fe76">
+      <div class="category-collapse collapse show" id="collapse-05aeba473f4906b85c7627ba045e890a"
+           role="tabpanel" aria-labelledby="heading-05aeba473f4906b85c7627ba045e890a">
         
         
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/posts/7a22/" title="命令行程序控制"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">命令行程序控制</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/f111/" title="从零开始使用服务器"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">从零开始使用服务器</span>
+        </a>
+      
     
       
       
@@ -381,85 +399,12 @@
         </a>
       
     
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="概念记录"
-        id="heading-6e55b2782cd4537cfd01ce7f3ab8d31e" role="tab" data-toggle="collapse" href="#collapse-6e55b2782cd4537cfd01ce7f3ab8d31e"
-        aria-expanded="false"
-      >
-        概念记录
-        <span class="list-group-count">(16)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-6e55b2782cd4537cfd01ce7f3ab8d31e"
-           role="tabpanel" aria-labelledby="heading-6e55b2782cd4537cfd01ce7f3ab8d31e">
-        
-        
-          
-          
-  <div class="category-post-list">
-    
-    
       
       
-        <a href="/posts/408/" title="主成分分析PCA"
+        <a href="/posts/8e9f/" title="常用数据集"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">主成分分析PCA</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/2116/" title="多模态跨模态"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">多模态跨模态</span>
-        </a>
-      
-    
-  </div>
-
-          
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="优化"
-        id="heading-aa84ec947f0a72b161a8d27598eda21e" role="tab" data-toggle="collapse" href="#collapse-aa84ec947f0a72b161a8d27598eda21e"
-        aria-expanded="false"
-      >
-        优化
-        <span class="list-group-count">(1)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-aa84ec947f0a72b161a8d27598eda21e"
-           role="tabpanel" aria-labelledby="heading-aa84ec947f0a72b161a8d27598eda21e">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/813c/" title="DRO"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">DRO</span>
+          <span class="category-post">常用数据集</span>
         </a>
       
     
@@ -474,17 +419,62 @@
     
     <div class="category-sub row nomargin-x">
       <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="机器学习"
-        id="heading-61bb1751fd355596e307767d1927c855" role="tab" data-toggle="collapse" href="#collapse-61bb1751fd355596e307767d1927c855"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Reading"
+        id="heading-26fccddf2f94b1685b184267996e10f8" role="tab" data-toggle="collapse" href="#collapse-26fccddf2f94b1685b184267996e10f8"
         aria-expanded="false"
       >
-        机器学习
+        Reading
+        <span class="list-group-count">(6)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse " id="collapse-26fccddf2f94b1685b184267996e10f8"
+           role="tabpanel" aria-labelledby="heading-26fccddf2f94b1685b184267996e10f8">
+        
+        
+          
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/posts/a5bb/" title="NeRF"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">NeRF</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/6d7d/" title="数字人编辑"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">数字人编辑</span>
+        </a>
+      
+    
+  </div>
+
+          
+  
+    
+    
+    
+    <div class="category-sub row nomargin-x">
+      <a class="category-subitem collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="语音驱动"
+        id="heading-356ee79fb40c0000d8d58668cdb8e1c6" role="tab" data-toggle="collapse" href="#collapse-356ee79fb40c0000d8d58668cdb8e1c6"
+        aria-expanded="false"
+      >
+        语音驱动
         <span class="list-group-count">(4)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse " id="collapse-61bb1751fd355596e307767d1927c855"
-           role="tabpanel" aria-labelledby="heading-61bb1751fd355596e307767d1927c855">
+      <div class="category-collapse collapse " id="collapse-356ee79fb40c0000d8d58668cdb8e1c6"
+           role="tabpanel" aria-labelledby="heading-356ee79fb40c0000d8d58668cdb8e1c6">
         
         
           
@@ -493,233 +483,37 @@
     
       
       
-        <a href="/posts/926e/" title="人类反馈学习"
+        <a href="/posts/be41/" title="2D数字人驱动合集"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">人类反馈学习</span>
+          <span class="category-post">2D数字人驱动合集</span>
         </a>
       
     
       
       
-        <a href="/posts/5340/" title="提示学习"
+        <a href="/posts/c16a/" title="SyncTalkFace"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">提示学习</span>
+          <span class="category-post">SyncTalkFace</span>
         </a>
       
     
       
       
-        <a href="/posts/55a8/" title="无监督域适应UDA"
+        <a href="/posts/5f49/" title="唇读专家"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">无监督域适应UDA</span>
+          <span class="category-post">唇读专家</span>
         </a>
       
     
       
       
-        <a href="/posts/2a86/" title="无监督学习与数据增强UDA"
+        <a href="/posts/253c/" title="数字人驱动"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">无监督学习与数据增强UDA</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="生成模型"
-        id="heading-5ed9c8cd91cff649154579b92a43027f" role="tab" data-toggle="collapse" href="#collapse-5ed9c8cd91cff649154579b92a43027f"
-        aria-expanded="false"
-      >
-        生成模型
-        <span class="list-group-count">(5)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-5ed9c8cd91cff649154579b92a43027f"
-           role="tabpanel" aria-labelledby="heading-5ed9c8cd91cff649154579b92a43027f">
-        
-        
-          
-          
-  <div class="category-post-list">
-    
-    
-  </div>
-
-          
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="VAE"
-        id="heading-a9423d60164f001a6715546c56c77154" role="tab" data-toggle="collapse" href="#collapse-a9423d60164f001a6715546c56c77154"
-        aria-expanded="false"
-      >
-        VAE
-        <span class="list-group-count">(2)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-a9423d60164f001a6715546c56c77154"
-           role="tabpanel" aria-labelledby="heading-a9423d60164f001a6715546c56c77154">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/ad84/" title="变分自编码器VAE"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">变分自编码器VAE</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/276c/" title="条件变分自编码器CVAE"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">条件变分自编码器CVAE</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="生成对抗网络GAN"
-        id="heading-3f659a4f500ac5af6d1dc680a2cd8741" role="tab" data-toggle="collapse" href="#collapse-3f659a4f500ac5af6d1dc680a2cd8741"
-        aria-expanded="false"
-      >
-        生成对抗网络GAN
-        <span class="list-group-count">(3)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-3f659a4f500ac5af6d1dc680a2cd8741"
-           role="tabpanel" aria-labelledby="heading-3f659a4f500ac5af6d1dc680a2cd8741">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/2a1/" title="StackGAN"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">StackGAN</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/94dc/" title="生成对抗网络"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">生成对抗网络</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/70cf/" title="StarGAN"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">StarGAN</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="神经网络"
-        id="heading-40850ccab8cdabc6868888fd85808d0e" role="tab" data-toggle="collapse" href="#collapse-40850ccab8cdabc6868888fd85808d0e"
-        aria-expanded="false"
-      >
-        神经网络
-        <span class="list-group-count">(4)</span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-      <div class="category-collapse collapse " id="collapse-40850ccab8cdabc6868888fd85808d0e"
-           role="tabpanel" aria-labelledby="heading-40850ccab8cdabc6868888fd85808d0e">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/posts/b5d6/" title="Dropout"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">Dropout</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/775/" title="卷积反卷积计算"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">卷积反卷积计算</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/c64/" title="超网络"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">超网络</span>
-        </a>
-      
-    
-      
-      
-        <a href="/posts/7401/" title="激活函数"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">激活函数</span>
+          <span class="category-post">数字人驱动</span>
         </a>
       
     
@@ -755,13 +549,22 @@
             
               <div class="markdown-body">
                 
-                <h3 id="model-train"><a href="#model-train" class="headerlink" title="model.train()"></a>model.train()</h3><p>model.train()的作用是<strong>启用 Batch Normalization 和 Dropout</strong>。</p>
-<p>如果模型中有BN层(Batch Normalization）和Dropout，需要在训练时添加model.train()。</p>
-<p>model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连接来训练更新参数。 </p>
-<h3 id="model-eval"><a href="#model-eval" class="headerlink" title="model.eval()"></a>model.eval()</h3><p>model.eval()的作用是<strong>不启用 Batch Normalization 和 Dropout</strong>。</p>
-<p>如果模型中有BN层(Batch Normalization）和Dropout，在测试时添加model.eval()。</p>
+                <h3 id="model.train">model.train()</h3>
+<p>model.train()的作用是<strong>启用 Batch Normalization 和
+Dropout</strong>。</p>
+<p>如果模型中有BN层(Batch
+Normalization）和Dropout，需要在训练时添加model.train()。</p>
+<p>model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连接来训练更新参数。</p>
+<h3 id="model.eval">model.eval()</h3>
+<p>model.eval()的作用是<strong>不启用 Batch Normalization 和
+Dropout</strong>。</p>
+<p>如果模型中有BN层(Batch
+Normalization）和Dropout，在测试时添加model.eval()。</p>
 <p>model.eval()是保证BN层能够<strong>用全部训练数据</strong>的均值和方差，即测试过程中要保证BN层的均值和方差不变。对于Dropout，model.eval()是利用到了<strong>所有网络连接</strong>，即不进行随机舍弃神经元。</p>
-<h3 id="测试时候的设定"><a href="#测试时候的设定" class="headerlink" title="测试时候的设定"></a>测试时候的设定</h3><p>训练完train_datasets之后，model要来测试样本了。在model(test_datasets)之前，需要<strong>加上model.eval()</strong>. 否则的话，<strong>有输入数据，即使不训练，它也会改变权值</strong>。这是model中含有batch normalization层所带来的的性质。</p>
+<h3 id="测试时候的设定">测试时候的设定</h3>
+<p>训练完train_datasets之后，model要来测试样本了。在model(test_datasets)之前，需要<strong>加上model.eval()</strong>.
+否则的话，<strong>有输入数据，即使不训练，它也会改变权值</strong>。这是model中含有batch
+normalization层所带来的的性质。</p>
 <p>eval()时，pytorch会自动把BN和DropOut固定住，不会取平均，而是用训练好的值。不然的话，一旦test的batch_size过小，很容易就会被BN层导致生成图片颜色失真极大。</p>
 
                 
@@ -781,12 +584,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="category-chain-item">人工智能</a>
+  <a href="/categories/Research/" class="category-chain-item">Research</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/PyTorch%E5%AD%A6%E4%B9%A0/" class="category-chain-item">PyTorch学习</a>
+  <a href="/categories/Research/Experiment/" class="category-chain-item">Experiment</a>
   
   
 
@@ -809,9 +612,9 @@
       
         <a href="/tags/Python/">#Python</a>
       
-        <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#神经网络</a>
+        <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
       
-        <a href="/tags/%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#模型训练</a>
+        <a href="/tags/model-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#model/模型训练</a>
       
     </div>
   
@@ -884,8 +687,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/408/" title="主成分分析PCA">
-                        <span class="hidden-mobile">主成分分析PCA</span>
+                      <a href="/posts/813c/" title="DRO">
+                        <span class="hidden-mobile">DRO</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
