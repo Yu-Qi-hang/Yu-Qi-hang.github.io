@@ -38,12 +38,12 @@ Park, S.J., Kim, M., Hong, J., Choi, J. and Ro, Y.M. 2022. SyncTalkFace: Talking
 
 ### contribution and novelty
 
+
 1. 提出 Audio-Lip Memory ，它将来自连续 ground truth image 的**嘴唇运动特征**存储在值存储器中，并将它们与相应的音频特征对齐，使用检索到的嘴唇运动特征作为视觉提示，可以在合成步骤中轻松地将音频与视觉动态相关联。
 2. 引入了 **visual-visual 同步损失**，模型中的视听同步损失一起使用时，可以增强口型同步性能。
 3. 通过分析内存中学习到的表示，确认音频唇形存储器存储音素级别的**代表性唇形特征**在每个内存槽中，并且寻址槽的不同组合会产生唇形特征的**各种组合**，从而实现复杂且多样化的唇形运动。因此，使用内存地址直接操纵嘴唇运动是可能的。
 
 ![](../../../../image/synctalkface/231029SYNmodel.png)
-
 
 #### 流程说明
 通过 Audio Encoder 可以将一段0.2s的音频编码为$C$个通道的特征$f_{aud}$。
@@ -51,9 +51,7 @@ Park, S.J., Kim, M., Hong, J., Choi, J. and Ro, Y.M. 2022. SyncTalkFace: Talking
 通过 Lip Encoder 可以将连续的五张掩盖上面部的图像序列编码成$C$个通道的特征$f_{lip}$。
 
 $\mathbf{M}_{lip}=\{m_{lip}^{i}\}_{i=1}^{S}$ 存储了$S$个唇形特征，通过计算输入特征与存储的每个特征的 [余弦相似度](../../../Concept/相似度/余弦相似度.md) 可以得到一组距离 $\{d_{lip}^{i}\}_{i=1}^{S}$ ，再对这组距离使用 [Softmax](../../../../BLOG/Concept/AI/神经网络/激活函数.md#Softmax) ，获取一组注意力权重 $A_{lip}=\{\alpha_{lip}^{i}\}_{i=1}^{S}$，这样子，**召回唇特征**就可以表示为：
-$$
-\hat{f}_{lip;valAdr}=A_{lip}\cdot\mathbf{M}_{lip}
-$$
+$$\hat{f}_{lip;valAdr}=A_{lip}\cdot\mathbf{M}_{lip}$$
 为了召回特征的准确性，这里使用和原特征的重建损失来约束召回特征，学习将代表性特征嵌入Memory：
 $$
 \mathcal{L}_{store}=\parallel f_{lip}-\hat{f}_{lip;valAdr}\parallel_{2}^{2}
@@ -100,12 +98,11 @@ $$
 +\lambda_{6}\mathcal{L}_{align}
 $$
 
-
 ### Experiment
 
 ![Quantitative results on LRW and LRS2](../../../../image/synctalkface/231029SYNquantitative.png)
  PSNR 和 SSIM 测量视觉质量，LMD、LSE-D 和 LSE-C 测量唇形同步质量。 LMD 是 ground truth 帧和生成帧的唇部标志（使用 dlib (King 2009) 检测到的）之间的距离。 (Prajwal et al. 2020) 提出的 LSE-C 和 LSE-D 分别是来自 SyncNet (Chung 和 Zisserman 2016b) 的音频和视频特征之间的置信度得分（越高越好）和距离得分​​（越低越好）。 LSE-C 和 LSE-D 测量音频和视觉特征之间的对应性，而 LMD 直接测量视觉到视觉的一致性。为了公平比较，根据 ATVGnet 中使用的人脸检测器评估人脸的裁剪区域（Chen et al. 2019）
-
+ 
 ![](../../../../image/synctalkface/231029SYNhumman.png)
 
 ![](../../../../image/synctalkface/231029SYNmemory.png)
