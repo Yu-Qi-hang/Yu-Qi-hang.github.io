@@ -4,6 +4,115 @@
   
   
   <entry>
+    <title>对比学习损失</title>
+    <link href="/posts/a7a1/"/>
+    <url>/posts/a7a1/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://zhuanlan.zhihu.com/p/506544456">对比学习损失</a></p><p><ahref="https://www.bilibili.com/video/BV1C3411s7t9/?vd_source=bab75b3ccf1b5ff4356ab5c39c33eca7">MoCo论文逐段精读</a> 35:42</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Concept</category>
+      
+      <category>AI</category>
+      
+      <category>损失函数</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>loss</tag>
+      
+      <tag>reward</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>用于细粒度可控头部说话合成的渐进式解耦表示学习</title>
+    <link href="/posts/c6e8/"/>
+    <url>/posts/c6e8/</url>
+    
+    <content type="html"><![CDATA[<h2id="用于细粒度可控头部说话合成的渐进式解耦表示学习">用于细粒度可控头部说话合成的渐进式解耦表示学习</h2><div class="line-block">code | <ahref="https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Progressive_Disentangled_Representation_Learning_for_Fine-Grained_Controllable_Talking_Head_Synthesis_CVPR_2023_paper.html">paper</a>|</div><p><img src="../../../../image/paper/231030dis.png" /></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs citation">Duomin Wang, Yu Deng, Zixin Yin, Heung-Yeung Shum, and Baoyuan Wang. Progressive Disentangled Representation Learning for Fine-Grained Controllable Talking Head Synthesis. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2023, pp. 17979–17989.<br></code></pre></td></tr></table></figure><h3 id="background-and-motivation">Background and Motivation</h3><p>头部说话合成是创建逼真视频头像必不可少的任务，研究人员利用深度学习技术在<ahref="../../../Concept/AI/机器学习/迁移学习.md#One-shot%20Learning">One-shot</a>生成生动头像方面取得了巨大进展。相应的方法主要可以分为音频驱动的头颅合成和视频驱动的人脸重现。音频驱动方法更注重从音频信号中准确合成<strong>嘴唇运动</strong>。视频驱动的方法旨在将源视频中的所有面部动作忠实地传输到目标身份，并且通常将这些动作视为<strong>一个整体</strong>，而无需单独控制。</p><p>我们认为，对多个面部运动的细粒度和解耦控制是实现逼真的头部说话的关键，在给定相应的驱动信号的情况下，我们可以分别控制<strong>嘴唇运动、头部姿势、眼睛运动和表情</strong>。</p><p>在真实场景中，我们想要修改已经合成的会说话的头部的目光，如果我们不能仅仅改变它而是要求演员执行全新的驱动动作，那么成本可能会很高。然而，以一种解耦的方式控制所有这些因素是非常具有挑战性的。例如，嘴唇动作本质上与情绪高度纠缠在一起，而同一言语在不同情绪下的嘴部动作可能会有所不同。</p><h3 id="contribution-and-novelty">contribution and novelty</h3><p>本文提出了渐进式解缠结细粒度可控说话头（PD-FGC），用于 one-shot头部说话生成，对嘴唇运动、头部姿势、眼睛凝视和眨眼以及情绪表达进行解缠结控制。</p><p>其中嘴唇运动的控制信号来自音频，所有其他动作都可以由不同的视频单独驱动。</p><p>为此，我们的直觉是学习每个<strong>运动因子</strong>的解开<strong>潜在表示</strong>，并利用图像生成器以这些潜在表示作为输入来合成会说话的头像。</p><p>在现有现有模型的帮助下充分利用视频数据中每个运动的固有属性。我们设计了一种渐进式解纠缠表示学习策略，根据各个因素的各自属性以从粗到细的方式分离每个因素控制。它由三个阶段组成：1.将外观与面部运动解开，获得记录所有运动信息的<strong>统一运动表示</strong>；2.通过<strong>运动特定对比学习</strong>从统一运动特征中分离出除表情之外的每个细粒度面部运动；3.通过<strong>特征级去相关</strong>将表情与其他动作分开，并同时学习用于细粒度可控头部说话合成的图像生成器。</p><h4 id="外观与运动解耦">外观与运动解耦</h4><p>为了实现对多个细粒度运动因素的解耦，首要任务是学习一个统一的运动表示，记录各种运动信息，同时排除外观（即身份）信息。</p><p>引入外观编码器 <span class="math inline">\(E_{app}\)</span>和运动编码器 <span class="math inline">\(E_{mot}\)</span>分别从<strong>外观图像</strong>和<strong>驱动帧</strong>中提取相应的<strong>特征</strong>。应用额外的生成器<span class="math inline">\(G_{0}\)</span>来合成具有外观图像的身份和驱动帧的面部运动的面部图像。应用自驱动和重建来学习整个流程，其中将数据增强引入到运动分支中，以迫使运动编码器忽略外观变化并仅关注运动提取。</p><p><span class="math display">\[\mathcal{L}_{m ot}=||\phi(I_{0})-\phi(I_{g})||_{2}+||\psi(I_{0})-\psi(I_{g})||_{2}\]</span></p><p><span class="math inline">\(\phi(\cdot)\)</span> 和 <spanclass="math inline">\(\psi(\cdot)\)</span>是使用3D重构网络和情绪网络提取的特征。<spanclass="math inline">\(I_{0},I_{g}\)</span> 分别是生成的图像和原图。</p><p><img src="../../../../image/paper/231030DISstage12.png" /></p><h4 id="细粒度运动解耦">细粒度运动解耦</h4><p>引入了三个额外的编码器来进一步从<strong>统一运动表示</strong>中提取细粒度的运动特征，包括<strong>嘴唇运动特征</strong>、<strong>眼睛注视和眨眼特征</strong>以及<strong>头部姿势特征</strong>。</p><p><strong>嘴唇运动对比学习</strong>通过探索统一运动特征和相应语音音频之间的共享信息，可以将嘴唇运动与其他运动很好地分开。</p><p>给定一组视频帧 <span class="math inline">\(\{v_{i}\}\)</span>及其对应的音频信号 <spanclass="math inline">\(\{a_{i}\}\)</span>，我们引入唇动编码器 <spanclass="math inline">\(E_{lip}\)</span> 和音频编码 <spanclass="math inline">\(E_{aud}\)</span>，并提取唇动特征<spanclass="math inline">\(\{f^{v}_{i}\}=\{E_{lip} \circE_{mot}(v_{i})\}\)</span>和音频特征<spanclass="math inline">\(\{f^{a}_{i}\}=\{E_{aud}(a_{i})\}\)</span>，其中<span class="math inline">\(E_{mot}\)</span>是前一阶段的预训练运动编码器。然后，我们为每个采样的音频特征 <spanclass="math inline">\(f^{a}_{i}\)</span> 构造一个正音视频对<spanclass="math inline">\((f^{a}_{i},f^{v}_{i})\)</span>和 <spanclass="math inline">\(K\)</span> 个负音视频对 <spanclass="math inline">\((f^{a}_{i},f^{v}_{k}),k\nei\)</span>，反之亦然。引入 <ahref="../../../Concept/AI/损失函数/对比学习损失.md">对比学习损失</a>来最大化正样本对相似度和最小化负样本对相似度：</p><p><spanclass="math display">\[\mathcal{L}_{a2v}=-\mathrm{log}[\frac{\exp(\mathcal{S}(f_{i}^{a},f_{i}^{v}))}{\exp(\mathcal{S}(f_{i}^{a},f_{i}^{v}))+\sum_{k=1}^{K}{\exp(\mathcal{S}(f_{i}^{a},f_{k}^{v}))}}]\]</span><spanclass="math display">\[\mathcal{L}_{v2a}=-\mathrm{log}[\frac{\exp(\mathcal{S}(f_{i}^{v},f_{i}^{a}))}{\exp(\mathcal{S}(f_{i}^{v},f_{i}^{a}))+\sum_{k=1}^{K}{\exp(\mathcal{S}(f_{i}^{v},f_{k}^{a}))}}]\]</span></p><p><span class="math inline">\(\mathcal{S}(\cdot)\)</span> 是 <ahref="../../../Concept/相似度/余弦相似度.md">余弦相似度</a>。对比损失确保了对应的音视频提取的运动特征接近彼此，有助于分解嘴唇特征。</p><p><strong>眼睛运动对比学习</strong>眼睛运动，是局部运动，对其他面部区域的影响有限。因此，从用一个人的眼部区域替换另一个人的眼部区域来合成的新图像提取的眼动特征应该与后一个人的眼动特征相同。</p><p>给定两个驱动帧，<span class="math inline">\(v_{1}\)</span> 和 <spanclass="math inline">\(v_{2}\)</span>，通过合成 <spanclass="math inline">\(v_{1}\)</span> 的眼睛区域和 <spanclass="math inline">\(v_{2}\)</span> 的其他区域来构造锚点帧 <spanclass="math inline">\(v_{a}\)</span>。使用编码器 <spanclass="math inline">\(E_{eye}\)</span>来从上述三帧对应的统一运动表示中提取眼部运动特征 <spanclass="math inline">\(f_{1}, f_{2}, f_{a}\)</span>，构造正对 <spanclass="math inline">\((f_{1}, f_{a})\)</span> 和负对 <spanclass="math inline">\((f_{2}, f_{a})\)</span>，引入对比学习损失： <spanclass="math display">\[\mathcal{L}_{eye}=-\mathrm{log}[\frac{\exp(\mathcal{S}(f_{1},f_{a}))}{\exp(\mathcal{S}(f_{1},f_{a}))+\exp(\mathcal{S}(f_{2},f_{a}))}]\]</span></p><p><strong>头部姿势学习</strong>头部姿势可以通过由三个欧拉角（即俯仰角、偏航角、滚动角）和 3D 平移组成的6D 参数来很好地定义，因此我们建议在 3D面部先验模型的指导下通过头部姿势编码器 <spanclass="math inline">\(E_{pose}\)</span> 直接对它们进行回归： <spanclass="math display">\[\mathcal{L}_{pose}=|\mathcal{P}_{pred}-\mathcal{P}_{gt}|_{1}\]</span>其中 <span class="math inline">\(\mathcal{P}_{pred}\)</span> 是 <spanclass="math inline">\(E_{pose}\)</span> 预测的姿态参数，<spanclass="math inline">\(\mathcal{P}_{gt}\)</span> 是通过现成的 3D人脸重建模型获得的真实姿态参数。</p><h4 id="表情解耦">表情解耦</h4><p><img src="../../../../image/paper/231030DISstage3.png" /></p><p>假设提取的表情特征独立于其他动作的特征，同时它与其他动作的组合仍然可以重建驱动信号中的所有面部动作，那么它就是地面表情的精确潜在表示。</p><p>提出了一种特征级去相关策略，以将表情与其他动作分开，以及驱动帧的自我重建，以互补的方式学习精确的表情表示。</p><p><strong>In-window decorrelation</strong>视频序列中的表情变化通常不如其他动作的变化频繁。因此，如果我们在一个时间窗口内取<strong>平均</strong>表情特征，那么存储在表情特征的特定维度中的其他运动信息应该被平均掉，从而得到与其他运动不相关的干净的表情特征。^PDFGCTHavg</p><p>给定一个驱动帧，我们在其周围定义一个大小为 <spanclass="math inline">\(K\)</span>的窗口，并通过随机旋转、缩放和颜色抖动来增强窗口内的帧。通过表情特征编码器<span class="math inline">\(E_{exp}\)</span>提取序列表情特征，取平均值作为<strong>中间驱动帧</strong>的<strong>表情特征</strong>。</p><p><strong>Lip-motion decorrelation</strong>引入了嘴唇运动去相关损失，通过强制表情特征和嘴唇运动特征之间的独立性来实现更好的表情解耦：<spanclass="math display">\[\mathcal{L}_{decor}={\frac{1}{D}}\sum_{B,D}cor(\bar{F^{e}},F^{a})^{2}\]</span>其中 <span class="math inline">\(\bar{F^{e}}\in \mathbb{R}^{B\timesD}\)</span> 是 <span class="math inline">\(B\)</span>个批次的平均表情特征组成的矩阵，<span class="math inline">\(F^{a}\in\mathbb{R}^{B\times D}\)</span> 是对应的音频特征矩阵，<spanclass="math inline">\(D\)</span> 是特征维度，<spanclass="math inline">\(cor(\cdot,\cdot)\)</span>计算两个矩阵之间的特征维度相关性。</p><p>计算两个变量之间的相关性需要大批量才能达到足够的精度。由于内存限制，在训练过程中很难做到足够大的批大小。</p><p>为了解决这个问题，为表情特征和音频特征维护两个存储库用于计算相关性，而不是仅使用当前批次的特征。存储体始终将<span class="math inline">\(M\)</span>个最新特征保存在内部以计算相关性。</p><p>训练期间，<span class="math inline">\(M\)</span>远大于每次迭代的批大小。梯度只会通过当前批次的特征反向传播来更新网络权重。</p><p><strong>Complementary learning via self-reconstruction</strong>上述两种去相关策略保证了表情与其他动作之间的特征<strong>独立性</strong>，但提取的表情特征仍然<strong>缺乏语义意义</strong>。</p><p>利用图像生成器<spanclass="math inline">\(G\)</span>将表情特征以及外观和其他运动特征作为输入，并通过驱动帧的自重建来合成具有所需面部运动的图像。</p><p>为了准确重建驱动帧，表情编码器被迫学习所有其他运动特征中未包含的补充信息，这正是表情信息。我们强制执行多个损失来学习表达编码器<span class="math inline">\(E_{exp}\)</span> 和图像生成器 <spanclass="math inline">\(G\)</span> : <spanclass="math display">\[\mathcal{L}_{vgg}=\sum_{i=1}^{N}{\parallelVGG_{i}(I_{f})-VGG_{i}(I_{g})\parallel_{1}}\]</span> <spanclass="math inline">\(VGGi(\cdot)\)</span> 是预训练 <spanclass="math inline">\(VGG19\)</span> 网络中第 <spanclass="math inline">\(i\)</span>层的特征图。引入对抗性损失和鉴别器特征匹配损失来提高合成图像质量。</p><p>为了确保合成图像很好地跟随驱动帧的所有面部运动，进一步引入了运动级一致性损失：<spanclass="math display">\[\mathcal{L}_{con}=\mathrm{exp}(-\mathcal{S}(\mathcal{V}_{lip}(I_{f}),E_{aud}(a_{g})))+\parallel\mathcal{G}(I_{f}),\mathcal{G}(I_{g})\parallel_{1}+\mathcal{L}_{mot}\]</span> <span class="math inline">\(E_{aud}\)</span>是前面训练的音频编码器，<spanclass="math inline">\(\mathcal{V}_{lip}\)</span>是预训练的从图像提取嘴唇运动特征的编码器，<spanclass="math inline">\(\mathcal{G}(I)\)</span> 是凝视估计器，<spanclass="math inline">\(I_{f},I_{g},a_{g}\)</span>分别是合成图像，真实图像以及对应的真实音频。</p><p>上述自重建过程与特征级去相关策略一起有助于将表情特征与统一运动特征分开。此外，这一步学习到的图像生成器<spanclass="math inline">\(G\)</span>自然地以所有解耦的运动特征和外观特征作为输入，实现了解耦的可控头部合成。因此，将<span class="math inline">\(G\)</span>作为头部合成的最终图像生成器。</p><h3 id="experiment">Experiment</h3><p><img src="../../../../image/paper/231030DISquantitative.png" /></p><p><spanclass="math display">\[NLSE-C=\frac{LSE\text{-}C^{gen}-LSE\text{-}C^{gt}}{LSE\text{-}C^{gt}}\]</span></p><p><img src="../../../../image/paper/231030DISacc.png" /></p><p><img src="../../../../image/paper/231030DISuser.png" /></p><h3 id="thinking">Thinking</h3><p>infoNCE Loss使得无监督在视觉领域能力大大提升。本文在对不同运动特征进行解耦时候使用了多次这个损失函数。作为对比学习损失的一种，通过巧妙设置正负样本对，可以实现灵活的功能。</p><p><ahref="用于细粒度可控头部说话合成的渐进式解耦表示学习.md#%5EPDFGCTHavg">窗口去关联</a>采用平均的方法，有一定道理。</p><p>在现有现有模型的帮助下充分利用视频数据中每个运动的固有属性。本文使用了多个现有模型，<spanclass="math inline">\(VGG19,\mathcal{G}(I),\mathcal{V}_{lip},\phi(\cdot),\psi(\cdot)\)</span>，充分使用了数据的信息。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>Reading</category>
+      
+      <category>语音驱动</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数字人</tag>
+      
+      <tag>2D</tag>
+      
+      <tag>数字人/数字人驱动</tag>
+      
+      <tag>media/audio</tag>
+      
+      <tag>media/video</tag>
+      
+      <tag>paper</tag>
+      
+      <tag>talkingface</tag>
+      
+      <tag>disentangle</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>迁移学习</title>
+    <link href="/posts/156/"/>
+    <url>/posts/156/</url>
+    
+    <content type="html"><![CDATA[<p>迁移学习的两种极端形式是一次学习( one-shot learning)和零次学习(zero-shot learning)，有时也被称为零数据学习( zero-datalearning)。只有一个标注样本的迁移任务被称为一次学习，没有标注样本的迁移任务被称为零次学习。</p><h3 id="one-shot-learning">One-shot Learning</h3><p>"one-shotlearning"（一次学习）是一种特殊的监督学习方法，其主要目标是通过仅有<strong>一个或非常有限</strong>的示例来识别或分类<strong>新的对象</strong>或类别。在传统的机器学习方法中，通常需要大量的训练数据来训练模型，但在一些现实场景中，获取大量标记数据可能是不切实际的，或者新的类别可能会<strong>不断出现</strong>。</p><p>"One-shot learning"的核心挑战是使模型具有<strong>泛化能力</strong>，能够从极少的示例中学到关于<strong>新类别的特征和模式</strong>。</p><p>因为第一阶段学习出的表示就可以清楚地<strong>分离出潜在的类别</strong>，所以一次学习是可能的。在迁移学习阶段，仅需要一个标注样本来推断<strong>表示空间</strong>中聚集在相同点周围许多可能测试样本的标签。这使得在学成的表示空间中，对应于不变性的变化因子已经与其他因子完全分离，在区分某些类别的对象时，我们可以学习到哪些因素具有决定意义。</p><h3 id="zero-shot-learning">Zero-shot Learning</h3><p>考虑一个零次学习情景的例子，学习器已经读取了大量文本，然后要解决对象识别的问题。如果文本足够好地描述了对象，那么即使没有看到某对象的图像，也能识别出该对象的类别。例如，已知猫有四条腿和尖尖的耳朵，那么学习器可以在没有见过猫的情况下猜测该图像中是猫。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Concept</category>
+      
+      <category>AI</category>
+      
+      <category>机器学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>AI/ML</tag>
+      
+      <tag>transfer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数字人驱动</title>
     <link href="/posts/253c/"/>
     <url>/posts/253c/</url>
@@ -47,7 +156,7 @@
     <link href="/posts/5f49/"/>
     <url>/posts/5f49/</url>
     
-    <content type="html"><![CDATA[<h2id="seeing-what-you-said-talking-face-generation-guided-by-a-lip-reading-expert">SeeingWhat You Said: Talking Face Generation Guided by a Lip ReadingExpert</h2><div class="line-block"><ahref="https://github.com/Sxjdwang/TalkLip">code</a> | <ahref="https://arxiv.org/abs/2303.17480">paper</a> |</div><p><img src="../../../../image/paper/231029008.png" /></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs citation">Jiadong Wang, Xinyuan Qian, Malu Zhang, Robby T. Tan, and Haizhou Li. 2023. Seeing What You Said: Talking Face Generation Guided by a Lip Reading Expert. DOI:[https://doi.org/10.48550/arXiv.2303.17480](https://doi.org/10.48550/arXiv.2303.17480)<br></code></pre></td></tr></table></figure><p>会说话的面部生成，也称为语音到嘴唇生成，在给定<strong>连贯的语音输入</strong>的情况下<strong>重建有关嘴唇的面部运动</strong>。</p><h3 id="motivation-and-contribution">Motivation and contribution</h3><p>先前的研究揭示了唇语同步和视觉质量的重要性，但他们很少关注嘴唇动作的内容，即<strong>所说单词的视觉清晰度</strong>。</p><ul><li>使用<strong>Lip-ReadingExpert</strong>通过<strong>惩罚不正确</strong>的生成结果来提高生成的唇部区域的清晰度。</li><li>为了弥补数据稀缺，我们以 audio-visual自监督的方式训练<strong>Lip-Reading Expert</strong>。</li><li>与<strong>Lip-ReadingExpert</strong>一起，提出了一种新颖的对比学习来增强唇语同步和一个Transformer Encoder来编码与视频同步的音频，同时考虑音频的全局时间依赖性</li></ul><p><img src="../../../../image/paper/231029talklip.png"alt="image.png" /> TalkLip网络的框图，该网络在给定连贯的语音输入、身份和姿势输入的情况下生成说话的面孔。该网络由：一个用于音素级特征提取的<strong>音频编码器</strong>；一个提取身份和姿势信息的<strong>视频编码器</strong>；一个以真实/合成的面部图像为条件的**GAN<strong>；一个来惩罚唇读错误的新颖的后端</strong>唇读专家<strong>组成。整个网络通过</strong>四重损失**进行优化，标记为黄色矩形。</p><h3 id="lip-reading-expert">lip-reading expert</h3><p>唇读系统的目标是从视频中的<strong>唇形动作转录单词</strong>序列。为了解决<strong>数据稀缺</strong>的问题，采用<strong>AV-Hubert</strong>来拥有可靠的唇读专家，这是一种<strong>自监督</strong>的方法，该方法在唇读，语音识别和视听语音识别方面产生了SOTA性能。</p><figure><img src="../../../../image/paper/231029avhubert.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><p>Visual frontend 由用于捕获局部唇部运动的3D　CNN　和2DResNet-18组成。Modality selector通过屏蔽无参与模态的特征来确定纯音频、纯视频或视听语音识别系统的训练。所有系统共享相同的TransformerEncoder，并使用相同的逐帧伪标签进行回归。因此，音频和视觉上下文功能是同步的。AV-Hubert还提供了一个<strong>同步语音识别系统</strong>，其编码器考虑了<strong>长期的时间依赖性</strong>，我们采用这种编码器对音频输入进行编码。</p><h3 id="audio-encoder">Audio encoder</h3><p>音频编码器用于对<strong>音素级嵌入</strong>进行编码，并将嵌入提供给生成器作为嘴型和嘴唇运动的参考。使用<strong>两个不同的音频编码器</strong>来提取嵌入。我们称它们为<strong>本地</strong>和<strong>全局</strong>音频嵌入。</p><figure><img src="../../../../image/paper/231029audio_encoder.png"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><p>本地音频嵌入是使用基于 CNN的网络提取的。一个0.2秒的音频片段，其中心与姿势参考同步，作为输入。但是，0.2秒的音频片段不包含整个语音的时间变化。采用与唇读专家共同训练的TransformerEncoder。TransformerEncoder将<strong>整个语音</strong>作为输入，以生成所有帧的音频上下文特征。然后，我们选择上下文特征的帧，这些帧与姿势参考在时间上对齐，作为全局音频嵌入。</p><h3 id="video-encoder">Video encoder</h3><p>视频编码器是从图像中提取身份和姿势信息以统一视觉嵌入，并将嵌入提供给生成器以合成与所提供的身份和姿势一致的图像。视觉嵌入是从两个图像中提取的：身份引用和姿势引用。姿势参考与目标面部图像相同，只是它遮盖了下半张脸，以防止我们的TalkLip网络学习嘴唇区域的动作。在同一视频序列中随机选取身份引用。两个参考在通道维度中连接起来作为视觉输入，并馈送到基于CNN 的视频编码器。</p><figure><img src="../../../../image/paper/231029video_encoder.png"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h3 id="video-generation">Video generation</h3><p>生成器在给定音频嵌入和视频嵌入的情况下构建说话人脸图像。生成器由转置的CNN块组成。给定合成的说话人脸图像和地面实况图像，应用<strong>两重损耗</strong>来提高视频生成质量，即重建损耗，GAN损失。<spanclass="math display">\[\mathcal{L}_{rec}=\frac{1}{N_{i}}\sum_{i}^{N_{i}}\lvertv_{i}-v_{i}&#39; \rvert\]</span> <spanclass="math display">\[\mathcal{L}_{gen}=\mathbb{E}[\log{(1-D(v&#39;)}]\]</span><spanclass="math display">\[\mathcal{L}_{disc}=\mathbb{E}[\log{(1-D(v))}]+\mathbb{E}[\log{(D(v&#39;)}]\]</span></p><figure><img src="../../../../image/paper/231029con_loss.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h3 id="lip-reading-loss">Lip reading loss</h3><p>将所有帧以比例p随机采样一组起始帧，其后续M帧将被v′替换。通过这种方式，考虑了v′ 内以及 v 和 v′ 之间的嘴唇运动。<spanclass="math inline">\(\mathcal{L}_{lip}=-Y\log{P(\hat{Y}|V)}\)</span></p><figure><img src="../../../../image/paper/231029lip_loss.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h3 id="contrastive-loss">Contrastive loss</h3><p>给定来自音频编码器的音频嵌入 Ea 和来自唇读专家的视觉上下文特征R，计算对比损失 <spanclass="math display">\[\theta(x,x&#39;)=exp(\mathcal{F}(x)\cdot\mathcal{F}(x&#39;)/\tau),\]</span><span class="math display">\[\mathcal{L}_{av}=-\sum_{i\in\Upsilon}{\log{\frac{\theta(E_{i}^{a},R_{i})}{\theta(E_{i}^{a},R_{i})+\sum_{j\in\Upsilon\\i\neq j}\theta(E_{i}^{a},E_{j}^{a})}}} \]</span> <spanclass="math display">\[\mathcal{L}_{t}=\lambda_{l}\mathcal{L}_{lip}+\lambda_{c}\mathcal{L}_{av}+\lambda_{r}\mathcal{L}_{rec}+\lambda_{g}\mathcal{L}_{gan}\]</span></p><h3 id="experiment">Experiment</h3><p><img src="../../../../image/paper/231029data_result.png"alt="image.png" /> <imgsrc="../../../../image/paper/231029eval_result.png"alt="image.png" /></p>]]></content>
+    <content type="html"><![CDATA[<h2id="seeing-what-you-said-talking-face-generation-guided-by-a-lip-reading-expert">SeeingWhat You Said: Talking Face Generation Guided by a Lip ReadingExpert</h2><div class="line-block"><ahref="https://github.com/Sxjdwang/TalkLip">code</a> | <ahref="https://arxiv.org/abs/2303.17480">paper</a> |</div><p><img src="../../../../image/paper/231029008.png" /></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs citation">Jiadong Wang, Xinyuan Qian, Malu Zhang, Robby T. Tan, and Haizhou Li. 2023. Seeing What You Said: Talking Face Generation Guided by a Lip Reading Expert. DOI:[https://doi.org/10.48550/arXiv.2303.17480](https://doi.org/10.48550/arXiv.2303.17480)<br></code></pre></td></tr></table></figure><p>会说话的面部生成，也称为语音到嘴唇生成，在给定<strong>连贯的语音输入</strong>的情况下<strong>重建有关嘴唇的面部运动</strong>。</p><h3 id="motivation-and-contribution">Motivation and contribution</h3><p>先前的研究揭示了唇语同步和视觉质量的重要性，但他们很少关注嘴唇动作的内容，即<strong>所说单词的视觉清晰度</strong>。</p><ul><li>使用<strong>Lip-ReadingExpert</strong>通过<strong>惩罚不正确</strong>的生成结果来提高生成的唇部区域的清晰度。</li><li>为了弥补数据稀缺，我们以 audio-visual自监督的方式训练<strong>Lip-Reading Expert</strong>。</li><li>与<strong>Lip-ReadingExpert</strong>一起，提出了一种新颖的对比学习来增强唇语同步和一个Transformer Encoder来编码与视频同步的音频，同时考虑音频的全局时间依赖性</li></ul><figure><img src="../../../../image/paper/231029talklip.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><p>TalkLip网络的框图，该网络在给定连贯的语音输入、身份和姿势输入的情况下生成说话的面孔。该网络由：一个用于音素级特征提取的<strong>音频编码器</strong>；一个提取身份和姿势信息的<strong>视频编码器</strong>；一个以真实/合成的面部图像为条件的**GAN<strong>；一个来惩罚唇读错误的新颖的后端</strong>唇读专家<strong>组成。整个网络通过</strong>四重损失**进行优化，标记为黄色矩形。</p><h3 id="lip-reading-expert">lip-reading expert</h3><p>唇读系统的目标是从视频中的<strong>唇形动作转录单词</strong>序列。为了解决<strong>数据稀缺</strong>的问题，采用<strong>AV-Hubert</strong>来拥有可靠的唇读专家，这是一种<strong>自监督</strong>的方法，该方法在唇读，语音识别和视听语音识别方面产生了SOTA性能。</p><figure><img src="../../../../image/paper/231029avhubert.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><p>Visual frontend 由用于捕获局部唇部运动的3D　CNN　和2DResNet-18组成。Modality selector通过屏蔽无参与模态的特征来确定纯音频、纯视频或视听语音识别系统的训练。所有系统共享相同的TransformerEncoder，并使用相同的逐帧伪标签进行回归。因此，音频和视觉上下文功能是同步的。AV-Hubert还提供了一个<strong>同步语音识别系统</strong>，其编码器考虑了<strong>长期的时间依赖性</strong>，我们采用这种编码器对音频输入进行编码。</p><h3 id="audio-encoder">Audio encoder</h3><p>音频编码器用于对<strong>音素级嵌入</strong>进行编码，并将嵌入提供给生成器作为嘴型和嘴唇运动的参考。使用<strong>两个不同的音频编码器</strong>来提取嵌入。我们称它们为<strong>本地</strong>和<strong>全局</strong>音频嵌入。</p><figure><img src="../../../../image/paper/231029audio_encoder.png"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><p>本地音频嵌入是使用基于 CNN的网络提取的。一个0.2秒的音频片段，其中心与姿势参考同步，作为输入。但是，0.2秒的音频片段不包含整个语音的时间变化。采用与唇读专家共同训练的TransformerEncoder。TransformerEncoder将<strong>整个语音</strong>作为输入，以生成所有帧的音频上下文特征。然后，我们选择上下文特征的帧，这些帧与姿势参考在时间上对齐，作为全局音频嵌入。</p><h3 id="video-encoder">Video encoder</h3><p>视频编码器是从图像中提取身份和姿势信息以统一视觉嵌入，并将嵌入提供给生成器以合成与所提供的身份和姿势一致的图像。视觉嵌入是从两个图像中提取的：身份引用和姿势引用。姿势参考与目标面部图像相同，只是它遮盖了下半张脸，以防止我们的TalkLip网络学习嘴唇区域的动作。在同一视频序列中随机选取身份引用。两个参考在通道维度中连接起来作为视觉输入，并馈送到基于CNN 的视频编码器。</p><figure><img src="../../../../image/paper/231029video_encoder.png"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h3 id="video-generation">Video generation</h3><p>生成器在给定音频嵌入和视频嵌入的情况下构建说话人脸图像。生成器由转置的CNN块组成。给定合成的说话人脸图像和地面实况图像，应用<strong>两重损耗</strong>来提高视频生成质量，即重建损耗，GAN损失。<spanclass="math display">\[\mathcal{L}_{rec}=\frac{1}{N_{i}}\sum_{i}^{N_{i}}\lvertv_{i}-v_{i}&#39; \rvert\]</span> <spanclass="math display">\[\mathcal{L}_{gen}=\mathbb{E}[\log{(1-D(v&#39;)}]\]</span><spanclass="math display">\[\mathcal{L}_{disc}=\mathbb{E}[\log{(1-D(v))}]+\mathbb{E}[\log{(D(v&#39;)}]\]</span></p><figure><img src="../../../../image/paper/231029con_loss.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h3 id="lip-reading-loss">Lip reading loss</h3><p>将所有帧以比例p随机采样一组起始帧，其后续M帧将被v′替换。通过这种方式，考虑了v′ 内以及 v 和 v′ 之间的嘴唇运动。<spanclass="math inline">\(\mathcal{L}_{lip}=-Y\log{P(\hat{Y}|V)}\)</span></p><figure><img src="../../../../image/paper/231029lip_loss.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h3 id="contrastive-loss">Contrastive loss</h3><p>给定来自音频编码器的音频嵌入 Ea 和来自唇读专家的视觉上下文特征R，计算对比损失 <spanclass="math display">\[\theta(x,x&#39;)=exp(\mathcal{F}(x)\cdot\mathcal{F}(x&#39;)/\tau),\]</span><span class="math display">\[\mathcal{L}_{av}=-\sum_{i\in\Upsilon}{\log{\frac{\theta(E_{i}^{a},R_{i})}{\theta(E_{i}^{a},R_{i})+\sum_{j\in\Upsilon\\i\neq j}\theta(E_{i}^{a},E_{j}^{a})}}} \]</span> <spanclass="math display">\[\mathcal{L}_{t}=\lambda_{l}\mathcal{L}_{lip}+\lambda_{c}\mathcal{L}_{av}+\lambda_{r}\mathcal{L}_{rec}+\lambda_{g}\mathcal{L}_{gan}\]</span></p><h3 id="experiment">Experiment</h3><p><img src="../../../../image/paper/231029data_result.png"alt="image.png" /> <imgsrc="../../../../image/paper/231029eval_result.png"alt="image.png" /></p>]]></content>
     
     
     <categories>
@@ -88,7 +197,7 @@
     <link href="/posts/c16a/"/>
     <url>/posts/c16a/</url>
     
-    <content type="html"><![CDATA[<h2 id="title">title</h2><div class="line-block">code | <ahref="https://ojs.aaai.org/index.php/AAAI/article/view/20102">paper</a>|</div><p><img src="../../../../image/synctalkface/231029SYNauthor.png" /></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs citation">Park, S.J., Kim, M., Hong, J., Choi, J. and Ro, Y.M. 2022. SyncTalkFace: Talking Face Generation with Precise Lip-Syncing via Audio-Lip Memory. _Proceedings of the AAAI Conference on Artificial Intelligence_. 36, 2 (Jun. 2022), 2062-2070. DOI:https://doi.org/10.1609/aaai.v36i2.20102.<br></code></pre></td></tr></table></figure><h3 id="background-and-motivation">Background and Motivation</h3><p>从语音生成说话脸部的挑战在于<strong>对齐音频和视频</strong>，使得嘴部区域动作与输入的音频对应。</p><p>以前的方法要么利用视听表示学习，要么利用中间结构信息，例如 landmarks和 3D模型。然而，他们很难合成<strong>音素级别</strong>上变化的嘴唇的<strong>精细细节</strong>，因为它们在视频合成步骤中不能充分提供<strong>嘴唇的视觉信息</strong>。</p><h3 id="contribution-and-novelty">contribution and novelty</h3><ol type="1"><li>提出 Audio-Lip Memory ，它将来自连续 ground truth image的<strong>嘴唇运动特征</strong>存储在值存储器中，并将它们与相应的音频特征对齐，使用检索到的嘴唇运动特征作为视觉提示，可以在合成步骤中轻松地将音频与视觉动态相关联。</li><li>引入了 <strong>visual-visual同步损失</strong>，模型中的视听同步损失一起使用时，可以增强口型同步性能。</li><li>通过分析内存中学习到的表示，确认音频唇形存储器存储音素级别的<strong>代表性唇形特征</strong>在每个内存槽中，并且寻址槽的不同组合会产生唇形特征的<strong>各种组合</strong>，从而实现复杂且多样化的唇形运动。因此，使用内存地址直接操纵嘴唇运动是可能的。</li></ol><p><img src="../../../../image/synctalkface/231029SYNmodel.png" /></p><h4 id="流程说明">流程说明</h4><p>通过 Audio Encoder 可以将一段0.2s的音频编码为<spanclass="math inline">\(C\)</span>个通道的特征<spanclass="math inline">\(f_{aud}\)</span>。</p><p>通过 Lip Encoder 可以将连续的五张掩盖上面部的图像序列编码成<spanclass="math inline">\(C\)</span>个通道的特征<spanclass="math inline">\(f_{lip}\)</span>。</p><p><spanclass="math inline">\(\mathbf{M}_{lip}=\{m_{lip}^{i}\}_{i=1}^{S}\)</span>存储了<spanclass="math inline">\(S\)</span>个唇形特征，通过计算输入特征与存储的每个特征的<a href="../../../Concept/相似度/余弦相似度.md">余弦相似度</a>可以得到一组距离 <spanclass="math inline">\(\{d_{lip}^{i}\}_{i=1}^{S}\)</span>，再对这组距离使用 <ahref="../../../../BLOG/Concept/AI/神经网络/激活函数.md#Softmax">Softmax</a>，获取一组注意力权重 <spanclass="math inline">\(A_{lip}=\{\alpha_{lip}^{i}\}_{i=1}^{S}\)</span>，这样子，<strong>召回唇特征</strong>就可以表示为：<span class="math display">\[\hat{f}_{lip;valAdr}=A_{lip}\cdot\mathbf{M}_{lip}\]</span>为了召回特征的准确性，这里使用和原特征的重建损失来约束召回特征，学习将代表性特征嵌入Memory：<span class="math display">\[\mathcal{L}_{store}=\parallelf_{lip}-\hat{f}_{lip;valAdr}\parallel_{2}^{2}\]</span> <spanclass="math inline">\(\mathbf{M}_{aud}=\{m_{aud}^{i}\}_{i=1}^{S}\)</span>存储了<span class="math inline">\(S\)</span>个音频特征，计算输入的<spanclass="math inline">\(f_{aud}\)</span>与给个的距离并进行softmax得到音频的注意力权重<spanclass="math inline">\(A_{aud}=\{\alpha_{aud}^{i}\}_{i=1}^{S}\)</span></p><p>两个注意力权重其实就是地址索引，为了使得音视频对齐，可以通过两者分布的<a href="../../../Concept/相似度/KL散度.md">KL散度</a>来衡量两者相似度，从而通过训练对齐音视频： <span class="math display">\[\mathcal{L}_{align}=D_{KL}(A_{lip}\parallel A_{aud})\]</span> 这样子就可以通过音频特征的键去索引嘴唇特征的值： <spanclass="math display">\[\hat{f}_{lip;keyAdr}=A_{aud}\cdot\mathbf{M}_{lip}\]</span>将其与输入的音频链接作为解码器的一个输入，再将一个完整的面部和一个需要还原嘴部的上面部连接输入到Identity Encoder 获取身份信息 <span class="math inline">\(f_{I}\)</span>作为解码器另一个输入，这样子就可以生成新的帧；而将召回特征换成输入的唇部特征，就可以合成专注唇部编码的图像，用于训练Lip Encoder： <spanclass="math display">\[\hat{I}_{g}=G(\hat{f}_{lip;keyAdr}\oplusf_{aud},f_{I})\]</span> <spanclass="math display">\[\hat{I}_{G}=G(f_{lip}\oplusf_{aud},f_{I})\]</span> 引入重建损失来衡量生成图像与原图的相似性： <spanclass="math display">\[\mathcal{L}_{recon}=\frac{1}{N}\sum_{i=1}^{N}{(\parallel\hat{I}_{g}^{i}-I^{i}\parallel_{1}+\parallel\hat{I}_{G}^{i}-I^{i}\parallel_{1})}\]</span> 引入对抗损失来衡量图像真实性： <spanclass="math display">\[\mathcal{L}_{gan}=\mathbb{E}_{\hat{I}\in[\hat{I}_{G},\hat{I}_{g}]}{[\log{(1-D(\hat{I}))}]}\]</span><spanclass="math display">\[\mathcal{L}_{disc}=\mathbb{E}_{I}{[\log{(1-D(I))}]}+\mathbb{E}_{\hat{I}\in[\hat{I}_{G},\hat{I}_{g}]}{[\log{D(\hat{I})}]}\]</span>引入视听同步模块 <spanclass="math inline">\(\mathcal{F}_{a},\mathcal{F}_{v}\)</span>分别需要一段音频和五帧对应图像序列作为输入得到特征，用 <spanclass="math inline">\(d_{sync}(f_{a},f_{v})\)</span>表示两者的余弦相似度，引入视听同步损失： <span class="math display">\[\mathcal{L}_{a-v}=-\frac{1}{N}\sum_{i=1}^{N}(\log{(d_{sync}(\mathcal{F}_{a}(a_{i}),\mathcal{F}_{v}(\hat{I}_{g}^{i})))}+\log{(d_{sync}(\mathcal{F}_{a}(a_{i}),\mathcal{F}_{v}(\hat{I}_{G}^{i})))})\]</span>视觉-视觉同步损失，可以通过鼓励视觉领域的连贯性来补充视听同步损失；使用之前的Lip Encoder 可以提取视觉特征，因此可以作为视觉同步模块： <spanclass="math display">\[\mathcal{L}_{v-v}=\frac{1}{N}\sum_{i=1}^{N}{(\parallelE_{lip}(\hat{I}_{g}^{i})-E_{lip}(\hat{I})\parallel_{1}+\parallel E_{lip}(\hat{I}_{G}^{i})-E_{lip}(\hat{I})\parallel_{1})}\]</span> 最后对各部分进行加权，得到最后的价值函数： <spanclass="math display">\[\mathcal{L}=\lambda_{1}\mathcal{L}_{recon}+\lambda_{2}\mathcal{L}_{a-v}+\lambda_{3}\mathcal{L}_{v-v}+\lambda_{4}\mathcal{L}_{gan}+\lambda_{5}\mathcal{L}_{disc}+\lambda_{6}\mathcal{L}_{align}\]</span></p><h3 id="experiment">Experiment</h3><p><img src="../../../../image/synctalkface/231029SYNquantitative.png"alt="Quantitative results on LRW and LRS2" /> PSNR 和 SSIM测量视觉质量，LMD、LSE-D 和 LSE-C 测量唇形同步质量。 LMD 是 ground truth帧和生成帧的唇部标志（使用 dlib (King 2009) 检测到的）之间的距离。(Prajwal et al. 2020) 提出的 LSE-C 和 LSE-D 分别是来自 SyncNet (Chung 和Zisserman 2016b)的音频和视频特征之间的置信度得分（越高越好）和距离得分​​（越低越好）。LSE-C 和 LSE-D 测量音频和视觉特征之间的对应性，而 LMD直接测量视觉到视觉的一致性。为了公平比较，根据 ATVGnet中使用的人脸检测器评估人脸的裁剪区域（Chen et al. 2019）</p><p><img src="../../../../image/synctalkface/231029SYNhumman.png" /></p><p><img src="../../../../image/synctalkface/231029SYNmemory.png" /></p><p><imgsrc="../../../../image/synctalkface/231029SYNablation.png" /></p><h3 id="thinking">Thinking</h3><p>最有趣的就是引入了 <span class="math inline">\(\mathbf{M}\)</span>用于索引不同的代表性唇形特征，进一步的融合就可以组合出丰富的唇形动作。也可由此进行唇部动作的编辑和驱动。</p><p>有一个思考是，对于同步指标的思考。文中指出： &gt; Wav2Lip 在 LSE-D 和LSE-C 指标上表现更好，甚至优于真实数据。然而，正如（Zhou et al.2021）中所指出的，它只是证明了他们的口型同步结果几乎与地面事实相当，而不是更好。我们的LSE-D 和 LSE-C 分数确实更接近真实分数，并且我们在 LMD指标上表现更好，LMD 指标是衡量视觉领域对应性的另一个同步指标。</p><p>因此对比指标不能仅仅看绝对的大小，还需要和真实值进行对比。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="title">title</h2><div class="line-block">code | <ahref="https://ojs.aaai.org/index.php/AAAI/article/view/20102">paper</a>|</div><p><img src="../../../../image/synctalkface/231029SYNauthor.png" /></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs citation">Park, S.J., Kim, M., Hong, J., Choi, J. and Ro, Y.M. 2022. SyncTalkFace: Talking Face Generation with Precise Lip-Syncing via Audio-Lip Memory. _Proceedings of the AAAI Conference on Artificial Intelligence_. 36, 2 (Jun. 2022), 2062-2070. DOI:https://doi.org/10.1609/aaai.v36i2.20102.<br></code></pre></td></tr></table></figure><h3 id="background-and-motivation">Background and Motivation</h3><p>从语音生成说话脸部的挑战在于<strong>对齐音频和视频</strong>，使得嘴部区域动作与输入的音频对应。</p><p>以前的方法要么利用视听表示学习，要么利用中间结构信息，例如 landmarks和 3D模型。然而，他们很难合成<strong>音素级别</strong>上变化的嘴唇的<strong>精细细节</strong>，因为它们在视频合成步骤中不能充分提供<strong>嘴唇的视觉信息</strong>。</p><h3 id="contribution-and-novelty">contribution and novelty</h3><ol type="1"><li>提出 Audio-Lip Memory ，它将来自连续 ground truth image的<strong>嘴唇运动特征</strong>存储在值存储器中，并将它们与相应的音频特征对齐，使用检索到的嘴唇运动特征作为视觉提示，可以在合成步骤中轻松地将音频与视觉动态相关联。</li><li>引入了 <strong>visual-visual同步损失</strong>，模型中的视听同步损失一起使用时，可以增强口型同步性能。</li><li>通过分析内存中学习到的表示，确认音频唇形存储器存储音素级别的<strong>代表性唇形特征</strong>在每个内存槽中，并且寻址槽的不同组合会产生唇形特征的<strong>各种组合</strong>，从而实现复杂且多样化的唇形运动。因此，使用内存地址直接操纵嘴唇运动是可能的。</li></ol><p><img src="../../../../image/synctalkface/231029SYNmodel.png" /></p><h4 id="流程说明">流程说明</h4><p>通过 Audio Encoder 可以将一段0.2s的音频编码为<spanclass="math inline">\(C\)</span>个通道的特征<spanclass="math inline">\(f_{aud}\)</span>。</p><p>通过 Lip Encoder 可以将连续的五张掩盖上面部的图像序列编码成<spanclass="math inline">\(C\)</span>个通道的特征<spanclass="math inline">\(f_{lip}\)</span>。</p><p><spanclass="math inline">\(\mathbf{M}_{lip}=\{m_{lip}^{i}\}_{i=1}^{S}\)</span>存储了<spanclass="math inline">\(S\)</span>个唇形特征，通过计算输入特征与存储的每个特征的<a href="../../../Concept/相似度/余弦相似度.md">余弦相似度</a>可以得到一组距离 <spanclass="math inline">\(\{d_{lip}^{i}\}_{i=1}^{S}\)</span>，再对这组距离使用 <ahref="../../../../BLOG/Concept/AI/神经网络/激活函数.md#Softmax">Softmax</a>，获取一组注意力权重 <spanclass="math inline">\(A_{lip}=\{\alpha_{lip}^{i}\}_{i=1}^{S}\)</span>，这样子，<strong>召回唇特征</strong>就可以表示为：<spanclass="math display">\[\hat{f}_{lip;valAdr}=A_{lip}\cdot\mathbf{M}_{lip}\]</span>为了召回特征的准确性，这里使用和原特征的重建损失来约束召回特征，学习将代表性特征嵌入Memory：<span class="math display">\[\mathcal{L}_{store}=\parallelf_{lip}-\hat{f}_{lip;valAdr}\parallel_{2}^{2}\]</span> <spanclass="math inline">\(\mathbf{M}_{aud}=\{m_{aud}^{i}\}_{i=1}^{S}\)</span>存储了<span class="math inline">\(S\)</span>个音频特征，计算输入的<spanclass="math inline">\(f_{aud}\)</span>与给个的距离并进行softmax得到音频的注意力权重<spanclass="math inline">\(A_{aud}=\{\alpha_{aud}^{i}\}_{i=1}^{S}\)</span></p><p>两个注意力权重其实就是地址索引，为了使得音视频对齐，可以通过两者分布的<a href="../../../Concept/相似度/KL散度.md">KL散度</a>来衡量两者相似度，从而通过训练对齐音视频： <span class="math display">\[\mathcal{L}_{align}=D_{KL}(A_{lip}\parallel A_{aud})\]</span> 这样子就可以通过音频特征的键去索引嘴唇特征的值： <spanclass="math display">\[\hat{f}_{lip;keyAdr}=A_{aud}\cdot\mathbf{M}_{lip}\]</span>将其与输入的音频链接作为解码器的一个输入，再将一个完整的面部和一个需要还原嘴部的上面部连接输入到Identity Encoder 获取身份信息 <span class="math inline">\(f_{I}\)</span>作为解码器另一个输入，这样子就可以生成新的帧；而将召回特征换成输入的唇部特征，就可以合成专注唇部编码的图像，用于训练Lip Encoder： <spanclass="math display">\[\hat{I}_{g}=G(\hat{f}_{lip;keyAdr}\oplusf_{aud},f_{I})\]</span> <spanclass="math display">\[\hat{I}_{G}=G(f_{lip}\oplusf_{aud},f_{I})\]</span> 引入重建损失来衡量生成图像与原图的相似性： <spanclass="math display">\[\mathcal{L}_{recon}=\frac{1}{N}\sum_{i=1}^{N}{(\parallel\hat{I}_{g}^{i}-I^{i}\parallel_{1}+\parallel\hat{I}_{G}^{i}-I^{i}\parallel_{1})}\]</span> 引入对抗损失来衡量图像真实性： <spanclass="math display">\[\mathcal{L}_{gan}=\mathbb{E}_{\hat{I}\in[\hat{I}_{G},\hat{I}_{g}]}{[\log{(1-D(\hat{I}))}]}\]</span><spanclass="math display">\[\mathcal{L}_{disc}=\mathbb{E}_{I}{[\log{(1-D(I))}]}+\mathbb{E}_{\hat{I}\in[\hat{I}_{G},\hat{I}_{g}]}{[\log{D(\hat{I})}]}\]</span>引入视听同步模块 <spanclass="math inline">\(\mathcal{F}_{a},\mathcal{F}_{v}\)</span>分别需要一段音频和五帧对应图像序列作为输入得到特征，用 <spanclass="math inline">\(d_{sync}(f_{a},f_{v})\)</span>表示两者的余弦相似度，引入视听同步损失： <span class="math display">\[\mathcal{L}_{a-v}=-\frac{1}{N}\sum_{i=1}^{N}(\log{(d_{sync}(\mathcal{F}_{a}(a_{i}),\mathcal{F}_{v}(\hat{I}_{g}^{i})))}+\log{(d_{sync}(\mathcal{F}_{a}(a_{i}),\mathcal{F}_{v}(\hat{I}_{G}^{i})))})\]</span>视觉-视觉同步损失，可以通过鼓励视觉领域的连贯性来补充视听同步损失；使用之前的Lip Encoder 可以提取视觉特征，因此可以作为视觉同步模块： <spanclass="math display">\[\mathcal{L}_{v-v}=\frac{1}{N}\sum_{i=1}^{N}{(\parallelE_{lip}(\hat{I}_{g}^{i})-E_{lip}(\hat{I})\parallel_{1}+\parallel E_{lip}(\hat{I}_{G}^{i})-E_{lip}(\hat{I})\parallel_{1})}\]</span> 最后对各部分进行加权，得到最后的价值函数： <spanclass="math display">\[\mathcal{L}=\lambda_{1}\mathcal{L}_{recon}+\lambda_{2}\mathcal{L}_{a-v}+\lambda_{3}\mathcal{L}_{v-v}+\lambda_{4}\mathcal{L}_{gan}+\lambda_{5}\mathcal{L}_{disc}+\lambda_{6}\mathcal{L}_{align}\]</span></p><h3 id="experiment">Experiment</h3><p><img src="../../../../image/synctalkface/231029SYNquantitative.png"alt="Quantitative results on LRW and LRS2" /> PSNR 和 SSIM测量视觉质量，LMD、LSE-D 和 LSE-C 测量唇形同步质量。 LMD 是 ground truth帧和生成帧的唇部标志（使用 dlib (King 2009) 检测到的）之间的距离。(Prajwal et al. 2020) 提出的 LSE-C 和 LSE-D 分别是来自 SyncNet (Chung 和Zisserman 2016b)的音频和视频特征之间的置信度得分（越高越好）和距离得分​​（越低越好）。LSE-C 和 LSE-D 测量音频和视觉特征之间的对应性，而 LMD直接测量视觉到视觉的一致性。为了公平比较，根据 ATVGnet中使用的人脸检测器评估人脸的裁剪区域（Chen et al. 2019）</p><p><img src="../../../../image/synctalkface/231029SYNhumman.png" /></p><p><img src="../../../../image/synctalkface/231029SYNmemory.png" /></p><p><imgsrc="../../../../image/synctalkface/231029SYNablation.png" /></p><h3 id="thinking">Thinking</h3><p>最有趣的就是引入了 <span class="math inline">\(\mathbf{M}\)</span>用于索引不同的代表性唇形特征，进一步的融合就可以组合出丰富的唇形动作。也可由此进行唇部动作的编辑和驱动。</p><p>有一个思考是，对于同步指标的思考。文中指出： &gt; Wav2Lip 在 LSE-D 和LSE-C 指标上表现更好，甚至优于真实数据。然而，正如（Zhou et al.2021）中所指出的，它只是证明了他们的口型同步结果几乎与地面事实相当，而不是更好。我们的LSE-D 和 LSE-C 分数确实更接近真实分数，并且我们在 LMD指标上表现更好，LMD 指标是衡量视觉领域对应性的另一个同步指标。</p><p>因此对比指标不能仅仅看绝对的大小，还需要和真实值进行对比。</p>]]></content>
     
     
     <categories>
@@ -571,6 +680,37 @@
   
   
   <entry>
+    <title>人间喜剧精选集（全10册|读客三个圈经典文库）</title>
+    <link href="/posts/62b3/"/>
+    <url>/posts/62b3/</url>
+    
+    <content type="html"><![CDATA[<hr /><h1 id="元数据">元数据</h1><blockquote><p>[!abstract] 人间喜剧精选集（全10册|读客三个圈经典文库） - <imgsrc="https://cdn.weread.qq.com/weread/cover/93/YueWen_22247769/t7_YueWen_22247769.jpg"alt="人间喜剧精选集（全10册|读客三个圈经典文库）|200" /> - 书名：人间喜剧精选集（全10册|读客三个圈经典文库） - 作者： 巴尔扎克 - 简介：一部人性百科全书，写尽你一生可能遇到的所有人！法语翻译界泰斗傅雷历时25年，精选精译15篇，全收录！遗失的一篇《猫球商店》由“傅译传人”罗新璋精译精校。作者巴尔扎克，文学界的拿破仑、法国社会的一面镜子，雨果、普鲁斯特、茨威格、哈代、毛姆、木心等众多文学大家的精神领袖！在人类共同的精神世界，《人间喜剧》用91部小说、2400多个典型形象，融汇人间百态，写尽你一生可能遇到的所有人。这是一部人性百科全书，一座罕见的文学丰碑！- 出版时间 2018-04-01 00:00:00 - ISBN： - 分类： 文学-经典作品 -出版社： 文汇出版社 -PC地址：https://weread.qq.com/web/reader/5a132560715379595a1db00</p></blockquote><h1 id="高亮划线">高亮划线</h1><h2 id="高老头1">高老头(1)</h2><ul><li>📌 到处是真苦难，空欢喜 ^22247769-2-401-411<ul><li>⏱ 2023-10-18 14:41:03</li></ul></li><li>📌 谁又能说，枯萎的心灵和空无一物的骷髅，究竟哪一样看上去更可怕呢？^22247769-2-1161-1193<ul><li>⏱ 2023-10-18 14:40:34 ## 高老头(2)</li></ul></li><li>📌 饱经忧患的结果，大家对最惨痛的苦难都冷了心。^22247769-3-3681-3703<ul><li>⏱ 2023-10-21 11:42:06</li></ul></li><li>📌这些牢房是属于她的。她喂养那批终身做苦役的囚犯，他们尊重她的威权。以她所定的价目，这些可怜虫在巴黎哪儿还能找到充足而卫生的饭食，以及即使不能安排得高雅舒适、至少可以收拾得干干净净的房间？哪怕她做出极不公道的事来，人家也只能忍受，不敢叫屈。^22247769-3-3822-3941<ul><li>⏱ 2023-10-21 11:42:13 ## 高老头(4)</li></ul></li><li>📌 能够在那些金碧辉煌的客厅中露面，就等于一纸阀阅世家的证书。^22247769-5-3092-3121<ul><li>⏱ 2023-10-29 11:09:35 ## 高老头(5)</li></ul></li><li>📌 “那是浓雾作怪，浓得用刀劈也劈不开。” ^22247769-6-1237-1256<ul><li>⏱ 2023-10-29 11:17:05 # 读书笔记</li></ul></li></ul><h1 id="本书评论">本书评论</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Enjoy</category>
+      
+      <category>读万卷书</category>
+      
+      <category>文学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>阅读</tag>
+      
+      <tag>文学-经典作品</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>实现多端同步</title>
     <link href="/posts/8ba1/"/>
     <url>/posts/8ba1/</url>
@@ -589,9 +729,9 @@
     
     <tags>
       
-      <tag>Git</tag>
-      
       <tag>environment</tag>
+      
+      <tag>Git</tag>
       
       <tag>同步</tag>
       
@@ -666,6 +806,99 @@
   
   
   <entry>
+    <title>你来人间一趟，你要看看太阳</title>
+    <link href="/posts/8cf7/"/>
+    <url>/posts/8cf7/</url>
+    
+    <content type="html"><![CDATA[<hr /><h1 id="元数据">元数据</h1><blockquote><p>[!abstract] 你来人间一趟，你要看看太阳 - <imgsrc="https://cdn.weread.qq.com/weread/cover/34/YueWen_25444612/t7_YueWen_25444612.jpg"alt="你来人间一趟，你要看看太阳|200" /> - 书名：你来人间一趟，你要看看太阳 - 作者： 海子 - 简介：在诗人海子去世30周年之际，我们推出了这本诗歌选集，以表达对诗人的怀念，也尝试用一种新的方式去感知和解读不朽的诗篇。本书精选100首海子创作的抒情短诗，按照情绪和意蕴分为六个板块，同时创新地提出了“朗读版”的概念。我们希望号召每个热爱海子诗歌的读者，用朗读的方式，用诗歌最天然的形式，去体会这些作品背后的情感与故事。同时，在每首诗的右下角放置相应二维码，扫码即可听到这首诗的“领读版声音”，为读者参与共读提供示例和引导。你来人间一趟，你要看看太阳。愿你能在朗读中有所得。愿你能在诗中有所得。即使没有，也愿你爱上海子。- 出版时间 2019-03-01 00:00:00 - ISBN： 9787540489601 - 分类：文学-现代诗歌 - 出版社： 湖南文艺出版社 -PC地址：https://weread.qq.com/web/reader/b5c3233071844104b5ccfaa</p></blockquote><h1 id="高亮划线">高亮划线</h1><h2 id="夏天的太阳">夏天的太阳</h2><ul><li>📌 你来人间一趟你要看看太阳和你的心上人一起走在街上^25444612-24-763-874<ul><li>⏱ 2023-10-22 17:00:10 ## 活在珍贵的人间</li></ul></li><li>📌 活在这珍贵的人间太阳强烈水波温柔 ^25444612-25-549-623<ul><li>⏱ 2023-10-22 17:00:04 ## 十四行：玫瑰花园</li></ul></li><li>📌 明亮的夜晚我来到玫瑰花园我脱下诗歌的王冠和沉重的土地的盔甲^25444612-27-550-666<ul><li>⏱ 2023-10-22 17:01:37 # 读书笔记</li></ul></li></ul><h1 id="本书评论">本书评论</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Enjoy</category>
+      
+      <category>读万卷书</category>
+      
+      <category>文学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>阅读</tag>
+      
+      <tag>文学-现代诗歌</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>小孩</title>
+    <link href="/posts/22d0/"/>
+    <url>/posts/22d0/</url>
+    
+    <content type="html"><![CDATA[<hr /><h1 id="元数据">元数据</h1><blockquote><p>[!abstract] 小孩 - <imgsrc="https://cdn.weread.qq.com/weread/cover/20/YueWen_27058200/t7_YueWen_27058200.jpg"alt="小孩|200" /> - 书名： 小孩 - 作者： 大冰 - 简介：他是个野生作家，也是个说书人，继超级畅销书《乖，摸摸头》《阿弥陀佛么么哒》之后，他漂到了南极，写下了《好吗好的》；2017年，他又带着他的亲生读者大梦，一路北上邂逅北极光，写下了《我不》；2018年他淬火重生的大姑娘《你坏》向你说声“你好”！2019年，蛰伏闭关9个月后，他的六姑娘——赤诚干净坦荡明媚的《小孩》，轻轻问你一句：你是哪一种小孩，你是否还是个小孩。大冰是个性情老小孩。他会自费摆流水席请读者吃饭，会自费包场请读者看电影，会在签名时动不动就给读者签“酒吧免单”，他还曾背着吉他忽然间出现在某一个城市的某一个读者身边，请他吃一顿烛光晚餐。2019年，他还要任性地把送你的1500场免费音乐会变成更多场！他说：我不过是个走江湖的说书人罢了，野生作家而已。只想讲故事，只会讲故事，只是讲故事。他说：纸价飞涨，我尽力了。你读了我的书就是我的人。我曾经历过的，永不要在你身上重演。都好好的。他说：走过的路越多，越喜欢宅着。见过的人越多，越喜欢孩子。他说：于无常处知有情，于有情处知众生。我书中所有的故事，这14个字便可概述。他说：未来未知的某一天，我希望你们忘记大冰这个名字。他说：有一天你会明白，人生底色是悲凉。有一天你会明白，悲凉之上，有自修自证的温暖。所以，如果可以，去试着当个小孩。- 出版时间 2019-07-01 00:00:00 - ISBN： 9787540492380 - 分类：文学-经典作品 - 出版社： 湖南文艺出版社 -PC地址：https://weread.qq.com/web/reader/fb332e10719ce018fb3b907</p></blockquote><h1 id="高亮划线">高亮划线</h1><h2 id="送你一棵树">送你一棵树</h2><ul><li>📌 就是因为遥远才要送啊。就是因为陌生才不送不行。^27058200-13-412-466<ul><li>⏱ 2023-09-28 16:25:40</li></ul></li><li>📌 他的梦想是一路徒步去拉萨……去那里当保安！ ^27058200-13-20839-20860<ul><li>⏱ 2023-09-29 11:03:19</li></ul></li><li>📌 他甚至不去勉励瓶罐好好读书什么的，帮了就是帮了，光风霁月。^27058200-13-32513-32542<ul><li>⏱ 2023-09-29 11:58:05 ## 兄弟</li></ul></li><li>📌大松友好地向我道了早安，告诉我其实人生就是一场迷途，每个迷路的人都在找寻自己的出口……又告诉我很快就能到拜县了，就快找到出口了，他确定只需要再翻过两三个山头。^27058200-14-5930-6009<ul><li>⏱ 2023-09-30 18:19:04 ## 天津往事</li></ul></li><li>📌年轻时代的喜欢，要么轻易认为是爱，要么轻易不肯承认是爱。该记的记不住，该忘的忘不了。该走的没走出去，该留的没留下来。^27058200-15-769-885<ul><li>⏱ 2023-10-12 12:24:42 ## 台北儿子</li></ul></li><li>📌他回家跟阿宏讲：没觉得大家让我干的是杂事啊，大家对我都很好耶，宁可把自己搞得很闲，也要给我那么多机会去锻炼。^27058200-16-5868-5922<ul><li>⏱ 2023-10-12 14:10:35</li></ul></li><li>📌 前途当几许，未知止泊处， ^27058200-16-10996-11008<ul><li>⏱ 2023-10-12 14:18:33</li></ul></li><li>📌应该是很久没笑了，老人终于捕捉住一点笑的理由，紧紧拽着，怎么也不舍得它飞去。^27058200-16-16910-16948<ul><li>⏱ 2023-10-12 14:26:56</li></ul></li><li>📌越怕什么越不能躲，忌讳的东西说惯了嘴，渐渐也就一点都不可怖。一个死字，也就稀里糊涂地变成了玩笑。^27058200-16-18048-18125<ul><li>⏱ 2023-10-12 14:30:41 ## 客家姑娘</li></ul></li><li>📌 每个人拥抱生命的姿势都各不相同 ^27058200-17-17667-17682<ul><li>⏱ 2023-10-12 19:18:48</li></ul></li><li>📌一生中最年轻美丽的那几年，她是个国际义工，游走在那片古老大陆的稀树草原。寂寥而充实，孤独而热烈。在那里，她曾爱与被爱。^27058200-17-46120-46237<ul><li>⏱ 2023-10-12 20:24:57</li></ul></li><li>📌 他抬起手在脖子上示意了一下，慈祥极了。 ^27058200-17-52036-52055<ul><li>⏱ 2023-10-12 20:30:24 ## 说书人</li></ul></li><li>📌 愿你知行合一，愿你能心安。愿你永远有心力，去当个小孩。^27058200-21-10573-10629<ul><li>⏱ 2023-10-17 19:36:46 # 读书笔记</li></ul></li></ul><h1 id="本书评论">本书评论</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Enjoy</category>
+      
+      <category>读万卷书</category>
+      
+      <category>文学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>阅读</tag>
+      
+      <tag>文学-经典作品</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>穿越人海拥抱你</title>
+    <link href="/posts/9a74/"/>
+    <url>/posts/9a74/</url>
+    
+    <content type="html"><![CDATA[<hr /><h1 id="元数据">元数据</h1><blockquote><p>[!abstract] 穿越人海拥抱你 - <imgsrc="https://cdn.weread.qq.com/weread/cover/39/YueWen_26914564/t7_YueWen_26914564.jpg"alt="穿越人海拥抱你|200" /> - 书名： 穿越人海拥抱你 - 作者： 苑子文苑子豪 - 简介：青年作家苑子文、苑子豪畅销书《穿越人海拥抱你》全新修订纪念版。本书包含12个温暖治愈的晚安故事，内附温暖系兄弟生活照，送给所有饱经磨砺却依然温暖的你。每个人都有这样的时刻：孤独、落寞、沮丧、失望，怀疑着自己，对抗着生活……愿你永远不要为失去而伤心；永远因得到过而知足。梦想遥不可及，路途艰难险阻，希望你我能穿越人海拥抱彼此，继续奔向明日征程。同名影视剧《穿越人海拥抱你》即将开播。- 出版时间 2019-11-01 00:00:00 - ISBN： 9787559637697 - 分类：文学-经典作品 - 出版社： 北京联合出版公司 -PC地址：https://weread.qq.com/web/reader/d6932770719aaf04d6992ed</p></blockquote><h1 id="高亮划线">高亮划线</h1><h2id="前言一切看似末日的终将被证明只是过程">前言：一切看似末日的，终将被证明只是过程</h2><ul><li>📌这世界人潮拥挤，所有人都拼了命地想挤上一列开往好日子的列车，他们觉得年轻的时候不用力地闯一闯，到老了就更没机会了。^26914564-4-2425-2482<ul><li>⏱ 2023-09-28 15:39:35</li></ul></li><li>📌 她睁眼是春天，闭眼有满山的星星。 ^26914564-4-3111-3127<ul><li>⏱ 2023-09-28 15:39:07</li></ul></li><li>📌她相信爱情，相信地久天长，相信真心会换来珍惜，相信所有甜言蜜语和誓言，结果却被爱情打败，被时间打败，被辜负打败，被花言巧语和背后的残酷现实打败。输了就是输了，不认输，又能怎样呢？我宁愿你是一个在不顺遂的时候可以接受失败的人。但你千万不要认命。愿赌就要服输，输了这一局，还有下一局，错过这个人，还可以等到更好的人。对于那个不爱你的人，要将最好的祝福送给他。说不定在转角处的路口，你遇到的下一个人，会歪打正着地进入你的生命里。^26914564-4-4078<ul><li>⏱ 2023-09-28 15:41:36</li></ul></li><li>📌 爱情需要修炼，当一个人独处的时候，应该努力修炼自己。^26914564-4-4475-4501<ul><li>⏱ 2023-09-28 15:41:10 # 读书笔记</li></ul></li></ul><h1 id="本书评论">本书评论</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Enjoy</category>
+      
+      <category>读万卷书</category>
+      
+      <category>文学</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>阅读</tag>
+      
+      <tag>文学-经典作品</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>主成分分析PCA</title>
     <link href="/posts/408/"/>
     <url>/posts/408/</url>
@@ -726,6 +959,35 @@
   
   
   <entry>
+    <title>从零开始使用服务器</title>
+    <link href="/posts/f111/"/>
+    <url>/posts/f111/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>进入实验室，分配到服务器用户名和密码，记录一下配置过程</p></blockquote><h3 id="服务器信息">服务器信息</h3><p>在用户文件夹下的 .ssh 文件夹下的config文件中，保存服务器信息</p><pre><code class="hljs">Host aliasHostName hostnameUser userPort port</code></pre><p>系统：Linux 硬盘空间：系统盘，数据盘</p><ul><li>/home 下的用户名文件夹是系统盘下个人空间</li><li>/data 下的用户名文件夹是数据盘下个人空间</li></ul><h3 id="服务器连接">服务器连接</h3><p>喜欢使用VSCode连接，可以一边看文件，一边在终端执行操作</p><ol type="1"><li>只需要在VSCode插件市场搜索RemoteDevelopment进行安装，就会安装一系列连接服务器需要的插件<imgsrc="../../../../image/server/plugin.png" alt="image.png" /></li><li>左边会出现<strong>远程资源管理器</strong>栏目<imgsrc="../../../../image/server/source.png"alt="image.png" />，左下角会出现<strong>打开远程窗口</strong>按钮<imgsrc="../../../../image/server/remote.png" alt="image.png" /></li><li>点击按钮即可按照要求进行连接。如果按照上一节保存了信息，只需要选择对应的服务器，输入密码即可。</li><li>初次连接资源管理器是空的，可以打开自己的文件夹，要添加更多文件夹，可以右键资源管理器的空白处添加文件夹到工作区。</li></ol><h3 id="服务器配置">服务器配置</h3><h4 id="结构安排">结构安排</h4><p>为了不影响使用的速度，存储性的功能放在数据盘，只在系统盘保留软件安装和正在使用的项目代码，架构图如下：系统盘存放项目和软件，数据盘存放数据集，模型以及实验结果</p><figure><img src="../../../../image/server/tree.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h4 id="conda安装">conda安装</h4><p>首先下载安装包到服务器，进入到想下载的地方之后，可以使用wget命令，这里进入到softwares文件夹</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 浙大源，内网超级快</span><br>wget https://mirror.zju.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh<br><span class="hljs-comment"># 官网，超级慢</span><br>wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh<br></code></pre></td></tr></table></figure><p>运行安装包，名字好长，可以通配符</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash Ana*.sh<br></code></pre></td></tr></table></figure><p>回车开始阅读协议，空格下翻，输入<code>yes</code>同意协议可以输入自定义安装目录，为了便于管理，这里选择安装在<code>/softwares/anaconda3</code>文件夹下安装完成之后开始配置，根据需求自行选择，回到<strong>用户目录</strong>执行下面命令，初始化命令行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure><p>安装完成，检查是否成功，显示版本信息，就是成功了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>然后进行换源以实现加速</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 开始没有配置文件，执行下面命令生成，会位于用户根目录下</span><br>conda config --<span class="hljs-built_in">set</span> show_channel_urls <span class="hljs-built_in">yes</span><br><span class="hljs-comment"># 此时已经生成 .condarc，我们打开它</span><br>code .condarc<br><span class="hljs-comment"># 修改内容为以下内容</span><br>channels:<br>  - defaults<br>show_channel_urls: <span class="hljs-literal">true</span><br>default_channels:<br>  - https://mirrors.zju.edu.cn/anaconda/pkgs/main<br>  - https://mirrors.zju.edu.cn/anaconda/pkgs/r<br>  - https://mirrors.zju.edu.cn/anaconda/pkgs/msys2<br>custom_channels:<br>  conda-forge: https://mirrors.zju.edu.cn/anaconda/cloud<br>  msys2: https://mirrors.zju.edu.cn/anaconda/cloud<br>  bioconda: https://mirrors.zju.edu.cn/anaconda/cloud<br>  menpo: https://mirrors.zju.edu.cn/anaconda/cloud<br>  pytorch: https://mirrors.zju.edu.cn/anaconda/cloud<br>  pytorch-lts: https://mirrors.zju.edu.cn/anaconda/cloud<br>  simpleitk: https://mirrors.zju.edu.cn/anaconda/cloud<br></code></pre></td></tr></table></figure><p>为了避免环境占用过多系统盘资源，将环境移动到数据盘</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看conda信息，envs directories表示当前环境存储位置</span><br>conda info<br><span class="hljs-comment"># 在.condarc末尾增加以下内容</span><br>envs_dirs:<br>  - /data/yuqihang/envs/envs<br>pkgs_dirs:<br>  - /data/yuqihang/envs/pkgs<br></code></pre></td></tr></table></figure><p>其余配置参考<ahref="../../Softwares/Environment/Anaconda下载安装与使用.md">Anaconda下载安装与使用</a>]</p><h4 id="git配置">git配置</h4><p>git已经预安装，只需要配置一下连接到自己的远程仓库即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Yu-Qi-hang&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;2659464450@qq.com&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;2659464450@qq.com&quot;</span><br></code></pre></td></tr></table></figure><p>执行之后一直回车即可，此时已经生成了公钥文件在<code>~/.ssh/id_rsa.pub</code>，参考<ahref="..\Windows相关\Git安装以及Github连接本地.md">Git安装以及Github连接本地</a>连接并验证</p><h3 id="命令速查">命令速查</h3><p>查看服务器的系统：uname -a</p><p>查看显卡当前状态：nvidia-smi</p><p>持续监控显卡状态：watch nvidia-smi</p><p>程序执行指定CPU：taskset -c 1 python main.py</p><p>程序执行指定GPU：</p><p>下载某个链接的文件：wget --user 《可能需要的用户名》 --password《可能需要的密码》 《链接》</p><p>后台运行指令：nohup 《原指令》&gt; 《输出信息的文件》 2&gt;&amp;1&amp;</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Research</category>
+      
+      <category>Experiment</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>server</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>命令行程序控制</title>
     <link href="/posts/7a22/"/>
     <url>/posts/7a22/</url>
@@ -757,40 +1019,11 @@
   
   
   <entry>
-    <title>从零开始使用服务器</title>
-    <link href="/posts/f111/"/>
-    <url>/posts/f111/</url>
+    <title>网络训练中的train和eval模式</title>
+    <link href="/posts/aac5/"/>
+    <url>/posts/aac5/</url>
     
-    <content type="html"><![CDATA[<blockquote><p>进入实验室，分配到服务器用户名和密码，记录一下配置过程</p></blockquote><h3 id="服务器信息">服务器信息</h3><p>在用户文件夹下的 .ssh 文件夹下的config文件中，保存服务器信息</p><pre><code class="hljs">Host aliasHostName hostnameUser userPort port</code></pre><p>系统：Linux 硬盘空间：系统盘，数据盘</p><ul><li>/home 下的用户名文件夹是系统盘下个人空间</li><li>/data 下的用户名文件夹是数据盘下个人空间</li></ul><h3 id="服务器连接">服务器连接</h3><p>喜欢使用VSCode连接，可以一边看文件，一边在终端执行操作</p><ol type="1"><li>只需要在VSCode插件市场搜索RemoteDevelopment进行安装，就会安装一系列连接服务器需要的插件<imgsrc="../../../../image/server/plugin.png" alt="image.png" /></li><li>左边会出现<strong>远程资源管理器</strong>栏目<imgsrc="../../../../image/server/source.png"alt="image.png" />，左下角会出现<strong>打开远程窗口</strong>按钮<imgsrc="../../../../image/server/remote.png" alt="image.png" /></li><li>点击按钮即可按照要求进行连接。如果按照上一节保存了信息，只需要选择对应的服务器，输入密码即可。</li><li>初次连接资源管理器是空的，可以打开自己的文件夹，要添加更多文件夹，可以右键资源管理器的空白处添加文件夹到工作区。</li></ol><h3 id="服务器配置">服务器配置</h3><h4 id="结构安排">结构安排</h4><p>为了不影响使用的速度，存储性的功能放在数据盘，只在系统盘保留软件安装和正在使用的项目代码，架构图如下：系统盘存放项目和软件，数据盘存放数据集，模型以及实验结果</p><figure><img src="../../../../image/server/tree.png" alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h4 id="conda安装">conda安装</h4><p>首先下载安装包到服务器，进入到想下载的地方之后，可以使用wget命令，这里进入到softwares文件夹</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 浙大源，内网超级快</span><br>wget https://mirror.zju.edu.cn/anaconda/archive/Anaconda3-2023.09-0-Linux-x86_64.sh<br><span class="hljs-comment"># 官网，超级慢</span><br>wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh<br></code></pre></td></tr></table></figure><p>运行安装包，名字好长，可以通配符</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bash Ana*.sh<br></code></pre></td></tr></table></figure><p>回车开始阅读协议，空格下翻，输入<code>yes</code>同意协议可以输入自定义安装目录，为了便于管理，这里选择安装在<code>/softwares/anaconda3</code>文件夹下安装完成之后开始配置，根据需求自行选择，回到<strong>用户目录</strong>执行下面命令，初始化命令行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure><p>安装完成，检查是否成功，显示版本信息，就是成功了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">conda --version<br></code></pre></td></tr></table></figure><p>然后进行换源以实现加速</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 开始没有配置文件，执行下面命令生成，会位于用户根目录下</span><br>conda config --<span class="hljs-built_in">set</span> show_channel_urls <span class="hljs-built_in">yes</span><br><span class="hljs-comment"># 此时已经生成 .condarc，我们打开它</span><br>code .condarc<br><span class="hljs-comment"># 修改内容为以下内容</span><br>channels:<br>  - defaults<br>show_channel_urls: <span class="hljs-literal">true</span><br>default_channels:<br>  - https://mirrors.zju.edu.cn/anaconda/pkgs/main<br>  - https://mirrors.zju.edu.cn/anaconda/pkgs/r<br>  - https://mirrors.zju.edu.cn/anaconda/pkgs/msys2<br>custom_channels:<br>  conda-forge: https://mirrors.zju.edu.cn/anaconda/cloud<br>  msys2: https://mirrors.zju.edu.cn/anaconda/cloud<br>  bioconda: https://mirrors.zju.edu.cn/anaconda/cloud<br>  menpo: https://mirrors.zju.edu.cn/anaconda/cloud<br>  pytorch: https://mirrors.zju.edu.cn/anaconda/cloud<br>  pytorch-lts: https://mirrors.zju.edu.cn/anaconda/cloud<br>  simpleitk: https://mirrors.zju.edu.cn/anaconda/cloud<br></code></pre></td></tr></table></figure><p>为了避免环境占用过多系统盘资源，将环境移动到数据盘</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看conda信息，envs directories表示当前环境存储位置</span><br>conda info<br><span class="hljs-comment"># 在.condarc末尾增加以下内容</span><br>envs_dirs:<br>  - /data/yuqihang/envs/envs<br>pkgs_dirs:<br>  - /data/yuqihang/envs/pkgs<br></code></pre></td></tr></table></figure><p>其余配置参考<ahref="../../Softwares/Environment/Anaconda下载安装与使用.md">Anaconda下载安装与使用</a>]</p><h4 id="git配置">git配置</h4><p>git已经预安装，只需要配置一下连接到自己的远程仓库即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Yu-Qi-hang&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;2659464450@qq.com&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;2659464450@qq.com&quot;</span><br></code></pre></td></tr></table></figure><p>执行之后一直回车即可，此时已经生成了公钥文件在<code>~/.ssh/id_rsa.pub</code>，参考<ahref="..\Windows相关\Git安装以及Github连接本地.md">Git安装以及Github连接本地</a>连接并验证</p><h3 id="命令速查">命令速查</h3><p>查看服务器的系统：uname -a</p><p>查看显卡当前状态：nvidia-smi</p><p>持续监控显卡状态：watch nvidia-smi</p><p>程序执行指定CPU：taskset -c 1 python main.py</p><p>程序执行指定GPU：</p><p>下载某个链接的文件：wget --user 《可能需要的用户名》 --password《可能需要的密码》 《链接》</p><p>后台运行指令：nohup 《原指令》&gt; 《输出信息的文件》 2&gt;&amp;1&amp;</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Research</category>
-      
-      <category>Experiment</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>server</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>网络训练中的eval与no_grad</title>
-    <link href="/posts/be0b/"/>
-    <url>/posts/be0b/</url>
-    
-    <content type="html"><![CDATA[<h3 id="model.eval">model.eval()</h3><p>model.eval()不会影响各层的gradient计算行为，即gradient计算和存储与training模式一样，只是不进行反向传播(backprobagation)</p><p>具体参考 <ahref="网络训练中的train和eval模式.md">网络训练中的train和eval模式</a></p><h3 id="torch.no_grad">torch.no_grad()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> torch.no_grad()：<br><span class="hljs-comment"># 代码块</span><br></code></pre></td></tr></table></figure><ol type="1"><li>用于停止autograd模块的工作，起到加速和节省显存的作用（具体行为就是停止gradient计算，从而节省了GPU算力和显存）</li><li>不会影响dropout和batchnorm层的行为</li></ol><h3 id="使用">使用</h3><p>可以同时使用，仅使用model.eval()已足够得到正确的validation的结果；</p><p>而withtorch.zero_grad()则是更进一步加速和节省gpu空间（因为不用计算和存储gradient），从而可以更快计算，也可以跑更大的batch来测试。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="model.train">model.train()</h3><p>model.train()的作用是<strong>启用 Batch Normalization 和Dropout</strong>。</p><p>如果模型中有BN层(BatchNormalization）和Dropout，需要在训练时添加model.train()。</p><p>model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连接来训练更新参数。</p><h3 id="model.eval">model.eval()</h3><p>model.eval()的作用是<strong>不启用 Batch Normalization 和Dropout</strong>。</p><p>如果模型中有BN层(BatchNormalization）和Dropout，在测试时添加model.eval()。</p><p>model.eval()是保证BN层能够<strong>用全部训练数据</strong>的均值和方差，即测试过程中要保证BN层的均值和方差不变。对于Dropout，model.eval()是利用到了<strong>所有网络连接</strong>，即不进行随机舍弃神经元。</p><h3 id="测试时候的设定">测试时候的设定</h3><p>训练完train_datasets之后，model要来测试样本了。在model(test_datasets)之前，需要<strong>加上model.eval()</strong>.否则的话，<strong>有输入数据，即使不训练，它也会改变权值</strong>。这是model中含有batchnormalization层所带来的的性质。</p><p>eval()时，pytorch会自动把BN和DropOut固定住，不会取平均，而是用训练好的值。不然的话，一旦test的batch_size过小，很容易就会被BN层导致生成图片颜色失真极大。</p>]]></content>
     
     
     <categories>
@@ -821,11 +1054,11 @@
   
   
   <entry>
-    <title>网络训练中的train和eval模式</title>
-    <link href="/posts/aac5/"/>
-    <url>/posts/aac5/</url>
+    <title>网络训练中的eval与no_grad</title>
+    <link href="/posts/be0b/"/>
+    <url>/posts/be0b/</url>
     
-    <content type="html"><![CDATA[<h3 id="model.train">model.train()</h3><p>model.train()的作用是<strong>启用 Batch Normalization 和Dropout</strong>。</p><p>如果模型中有BN层(BatchNormalization）和Dropout，需要在训练时添加model.train()。</p><p>model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连接来训练更新参数。</p><h3 id="model.eval">model.eval()</h3><p>model.eval()的作用是<strong>不启用 Batch Normalization 和Dropout</strong>。</p><p>如果模型中有BN层(BatchNormalization）和Dropout，在测试时添加model.eval()。</p><p>model.eval()是保证BN层能够<strong>用全部训练数据</strong>的均值和方差，即测试过程中要保证BN层的均值和方差不变。对于Dropout，model.eval()是利用到了<strong>所有网络连接</strong>，即不进行随机舍弃神经元。</p><h3 id="测试时候的设定">测试时候的设定</h3><p>训练完train_datasets之后，model要来测试样本了。在model(test_datasets)之前，需要<strong>加上model.eval()</strong>.否则的话，<strong>有输入数据，即使不训练，它也会改变权值</strong>。这是model中含有batchnormalization层所带来的的性质。</p><p>eval()时，pytorch会自动把BN和DropOut固定住，不会取平均，而是用训练好的值。不然的话，一旦test的batch_size过小，很容易就会被BN层导致生成图片颜色失真极大。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="model.eval">model.eval()</h3><p>model.eval()不会影响各层的gradient计算行为，即gradient计算和存储与training模式一样，只是不进行反向传播(backprobagation)</p><p>具体参考 <ahref="网络训练中的train和eval模式.md">网络训练中的train和eval模式</a></p><h3 id="torch.no_grad">torch.no_grad()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">with</span> torch.no_grad()：<br><span class="hljs-comment"># 代码块</span><br></code></pre></td></tr></table></figure><ol type="1"><li>用于停止autograd模块的工作，起到加速和节省显存的作用（具体行为就是停止gradient计算，从而节省了GPU算力和显存）</li><li>不会影响dropout和batchnorm层的行为</li></ol><h3 id="使用">使用</h3><p>可以同时使用，仅使用model.eval()已足够得到正确的validation的结果；</p><p>而withtorch.zero_grad()则是更进一步加速和节省gpu空间（因为不用计算和存储gradient），从而可以更快计算，也可以跑更大的batch来测试。</p>]]></content>
     
     
     <categories>
@@ -955,41 +1188,6 @@
   
   
   <entry>
-    <title>无监督域适应UDA</title>
-    <link href="/posts/55a8/"/>
-    <url>/posts/55a8/</url>
-    
-    <content type="html"><![CDATA[<p>UDA，全称为Unsupervised DomainAdaptation，即无监督域适应，是一种机器学习中的技术，用于解决在目标领域中缺乏标记数据的情况下进行有监督学习的问题。</p><p>在有监督学习中，我们通常会有一组标记数据（即有标签的数据），并使用这些数据来训练我们的模型。但在现实中，由于多种原因（例如数据收集成本高昂，标注困难等），我们可能无法获取足够数量的标记数据来训练我们的模型。这时候，就需要使用无监督域适应技术。</p><p>UDA的基本思想是使用已有的标记数据和未标记数据来训练模型。我们先在<strong>源领域</strong>中使用<strong>标记数据训练模型</strong>，然后将该模型应用于<strong>目标领域</strong>中的<strong>未标记数据</strong>，利用目标领域中的数据来<strong>调整模型的参数</strong>，使得模型在目标领域中的性能更好。这种方法的优点是可以<strong>充分利用</strong>目标领域中的未标记数据，从而提高模型的<strong>泛化能力和性能</strong>。</p><p>UDA的一些常见方法包括DANN（Domain Adversarial NeuralNetworks）、MMD（Maximum Mean Discrepancy）、CORAL（CORrelationALignment）、CDAN（Conditional Domain AdversarialNetworks）等。这些方法基于不同的思想和原理，但它们的共同目标都是通过将源领域和目标领域的分布对齐，使得模型在目标领域中的表现更好。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Concept</category>
-      
-      <category>AI</category>
-      
-      <category>机器学习</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>distribution</tag>
-      
-      <tag>AI/ML</tag>
-      
-      <tag>Adaptation</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>无监督学习与数据增强UDA</title>
     <link href="/posts/2a86/"/>
     <url>/posts/2a86/</url>
@@ -1025,11 +1223,11 @@
   
   
   <entry>
-    <title>卷积反卷积计算</title>
-    <link href="/posts/775/"/>
-    <url>/posts/775/</url>
+    <title>无监督域适应UDA</title>
+    <link href="/posts/55a8/"/>
+    <url>/posts/55a8/</url>
     
-    <content type="html"><![CDATA[<h3 id="卷积">卷积</h3><p>输入图片大小 <span class="math inline">\(W\times W\)</span></p><p>kernel 卷积核大小 <span class="math inline">\(K\times K\)</span></p><p>stride 步长 <span class="math inline">\(S\)</span></p><p>padding 的像素数 <span class="math inline">\(P\)</span></p><p>于是我们可以得出计算公式为：</p><p><span class="math inline">\(N = (W − K + 2P )/S+1\)</span></p><h3 id="反卷积">反卷积</h3><p>输入图片大小 <span class="math inline">\(W\times W\)</span></p><p>kernel 卷积核大小 <span class="math inline">\(K\times K\)</span></p><p>stride 步长 <span class="math inline">\(S\)</span></p><p>padding 的像素数 <span class="math inline">\(P\)</span></p><p>output_padding 周边补充像素数</p><p>于是我们可以得出计算公式为：</p><p><span class="math inline">\(N =S(W-1)+K-2P+output\_padding\)</span></p>]]></content>
+    <content type="html"><![CDATA[<p>UDA，全称为Unsupervised DomainAdaptation，即无监督域适应，是一种机器学习中的技术，用于解决在目标领域中缺乏标记数据的情况下进行有监督学习的问题。</p><p>在有监督学习中，我们通常会有一组标记数据（即有标签的数据），并使用这些数据来训练我们的模型。但在现实中，由于多种原因（例如数据收集成本高昂，标注困难等），我们可能无法获取足够数量的标记数据来训练我们的模型。这时候，就需要使用无监督域适应技术。</p><p>UDA的基本思想是使用已有的标记数据和未标记数据来训练模型。我们先在<strong>源领域</strong>中使用<strong>标记数据训练模型</strong>，然后将该模型应用于<strong>目标领域</strong>中的<strong>未标记数据</strong>，利用目标领域中的数据来<strong>调整模型的参数</strong>，使得模型在目标领域中的性能更好。这种方法的优点是可以<strong>充分利用</strong>目标领域中的未标记数据，从而提高模型的<strong>泛化能力和性能</strong>。</p><p>UDA的一些常见方法包括DANN（Domain Adversarial NeuralNetworks）、MMD（Maximum Mean Discrepancy）、CORAL（CORrelationALignment）、CDAN（Conditional Domain AdversarialNetworks）等。这些方法基于不同的思想和原理，但它们的共同目标都是通过将源领域和目标领域的分布对齐，使得模型在目标领域中的表现更好。</p>]]></content>
     
     
     <categories>
@@ -1038,7 +1236,7 @@
       
       <category>AI</category>
       
-      <category>神经网络</category>
+      <category>机器学习</category>
       
     </categories>
     
@@ -1047,9 +1245,11 @@
       
       <tag>AI</tag>
       
-      <tag>model/神经网络</tag>
+      <tag>distribution</tag>
       
-      <tag>model/神经网络/CNN</tag>
+      <tag>AI/ML</tag>
+      
+      <tag>Adaptation</tag>
       
     </tags>
     
@@ -1126,6 +1326,39 @@
   
   
   <entry>
+    <title>卷积反卷积计算</title>
+    <link href="/posts/775/"/>
+    <url>/posts/775/</url>
+    
+    <content type="html"><![CDATA[<h3 id="卷积">卷积</h3><p>输入图片大小 <span class="math inline">\(W\times W\)</span></p><p>kernel 卷积核大小 <span class="math inline">\(K\times K\)</span></p><p>stride 步长 <span class="math inline">\(S\)</span></p><p>padding 的像素数 <span class="math inline">\(P\)</span></p><p>于是我们可以得出计算公式为：</p><p><span class="math inline">\(N = (W − K + 2P )/S+1\)</span></p><h3 id="反卷积">反卷积</h3><p>输入图片大小 <span class="math inline">\(W\times W\)</span></p><p>kernel 卷积核大小 <span class="math inline">\(K\times K\)</span></p><p>stride 步长 <span class="math inline">\(S\)</span></p><p>padding 的像素数 <span class="math inline">\(P\)</span></p><p>output_padding 周边补充像素数</p><p>于是我们可以得出计算公式为：</p><p><span class="math inline">\(N =S(W-1)+K-2P+output\_padding\)</span></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Concept</category>
+      
+      <category>AI</category>
+      
+      <category>神经网络</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>model/神经网络</tag>
+      
+      <tag>model/神经网络/CNN</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>超网络</title>
     <link href="/posts/c64/"/>
     <url>/posts/c64/</url>
@@ -1153,6 +1386,117 @@
       <tag>model/神经网络</tag>
       
       <tag>model/模型训练</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>StackGAN</title>
+    <link href="/posts/2a1/"/>
+    <url>/posts/2a1/</url>
+    
+    <content type="html"><![CDATA[<p>StackGAN（Stacked Generative AdversarialNetworks）是一种生成对抗网络（GAN）模型，由中国香港科技大学的HanZhang等人在2017年提出。StackGAN是一种多尺度图像生成模型，可以生成高分辨率的真实感图像。</p><p>StackGAN的网络结构包括<strong>两个生成器网络</strong>和<strong>两个判别器网络</strong>，其中第一个生成器网络用于<strong>生成低分辨率</strong>的图像，第二个生成器网络则用于将<strong>低分辨率图像转换成高分辨率</strong>的真实感图像。而两个判别器网络则用于区分生成的图像与真实的图像之间的差异。</p><p>为了提高模型的性能，StackGAN还使用了条件变分自编码器（conditionalvariational autoencoder，CVAE）和循环一致性损失（cycle consistencyloss）等技术。CVAE可以通过潜在向量和条件信息来生成<strong>高质量的图像</strong>，而循环一致性损失则可以确保生成的图像与真实图像之间的<strong>转换是可逆的</strong>。</p><p>StackGAN可以应用于许多领域，如计算机视觉、图像处理、虚拟现实等。它可以生成高质量、高分辨率的真实感图像，具有很高的应用价值。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Concept</category>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+      <category>生成对抗网络GAN</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>model</tag>
+      
+      <tag>model/神经网络</tag>
+      
+      <tag>model/GAN</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>StarGAN</title>
+    <link href="/posts/70cf/"/>
+    <url>/posts/70cf/</url>
+    
+    <content type="html"><![CDATA[<p>StarGAN（Star Generative AdversarialNetworks）是一种生成对抗网络（GAN）模型，由韩国KAIST大学的YunjeyChoi等人在2018年提出。StarGAN是一种<strong>多域图像转换模型</strong>，它可以<strong>将输入图像转换为多个目标域的图像</strong>。与传统的单一域的图像转换模型不同，StarGAN可以处理多个领域的图像转换，例如将马转换成斑马、将男性转换成女性等。这种多域图像转换可以通过一个<strong>统一的生成器网络</strong>来实现，使得模型更加简单和高效。</p><p>StarGAN的网络结构包括<strong>一个生成器网络</strong>和<strong>一个判别器网络</strong>。生成器网络通过<strong>输入一张源域图像和目标域的标签</strong>，生成一张目标域的图像。而判别器网络则用于区分生成的图像与真实的目标域图像之间的差异。为了提高模型的性能，StarGAN还使用了<strong>循环一致性损失</strong>（cycleconsistency loss）和<strong>域一致性损失</strong>（domain consistencyloss）等技术，使得生成的图像与真实图像之间的转换更加准确和自然。</p><p>StarGAN可以应用于许多领域，例如计算机视觉、图像处理、虚拟现实等。它不仅可以用于图像转换，还可以用于音频、视频等多种类型的跨域数据转换。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Concept</category>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+      <category>生成对抗网络GAN</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>model</tag>
+      
+      <tag>model/神经网络</tag>
+      
+      <tag>model/GAN</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>生成对抗网络</title>
+    <link href="/posts/94dc/"/>
+    <url>/posts/94dc/</url>
+    
+    <content type="html"><![CDATA[<p><strong>GAN</strong>指的是生成对抗网络（Generative AdversarialNetworks），是由伊恩·古德费洛等人于2014年提出的一种<strong>深度学习模型</strong>，用于生成<strong>逼真的新数据</strong>，如图像、音频、视频等。</p><p>GAN由两个神经网络组成：<strong>生成器网络</strong>和<strong>判别器网络</strong>。</p><ol type="1"><li>生成器网络通过<strong>学习真实数据的分布</strong>，生成伪造的数据。</li><li>判别器网络则用于<strong>区分生成的数据和真实的数据</strong>，并将其分类为真实数据或伪造数据。</li></ol><p>在训练过程中，生成器和判别器网络<strong>相互博弈</strong>，生成器网络通过<strong>反向传播</strong>算法不断优化生成的数据，使其更接近真实数据的分布；判别器网络也通过<strong>反向传播</strong>算法不断优化对生成的数据和真实数据的分类准确度。</p><p>GAN的一个主要优点是可以生成逼真的数据，具有很高的创造性和想象力，可以用于许多领域，如计算机视觉、自然语言处理、音频处理等。GAN也有一些变体，如DCGAN（DeepConvolutional GAN）、WGAN（WassersteinGAN）等，它们通过改进GAN的结构和算法，进一步提高了GAN的性能和稳定性。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Concept</category>
+      
+      <category>AI</category>
+      
+      <category>生成模型</category>
+      
+      <category>生成对抗网络GAN</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+      <tag>model</tag>
+      
+      <tag>model/神经网络</tag>
+      
+      <tag>model/GAN</tag>
       
     </tags>
     
@@ -1239,117 +1583,6 @@
   
   
   <entry>
-    <title>StarGAN</title>
-    <link href="/posts/70cf/"/>
-    <url>/posts/70cf/</url>
-    
-    <content type="html"><![CDATA[<p>StarGAN（Star Generative AdversarialNetworks）是一种生成对抗网络（GAN）模型，由韩国KAIST大学的YunjeyChoi等人在2018年提出。StarGAN是一种<strong>多域图像转换模型</strong>，它可以<strong>将输入图像转换为多个目标域的图像</strong>。与传统的单一域的图像转换模型不同，StarGAN可以处理多个领域的图像转换，例如将马转换成斑马、将男性转换成女性等。这种多域图像转换可以通过一个<strong>统一的生成器网络</strong>来实现，使得模型更加简单和高效。</p><p>StarGAN的网络结构包括<strong>一个生成器网络</strong>和<strong>一个判别器网络</strong>。生成器网络通过<strong>输入一张源域图像和目标域的标签</strong>，生成一张目标域的图像。而判别器网络则用于区分生成的图像与真实的目标域图像之间的差异。为了提高模型的性能，StarGAN还使用了<strong>循环一致性损失</strong>（cycleconsistency loss）和<strong>域一致性损失</strong>（domain consistencyloss）等技术，使得生成的图像与真实图像之间的转换更加准确和自然。</p><p>StarGAN可以应用于许多领域，例如计算机视觉、图像处理、虚拟现实等。它不仅可以用于图像转换，还可以用于音频、视频等多种类型的跨域数据转换。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Concept</category>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-      <category>生成对抗网络GAN</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>model</tag>
-      
-      <tag>model/神经网络</tag>
-      
-      <tag>model/GAN</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>StackGAN</title>
-    <link href="/posts/2a1/"/>
-    <url>/posts/2a1/</url>
-    
-    <content type="html"><![CDATA[<p>StackGAN（Stacked Generative AdversarialNetworks）是一种生成对抗网络（GAN）模型，由中国香港科技大学的HanZhang等人在2017年提出。StackGAN是一种多尺度图像生成模型，可以生成高分辨率的真实感图像。</p><p>StackGAN的网络结构包括<strong>两个生成器网络</strong>和<strong>两个判别器网络</strong>，其中第一个生成器网络用于<strong>生成低分辨率</strong>的图像，第二个生成器网络则用于将<strong>低分辨率图像转换成高分辨率</strong>的真实感图像。而两个判别器网络则用于区分生成的图像与真实的图像之间的差异。</p><p>为了提高模型的性能，StackGAN还使用了条件变分自编码器（conditionalvariational autoencoder，CVAE）和循环一致性损失（cycle consistencyloss）等技术。CVAE可以通过潜在向量和条件信息来生成<strong>高质量的图像</strong>，而循环一致性损失则可以确保生成的图像与真实图像之间的<strong>转换是可逆的</strong>。</p><p>StackGAN可以应用于许多领域，如计算机视觉、图像处理、虚拟现实等。它可以生成高质量、高分辨率的真实感图像，具有很高的应用价值。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Concept</category>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-      <category>生成对抗网络GAN</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>model</tag>
-      
-      <tag>model/神经网络</tag>
-      
-      <tag>model/GAN</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>生成对抗网络</title>
-    <link href="/posts/94dc/"/>
-    <url>/posts/94dc/</url>
-    
-    <content type="html"><![CDATA[<p><strong>GAN</strong>指的是生成对抗网络（Generative AdversarialNetworks），是由伊恩·古德费洛等人于2014年提出的一种<strong>深度学习模型</strong>，用于生成<strong>逼真的新数据</strong>，如图像、音频、视频等。</p><p>GAN由两个神经网络组成：<strong>生成器网络</strong>和<strong>判别器网络</strong>。</p><ol type="1"><li>生成器网络通过<strong>学习真实数据的分布</strong>，生成伪造的数据。</li><li>判别器网络则用于<strong>区分生成的数据和真实的数据</strong>，并将其分类为真实数据或伪造数据。</li></ol><p>在训练过程中，生成器和判别器网络<strong>相互博弈</strong>，生成器网络通过<strong>反向传播</strong>算法不断优化生成的数据，使其更接近真实数据的分布；判别器网络也通过<strong>反向传播</strong>算法不断优化对生成的数据和真实数据的分类准确度。</p><p>GAN的一个主要优点是可以生成逼真的数据，具有很高的创造性和想象力，可以用于许多领域，如计算机视觉、自然语言处理、音频处理等。GAN也有一些变体，如DCGAN（DeepConvolutional GAN）、WGAN（WassersteinGAN）等，它们通过改进GAN的结构和算法，进一步提高了GAN的性能和稳定性。</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Concept</category>
-      
-      <category>AI</category>
-      
-      <category>生成模型</category>
-      
-      <category>生成对抗网络GAN</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>AI</tag>
-      
-      <tag>model</tag>
-      
-      <tag>model/神经网络</tag>
-      
-      <tag>model/GAN</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Hello World</title>
     <link href="/posts/3eeb/"/>
     <url>/posts/3eeb/</url>
@@ -1380,37 +1613,6 @@
     <url>/posts/3aa1/</url>
     
     <content type="html"><![CDATA[<p>Next中集成了 <code>AddThis Share</code> ，但是需要进行配置。</p><p>下面是配置的步骤。</p><ol type="1"><li>来到 <a href="https://www.addthis.com/">Addthis 官网</a>完成注册。</li><li>选择工具选择 <code>Share Buttons</code> <span id="more"></span><imgsrc="../../../../image/AddThis/button.png"alt="image-20230214131030077" /></li><li>选择一种工具类型，一共有七种样式，我选择 <code>Expanding</code>，然后 continue。</li><li>四个栏目分别设置分享的目标，颜色，分享按钮位置以及隐藏分享的页面，配置完成。</li><li>获取配置所需ID，也就是模糊部分 <imgsrc="../../../../image/AddThis/id.png"alt="image-20230214132749541" /></li><li>点击定位规则添加定位规则配置，配置设备，博客地址，名字以及隐藏的页面<imgsrc="../../../../image/AddThis/settings.png"alt="image-20230214133816494" /> <imgsrc="../../../../image/AddThis/more_settings.png"alt="image-20230214133905902" /></li><li>打开主题配置文件，将刚刚的pubid配置到 <code>add_this_id</code>。</li></ol><p>完成了，但是好像不太好用，不会自动唤起QQ和微信，还需要扫码之类，太麻烦了，去掉了。</p><p>参考：<ahref="https://jasonssun.github.io/2019/06/15/Hexo搭建博客NexT主题之AddThis分享文章的配置/">Hexo搭建博客NexT主题之AddThis分享文章的配置</a></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Softwares</category>
-      
-      <category>blog</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>blog/Hexo</tag>
-      
-      <tag>blog/Hexo/Next</tag>
-      
-      <tag>blog</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>指定页面侧边栏不显示目录</title>
-    <link href="/posts/66a1/"/>
-    <url>/posts/66a1/</url>
-    
-    <content type="html"><![CDATA[<h3 id="一背景">一、背景</h3><p>由于添加的小记页面是自建的page，所以会显示目录，但是从功能考虑并不需要目录。于是考虑删除该页面的目录部分。</p><span id="more"></span><h3 id="二实现">二、实现</h3><p>我的next版本为8.x，其余版本可能略有不同。</p><p>打开文件 <code>themes/next/layout/_macro/sidebar.njk</code>，可以找到如下代码</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;%- set display_toc = toc<span class="hljs-selector-class">.length</span> &gt; <span class="hljs-number">1</span> and display_toc%&#125;<br></code></pre></td></tr></table></figure><p>这是出现目录的判断条件，我们额外增加一个条件</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;%- set display_toc = toc<span class="hljs-selector-class">.length</span> &gt; <span class="hljs-number">1</span> and display_toc and not page<span class="hljs-selector-class">.notoc</span>%&#125;<br></code></pre></td></tr></table></figure><p>增加的部分意思是 <code>page.notoc</code> 不为 <code>true</code>时才会出现目录。所以我们在需要关闭目录的文件的Front-matter中加上</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">notoc:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure><p>即可关闭该页面的目录页。</p><h3 id="参考">参考</h3><p><ahref="https://blog.csdn.net/qq_44766883/article/details/113478757">在HexoNexT主题中关闭指定文章的Table of Contents</a></p>]]></content>
     
     
     <categories>
@@ -1468,6 +1670,37 @@
   
   
   <entry>
+    <title>指定页面侧边栏不显示目录</title>
+    <link href="/posts/66a1/"/>
+    <url>/posts/66a1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一背景">一、背景</h3><p>由于添加的小记页面是自建的page，所以会显示目录，但是从功能考虑并不需要目录。于是考虑删除该页面的目录部分。</p><span id="more"></span><h3 id="二实现">二、实现</h3><p>我的next版本为8.x，其余版本可能略有不同。</p><p>打开文件 <code>themes/next/layout/_macro/sidebar.njk</code>，可以找到如下代码</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;%- set display_toc = toc<span class="hljs-selector-class">.length</span> &gt; <span class="hljs-number">1</span> and display_toc%&#125;<br></code></pre></td></tr></table></figure><p>这是出现目录的判断条件，我们额外增加一个条件</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;%- set display_toc = toc<span class="hljs-selector-class">.length</span> &gt; <span class="hljs-number">1</span> and display_toc and not page<span class="hljs-selector-class">.notoc</span>%&#125;<br></code></pre></td></tr></table></figure><p>增加的部分意思是 <code>page.notoc</code> 不为 <code>true</code>时才会出现目录。所以我们在需要关闭目录的文件的Front-matter中加上</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">notoc:</span> <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure><p>即可关闭该页面的目录页。</p><h3 id="参考">参考</h3><p><ahref="https://blog.csdn.net/qq_44766883/article/details/113478757">在HexoNexT主题中关闭指定文章的Table of Contents</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Softwares</category>
+      
+      <category>blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blog/Hexo</tag>
+      
+      <tag>blog/Hexo/Next</tag>
+      
+      <tag>blog</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hexo实现在线编辑</title>
     <link href="/posts/c96c/"/>
     <url>/posts/c96c/</url>
@@ -1486,9 +1719,9 @@
     
     <tags>
       
-      <tag>Git</tag>
-      
       <tag>Windows</tag>
+      
+      <tag>Git</tag>
       
       <tag>blog/Hexo</tag>
       
@@ -1530,37 +1763,6 @@
   
   
   <entry>
-    <title>Git安装以及Github连接本地</title>
-    <link href="/posts/f446/"/>
-    <url>/posts/f446/</url>
-    
-    <content type="html"><![CDATA[<h3 id="一windows安装git">一、Windows安装Git</h3><p>到<a href="https://git-scm.com/download/">Git官网</a>下载对应版本进行安装。除了想更改安装路径的，全部默认即可。<span id="more"></span></p><h3 id="二-github连接本地">二、 Github连接本地</h3><p>右键打开Git Bash，注意用自己的信息</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#配置注册Github的用户名和邮箱到本地</span><br><span class="hljs-comment">#在用户文件夹下的.gitconfig文件可以看到</span><br><br>git config --global user.name <span class="hljs-string">&quot;guest&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;email@xx.com&quot;</span><br><br><span class="hljs-comment">#生成密钥</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;email@xx.com&quot;</span><br><br><span class="hljs-comment">#回车默认存储位置，回车默认空密码，此时已经生成</span><br><span class="hljs-comment">#可以在用户文件夹的.ssh文件夹里面查看</span><br><br><span class="hljs-comment">#我们将其复制到粘贴板，方便等会粘贴</span><br>clip &lt; ~/.ssh/id_rsa.pub<br></code></pre></td></tr></table></figure><p>在Github头像下面点击Settings，再点击SSH and GPGkeys，新建一个SSH，粘贴刚刚复制的密钥即可，名称自己定。</p><table><tbody><tr class="odd"><td><img src="../../../../image/Git/settings.png" alt="image-1" /></td><td><img src="../../../../image/Git/ssh_keys.png" alt="image-2" /></td></tr></tbody></table><p>回到Git Bash测试连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>连接成功 <img src="../../../../image/Git/connect.png"alt="image-3" /></p><h3 id="三github-token-生成">三、Github Token 生成</h3><p>TODO</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Softwares</category>
-      
-      <category>Git</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Git</tag>
-      
-      <tag>environment</tag>
-      
-      <tag>ssh</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Nodejs安装以及更新</title>
     <link href="/posts/efdd/"/>
     <url>/posts/efdd/</url>
@@ -1579,11 +1781,42 @@
     
     <tags>
       
-      <tag>environment</tag>
-      
       <tag>Windows</tag>
       
+      <tag>environment</tag>
+      
       <tag>nodejs</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git安装以及Github连接本地</title>
+    <link href="/posts/f446/"/>
+    <url>/posts/f446/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一windows安装git">一、Windows安装Git</h3><p>到<a href="https://git-scm.com/download/">Git官网</a>下载对应版本进行安装。除了想更改安装路径的，全部默认即可。<span id="more"></span></p><h3 id="二-github连接本地">二、 Github连接本地</h3><p>右键打开Git Bash，注意用自己的信息</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#配置注册Github的用户名和邮箱到本地</span><br><span class="hljs-comment">#在用户文件夹下的.gitconfig文件可以看到</span><br><br>git config --global user.name <span class="hljs-string">&quot;guest&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;email@xx.com&quot;</span><br><br><span class="hljs-comment">#生成密钥</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;email@xx.com&quot;</span><br><br><span class="hljs-comment">#回车默认存储位置，回车默认空密码，此时已经生成</span><br><span class="hljs-comment">#可以在用户文件夹的.ssh文件夹里面查看</span><br><br><span class="hljs-comment">#我们将其复制到粘贴板，方便等会粘贴</span><br>clip &lt; ~/.ssh/id_rsa.pub<br></code></pre></td></tr></table></figure><p>在Github头像下面点击Settings，再点击SSH and GPGkeys，新建一个SSH，粘贴刚刚复制的密钥即可，名称自己定。</p><table><tbody><tr class="odd"><td><img src="../../../../image/Git/settings.png" alt="image-1" /></td><td><img src="../../../../image/Git/ssh_keys.png" alt="image-2" /></td></tr></tbody></table><p>回到Git Bash测试连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></td></tr></table></figure><p>连接成功 <img src="../../../../image/Git/connect.png"alt="image-3" /></p><h3 id="三github-token-生成">三、Github Token 生成</h3><p>TODO</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Softwares</category>
+      
+      <category>Git</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>environment</tag>
+      
+      <tag>Git</tag>
+      
+      <tag>ssh</tag>
       
     </tags>
     
@@ -1724,11 +1957,11 @@
     
     <tags>
       
-      <tag>environment</tag>
-      
       <tag>Windows</tag>
       
       <tag>conda</tag>
+      
+      <tag>environment</tag>
       
     </tags>
     
@@ -1756,64 +1989,6 @@
     <tags>
       
       <tag>Linux</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>导出语雀知识库</title>
-    <link href="/posts/7713/"/>
-    <url>/posts/7713/</url>
-    
-    <content type="html"><![CDATA[<h3 id="背景">背景</h3><p>之前说过原先的GitHubPages的博客源码由于重装系统丢失，最近比较闲，想要重新搭建，因此希望能够将语雀知识库导出，但是只能导出lakebook格式，不能满足要求，于是有了这个摸索。</p><h3 id="操作">操作</h3><ol type="1"><li><p>安装nodejs，参考 <ahref="../Environment/Nodejs安装以及更新.md">Nodejs安装以及更新</a> 要求Node.js 16.18.0 以上版本。</p></li><li><p><code>win+r</code>呼出运行，输入<code>cmd</code>回车，运行下面代码安装小工具。</p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -g yuque-exporter --registry=https://registry.npmmirror.com<br></code></pre></td></tr></table></figure></p></li><li><p><ahref="https://link.zhihu.com/?target=https%3A//www.yuque.com/yuque/developer/api%23785a3731">获取语雀token</a>并且设置，注意<code>&lt;your_token&gt;</code>用自己获取的token替换。</p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> YUQUE_TOKEN=&lt;your_token&gt;<br></code></pre></td></tr></table></figure></p></li><li><p>在自己希望存放文件的文件夹下点击资源管理器路径输入<strong>cmd</strong>回车打开终端，运行下面代码<img src="../../../image/yuque/termina;.png"alt="image.png" /></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yuque-exporter<br></code></pre></td></tr></table></figure></p></li><li><p>之后就会自动完成文章拉取，如果在文档下面又子文档，那么该文档会变成一个文件和一个文件夹。图片会全部存放哎asset文件夹之内。站外的卡片和标题不会显示，推荐全部使用链接的形式。站内的引用会自动变成链接。</p></li></ol><h3 id="参考">参考</h3><ol type="1"><li><a href="https://zhuanlan.zhihu.com/p/582287220">语雀知识库一键导出Markdown 工具</a></li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>Softwares</category>
-      
-      <category>note</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>nodejs</tag>
-      
-      <tag>note</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hexo_Typora实现相对路径图片显示</title>
-    <link href="/posts/5934/"/>
-    <url>/posts/5934/</url>
-    
-    <content type="html"><![CDATA[<h3 id="背景">背景</h3><p>之前都是使用的图床，但是有时候加载不稳定，所以现在都是把图片存在本地一起使用。但是hexo生成的静态网页会无法识别路径，因此需要插件辅助实现。hexo文档有提及方法，但是不是不方便，就是失效。</p><h3 id="实现">实现</h3><ol type="1"><li>安装插件 <code>npm install hexo-asset-img --save</code>这是在github找到的可用插件</li><li>打开配置文件，将 <code>post_asset_folder</code> 设置为<code>true</code></li><li>打开typora偏好设置的图像一栏如下图设置，这样子复制的图片就会自动保存到文件同名同目录的文件夹里面，并且自动转义成相对路径<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">!<span class="hljs-selector-attr">[图片标签]</span>(文件名/图片名)<br></code></pre></td></tr></table></figure> <img src="../../../../image/Hexo_Typora/path.png"alt="image.png" /></li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>Softwares</category>
-      
-      <category>blog</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>blog/Hexo</tag>
-      
-      <tag>blog</tag>
       
     </tags>
     
@@ -1882,11 +2057,11 @@
   
   
   <entry>
-    <title>Next主题导入JQuery</title>
-    <link href="/posts/6c58/"/>
-    <url>/posts/6c58/</url>
+    <title>Hexo_Typora实现相对路径图片显示</title>
+    <link href="/posts/5934/"/>
+    <url>/posts/5934/</url>
     
-    <content type="html"><![CDATA[<h3 id="问题">问题</h3><p>使用Next主题的Hexo博客，在进行个性化配置时，可能出现</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">Uncaught ReferenceError: $ is not defined`<br></code></pre></td></tr></table></figure><p>这是由于使用的插件引用了 <code>JQuery</code>　但是我们没有导入。</p><h3 id="方法">方法</h3><p>在Next的主题配置文件 <code>_config.yml</code> 中，找到</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">vendors:</span><br></code></pre></td></tr></table></figure><p>在下面增加一行，即可导入。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">jquery:</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span><br></code></pre></td></tr></table></figure><figure><img src="../../../../image/NextJQuery/jquery.png"alt="image-20230210201839159.png" /><figcaption aria-hidden="true">image-20230210201839159.png</figcaption></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="背景">背景</h3><p>之前都是使用的图床，但是有时候加载不稳定，所以现在都是把图片存在本地一起使用。但是hexo生成的静态网页会无法识别路径，因此需要插件辅助实现。hexo文档有提及方法，但是不是不方便，就是失效。</p><h3 id="实现">实现</h3><ol type="1"><li>安装插件 <code>npm install hexo-asset-img --save</code>这是在github找到的可用插件</li><li>打开配置文件，将 <code>post_asset_folder</code> 设置为<code>true</code></li><li>打开typora偏好设置的图像一栏如下图设置，这样子复制的图片就会自动保存到文件同名同目录的文件夹里面，并且自动转义成相对路径<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">!<span class="hljs-selector-attr">[图片标签]</span>(文件名/图片名)<br></code></pre></td></tr></table></figure> <img src="../../../../image/Hexo_Typora/path.png"alt="image.png" /></li></ol>]]></content>
     
     
     <categories>
@@ -1901,8 +2076,6 @@
     <tags>
       
       <tag>blog/Hexo</tag>
-      
-      <tag>blog/Hexo/Next</tag>
       
       <tag>blog</tag>
       
@@ -1944,11 +2117,71 @@
   
   
   <entry>
-    <title>双系统切换界面</title>
-    <link href="/posts/9e30/"/>
-    <url>/posts/9e30/</url>
+    <title>Next主题导入JQuery</title>
+    <link href="/posts/6c58/"/>
+    <url>/posts/6c58/</url>
     
-    <content type="html"><![CDATA[<h3 id="一更改默认启动项">一、更改默认启动项</h3><p>ctrl+alt+T 打开终端，输入下面代码打开配置文件</p><pre><code class="hljs">sudo gedit /etc/default/grub</code></pre><p>此处为<code>0</code>表示ubuntu为默认系统，改为<code>2</code>即windows为默认系统。<code>10</code>表示等待时间为10s <imgsrc="../../../../image/doubleOS/parameters.png" alt="image.png" />最后运行改行代码实现更新，重启发现更改成功。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo update-grub<br></code></pre></td></tr></table></figure><h3 id="二界面美化">二、界面美化</h3><p>到 <ahref="https://www.gnome-look.org/browse?cat=109&amp;ord=latest">这里</a>下载喜欢的主题，我选了 <ahref="https://www.gnome-look.org/p/1443844">BigSur GRUB Theme</a>有点慢。 解压缩主题文件夹，进入<code>install.sh</code>所在文件夹右键打开终端，执行以下命令进行安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./install.sh<br></code></pre></td></tr></table></figure><p>配置文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/default/grub #打开配置文件<br></code></pre></td></tr></table></figure><pre><code class="hljs">配置主题和分辨率</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">GRUB_CFXMODE=&quot;1920*1080&quot;<br>GRUB_THEME=&quot;/boot/grub/themes/bigsur/theme.txt&quot;<br></code></pre></td></tr></table></figure><p>更新配置</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg<br>sudo update-grub<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="问题">问题</h3><p>使用Next主题的Hexo博客，在进行个性化配置时，可能出现</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">Uncaught ReferenceError: $ is not defined`<br></code></pre></td></tr></table></figure><p>这是由于使用的插件引用了 <code>JQuery</code>　但是我们没有导入。</p><h3 id="方法">方法</h3><p>在Next的主题配置文件 <code>_config.yml</code> 中，找到</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">vendors:</span><br></code></pre></td></tr></table></figure><p>在下面增加一行，即可导入。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">jquery:</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span><br></code></pre></td></tr></table></figure><figure><img src="../../../../image/NextJQuery/jquery.png"alt="image-20230210201839159.png" /><figcaption aria-hidden="true">image-20230210201839159.png</figcaption></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Softwares</category>
+      
+      <category>blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>blog/Hexo</tag>
+      
+      <tag>blog/Hexo/Next</tag>
+      
+      <tag>blog</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>导出语雀知识库</title>
+    <link href="/posts/7713/"/>
+    <url>/posts/7713/</url>
+    
+    <content type="html"><![CDATA[<h3 id="背景">背景</h3><p>之前说过原先的GitHubPages的博客源码由于重装系统丢失，最近比较闲，想要重新搭建，因此希望能够将语雀知识库导出，但是只能导出lakebook格式，不能满足要求，于是有了这个摸索。</p><h3 id="操作">操作</h3><ol type="1"><li><p>安装nodejs，参考 <ahref="../Environment/Nodejs安装以及更新.md">Nodejs安装以及更新</a> 要求Node.js 16.18.0 以上版本。</p></li><li><p><code>win+r</code>呼出运行，输入<code>cmd</code>回车，运行下面代码安装小工具。</p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm i -g yuque-exporter --registry=https://registry.npmmirror.com<br></code></pre></td></tr></table></figure></p></li><li><p><ahref="https://link.zhihu.com/?target=https%3A//www.yuque.com/yuque/developer/api%23785a3731">获取语雀token</a>并且设置，注意<code>&lt;your_token&gt;</code>用自己获取的token替换。</p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> YUQUE_TOKEN=&lt;your_token&gt;<br></code></pre></td></tr></table></figure></p></li><li><p>在自己希望存放文件的文件夹下点击资源管理器路径输入<strong>cmd</strong>回车打开终端，运行下面代码<img src="../../../image/yuque/termina;.png"alt="image.png" /></p><p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yuque-exporter<br></code></pre></td></tr></table></figure></p></li><li><p>之后就会自动完成文章拉取，如果在文档下面又子文档，那么该文档会变成一个文件和一个文件夹。图片会全部存放哎asset文件夹之内。站外的卡片和标题不会显示，推荐全部使用链接的形式。站内的引用会自动变成链接。</p></li></ol><h3 id="参考">参考</h3><ol type="1"><li><a href="https://zhuanlan.zhihu.com/p/582287220">语雀知识库一键导出Markdown 工具</a></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Softwares</category>
+      
+      <category>note</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>nodejs</tag>
+      
+      <tag>note</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Win10安装Ubuntu22.04双系统</title>
+    <link href="/posts/764/"/>
+    <url>/posts/764/</url>
+    
+    <content type="html"><![CDATA[<h3 id="下载镜像文件">1. 下载镜像文件</h3><p>进入 <ahref="https://cn.ubuntu.com/download/desktop">Ubuntu下载链接</a>下载22.04版本，等待下载完成。 <imgsrc="../../../../image/WINandLINUX/download.png" alt="image.png" /></p><h3 id="下载安装镜像工具">2. 下载安装镜像工具</h3><p>进入 <a href="https://rufus.ie/zh/#google_vignette">rufus官网</a>下载便携版即可。 <img src="../../../../image/WINandLINUX/rufus.png"alt="image.png" /></p><h3 id="安装盘制作">3. 安装盘制作</h3><p>打开上面下好的软件，准备一个4G以上空U盘。连接后会自动识别到U盘盘符。<img src="../../../../image/WINandLINUX/Upan.png" alt="image.png" />点击上图红色框选择镜像，找到下好的镜像文件点击打开。确保已经不需要U盘内的资料，点击开始。<img src="../../../../image/WINandLINUX/done.png" alt="image.png" />安装完成。</p><h3 id="磁盘分区">4. 磁盘分区</h3><p>右键开始菜单，打开磁盘管理。我只有一个SSD，因此只需要分出一块分区。右键分区，选择压缩卷。<img src="../../../../image/WINandLINUX/compress.png" alt="image.png" />1024*120个MB空间 <imgsrc="../../../../image/WINandLINUX/120G.png" /></p><h3 id="查看磁盘格式">5. 查看磁盘格式</h3><p>win+r 打开运行，输入 msinfo32 ，查看bios模式。 <imgsrc="../../../../image/WINandLINUX/bios.png" alt="image.png" /></p><h3 id="安装双系统">6. 安装双系统</h3><p>重启计算机，进入bios，我的是dell，一直按f12即可。选择UEFI一栏回车。进入了安装系统，选择语言为中文简体，点击安装Ubuntu。之后选择English(US)，继续。安装软件时候选择最小安装即可。</p><h3 id="软件安装">7. 软件安装</h3><p>按照引导完成安装之后进行联网，软件安装。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt update#拉取更新<br>sudo apt install vim#安装vim<br>sudo apt upgrade#更新软件<br></code></pre></td></tr></table></figure><p>安装了edge进行了登录和同步。</p><h3 id="时间同步">8. 时间同步</h3><p>Ubuntu 与 Windows 时间确定机制不同，需要进行同步。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install ntpdate #安装同步工具<br>sudo ntpdate time.windows.com #更改时间确定机制<br>sudo hwclock --localtime --systohc #同步硬件时间<br></code></pre></td></tr></table></figure><h3 id="参考视频">9. 参考视频</h3><p><ahref="https://www.bilibili.com/video/BV1554y1n7zv/?spm_id_from=333.337.search-card.all.click&amp;vd_source=bab75b3ccf1b5ff4356ab5c39c33eca7">Windows和 Ubuntu 双系统的安装和卸载_哔哩哔哩_bilibili</a>上视频使用的安装工具在我得U盘不行，于是按照下面视频制作U盘，U盘文件系统为FAT32。与上边视频不同的操作就是软件安装时选择了最小安装，以及分配空间时候有自己想法。</p><p><ahref="https://www.bilibili.com/video/BV1F44y1m7ZL/?spm_id_from=333.337.search-card.all.click&amp;vd_source=bab75b3ccf1b5ff4356ab5c39c33eca7">Win10与Ubuntu双系统安装（绝对新手向）_哔哩哔哩_bilibili</a></p>]]></content>
     
     
     <categories>
@@ -1973,11 +2206,11 @@
   
   
   <entry>
-    <title>Win10安装Ubuntu22.04双系统</title>
-    <link href="/posts/764/"/>
-    <url>/posts/764/</url>
+    <title>双系统切换界面</title>
+    <link href="/posts/9e30/"/>
+    <url>/posts/9e30/</url>
     
-    <content type="html"><![CDATA[<h3 id="下载镜像文件">1. 下载镜像文件</h3><p>进入 <ahref="https://cn.ubuntu.com/download/desktop">Ubuntu下载链接</a>下载22.04版本，等待下载完成。 <imgsrc="../../../../image/WINandLINUX/download.png" alt="image.png" /></p><h3 id="下载安装镜像工具">2. 下载安装镜像工具</h3><p>进入 <a href="https://rufus.ie/zh/#google_vignette">rufus官网</a>下载便携版即可。 <img src="../../../../image/WINandLINUX/rufus.png"alt="image.png" /></p><h3 id="安装盘制作">3. 安装盘制作</h3><p>打开上面下好的软件，准备一个4G以上空U盘。连接后会自动识别到U盘盘符。<img src="../../../../image/WINandLINUX/Upan.png" alt="image.png" />点击上图红色框选择镜像，找到下好的镜像文件点击打开。确保已经不需要U盘内的资料，点击开始。<img src="../../../../image/WINandLINUX/done.png" alt="image.png" />安装完成。</p><h3 id="磁盘分区">4. 磁盘分区</h3><p>右键开始菜单，打开磁盘管理。我只有一个SSD，因此只需要分出一块分区。右键分区，选择压缩卷。<img src="../../../../image/WINandLINUX/compress.png" alt="image.png" />1024*120个MB空间 <imgsrc="../../../../image/WINandLINUX/120G.png" /></p><h3 id="查看磁盘格式">5. 查看磁盘格式</h3><p>win+r 打开运行，输入 msinfo32 ，查看bios模式。 <imgsrc="../../../../image/WINandLINUX/bios.png" alt="image.png" /></p><h3 id="安装双系统">6. 安装双系统</h3><p>重启计算机，进入bios，我的是dell，一直按f12即可。选择UEFI一栏回车。进入了安装系统，选择语言为中文简体，点击安装Ubuntu。之后选择English(US)，继续。安装软件时候选择最小安装即可。</p><h3 id="软件安装">7. 软件安装</h3><p>按照引导完成安装之后进行联网，软件安装。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt update#拉取更新<br>sudo apt install vim#安装vim<br>sudo apt upgrade#更新软件<br></code></pre></td></tr></table></figure><p>安装了edge进行了登录和同步。</p><h3 id="时间同步">8. 时间同步</h3><p>Ubuntu 与 Windows 时间确定机制不同，需要进行同步。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt install ntpdate #安装同步工具<br>sudo ntpdate time.windows.com #更改时间确定机制<br>sudo hwclock --localtime --systohc #同步硬件时间<br></code></pre></td></tr></table></figure><h3 id="参考视频">9. 参考视频</h3><p><ahref="https://www.bilibili.com/video/BV1554y1n7zv/?spm_id_from=333.337.search-card.all.click&amp;vd_source=bab75b3ccf1b5ff4356ab5c39c33eca7">Windows和 Ubuntu 双系统的安装和卸载_哔哩哔哩_bilibili</a>上视频使用的安装工具在我得U盘不行，于是按照下面视频制作U盘，U盘文件系统为FAT32。与上边视频不同的操作就是软件安装时选择了最小安装，以及分配空间时候有自己想法。</p><p><ahref="https://www.bilibili.com/video/BV1F44y1m7ZL/?spm_id_from=333.337.search-card.all.click&amp;vd_source=bab75b3ccf1b5ff4356ab5c39c33eca7">Win10与Ubuntu双系统安装（绝对新手向）_哔哩哔哩_bilibili</a></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="一更改默认启动项">一、更改默认启动项</h3><p>ctrl+alt+T 打开终端，输入下面代码打开配置文件</p><pre><code class="hljs">sudo gedit /etc/default/grub</code></pre><p>此处为<code>0</code>表示ubuntu为默认系统，改为<code>2</code>即windows为默认系统。<code>10</code>表示等待时间为10s <imgsrc="../../../../image/doubleOS/parameters.png" alt="image.png" />最后运行改行代码实现更新，重启发现更改成功。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo update-grub<br></code></pre></td></tr></table></figure><h3 id="二界面美化">二、界面美化</h3><p>到 <ahref="https://www.gnome-look.org/browse?cat=109&amp;ord=latest">这里</a>下载喜欢的主题，我选了 <ahref="https://www.gnome-look.org/p/1443844">BigSur GRUB Theme</a>有点慢。 解压缩主题文件夹，进入<code>install.sh</code>所在文件夹右键打开终端，执行以下命令进行安装</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">./install.sh<br></code></pre></td></tr></table></figure><p>配置文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/default/grub #打开配置文件<br></code></pre></td></tr></table></figure><pre><code class="hljs">配置主题和分辨率</code></pre><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">GRUB_CFXMODE=&quot;1920*1080&quot;<br>GRUB_THEME=&quot;/boot/grub/themes/bigsur/theme.txt&quot;<br></code></pre></td></tr></table></figure><p>更新配置</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo grub-mkconfig -o /boot/efi/EFI/ubuntu/grub.cfg<br>sudo update-grub<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>

@@ -253,6 +253,503 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/7a22/" target="_self">
+          <img src="/img/computer.png" srcset="/img/loading.gif" lazyload alt="命令行程序控制">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/7a22/" target="_self">
+          命令行程序控制
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/posts/7a22/" target="_self">
+        <div>
+          command hints     Ctrl+C 停止程序   Ctrl+Z 暂停进程并放入后台   jobs 显示当前暂停的进程   bg N 使第N个任务在后台运行   fg N 使第N个任务在前台运行   bg, fg 不带 N 时表示对最后一个进程操作
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-04 00:00" pubdate>
+              2023-05-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Research/" class="category-chain-item">Research</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Research/Experiment/" class="category-chain-item">Experiment</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/terminal/">#terminal</a>
+            
+              <a href="/tags/task/">#task</a>
+            
+              <a href="/tags/process/">#process</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/aac5/" target="_self">
+          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="网络训练中的train和eval模式">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/aac5/" target="_self">
+          网络训练中的train和eval模式
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/posts/aac5/" target="_self">
+        <div>
+          model.train() model.train()的作用是启用 Batch Normalization 和 Dropout。 如果模型中有BN层(Batch Normalization）和Dropout，需要在训练时添加model.train()。 model.train()是保证BN层能够用到每一批数据的均值和方差。对于Dropout，model.train()是随机取一部分网络连
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-04 00:00" pubdate>
+              2023-05-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Research/" class="category-chain-item">Research</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Research/Experiment/" class="category-chain-item">Experiment</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AI/">#AI</a>
+            
+              <a href="/tags/Pytorch/">#Pytorch</a>
+            
+              <a href="/tags/Python/">#Python</a>
+            
+              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
+            
+              <a href="/tags/model-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#model/模型训练</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/be0b/" target="_self">
+          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="网络训练中的eval与no_grad">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/be0b/" target="_self">
+          网络训练中的eval与no_grad
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/posts/be0b/" target="_self">
+        <div>
+          model.eval() model.eval()不会影响各层的gradient计算行为，即gradient计算和存储与training模式一样，只是不进行反向传播(backprobagation) 具体参考 网络训练中的train和eval模式 torch.no_grad() 12with torch.no_grad()：	# 代码块  用于停止autograd模块的工作，起到加速和
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-04 00:00" pubdate>
+              2023-05-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Research/" class="category-chain-item">Research</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Research/Experiment/" class="category-chain-item">Experiment</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AI/">#AI</a>
+            
+              <a href="/tags/Pytorch/">#Pytorch</a>
+            
+              <a href="/tags/Python/">#Python</a>
+            
+              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
+            
+              <a href="/tags/model-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#model/模型训练</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/813c/" target="_self">
+          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="DRO">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/813c/" target="_self">
+          DRO
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/posts/813c/" target="_self">
+        <div>
+          DRO（Distributionally Robust Optimization）是一种优化方法，旨在解决数据分布偏移（distribution shift）问题。 传统的机器学习模型都是基于训练数据的经验分布进行优化，但实际应用中，测试数据往往与训练数据的分布有所不同，这会导致模型的性能下降。 DRO的目标是在优化模型的同时，考虑测试数据与训练数据分布的偏移，从而提高模型的鲁棒性。 D
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-04 00:00" pubdate>
+              2023-05-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Concept/AI/%E4%BC%98%E5%8C%96/" class="category-chain-item">优化</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AI/">#AI</a>
+            
+              <a href="/tags/distribution/">#distribution</a>
+            
+              <a href="/tags/AI-ML/">#AI/ML</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/926e/" target="_self">
+          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="人类反馈学习">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/926e/" target="_self">
+          人类反馈学习
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/posts/926e/" target="_self">
+        <div>
+          人类反馈学习（human feedback learning）是一种机器学习方法，它使用人类反馈来指导模型的学习过程。在人类反馈学习中，模型在完成任务或生成输出后，会接收到人类的反馈或指导，并根据反馈调整其预测或输出。这种方法通常用于监督学习或强化学习中，可以帮助模型更快速、更准确地学习任务，并提高模型的性能和鲁棒性。人类反馈可以采用不同的形式，如标签、注释、评分、建议等，也可以通过人机交互的方
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-04 00:00" pubdate>
+              2023-05-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Concept/AI/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="category-chain-item">机器学习</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AI/">#AI</a>
+            
+              <a href="/tags/AI-ML/">#AI/ML</a>
+            
+              <a href="/tags/feedback/">#feedback</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/5340/" target="_self">
+          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="提示学习">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/posts/5340/" target="_self">
+          提示学习
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/posts/5340/" target="_self">
+        <div>
+          提示学习（prompt-based learning）是一种机器学习方法，它通过提供文本或指令来指导模型完成特定的任务或问题。在提示学习中，模型接收一个问题或任务描述，并使用该描述来生成预测或生成输出。这种方法通常用于语言生成、文本分类、问答系统和语言翻译等自然语言处理任务。与传统的无监督学习或监督学习相比，提示学习更加灵活和高效，因为它可以通过不同的提示来定制模型的输出。此外，提示学习还可以利
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-04 00:00" pubdate>
+              2023-05-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Concept/AI/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="category-chain-item">机器学习</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/AI/">#AI</a>
+            
+              <a href="/tags/AI-ML/">#AI/ML</a>
+            
+              <a href="/tags/prompt/">#prompt</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/posts/2a86/" target="_self">
           <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="无监督学习与数据增强UDA">
         </a>
@@ -340,23 +837,23 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/775/" target="_self">
-          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="卷积反卷积计算">
+        <a href="/posts/55a8/" target="_self">
+          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="无监督域适应UDA">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/posts/775/" target="_self">
-          卷积反卷积计算
+        <a href="/posts/55a8/" target="_self">
+          无监督域适应UDA
         </a>
       </h1>
 
       
-      <a class="index-excerpt " href="/posts/775/" target="_self">
+      <a class="index-excerpt " href="/posts/55a8/" target="_self">
         <div>
-          卷积 输入图片大小 \(W\times W\) kernel 卷积核大小 \(K\times K\) stride 步长 \(S\) padding 的像素数 \(P\) 于是我们可以得出计算公式为： \(N = (W − K + 2P )/S+1\) 反卷积 输入图片大小 \(W\times W\) kernel 卷积核大小 \(K\times K\) stride 步长 \
+          UDA，全称为Unsupervised Domain Adaptation，即无监督域适应，是一种机器学习中的技术，用于解决在目标领域中缺乏标记数据的情况下进行有监督学习的问题。 在有监督学习中，我们通常会有一组标记数据（即有标签的数据），并使用这些数据来训练我们的模型。但在现实中，由于多种原因（例如数据收集成本高昂，标注困难等），我们可能无法获取足够数量的标记数据来训练我们的模型。这时候，就
         </div>
       </a>
 
@@ -390,7 +887,7 @@
   
     <span>></span>
     
-  <a href="/categories/Concept/AI/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="category-chain-item">神经网络</a>
+  <a href="/categories/Concept/AI/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="category-chain-item">机器学习</a>
   
   
 
@@ -411,9 +908,11 @@
             
               <a href="/tags/AI/">#AI</a>
             
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
+              <a href="/tags/distribution/">#distribution</a>
             
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-CNN/">#model/神经网络/CNN</a>
+              <a href="/tags/AI-ML/">#AI/ML</a>
+            
+              <a href="/tags/Adaptation/">#Adaptation</a>
             
           </div>
         
@@ -586,567 +1085,6 @@
               <a href="/tags/model-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#model/模型训练</a>
             
               <a href="/tags/model-%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">#model/激活函数</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/c64/" target="_self">
-          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="超网络">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/c64/" target="_self">
-          超网络
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/c64/" target="_self">
-        <div>
-          超网络（Meta-network）是一种神经网络结构，用于生成其他神经网络的权重或结构。通常情况下，超网络自身也是一个神经网络，其输入是一个或多个描述目标网络结构的参数或超参数，输出是目标网络的权重或结构。 在训练阶段，超网络接收一个目标网络的结构描述，例如层数、节点数、卷积核大小等超参数，然后使用这些超参数来生成目标网络的权重。通过在目标任务上对生成的网络进行训练，可以优化超网络的参数，使其能
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-04 00:00" pubdate>
-              2023-05-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="category-chain-item">神经网络</a>
-  
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/AI/">#AI</a>
-            
-              <a href="/tags/model/">#model</a>
-            
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
-            
-              <a href="/tags/model-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83/">#model/模型训练</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/ad84/" target="_self">
-          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="变分自编码器VAE">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/ad84/" target="_self">
-          变分自编码器VAE
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/ad84/" target="_self">
-        <div>
-          变分自编码器（Variational Auto-Encoder，VAE），希望构建一个从 隐变量Z 生成 目标数据X 的模型。更准确地讲，VAE是一个自动编码器，其编码分布在训练期间被正则化（正态分布），训练一个模型 \(X=g(Z)\)，这个模型能够将原来的概率分布映射到训练集的概率分布，以确保其潜在空间具有良好的属性，使我们能够生成一些新数据。 AE encoder：从“旧特征”表示
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-04 00:00" pubdate>
-              2023-05-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/VAE/" class="category-chain-item">VAE</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/AI/">#AI</a>
-            
-              <a href="/tags/distribution/">#distribution</a>
-            
-              <a href="/tags/model/">#model</a>
-            
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
-            
-              <a href="/tags/model-VAE/">#model/VAE</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/276c/" target="_self">
-          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="条件变分自编码器CVAE">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/276c/" target="_self">
-          条件变分自编码器CVAE
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/276c/" target="_self">
-        <div>
-          CVAE是一种条件变分自编码器（Conditional Variational Autoencoder）模型，它是基于变分自编码器VAE的一个变种。CVAE能够将外部给定的条件信息（如类别标签）融合到潜在空间中的分布中，从而实现对生成样本的控制。相比于传统的VAE模型，CVAE在学习过程中引入了额外的条件信息，并通过在生成器和判别器中添加相应的条件特征，来实现对条件信息的利用。 具体来说，在C
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-04 00:00" pubdate>
-              2023-05-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/VAE/" class="category-chain-item">VAE</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/AI/">#AI</a>
-            
-              <a href="/tags/distribution/">#distribution</a>
-            
-              <a href="/tags/model/">#model</a>
-            
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
-            
-              <a href="/tags/model-VAE/">#model/VAE</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/70cf/" target="_self">
-          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="StarGAN">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/70cf/" target="_self">
-          StarGAN
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/70cf/" target="_self">
-        <div>
-          StarGAN（Star Generative Adversarial Networks）是一种生成对抗网络（GAN）模型，由韩国KAIST大学的Yunjey Choi等人在2018年提出。StarGAN是一种多域图像转换模型，它可以将输入图像转换为多个目标域的图像。与传统的单一域的图像转换模型不同，StarGAN可以处理多个领域的图像转换，例如将马转换成斑马、将男性转换成女性等。这种多域图像
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-04 00:00" pubdate>
-              2023-05-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9CGAN/" class="category-chain-item">生成对抗网络GAN</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/AI/">#AI</a>
-            
-              <a href="/tags/model/">#model</a>
-            
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
-            
-              <a href="/tags/model-GAN/">#model/GAN</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/2a1/" target="_self">
-          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="StackGAN">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/2a1/" target="_self">
-          StackGAN
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/2a1/" target="_self">
-        <div>
-          StackGAN（Stacked Generative Adversarial Networks）是一种生成对抗网络（GAN）模型，由中国香港科技大学的Han Zhang等人在2017年提出。StackGAN是一种多尺度图像生成模型，可以生成高分辨率的真实感图像。 StackGAN的网络结构包括两个生成器网络和两个判别器网络，其中第一个生成器网络用于生成低分辨率的图像，第二个生成器网络则用于
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-04 00:00" pubdate>
-              2023-05-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9CGAN/" class="category-chain-item">生成对抗网络GAN</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/AI/">#AI</a>
-            
-              <a href="/tags/model/">#model</a>
-            
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
-            
-              <a href="/tags/model-GAN/">#model/GAN</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/94dc/" target="_self">
-          <img src="/img/AI.png" srcset="/img/loading.gif" lazyload alt="生成对抗网络">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/94dc/" target="_self">
-          生成对抗网络
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/94dc/" target="_self">
-        <div>
-          GAN指的是生成对抗网络（Generative Adversarial Networks），是由伊恩·古德费洛等人于2014年提出的一种深度学习模型，用于生成逼真的新数据，如图像、音频、视频等。 GAN由两个神经网络组成：生成器网络和判别器网络。  生成器网络通过学习真实数据的分布，生成伪造的数据。 判别器网络则用于区分生成的数据和真实的数据，并将其分类为真实数据或伪造数据。  在训
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-04 00:00" pubdate>
-              2023-05-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Concept/" class="category-chain-item">Concept</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/" class="category-chain-item">AI</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" class="category-chain-item">生成模型</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/Concept/AI/%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/%E7%94%9F%E6%88%90%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9CGAN/" class="category-chain-item">生成对抗网络GAN</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/AI/">#AI</a>
-            
-              <a href="/tags/model/">#model</a>
-            
-              <a href="/tags/model-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">#model/神经网络</a>
-            
-              <a href="/tags/model-GAN/">#model/GAN</a>
             
           </div>
         
