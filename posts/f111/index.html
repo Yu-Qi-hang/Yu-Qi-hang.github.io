@@ -25,10 +25,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yu-qi-hang.github.io/img/computer.png">
 <meta property="article:published_time" content="2023-05-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-30T15:21:49.000Z">
+<meta property="article:modified_time" content="2023-11-14T02:44:27.393Z">
 <meta property="article:author" content="围墙里的鱼">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="server">
+<meta property="article:tag" content="command">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://yu-qi-hang.github.io/img/computer.png">
   
@@ -223,7 +224,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/bg.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/bg.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -252,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          2.5k 字
         
       </span>
     
@@ -263,7 +264,7 @@
         
         
         
-          19 分钟
+          21 分钟
         
       </span>
     
@@ -321,7 +322,7 @@
         aria-expanded="true"
       >
         Research
-        <span class="list-group-count">(12)</span>
+        <span class="list-group-count">(14)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -348,7 +349,7 @@
         aria-expanded="true"
       >
         Experiment
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -380,15 +381,6 @@
     
       
       
-        <a href="/posts/aac5/" title="网络训练中的train和eval模式"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">网络训练中的train和eval模式</span>
-        </a>
-      
-    
-      
-      
         <a href="/posts/be0b/" title="网络训练中的eval与no_grad"
            class="list-group-item list-group-item-action
            ">
@@ -398,10 +390,28 @@
     
       
       
+        <a href="/posts/aac5/" title="网络训练中的train和eval模式"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">网络训练中的train和eval模式</span>
+        </a>
+      
+    
+      
+      
         <a href="/posts/8e9f/" title="常用数据集"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">常用数据集</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/3fd5/" title="TalkingFace常用数据集"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">TalkingFace常用数据集</span>
         </a>
       
     
@@ -421,7 +431,7 @@
         aria-expanded="false"
       >
         Reading
-        <span class="list-group-count">(7)</span>
+        <span class="list-group-count">(8)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -466,7 +476,7 @@
         aria-expanded="false"
       >
         语音驱动
-        <span class="list-group-count">(5)</span>
+        <span class="list-group-count">(6)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
@@ -520,6 +530,15 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">用于细粒度可控头部说话合成的渐进式解耦表示学习</span>
+        </a>
+      
+    
+      
+      
+        <a href="/posts/33ad/" title="DINet"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">DINet</span>
         </a>
       
     
@@ -577,8 +596,8 @@ Development进行安装，就会安装一系列连接服务器需要的插件<im
 src="../../../../image/server/plugin.png" srcset="/img/loading.gif" lazyload alt="image.png" /></li>
 <li>左边会出现<strong>远程资源管理器</strong>栏目<img
 src="../../../../image/server/source.png" srcset="/img/loading.gif" lazyload
-alt="image.png" />，左下角会出现<strong>打开远程窗口</strong>按钮<img
-src="../../../../image/server/remote.png" srcset="/img/loading.gif" lazyload alt="image.png" /></li>
+alt="image.png|35*35" />，左下角会出现<strong>打开远程窗口</strong>按钮<img
+src="../../../../image/server/remote.png" srcset="/img/loading.gif" lazyload alt="image.png|35*35" /></li>
 <li>点击按钮即可按照要求进行连接。如果按照上一节保存了信息，只需要选择对应的服务器，输入密码即可。</li>
 <li>初次连接资源管理器是空的，可以打开自己的文件夹，要添加更多文件夹，可以右键资源管理器的空白处添加文件夹到工作区。</li>
 </ol>
@@ -605,22 +624,27 @@ src="../../../../image/server/remote.png" srcset="/img/loading.gif" lazyload alt
 <p>为了避免环境占用过多系统盘资源，将环境移动到数据盘</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 查看conda信息，envs directories表示当前环境存储位置</span><br>conda info<br><span class="hljs-comment"># 在.condarc末尾增加以下内容</span><br>envs_dirs:<br>  - /data/yuqihang/envs/envs<br>pkgs_dirs:<br>  - /data/yuqihang/envs/pkgs<br></code></pre></td></tr></table></figure>
 <p>其余配置参考<a
-href="../../Softwares/Environment/Anaconda下载安装与使用.md">Anaconda下载安装与使用</a>]</p>
+href="../../Softwares/Environment/Anaconda下载安装与使用.md">Anaconda下载安装与使用</a></p>
 <h4 id="git配置">git配置</h4>
 <p>git已经预安装，只需要配置一下连接到自己的远程仓库即可</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;Yu-Qi-hang&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;2659464450@qq.com&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;2659464450@qq.com&quot;</span><br></code></pre></td></tr></table></figure>
 <p>执行之后一直回车即可，此时已经生成了公钥文件在<code>~/.ssh/id_rsa.pub</code>，参考<a
 href="..\Windows相关\Git安装以及Github连接本地.md">Git安装以及Github连接本地</a>连接并验证</p>
 <h3 id="命令速查">命令速查</h3>
-<p>查看服务器的系统：uname -a</p>
-<p>查看显卡当前状态：nvidia-smi</p>
-<p>持续监控显卡状态：watch nvidia-smi</p>
-<p>程序执行指定CPU：taskset -c 1 python main.py</p>
-<p>程序执行指定GPU：</p>
-<p>下载某个链接的文件：wget --user 《可能需要的用户名》 --password
-《可能需要的密码》 《链接》</p>
-<p>后台运行指令：nohup 《原指令》&gt; 《输出信息的文件》 2&gt;&amp;1
-&amp;</p>
+<p>^abb09f</p>
+<p>查看服务器的系统：<code>uname -a</code></p>
+<p>查看显卡当前状态：<code>nvidia-smi</code></p>
+<p>持续监控显卡状态：<code>watch nvidia-smi</code></p>
+<p>程序执行指定CPU：<code>taskset -c 1 python main.py</code></p>
+<p>程序执行指定GPU：CUDA_VISIBLE_DEVICES=0,1</p>
+<p>下载某个链接的文件：<code>wget --user 《可能需要的用户名》 --password 《可能需要的密码》 《链接》</code></p>
+<p>后台运行指令：<code>nohup 《原指令》&gt; 《输出信息的文件》 2&gt;&amp;1 &amp;</code></p>
+<p>统计当前目录下文件的个数（不包括目录）:
+<code>ls -l | grep "^-" | wc -l</code></p>
+<p>统计当前目录下文件的个数（包括子目录）:
+<code>ls -lR | grep "^-" | wc -l</code></p>
+<p>统计当前目录下文件夹的个数（包括子目录）：<code>ls -lR | grep "^d" | wc -l</code></p>
+<p>统计当前目录下文件夹的个数（不包括子目录）：<code>ls -l | grep "^d" | wc -l</code></p>
 
                 
               </div>
@@ -664,6 +688,8 @@ href="..\Windows相关\Git安装以及Github连接本地.md">Git安装以及Gith
         <a href="/tags/Linux/">#Linux</a>
       
         <a href="/tags/server/">#server</a>
+      
+        <a href="/tags/command/">#command</a>
       
     </div>
   
@@ -726,9 +752,9 @@ href="..\Windows相关\Git安装以及Github连接本地.md">Git安装以及Gith
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/9a74/" title="穿越人海拥抱你">
+                      <a href="/posts/2116/" title="多模态跨模态">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">穿越人海拥抱你</span>
+                        <span class="hidden-mobile">多模态跨模态</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
